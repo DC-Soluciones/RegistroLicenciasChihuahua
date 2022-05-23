@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistroLicenciasChihuahua.Contexto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +13,26 @@ namespace RegistroLicenciasChihuahua
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        LicenciasCH_QAEntities _context;
+        int idUser;
+        public Dashboard(dtUsuario usuario)
         {
             InitializeComponent();
+            using (_context = new LicenciasCH_QAEntities())
+            {
+                var rol = _context.dtRols.Where(x => x.RolId == usuario.RolId).FirstOrDefault();
+                lbl_UserName.Text = usuario.NombreUsuario;
+                lbl_Rol.Text = rol.Rol;
+
+
+            }
+
+
         }
 
         public void loadform(object Form)
         {
+
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.RemoveAt(0);
             Form f = Form as Form;

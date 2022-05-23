@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b645b0bd2a3e4f8bae558a25ab1eb03f" Name="Diagram1">
+        <EntityTypeShape EntityType="LicenciasCH_Model.ASPStateTempApplication" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.ASPStateTempSession" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtAccountType" Width="1.5" PointX="39.75" PointY="174" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtActividad" Width="1.5" PointX="10.5" PointY="199.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtAgrupador" Width="1.5" PointX="33" PointY="169.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtAlmacen" Width="1.5" PointX="36.75" PointY="170.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtApartadoArchivo" Width="1.5" PointX="24.75" PointY="200.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtApartado" Width="1.5" PointX="24.75" PointY="204.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtApiConfig" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtAprobacionDatosPDV" Width="1.5" PointX="13.5" PointY="196.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtArchivo" Width="1.5" PointX="16.5" PointY="196.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtArchivoTramite" Width="1.5" PointX="10.5" PointY="195.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtArea" Width="1.5" PointX="10.5" PointY="203.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtAreaSol" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtAseguraPorRamo" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtAsignacionUsuarioDestino" Width="1.5" PointX="13.5" PointY="193.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtAtributo" Width="1.5" PointX="33" PointY="185.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtAtributoValor" Width="1.5" PointX="35.25" PointY="234.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtBitacora" Width="1.5" PointX="36" PointY="185.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtBitacoraAlmacen" Width="1.5" PointX="33" PointY="179.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtBitacoraAlmacenEvidencia" Width="1.5" PointX="35.25" PointY="180.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtBitacoraDocumentosConcesione" Width="1.5" PointX="13.5" PointY="206.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtBitacoraLicencia" Width="1.5" PointX="16.5" PointY="192.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCadena" Width="1.5" PointX="36.75" PointY="166.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampania" Width="1.5" PointX="39" PointY="183.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampaniaContacto" Width="1.5" PointX="21.75" PointY="210.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampaniaContactoAsignado" Width="1.5" PointX="16.5" PointY="205.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampaniaContactoContestado" Width="1.5" PointX="10.5" PointY="189.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampaniaContactoCuestionario" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampaniaDestino" Width="1.5" PointX="47.25" PointY="196.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampaniaProducto" Width="1.5" PointX="44.25" PointY="186.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampaniaTipo" Width="1.5" PointX="36.75" PointY="174.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampaniaUbicacionAsignado" Width="1.5" PointX="10.5" PointY="207.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampaniaUbicacionContestado" Width="1.5" PointX="19.5" PointY="198.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampaniaUbicacionCuestionario" Width="1.5" PointX="41.25" PointY="253" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampoGrupo" Width="1.5" PointX="30.75" PointY="174.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampoRespuesta" Width="1.5" PointX="35.25" PointY="176.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCampos" Width="1.5" PointX="33" PointY="189.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCanal" Width="1.5" PointX="36.75" PointY="225.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCapacitacion" Width="1.5" PointX="22.5" PointY="192.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCasoDocumento" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCategoria" Width="1.5" PointX="12" PointY="225.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCategoriaProducto" Width="1.5" PointX="33" PointY="196.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCeckListSeccion1" Width="1.5" PointX="15" PointY="320.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCheckList1" Width="1.5" PointX="12.75" PointY="318.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCheckListPreguntas1" Width="1.5" PointX="19.5" PointY="192.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCiudadano" Width="1.5" PointX="14.25" PointY="179.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtClavesDescto" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtColonia" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtConcepto" Width="1.5" PointX="10.5" PointY="271.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtConcesione" Width="1.5" PointX="48" PointY="161.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCondicionesCredito" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtContacto" Width="1.5" PointX="19.5" PointY="204.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtContestadoFormulario" Width="1.5" PointX="41.25" PointY="244.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtContestadoFormularioRespuesta" Width="1.5" PointX="43.5" PointY="282.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCoordenada" Width="1.5" PointX="13.5" PointY="189.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCoordenadaGeoCerca" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCorreoHistorial" Width="1.5" PointX="16.5" PointY="209.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCotizacion" Width="1.5" PointX="12.75" PointY="238.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCotizacionDetalle" Width="1.5" PointX="12.75" PointY="258.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCotizacionDetalleSva" Width="1.5" PointX="15" PointY="248.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCrmAsignacion" Width="1.5" PointX="27.75" PointY="201.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCuenta" Width="1.5" PointX="42" PointY="182" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCuentaCorreo" Width="1.5" PointX="14.25" PointY="221.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtCuotasPDV" Width="1.5" PointX="49.25" PointY="205.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtDestino" Width="1.5" PointX="39" PointY="190.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtDispositivoHistorial" Width="1.5" PointX="36" PointY="196.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtDomicilioEnvio" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEmpresa" Width="1.5" PointX="30.75" PointY="177.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEmpresaUsuario" Width="1.5" PointX="33" PointY="200.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEncuestaCuestionario" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEncuesta" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEncuestaUsuario" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEstado" Width="1.5" PointX="3" PointY="197.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEstandarTipoMov" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEstatu" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEstatusLicencia" Width="1.5" PointX="14.25" PointY="175.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEstatusSol" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEtapa" Width="1.5" PointX="33" PointY="235.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEtapaTemplate" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEvaluacion" Width="1.5" PointX="36" PointY="251.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtExamenMedico" Width="1.5" PointX="10.5" PointY="157" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtExamenPsicometrico" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtExamenToxico" Width="1.5" PointX="10.5" PointY="151.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtFactura" Width="1.5" PointX="35.25" PointY="203" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtFacturaCategoria" Width="1.5" PointX="33" PointY="242.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtFolioConocer" Width="1.5" PointX="10.5" PointY="294.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtFormaEjecutiva" Width="1.5" PointX="41.25" PointY="208.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtGaleria" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtGaleriaDetalle" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtGastoReporte" Width="1.5" PointX="33" PointY="203.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtGestionCanal" Width="1.5" PointX="36.75" PointY="228.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtGrupo" Width="1.5" PointX="33" PointY="248.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtGrupoUsuario" Width="1.5" PointX="38.25" PointY="213" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtImporte" Width="1.5" PointX="15" PointY="253.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtJerarquia" Width="1.5" PointX="13.5" PointY="210.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtLicencia" Width="1.5" PointX="44.25" PointY="208.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtListaPrecio" Width="1.5" PointX="33" PointY="253.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtLlamadaMotivo" Width="1.5" PointX="28.5" PointY="188.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtLogBloqueoCiudadano" Width="1.5" PointX="16.5" PointY="188.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMarker" Width="1.5" PointX="47.25" PointY="200.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMeta" Width="1.5" PointX="44.25" PointY="214.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMetrica" Width="1.5" PointX="33" PointY="256.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtModulo" Width="1.5" PointX="12" PointY="221" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtModuloAsignacion" Width="1.5" PointX="38.25" PointY="216.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtModuloDetalleComentario" Width="1.5" PointX="54.5" PointY="203.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtModuloRespuesta" Width="1.5" PointX="44.25" PointY="181.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtModuloRespuestaOpcion" Width="1.5" PointX="43.5" PointY="178.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMotivosEndoso" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMovimiento" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMovimientosHistorial" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMoviqFormaPago" Width="1.5" PointX="17.25" PointY="186.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMoviqScoring" Width="1.5" PointX="19.5" PointY="188.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMoviqServicio" Width="1.5" PointX="10.5" PointY="312.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMoviqSocrinTipoCliente" Width="1.5" PointX="24.75" PointY="196.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMoviqSva" Width="1.5" PointX="12.75" PointY="247.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMoviqTipoCliente" Width="1.5" PointX="22.5" PointY="188.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMunicipio" Width="1.5" PointX="5.25" PointY="199.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMuro" Width="1.5" PointX="38" PointY="179.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMuroDetalle" Width="1.5" PointX="47.25" PointY="191.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMuroDetalleUsuario" Width="1.5" PointX="52.5" PointY="193.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMuroDetalleVisitado" Width="1.5" PointX="55.5" PointY="198.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtMuroLike" Width="1.5" PointX="57.75" PointY="199.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtNota" Width="1.5" PointX="27.75" PointY="195.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtNoticia" Width="1.5" PointX="10.5" PointY="315.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtObjetivo" Width="1.5" PointX="35.25" PointY="218" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtObjetivoHistorial" Width="1.5" PointX="37.5" PointY="209" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtOportunidad" Width="1.5" PointX="44.25" PointY="223.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtOportunidadContacto" Width="1.5" PointX="27.75" PointY="207.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtOportunidadHistorial" Width="1.5" PointX="46.5" PointY="212.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtOportunidadProducto" Width="1.5" PointX="46.5" PointY="209" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtPagoHistorial" Width="1.5" PointX="41" PointY="177.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtPai" Width="1.5" PointX="0.75" PointY="198.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtPaquete" Width="1.5" PointX="28.5" PointY="182.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtPermiso" Width="1.5" PointX="3.75" PointY="193.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtPlan" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtPlanProducto" Width="1.5" PointX="10.5" PointY="262" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtPotencial" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtPreguntasEncuesta" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtPrioridad" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtProductoAlmacen" Width="1.5" PointX="46.5" PointY="187.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtProductoApartado" Width="1.5" PointX="27" PointY="211.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtProductoCompetidor" Width="1.5" PointX="44.25" PointY="190.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtProductoImagen" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtProductoServicio" Width="1.5" PointX="35.25" PointY="189.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtProyecto" Width="1.5" PointX="54.5" PointY="207" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtProyectoRole" Width="1.5" PointX="56.75" PointY="202.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtPuesto" Width="1.5" PointX="12.75" PointY="216.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtRamo" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtRegion" Width="1.5" PointX="36.75" PointY="163" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtRegistroEquipo" Width="1.5" PointX="41.25" PointY="219.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtRegistroToken" Width="1.5" PointX="42" PointY="194.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtReunion" Width="1.5" PointX="42" PointY="199.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtReunionAcuerdo" Width="1.5" PointX="44.25" PointY="200.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtReunionIntegrante" Width="1.5" PointX="27.75" PointY="191.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtRol" Width="1.5" PointX="6" PointY="193.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtRss" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtSource" Width="1.5" PointX="33" PointY="274.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtStatu" Width="1.5" PointX="33" PointY="277.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtSubCanal" Width="1.5" PointX="36.75" PointY="238.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtSubCategoria" Width="1.5" PointX="12" PointY="229.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTag" Width="1.5" PointX="10.5" PointY="324.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTagModulo" Width="1.5" PointX="14.25" PointY="273" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTarea" Width="1.5" PointX="30.75" PointY="197" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTareaFrecuencia" Width="1.5" PointX="28.5" PointY="215" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTareaPaso" Width="1.5" PointX="33" PointY="209.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTareaPasoArchivo" Width="1.5" PointX="24.75" PointY="192.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTareaRecurso" Width="1.5" PointX="35.25" PointY="213.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTareaTipo" Width="1.5" PointX="28.5" PointY="218.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTarjetasCirculacionConcesione" Width="1.5" PointX="52.25" PointY="207.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTarjetonesConcesione" Width="1.5" PointX="53.25" PointY="197.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTarjetonesMercantile" Width="1.5" PointX="49.25" PointY="210.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTemplatePaso" Width="1.5" PointX="42" PointY="205" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTemplatePasosTarea" Width="1.5" PointX="44.25" PointY="205.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTerritorio" Width="1.5" PointX="36.75" PointY="241.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTicket" Width="1.5" PointX="50.25" PointY="192.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTicketServicio" Width="1.5" PointX="14.25" PointY="226.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTipoDomEnvio" Width="1.5" PointX="16.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTipoLicencia" Width="1.5" PointX="10.5" PointY="319.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTipoMovimientoSol" Width="1.5" PointX="16.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTipoMovRequisito" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTipoNomina" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTipoSubscripcion" Width="1.5" PointX="28.5" PointY="185.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTitulosConcesione" Width="1.5" PointX="50.25" PointY="186.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtToken" Width="1.5" PointX="2.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTokenLogin" Width="1.5" PointX="51.5" PointY="202.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTramite" Width="1.5" PointX="8.25" PointY="151.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtUnidadMedita" Width="1.5" PointX="33" PointY="176.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtUsuario" Width="1.5" PointX="8.25" PointY="184.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtUsuarioArea" Width="1.5" PointX="4.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtUsuarioZona" Width="1.5" PointX="50.25" PointY="199.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtValor" Width="1.5" PointX="33" PointY="284.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtVigencia" Width="1.5" PointX="12.75" PointY="253.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtZona" Width="1.5" PointX="45" PointY="194.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.Number" Width="1.5" PointX="12.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.spfPadLicencia" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.sysdiagram" Width="1.5" PointX="18.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtBanco" Width="1.5" PointX="18.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtDocumento" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtEstadoCivil" Width="1.5" PointX="18.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTipoEmpleado" Width="1.5" PointX="10.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTipoMovPorProducto" Width="1.5" PointX="12.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.Query" Width="1.5" PointX="14.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.spfCatalogoGral" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.spfFolio" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.spfLicenciasDigitale" Width="1.5" PointX="2.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.spfLicenciasDigitalesHist" Width="1.5" PointX="20.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.spfLicenciasDigitalesTemp" Width="1.5" PointX="4.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.spfServiciosConcepto" Width="1.5" PointX="20.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.ViewContactoContestada" Width="1.5" PointX="20.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.ViewUbicacionesContestada" Width="1.5" PointX="16.75" PointY="20.75" IsExpanded="true" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCuenta_dtAccountType" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtActividad_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtActividad_dtTarea" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtActividad_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAgrupador_EmpresaId" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFactura_dtAgrupador" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtAlmacen" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtApartadoArchivo_dtApartados" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtApartadoArchivo_dtArchivo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtApartados_dtArchivo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtApartados_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtProductoApartado_dtProductoApartado" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAprobacionDatosPDV_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAprobacionDatosPDV_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAprobacionDatosPDV_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAprobacionDatosPDV_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAprobacionDatosPDV_dtUsuario3" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAprobacionDatosPDV_dtUsuario4" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtContacto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtCuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtMuroDetalle" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtObjetivo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtOportunidad" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtProductoServicio" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtReunion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtTicketServicio" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTareaPasoArchivo_dtArchivo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivoTramite_dtTramites" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivoTramite_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArea_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArea_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtPuesto_dtArea" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAsignacionUsuarioDestino_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAsignacionUsuarioDestino_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAtributo_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAtributo_dtModulo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAtributoValor_dtAtributo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtAtributoValor_dtValor" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtBitacora_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtBitacora_dtModulo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtBitacoraAlmacenEvidencia_dtBitacoraAlmacen" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_EmpresaId" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtBitacoraDocumentosConcesiones_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtBitacoraDocumentosConcesiones_dtEstatusLicencia" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtBitacoraDocumentosConcesiones_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtBitacoraLicencias_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtBitacoraLicencias_dtEstatusLicencia" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtBitacoraLicencias_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtCadena" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampania_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampania_dtTipoCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaContacto_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaContactoAsignado_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaContactoContestado_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaDestino_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaProducto_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaUbicacionAsignado_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaUbicacionContestado_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaUbicacionCuestionario_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormulario_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMarkers_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTicket_dtCampania" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaContacto_dtContacto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaContactoAsignado_dtContacto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaContactoAsignado_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaContactoContestado_dtCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaContactoContestado_dtContacto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaContactoContestado_dtCuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaContactoContestado_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaContactoContestado_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaDestino_dtDestino" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaProducto_dtProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaUbicacionAsignado_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaUbicacionAsignado_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtCampani__Cuent__3F6663D5" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaUbicacionContestado_dtChecklist" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaUbicacionContestado_dtUbicacion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaUbicacionContestado_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaUbicacionCuestionario_dtCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampaniaUbicacionCuestionario_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampos_dtCampoGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloRespuesta_dtCampoGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampoRespuesta_dtCampos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloRespuestaOpcion_dtCampoRespuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampos_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCampos_dtModulo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloRespuesta_dtCampos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloRespuestaOpcion_dtCampos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtCanal" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtJerarquia_dtCanal" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCapacitacion_dtCiudadano" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCapacitacion_dtTramites" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCapacitacion_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCapacitacion_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCapacitacion_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtSubCategoria_dtCategoria" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTicketServicio_dtCategoria" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCategoriaProducto_dtCategoriaProducto2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCategoriaProducto_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtProductoServicio_dtCategoriaProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCeckListSeccion_dtCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCheckListPreguntas_dtCeckListSeccion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtCheckLi__TagId__5DEAEAF5" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCheckList_dtTipoLicencias" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCheckListPreguntas_dtCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormulario_dtCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormularioRespuestas_dtCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtEvaluacion_dtCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCheckListPreguntas_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtLogBloqueoCiudadanos_dtCiudadano" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtConceptos_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFormaEjecutiva_dtFormaEjecutiva" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetasCirculacionConcesiones_dtConcesiones" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesConcesiones_dtConcesiones" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesMercantiles_dtConcesiones" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTitulosConcesiones_dtConcesiones" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContacto_dtCuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContacto_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContacto_dtSource" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContacto_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContacto_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContacto_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCrmAsignacion_dtContacto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtNotas_dtContacto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidadContacto_dtContacto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtReunionIntegrantes_dtContacto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtContacto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormulario_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormulario_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormulario_dtTramites" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormularioRespuestas_dtContestadoFormulario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCoordenada_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCoordenada_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCorreoHistorial_dtCuentaCorreo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCorreoHistorial_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCotizacionDetalle_dtCotizacion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCotizacionDetalleSva_dtCotizacion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCotizacionDetalle_dtPlanProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCotizacionDetalleSva_dtCotizacionDetalle" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCotizacionDetalleSva_dtMoviqSva" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCrmAsignacion_dtCuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCrmAsignacion_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCrmAsignacion_dtGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCrmAsignacion_dtOportunidad" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCrmAsignacion_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCrmAsignacion_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCuenta_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFactura_dtCuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtNotas_dtCuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidad_dtCuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtProductoCompetidor_dtCuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtProyecto_dtCuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtCuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCuentaCorreo_dtModulo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCuotasPDV_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCuotasPDV_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCuotasPDV_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtGestionCanal" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtSubCanal" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtTerritorio" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtUsuario3" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtZona" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFormaEjecutiva_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtLicencias_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMarkers_dtUbicacion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMeta_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidad_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtRegistroEquipo_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetasCirculacionConcesiones_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesConcesiones_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesMercantiles_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTicket_dtDestino" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTitulosConcesiones_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTokenLogin_dtDestinos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDispositivoHistorial_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtDispositivoHistorial_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtProduct__Empre__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtEmpresa_dtPaquete" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtEmpresa_dtTipoSubscripcion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtEmpresa_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtEmpresaUsuario_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtEtapa_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtEvaluacion_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFactura_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFacturaCategoria_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtGastoReporte_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtGrupo_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtGrupoUsuario_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtListaPrecios_dtListaPrecios" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMarkers_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMeta_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMetrica_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloAsignacion_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMuro_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtNotas_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtObjetivo_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidad_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidadContacto_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtPagoHistorial_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtProyecto_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtRegistroToken_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtReunion_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtSource_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtStatus_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTareaRecursos_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTemplatePasos_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTicket_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtUsuario_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtValor_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtZona_dtEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtEmpresaUsuario_dtRol" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtEmpresaUsuario_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__37E53D9E" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__38D961D7" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__39CD8610" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__3AC1AA49" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__3BB5CE82" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__3CA9F2BB" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__3D9E16F4" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__3E923B2D" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__51851410" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__52793849" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__536D5C82" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__546180BB" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__5555A4F4" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__5649C92D" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__573DED66" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtEstado__PaisId__5832119F" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtMunicip__Estad__2759D01A" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtMunicip__Estad__3F865F66" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__384F51F2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__3943762B" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__3A379A64" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__3B2BBE9D" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__407A839F" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__416EA7D8" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__4262CC11" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__4356F04A" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__6E414E4F" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__6F357288" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__702996C1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtUsuario__Estad__711DBAFA" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFormaEjecutiva_dtEstatusLicencia" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtLicencias_dtEstatusLicencia" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetasCirculacionConcesiones_dtEstatusLicencia" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesConcesiones_dtEstatusLicencia" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesMercantiles_dtEstatusLicencia" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTitulosConcesiones_dtEstatusLicencia" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMeta_dtEtapa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidad_dtEtapa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidadHistorial_dtEtapa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtExamenMedico_dtTramites" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtExamenToxico_dtTramites" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFactura_dtFacturaCategoria" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFactura_dtProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFactura_dtTarea" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFolioConocer_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFormaEjecutiva_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFormaEjecutiva_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtFormaEjecutiva_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtGaleriaDetalle_dtGaleria" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtGastoReporte_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtGrupoUsuario_dtGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMeta_dtGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloAsignacion_dtGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtObjetivo_dtGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTareaRecursos_dtGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtGrupoUsuario_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtImporte_dtVigencia" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtJerarquia_dtRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtJerarquia_dtSubCanal" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtJerarquia_dtTerritorio" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtJerarquia_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtJerarquia_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtJerarquia_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtLicencias_dtTramites" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtLicencias_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtLicencias_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtLicencias_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtLlamadaMotivo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtLogBloqueoCiudadanos_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMarkers_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMeta_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMeta_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMeta_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtObjetivo_dtMetrica" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloAsignacion_dtModulo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloRespuesta_dtModulo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloRespuestaOpcion_dtModulo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMuro_dtModulo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTagModulo_dtModulo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtModulo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloAsignacion_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloAsignacion_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloDetalleComentario_dtMuroDetalle" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtModuloDetalleComentario_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMuroLike_dtModuloDetalleComentario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqScoring_dtMoviqFormaPago" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqScoring_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqScoring_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqSocrinTipoCliente_dtMoviqScoring" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqServicios_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqServicios_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqSva_dtMoviqServicios" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqSocrinTipoCliente_dtMoviqTipoCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqSocrinTipoCliente_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqSocrinTipoCliente_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqSva_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMoviqSva_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMuroDetalle_dtMuro" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMuroDetalle_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMuroDetalleUsuarios_dtMuroDetalle1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMuroDetalleVisitado_dtMuroDetalle" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMuroLike_dtMuroDetalle" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMuroDetalleUsuarios_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMuroDetalleVisitado_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtMuroLike_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtNotas_dtOportunidad" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtNotas_dtProductoServicio" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtNotas_dtReunion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtNotas_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtNotas_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtNoticia_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtNoticia_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtObjetivo_dtObjetivo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtObjetivo_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtObjetivo_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtObjetivo_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtObjetivoHistorial_dtObjetivo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtObjetivo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtObjetivoHistorial_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidad_dtSource" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidad_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidad_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidad_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidad_dtUsuario3" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidadContacto_dtOportunidad" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidadHistorial_dtOportunidad" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidadProducto_dtOportunidad" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtProyecto_dtOportunidad" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtOportunidad" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidadContacto_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidadHistorial_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidadProducto_dtProductoServicio" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtPagoHistorial_dtPaquete" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK__dtProduct__Unida__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtProductoServicio" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtProyecto_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtProyecto_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtProyectoRoles_dtProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtProyectoRoles_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtUsuario_dtPuesto" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTokenLogin_dtRegistroEquipo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtRegistroToken_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtReunion_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtReunionAcuerdo_dtReunion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtReunionIntegrantes_dtReunion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtReunion" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtReunionIntegrantes_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtUsuario_dtRol" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTicketServicio_dtSubCategoria" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTagModulo_dtTag" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtTareaFrecuencia" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtTareaTipo" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTareaPaso_dtTarea" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTareaRecursos_dtTarea" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTareaPasoArchivo_dtTareaPaso" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTareaRecursos_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTareaRecursos_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetasCirculacionConcesiones_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetasCirculacionConcesiones_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetasCirculacionConcesiones_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesConcesiones_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesConcesiones_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesConcesiones_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesMercantiles_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesMercantiles_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTarjetonesMercantiles_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTemplatePasos_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTemplatePasosTareas_dtTemplatePasos" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTicket_dtUsuarioCreador" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTicket_dtUsuarioModifico" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTicket_dtUsuarioTicket" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTipoLicencias_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTipoLicencias_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtVigencia_dtTipoLicencias" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTitulosConcesiones_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTitulosConcesiones_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTitulosConcesiones_dtUsuario2" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtTokenLogin_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtUsuarioZona_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtVigencia_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtVigencia_dtUsuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtZona_dtUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtUsuarioZona_dtZona" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.dtCorreoHistorialEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.dtPuestoReporta" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.dtRolPermiso" ManuallyRouted="false" />
+        <AssociationConnector Association="LicenciasCH_Model.dtTareaDependencia" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

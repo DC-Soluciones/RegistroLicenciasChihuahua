@@ -33,9 +33,9 @@ namespace RegistroLicenciasChihuahua
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Usuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_Contraseña = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -69,12 +69,12 @@ namespace RegistroLicenciasChihuahua
             this.label2.TabIndex = 2;
             this.label2.Text = "Usuario:";
             // 
-            // textBox1
+            // txt_Usuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 20);
-            this.textBox1.TabIndex = 3;
+            this.txt_Usuario.Location = new System.Drawing.Point(15, 148);
+            this.txt_Usuario.Name = "txt_Usuario";
+            this.txt_Usuario.Size = new System.Drawing.Size(275, 20);
+            this.txt_Usuario.TabIndex = 3;
             // 
             // label3
             // 
@@ -86,12 +86,13 @@ namespace RegistroLicenciasChihuahua
             this.label3.TabIndex = 4;
             this.label3.Text = "Contraseña:";
             // 
-            // textBox2
+            // txt_Contraseña
             // 
-            this.textBox2.Location = new System.Drawing.Point(15, 223);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(275, 20);
-            this.textBox2.TabIndex = 5;
+            this.txt_Contraseña.Location = new System.Drawing.Point(15, 223);
+            this.txt_Contraseña.Name = "txt_Contraseña";
+            this.txt_Contraseña.PasswordChar = '*';
+            this.txt_Contraseña.Size = new System.Drawing.Size(275, 20);
+            this.txt_Contraseña.TabIndex = 5;
             // 
             // button1
             // 
@@ -104,6 +105,7 @@ namespace RegistroLicenciasChihuahua
             this.button1.TabIndex = 6;
             this.button1.Text = "Iniciar sesión";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 
@@ -112,9 +114,9 @@ namespace RegistroLicenciasChihuahua
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(302, 369);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_Contraseña);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Usuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -133,9 +135,9 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Usuario;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_Contraseña;
         private System.Windows.Forms.Button button1;
     }
 }

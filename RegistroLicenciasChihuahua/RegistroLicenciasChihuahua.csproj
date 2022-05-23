@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +66,681 @@
     </Compile>
     <Compile Include="Busqueda.Designer.cs">
       <DependentUpon>Busqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\ASPStateTempApplication.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\ASPStateTempSession.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtAccountType.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtActividad.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtAgrupador.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtAlmacen.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtApartado.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtApartadoArchivo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtApiConfig.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtAprobacionDatosPDV.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtArchivo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtArchivoTramite.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtArea.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtAreaSol.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtAseguraPorRamo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtAsignacionUsuarioDestino.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtAtributo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtAtributoValor.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtBanco.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtBitacora.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtBitacoraAlmacen.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtBitacoraAlmacenEvidencia.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtBitacoraDocumentosConcesione.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtBitacoraLicencia.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCadena.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampania.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampaniaContacto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampaniaContactoAsignado.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampaniaContactoContestado.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampaniaContactoCuestionario.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampaniaDestino.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampaniaProducto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampaniaTipo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampaniaUbicacionAsignado.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampaniaUbicacionContestado.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampaniaUbicacionCuestionario.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampoGrupo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampoRespuesta.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCampos.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCanal.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCapacitacion.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCasoDocumento.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCategoria.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCategoriaProducto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCeckListSeccion1.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCheckList1.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCheckListPreguntas1.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCiudadano.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtClavesDescto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtColonia.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtConcepto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtConcesione.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCondicionesCredito.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtContacto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtContestadoFormulario.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtContestadoFormularioRespuesta.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCoordenada.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCoordenadaGeoCerca.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCorreoHistorial.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCotizacion.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCotizacionDetalle.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCotizacionDetalleSva.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCrmAsignacion.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCuenta.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCuentaCorreo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtCuotasPDV.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtDestino.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtDispositivoHistorial.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtDocumento.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtDomicilioEnvio.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEmpresa.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEmpresaUsuario.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEncuesta.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEncuestaCuestionario.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEncuestaUsuario.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEstado.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEstadoCivil.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEstandarTipoMov.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEstatu.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEstatusLicencia.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEstatusSol.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEtapa.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEtapaTemplate.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtEvaluacion.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtExamenMedico.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtExamenPsicometrico.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtExamenToxico.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtFactura.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtFacturaCategoria.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtFolioConocer.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtFormaEjecutiva.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtGaleria.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtGaleriaDetalle.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtGastoReporte.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtGestionCanal.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtGrupo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtGrupoUsuario.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtImporte.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtJerarquia.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtLicencia.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtListaPrecio.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtLlamadaMotivo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtLogBloqueoCiudadano.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMarker.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMeta.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMetrica.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtModulo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtModuloAsignacion.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtModuloDetalleComentario.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtModuloRespuesta.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtModuloRespuestaOpcion.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMotivosEndoso.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMovimiento.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMovimientosHistorial.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMoviqFormaPago.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMoviqScoring.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMoviqServicio.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMoviqSocrinTipoCliente.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMoviqSva.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMoviqTipoCliente.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMunicipio.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMuro.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMuroDetalle.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMuroDetalleUsuario.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMuroDetalleVisitado.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtMuroLike.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtNota.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtNoticia.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtObjetivo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtObjetivoHistorial.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtOportunidad.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtOportunidadContacto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtOportunidadHistorial.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtOportunidadProducto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtPagoHistorial.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtPai.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtPaquete.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtPermiso.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtPlan.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtPlanProducto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtPotencial.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtPreguntasEncuesta.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtPrioridad.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtProductoAlmacen.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtProductoApartado.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtProductoCompetidor.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtProductoImagen.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtProductoServicio.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtProyecto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtProyectoRole.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtPuesto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtRamo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtRegion.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtRegistroEquipo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtRegistroToken.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtReunion.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtReunionAcuerdo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtReunionIntegrante.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtRol.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtRss.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtSource.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtStatu.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtSubCanal.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtSubCategoria.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTag.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTagModulo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTarea.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTareaFrecuencia.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTareaPaso.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTareaPasoArchivo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTareaRecurso.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTareaTipo.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTarjetasCirculacionConcesione.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTarjetonesConcesione.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTarjetonesMercantile.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTemplatePaso.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTemplatePasosTarea.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTerritorio.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTicket.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTicketServicio.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTipoDomEnvio.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTipoEmpleado.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTipoLicencia.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTipoMovimientoSol.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTipoMovPorProducto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTipoMovRequisito.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTipoNomina.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTipoSubscripcion.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTitulosConcesione.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtToken.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTokenLogin.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtTramite.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtUnidadMedita.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtUsuario.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtUsuarioArea.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtUsuarioZona.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtValor.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtVigencia.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\dtZona.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\fnMailInbox_Result.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\LicenciasCH.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LicenciasCH.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\LicenciasCH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\LicenciasCH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LicenciasCH.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\Number.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\Query.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\sPConteoProductoSemanal_Result.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\spfCatalogoGral.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\spfFolio.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\spfLicenciasDigitale.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\spfLicenciasDigitalesHist.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\spfLicenciasDigitalesTemp.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\spfPadLicencia.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\spfServiciosConcepto.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\spSearchMail_Result.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\sPVentaProductoSemanal_Result.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\sp_helpdiagrams_Result.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\sysdiagram.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\uspConsultaLicencias_Result.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\uspLogin_Result.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\uspReporteLicenciasEstatus_Result.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\ViewContactoContestada.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexto\ViewUbicacionesContestada.cs">
+      <DependentUpon>LicenciasCH.tt</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -111,6 +795,14 @@
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Contexto\LicenciasCH.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LicenciasCH.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Contexto\LicenciasCH.edmx.diagram">
+      <DependentUpon>LicenciasCH.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,6 +815,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contexto\LicenciasCH.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LicenciasCH.Context.cs</LastGenOutput>
+      <DependentUpon>LicenciasCH.edmx</DependentUpon>
+    </Content>
+    <Content Include="Contexto\LicenciasCH.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LicenciasCH.edmx</DependentUpon>
+      <LastGenOutput>LicenciasCH.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
