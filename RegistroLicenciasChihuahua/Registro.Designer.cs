@@ -1302,7 +1302,6 @@ namespace RegistroLicenciasChihuahua
             this.Name = "Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Registro_Load);
             this.panelregistro.ResumeLayout(false);
             this.panelregistro.PerformLayout();
