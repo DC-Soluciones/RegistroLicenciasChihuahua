@@ -53,7 +53,7 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_mistramites_Click(object sender, EventArgs e)
         {
-            loadform(new Mistramites());
+            loadform(new Mistramites(RolUsuario, userDashboard));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,6 +65,16 @@ namespace RegistroLicenciasChihuahua
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void btn_cerrarsesion_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
         }
     }
 }

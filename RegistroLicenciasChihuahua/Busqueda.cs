@@ -29,7 +29,7 @@ namespace RegistroLicenciasChihuahua
             InitializeComponent();
             usuario = user;
             UserRol = userRol;
-            if (userRol != "Supervisor")
+            if (userRol != "Supervisor" || userRol != "Administrador" || userRol != "Capturista")
             {
                 btn_Editactual.Visible = false;
             }

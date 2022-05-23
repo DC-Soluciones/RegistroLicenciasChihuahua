@@ -786,6 +786,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LicenciasCHDataSetMunicipios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LicenciasCH_QADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LicenciasCH_QADataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -878,6 +883,17 @@
     </None>
     <None Include="LicenciasCHDataSetMunicipios.xss">
       <DependentUpon>LicenciasCHDataSetMunicipios.xsd</DependentUpon>
+    </None>
+    <None Include="LicenciasCH_QADataSet.xsc">
+      <DependentUpon>LicenciasCH_QADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LicenciasCH_QADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LicenciasCH_QADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LicenciasCH_QADataSet.xss">
+      <DependentUpon>LicenciasCH_QADataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

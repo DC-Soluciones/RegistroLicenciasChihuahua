@@ -29,6 +29,7 @@ namespace RegistroLicenciasChihuahua
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mistramites));
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -42,8 +43,38 @@ namespace RegistroLicenciasChihuahua
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gv_Tramites = new System.Windows.Forms.DataGridView();
+            this.licenciasCH_QADataSet = new RegistroLicenciasChihuahua.LicenciasCH_QADataSet();
+            this.dtTramitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtTramitesTableAdapter = new RegistroLicenciasChihuahua.LicenciasCH_QADataSetTableAdapters.dtTramitesTableAdapter();
+            this.tramiteIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.folioSeguimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoPaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoMaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoLicenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoTramiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aniosVigenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaExpedicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaVencimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complexionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mensajePagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rFCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.municipioNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoTelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ladaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ben2NombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ben3PorcentajeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Tramites)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licenciasCH_QADataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTramitesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -147,6 +178,7 @@ namespace RegistroLicenciasChihuahua
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -162,6 +194,7 @@ namespace RegistroLicenciasChihuahua
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -177,6 +210,7 @@ namespace RegistroLicenciasChihuahua
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
@@ -188,12 +222,202 @@ namespace RegistroLicenciasChihuahua
             this.panel1.Size = new System.Drawing.Size(916, 136);
             this.panel1.TabIndex = 2;
             // 
+            // gv_Tramites
+            // 
+            this.gv_Tramites.AutoGenerateColumns = false;
+            this.gv_Tramites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gv_Tramites.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tramiteIdDataGridViewTextBoxColumn,
+            this.folioSeguimientoDataGridViewTextBoxColumn,
+            this.curpDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.apellidoPaternoDataGridViewTextBoxColumn,
+            this.apellidoMaternoDataGridViewTextBoxColumn,
+            this.tipoLicenciaDataGridViewTextBoxColumn,
+            this.tipoTramiteDataGridViewTextBoxColumn,
+            this.aniosVigenciaDataGridViewTextBoxColumn,
+            this.fechaExpedicionDataGridViewTextBoxColumn,
+            this.fechaVencimientoDataGridViewTextBoxColumn,
+            this.estatusDataGridViewTextBoxColumn,
+            this.sexoDataGridViewTextBoxColumn,
+            this.complexionDataGridViewTextBoxColumn,
+            this.mensajePagoDataGridViewTextBoxColumn,
+            this.rFCDataGridViewTextBoxColumn,
+            this.fechaNacimientoDataGridViewTextBoxColumn,
+            this.municipioNDataGridViewTextBoxColumn,
+            this.tipoTelDataGridViewTextBoxColumn,
+            this.ladaDataGridViewTextBoxColumn,
+            this.ben2NombreDataGridViewTextBoxColumn,
+            this.ben3PorcentajeDataGridViewTextBoxColumn,
+            this.taxiDataGridViewCheckBoxColumn});
+            this.gv_Tramites.DataSource = this.dtTramitesBindingSource;
+            this.gv_Tramites.Location = new System.Drawing.Point(15, 148);
+            this.gv_Tramites.Name = "gv_Tramites";
+            this.gv_Tramites.Size = new System.Drawing.Size(880, 378);
+            this.gv_Tramites.TabIndex = 3;
+            this.gv_Tramites.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv_Tramites_CellContentDoubleClick);
+            // 
+            // licenciasCH_QADataSet
+            // 
+            this.licenciasCH_QADataSet.DataSetName = "LicenciasCH_QADataSet";
+            this.licenciasCH_QADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dtTramitesBindingSource
+            // 
+            this.dtTramitesBindingSource.DataMember = "dtTramites";
+            this.dtTramitesBindingSource.DataSource = this.licenciasCH_QADataSet;
+            // 
+            // dtTramitesTableAdapter
+            // 
+            this.dtTramitesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tramiteIdDataGridViewTextBoxColumn
+            // 
+            this.tramiteIdDataGridViewTextBoxColumn.DataPropertyName = "TramiteId";
+            this.tramiteIdDataGridViewTextBoxColumn.HeaderText = "TramiteId";
+            this.tramiteIdDataGridViewTextBoxColumn.Name = "tramiteIdDataGridViewTextBoxColumn";
+            this.tramiteIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tramiteIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // folioSeguimientoDataGridViewTextBoxColumn
+            // 
+            this.folioSeguimientoDataGridViewTextBoxColumn.DataPropertyName = "FolioSeguimiento";
+            this.folioSeguimientoDataGridViewTextBoxColumn.HeaderText = "FolioSeguimiento";
+            this.folioSeguimientoDataGridViewTextBoxColumn.Name = "folioSeguimientoDataGridViewTextBoxColumn";
+            // 
+            // curpDataGridViewTextBoxColumn
+            // 
+            this.curpDataGridViewTextBoxColumn.DataPropertyName = "Curp";
+            this.curpDataGridViewTextBoxColumn.HeaderText = "Curp";
+            this.curpDataGridViewTextBoxColumn.Name = "curpDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoPaternoDataGridViewTextBoxColumn
+            // 
+            this.apellidoPaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoPaterno";
+            this.apellidoPaternoDataGridViewTextBoxColumn.HeaderText = "ApellidoPaterno";
+            this.apellidoPaternoDataGridViewTextBoxColumn.Name = "apellidoPaternoDataGridViewTextBoxColumn";
+            // 
+            // apellidoMaternoDataGridViewTextBoxColumn
+            // 
+            this.apellidoMaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoMaterno";
+            this.apellidoMaternoDataGridViewTextBoxColumn.HeaderText = "ApellidoMaterno";
+            this.apellidoMaternoDataGridViewTextBoxColumn.Name = "apellidoMaternoDataGridViewTextBoxColumn";
+            // 
+            // tipoLicenciaDataGridViewTextBoxColumn
+            // 
+            this.tipoLicenciaDataGridViewTextBoxColumn.DataPropertyName = "TipoLicencia";
+            this.tipoLicenciaDataGridViewTextBoxColumn.HeaderText = "TipoLicencia";
+            this.tipoLicenciaDataGridViewTextBoxColumn.Name = "tipoLicenciaDataGridViewTextBoxColumn";
+            // 
+            // tipoTramiteDataGridViewTextBoxColumn
+            // 
+            this.tipoTramiteDataGridViewTextBoxColumn.DataPropertyName = "TipoTramite";
+            this.tipoTramiteDataGridViewTextBoxColumn.HeaderText = "TipoTramite";
+            this.tipoTramiteDataGridViewTextBoxColumn.Name = "tipoTramiteDataGridViewTextBoxColumn";
+            // 
+            // aniosVigenciaDataGridViewTextBoxColumn
+            // 
+            this.aniosVigenciaDataGridViewTextBoxColumn.DataPropertyName = "AniosVigencia";
+            this.aniosVigenciaDataGridViewTextBoxColumn.HeaderText = "AniosVigencia";
+            this.aniosVigenciaDataGridViewTextBoxColumn.Name = "aniosVigenciaDataGridViewTextBoxColumn";
+            // 
+            // fechaExpedicionDataGridViewTextBoxColumn
+            // 
+            this.fechaExpedicionDataGridViewTextBoxColumn.DataPropertyName = "FechaExpedicion";
+            this.fechaExpedicionDataGridViewTextBoxColumn.HeaderText = "FechaExpedicion";
+            this.fechaExpedicionDataGridViewTextBoxColumn.Name = "fechaExpedicionDataGridViewTextBoxColumn";
+            // 
+            // fechaVencimientoDataGridViewTextBoxColumn
+            // 
+            this.fechaVencimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaVencimiento";
+            this.fechaVencimientoDataGridViewTextBoxColumn.HeaderText = "FechaVencimiento";
+            this.fechaVencimientoDataGridViewTextBoxColumn.Name = "fechaVencimientoDataGridViewTextBoxColumn";
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            // 
+            // sexoDataGridViewTextBoxColumn
+            // 
+            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
+            // 
+            // complexionDataGridViewTextBoxColumn
+            // 
+            this.complexionDataGridViewTextBoxColumn.DataPropertyName = "Complexion";
+            this.complexionDataGridViewTextBoxColumn.HeaderText = "Complexion";
+            this.complexionDataGridViewTextBoxColumn.Name = "complexionDataGridViewTextBoxColumn";
+            // 
+            // mensajePagoDataGridViewTextBoxColumn
+            // 
+            this.mensajePagoDataGridViewTextBoxColumn.DataPropertyName = "MensajePago";
+            this.mensajePagoDataGridViewTextBoxColumn.HeaderText = "MensajePago";
+            this.mensajePagoDataGridViewTextBoxColumn.Name = "mensajePagoDataGridViewTextBoxColumn";
+            // 
+            // rFCDataGridViewTextBoxColumn
+            // 
+            this.rFCDataGridViewTextBoxColumn.DataPropertyName = "RFC";
+            this.rFCDataGridViewTextBoxColumn.HeaderText = "RFC";
+            this.rFCDataGridViewTextBoxColumn.Name = "rFCDataGridViewTextBoxColumn";
+            // 
+            // fechaNacimientoDataGridViewTextBoxColumn
+            // 
+            this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
+            // 
+            // municipioNDataGridViewTextBoxColumn
+            // 
+            this.municipioNDataGridViewTextBoxColumn.DataPropertyName = "MunicipioN";
+            this.municipioNDataGridViewTextBoxColumn.HeaderText = "MunicipioN";
+            this.municipioNDataGridViewTextBoxColumn.Name = "municipioNDataGridViewTextBoxColumn";
+            // 
+            // tipoTelDataGridViewTextBoxColumn
+            // 
+            this.tipoTelDataGridViewTextBoxColumn.DataPropertyName = "TipoTel";
+            this.tipoTelDataGridViewTextBoxColumn.HeaderText = "TipoTel";
+            this.tipoTelDataGridViewTextBoxColumn.Name = "tipoTelDataGridViewTextBoxColumn";
+            // 
+            // ladaDataGridViewTextBoxColumn
+            // 
+            this.ladaDataGridViewTextBoxColumn.DataPropertyName = "Lada";
+            this.ladaDataGridViewTextBoxColumn.HeaderText = "Lada";
+            this.ladaDataGridViewTextBoxColumn.Name = "ladaDataGridViewTextBoxColumn";
+            // 
+            // ben2NombreDataGridViewTextBoxColumn
+            // 
+            this.ben2NombreDataGridViewTextBoxColumn.DataPropertyName = "Ben2Nombre";
+            this.ben2NombreDataGridViewTextBoxColumn.HeaderText = "Ben2Nombre";
+            this.ben2NombreDataGridViewTextBoxColumn.Name = "ben2NombreDataGridViewTextBoxColumn";
+            // 
+            // ben3PorcentajeDataGridViewTextBoxColumn
+            // 
+            this.ben3PorcentajeDataGridViewTextBoxColumn.DataPropertyName = "Ben3Porcentaje";
+            this.ben3PorcentajeDataGridViewTextBoxColumn.HeaderText = "Ben3Porcentaje";
+            this.ben3PorcentajeDataGridViewTextBoxColumn.Name = "ben3PorcentajeDataGridViewTextBoxColumn";
+            // 
+            // taxiDataGridViewCheckBoxColumn
+            // 
+            this.taxiDataGridViewCheckBoxColumn.DataPropertyName = "Taxi";
+            this.taxiDataGridViewCheckBoxColumn.HeaderText = "Taxi";
+            this.taxiDataGridViewCheckBoxColumn.Name = "taxiDataGridViewCheckBoxColumn";
+            // 
             // Mistramites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(916, 538);
+            this.Controls.Add(this.gv_Tramites);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Mistramites";
@@ -203,6 +427,9 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Tramites)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licenciasCH_QADataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtTramitesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,5 +448,32 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView gv_Tramites;
+        private LicenciasCH_QADataSet licenciasCH_QADataSet;
+        private System.Windows.Forms.BindingSource dtTramitesBindingSource;
+        private LicenciasCH_QADataSetTableAdapters.dtTramitesTableAdapter dtTramitesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tramiteIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn folioSeguimientoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoPaternoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoMaternoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoLicenciaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoTramiteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aniosVigenciaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaExpedicionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaVencimientoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn complexionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mensajePagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rFCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimientoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn municipioNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoTelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ladaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ben2NombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ben3PorcentajeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn taxiDataGridViewCheckBoxColumn;
     }
 }

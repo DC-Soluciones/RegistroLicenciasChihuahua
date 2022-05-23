@@ -33,5 +33,16 @@ namespace RegistroLicenciasChihuahua.Properties {
                 return ((string)(this["LicenciasCHConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.169.3.25;Initial Catalog=LicenciasCH_QA;User ID=sa;Password=DC_202" +
+            "2$")]
+        public string LicenciasCH_QAConnectionString {
+            get {
+                return ((string)(this["LicenciasCH_QAConnectionString"]));
+            }
+        }
     }
 }
