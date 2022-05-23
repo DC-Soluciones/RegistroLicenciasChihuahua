@@ -44,9 +44,6 @@ namespace RegistroLicenciasChihuahua
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gv_Tramites = new System.Windows.Forms.DataGridView();
-            this.licenciasCH_QADataSet = new RegistroLicenciasChihuahua.LicenciasCH_QADataSet();
-            this.dtTramitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dtTramitesTableAdapter = new RegistroLicenciasChihuahua.LicenciasCH_QADataSetTableAdapters.dtTramitesTableAdapter();
             this.tramiteIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.folioSeguimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,11 +62,14 @@ namespace RegistroLicenciasChihuahua
             this.rFCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.municipioNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtTramitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.licenciasCH_QADataSet = new RegistroLicenciasChihuahua.LicenciasCH_QADataSet();
+            this.dtTramitesTableAdapter = new RegistroLicenciasChihuahua.LicenciasCH_QADataSetTableAdapters.dtTramitesTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Tramites)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licenciasCH_QADataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTramitesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licenciasCH_QADataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -241,25 +241,12 @@ namespace RegistroLicenciasChihuahua
             this.fechaNacimientoDataGridViewTextBoxColumn,
             this.municipioNDataGridViewTextBoxColumn});
             this.gv_Tramites.DataSource = this.dtTramitesBindingSource;
-            this.gv_Tramites.Location = new System.Drawing.Point(15, 148);
+            this.gv_Tramites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gv_Tramites.Location = new System.Drawing.Point(0, 136);
             this.gv_Tramites.Name = "gv_Tramites";
-            this.gv_Tramites.Size = new System.Drawing.Size(880, 378);
+            this.gv_Tramites.Size = new System.Drawing.Size(916, 402);
             this.gv_Tramites.TabIndex = 3;
             this.gv_Tramites.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv_Tramites_CellContentDoubleClick);
-            // 
-            // licenciasCH_QADataSet
-            // 
-            this.licenciasCH_QADataSet.DataSetName = "LicenciasCH_QADataSet";
-            this.licenciasCH_QADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dtTramitesBindingSource
-            // 
-            this.dtTramitesBindingSource.DataMember = "dtTramites";
-            this.dtTramitesBindingSource.DataSource = this.licenciasCH_QADataSet;
-            // 
-            // dtTramitesTableAdapter
-            // 
-            this.dtTramitesTableAdapter.ClearBeforeFill = true;
             // 
             // tramiteIdDataGridViewTextBoxColumn
             // 
@@ -371,6 +358,20 @@ namespace RegistroLicenciasChihuahua
             this.municipioNDataGridViewTextBoxColumn.HeaderText = "MunicipioN";
             this.municipioNDataGridViewTextBoxColumn.Name = "municipioNDataGridViewTextBoxColumn";
             // 
+            // dtTramitesBindingSource
+            // 
+            this.dtTramitesBindingSource.DataMember = "dtTramites";
+            this.dtTramitesBindingSource.DataSource = this.licenciasCH_QADataSet;
+            // 
+            // licenciasCH_QADataSet
+            // 
+            this.licenciasCH_QADataSet.DataSetName = "LicenciasCH_QADataSet";
+            this.licenciasCH_QADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dtTramitesTableAdapter
+            // 
+            this.dtTramitesTableAdapter.ClearBeforeFill = true;
+            // 
             // Mistramites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,8 +389,8 @@ namespace RegistroLicenciasChihuahua
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Tramites)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licenciasCH_QADataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTramitesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licenciasCH_QADataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
