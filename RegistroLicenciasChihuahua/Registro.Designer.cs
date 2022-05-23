@@ -310,6 +310,7 @@ namespace RegistroLicenciasChihuahua
             this.txt_APTutor.Name = "txt_APTutor";
             this.txt_APTutor.Size = new System.Drawing.Size(136, 20);
             this.txt_APTutor.TabIndex = 3;
+            this.txt_APTutor.Text = " \r\n  ";
             // 
             // label45
             // 
@@ -489,7 +490,7 @@ namespace RegistroLicenciasChihuahua
             this.cb_Municipio.Name = "cb_Municipio";
             this.cb_Municipio.Size = new System.Drawing.Size(136, 21);
             this.cb_Municipio.TabIndex = 11;
-            this.cb_Municipio.ValueMember = "MunicipioId";
+            this.cb_Municipio.ValueMember = "MunicipioNombre";
             // 
             // dtMunicipioBindingSource1
             // 

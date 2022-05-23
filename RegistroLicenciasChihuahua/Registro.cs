@@ -206,7 +206,7 @@ namespace RegistroLicenciasChihuahua
             txt_NoInterior.Text = ciudadano.NoInterior;
             txt_CP.Text = ciudadano.CodigoPostal;
             cb_Estado.Text = ciudadano.EstadoN;
-            cb_Municipio.SelectedText = ciudadano.MunicipioN.Trim();
+            cb_Municipio.SelectedText = ciudadano.MunicipioN;
             txt_Colonia.Text = ciudadano.ColoniaN;
             txt_NTutor.Text = ciudadano.NombreTutor;
             txt_APTutor.Text = ciudadano.APaternoTutor;
