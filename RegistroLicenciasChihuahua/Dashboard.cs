@@ -13,18 +13,21 @@ namespace RegistroLicenciasChihuahua
 {
     public partial class Dashboard : Form
     {
-        LicenciasCH_QAEntities _context;
+        LicenciasCH_Entities _context;
         int idUser;
+        public static string userDashboard;
+
+        public static string RolUsuario = "Supervisor";
         public Dashboard(dtUsuario usuario)
         {
             InitializeComponent();
-            using (_context = new LicenciasCH_QAEntities())
+            using (_context = new LicenciasCH_Entities())
             {
                 var rol = _context.dtRols.Where(x => x.RolId == usuario.RolId).FirstOrDefault();
                 lbl_UserName.Text = usuario.NombreUsuario;
                 lbl_Rol.Text = rol.Rol;
-
-
+                userDashboard = usuario.NombreUsuario;
+                RolUsuario = rol.Rol;
             }
 
 
@@ -45,7 +48,7 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_menu_busqueda_Click(object sender, EventArgs e)
         {
-            loadform(new Busqueda());
+            loadform(new Busqueda(userDashboard, RolUsuario));
         }
 
         private void btn_mistramites_Click(object sender, EventArgs e)
