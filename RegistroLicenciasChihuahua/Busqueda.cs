@@ -29,7 +29,7 @@ namespace RegistroLicenciasChihuahua
             InitializeComponent();
             usuario = user;
             UserRol = userRol;
-            if (userRol != "Supervisor" || userRol != "Administrador" || userRol != "Capturista")
+            if (userRol != "Supervisor" && userRol != "Administrador" &&  userRol != "Capturista")
             {
                 btn_Editactual.Visible = false;
             }
@@ -197,118 +197,14 @@ namespace RegistroLicenciasChihuahua
             registro.Show();
         }
 
-        private async void button1_Click_1(object sender, EventArgs e)
+        private void btn_Editactual_Click(object sender, EventArgs e)
         {
-            if (txt_Curp.Text != "" || (txt_Nombre.Text != "" && txt_ApellidoP.Text != ""))
-            {
-                var cdActual = new dtTramite();
-                List<dtTramite> listcd = new List<dtTramite> ();
-                Loading loading = new Loading();
-                loading.Show();
+            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditAct.Text), "Actual");
 
-                Task task = new Task(Load);
-                task.Start();
-                await task;
-
-                _context = new LicenciasCH_Entities();
-
-                if (txt_Curp.Text != "")
-                {
-                    cdActual = (from d in _context.dtTramites
-                                where (d.Curp == txt_Curp.Text )
-                                select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
-                }
-                else if (txt_Nombre.Text != "" && txt_ApellidoP.Text != "")
-                {
-                    cdActual = (from d in _context.dtTramites
-                                where ( (d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text))
-                                select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
-                }
-
-                if (cdActual != null)
-                {
-                    txt_Nombre.Text = cdActual.Nombre;
-                    txt_ApellidoP.Text = cdActual.ApellidoPaterno;
-                    txt_ApellidoM.Text = cdActual.ApellidoMaterno;
-
-                    lbl_NombreActual.Text = cdActual.Nombre + " " + cdActual.ApellidoPaterno + " " + cdActual.ApellidoMaterno;
-                    lbl_NoLicActual.Text = cdActual.NumeroLicencia;
-                    lbl_LicActual.Text = cdActual.TipoLicencia;
-                    lbl_StatusActual.Text = cdActual.Estatus;
-                    lbl_VigenciaActual.Text = cdActual.AniosVigencia.ToString();
-                    lbl_ExpedicionActual.Text = cdActual.FechaExpedicion.Value.ToShortDateString();
-                    lbl_VencimientoActual.Text = cdActual.FechaVencimiento.Value.ToShortDateString();
-                    lbl_RfcActual.Text = cdActual.RFC;
-                    gb_DatoActual.Visible = true;
-                    lbl_EditAct.Text = cdActual.TramiteId.ToString();
-                    txt_Curp.Text = cdActual.Curp;
-
-                    code = Encriptar(lbl_EditAct.Text);
-                    Qr(code);
-                    //btn_LeerQ3.Visible = true;
-                    //var codedes = DesEncriptar(code);
-                }
-                else
-                {
-                    gb_DatoActual.Visible = false;
-                    //btn_LeerQ3.Visible = false;
-                    //pictureBox1.Visible = false;
-                }
-
-                using (_contextHist = new LicHistoricoEntities())
-                {
-                    if (txt_Curp.Text != "")
-                    {
-
-                        listcd = (from d in _contextHist.dtTramites
-                                  where (d.Curp == txt_Curp.Text )
-                                  select d).Take(1).ToList();
-                    }
-                    else if (txt_Nombre.Text != "" && txt_ApellidoP.Text != "")
-                    {
-                        listcd = (from d in _contextHist.dtTramites
-                                  where ((d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text))
-                                  select d).Take(1).ToList();
-                    }
-
-                    if (listcd.Count() > 0)
-                    {
-                        cIUDADANO = listcd.OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
-
-                        txt_Nombre.Text = cIUDADANO.Nombre;
-                        txt_ApellidoP.Text = cIUDADANO.ApellidoPaterno;
-                        txt_ApellidoM.Text = cIUDADANO.ApellidoMaterno;
-
-                        lbl_Nombre.Text = cIUDADANO.Nombre + " " + cIUDADANO.ApellidoPaterno + " " + cIUDADANO.ApellidoMaterno;
-                        lbl_NoLicencia.Text = cIUDADANO.NumeroLicencia;
-                        lbl_Licencia.Text = cIUDADANO.TipoLicencia;
-                        lbl_Status.Text = cIUDADANO.Estatus;
-                        lbl_Vigencia.Text = cIUDADANO.AniosVigencia.ToString();
-                        lbl_Expedicion.Text = cIUDADANO.FechaExpedicion.Value.ToShortDateString();
-                        lbl_Vencimiento.Text = cIUDADANO.FechaVencimiento.Value.ToShortDateString();
-                        lbl_Rfc.Text = cIUDADANO.RFC;
-                        gb_DatoHisto.Visible = true;
-                        lbl_EditHistorica.Text = cIUDADANO.TramiteId.ToString();
-                        txt_Curp.Text = cIUDADANO.Curp;
-                        if (listcd.Count > 1)
-                        {
-                            //btn_Siguiente.Visible = true;
-                        }
-                    }
-                    else
-                    {
-                        gb_DatoHisto.Visible = false;
-                    }
-
-
-                }
-
-                loading.Close();
-            }
-            else
-            {
-                MessageBox.Show("Favor de ingresar una CURP valida");
-            }
+            registro.FormBorderStyle = FormBorderStyle.Sizable;
+            registro.StartPosition = FormStartPosition.CenterScreen;
+            registro.Size = new Size(1300, 850);
+            registro.Show();
         }
     }
 }

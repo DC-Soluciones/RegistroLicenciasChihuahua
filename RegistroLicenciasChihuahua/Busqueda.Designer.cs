@@ -181,6 +181,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_Editactual.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Editactual.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Editactual.UseVisualStyleBackColor = false;
+            this.btn_Editactual.Click += new System.EventHandler(this.btn_Editactual_Click);
             // 
             // label26
             // 
@@ -672,7 +673,7 @@ namespace RegistroLicenciasChihuahua
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 

@@ -21,6 +21,11 @@ namespace RegistroLicenciasChihuahua
 
         private void button1_Click(object sender, EventArgs e)
         {
+            loginEnter();
+        }
+
+        private void loginEnter()
+        {
             using (_context = new LicenciasCH_Entities())
             {
                 try
@@ -35,12 +40,20 @@ namespace RegistroLicenciasChihuahua
                     else
                     {
                         MessageBox.Show("Usuario y/o contraseña incorrectos, favor de verificar.");
+                        txt_Contraseña.Text = "";
                     }
                 }
                 catch (Exception err)
                 {
                     MessageBox.Show("Error de conexión, verifique la red." + err.Message);
                 }
+            }
+        }
+        private void txt_Contraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loginEnter();
             }
         }
     }

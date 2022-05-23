@@ -93,6 +93,7 @@ namespace RegistroLicenciasChihuahua
             this.txt_Contraseña.PasswordChar = '*';
             this.txt_Contraseña.Size = new System.Drawing.Size(275, 20);
             this.txt_Contraseña.TabIndex = 5;
+            this.txt_Contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Contraseña_KeyPress);
             // 
             // button1
             // 

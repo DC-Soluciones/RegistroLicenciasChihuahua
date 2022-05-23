@@ -172,7 +172,7 @@ namespace RegistroLicenciasChihuahua
                     break;
             }
 
-
+         
             txt_Curp.Text = ciudadano.Curp;
             cb_Tlicencia.SelectedValue = ciudadano.TipoLicencia;
 
@@ -186,7 +186,7 @@ namespace RegistroLicenciasChihuahua
             txt_Nombre.Text = ciudadano.Nombre;
             txt_ApellidoP.Text = ciudadano.ApellidoPaterno;
             txt_ApellidoM.Text = ciudadano.ApellidoMaterno;
-            cb_Ecivil.SelectedItem = ciudadano.EstadoCivil;
+            cb_Ecivil.Text = ciudadano.EstadoCivil;
             txt_Fnacimiento.Text = ciudadano.FechaNacimiento.Value.ToShortDateString();
             txt_Rfc.Text = ciudadano.RFC;
 
@@ -206,13 +206,13 @@ namespace RegistroLicenciasChihuahua
             txt_NoInterior.Text = ciudadano.NoInterior;
             txt_CP.Text = ciudadano.CodigoPostal;
             cb_Estado.Text = ciudadano.EstadoN;
-            cb_Municipio.SelectedText = ciudadano.MunicipioN;
+            cb_Municipio.SelectedText = ciudadano.MunicipioN.Trim();
             txt_Colonia.Text = ciudadano.ColoniaN;
             txt_NTutor.Text = ciudadano.NombreTutor;
             txt_APTutor.Text = ciudadano.APaternoTutor;
             txt_AMTutor.Text = ciudadano.AMaternoTutor;
             txt_Licanterior.Text = ciudadano.LicenciaAnterior == null ? ciudadano.NumeroLicencia : ciudadano.LicenciaAnterior;
-
+            Vigencia();
 
         }
         public Boolean IsValid(Form form)
