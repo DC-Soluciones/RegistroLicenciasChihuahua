@@ -34,11 +34,11 @@ namespace RegistroLicenciasChihuahua
             this.btn_nuevoregistro = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gb_DatoActual = new System.Windows.Forms.GroupBox();
             this.btn_Editactual = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.lbl_EditAct = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.lbl_NombreActual = new System.Windows.Forms.Label();
             this.lbl_RfcActual = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.lbl_VencimientoActual = new System.Windows.Forms.Label();
@@ -85,7 +85,7 @@ namespace RegistroLicenciasChihuahua
             this.label1 = new System.Windows.Forms.Label();
             this.panelbusqueda.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gb_DatoActual.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gb_DatoHisto.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -112,7 +112,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_nuevoregistro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_nuevoregistro.ForeColor = System.Drawing.Color.White;
             this.btn_nuevoregistro.Image = ((System.Drawing.Image)(resources.GetObject("btn_nuevoregistro.Image")));
-            this.btn_nuevoregistro.Location = new System.Drawing.Point(931, 186);
+            this.btn_nuevoregistro.Location = new System.Drawing.Point(995, 186);
             this.btn_nuevoregistro.Name = "btn_nuevoregistro";
             this.btn_nuevoregistro.Size = new System.Drawing.Size(159, 38);
             this.btn_nuevoregistro.TabIndex = 13;
@@ -134,37 +134,38 @@ namespace RegistroLicenciasChihuahua
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Controls.Add(this.gb_DatoActual);
             this.panel2.Location = new System.Drawing.Point(509, 217);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(345, 306);
             this.panel2.TabIndex = 11;
             // 
-            // groupBox1
+            // gb_DatoActual
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(234)))), ((int)(((byte)(240)))));
-            this.groupBox1.Controls.Add(this.btn_Editactual);
-            this.groupBox1.Controls.Add(this.label26);
-            this.groupBox1.Controls.Add(this.lbl_EditAct);
-            this.groupBox1.Controls.Add(this.label30);
-            this.groupBox1.Controls.Add(this.lbl_RfcActual);
-            this.groupBox1.Controls.Add(this.label29);
-            this.groupBox1.Controls.Add(this.lbl_VencimientoActual);
-            this.groupBox1.Controls.Add(this.label28);
-            this.groupBox1.Controls.Add(this.lbl_ExpedicionActual);
-            this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.lbl_VigenciaActual);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.lbl_StatusActual);
-            this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.lbl_NoLicActual);
-            this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.lbl_LicActual);
-            this.groupBox1.Location = new System.Drawing.Point(35, 17);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(260, 258);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.gb_DatoActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(234)))), ((int)(((byte)(240)))));
+            this.gb_DatoActual.Controls.Add(this.btn_Editactual);
+            this.gb_DatoActual.Controls.Add(this.label26);
+            this.gb_DatoActual.Controls.Add(this.lbl_EditAct);
+            this.gb_DatoActual.Controls.Add(this.lbl_NombreActual);
+            this.gb_DatoActual.Controls.Add(this.lbl_RfcActual);
+            this.gb_DatoActual.Controls.Add(this.label29);
+            this.gb_DatoActual.Controls.Add(this.lbl_VencimientoActual);
+            this.gb_DatoActual.Controls.Add(this.label28);
+            this.gb_DatoActual.Controls.Add(this.lbl_ExpedicionActual);
+            this.gb_DatoActual.Controls.Add(this.label27);
+            this.gb_DatoActual.Controls.Add(this.lbl_VigenciaActual);
+            this.gb_DatoActual.Controls.Add(this.label25);
+            this.gb_DatoActual.Controls.Add(this.lbl_StatusActual);
+            this.gb_DatoActual.Controls.Add(this.label24);
+            this.gb_DatoActual.Controls.Add(this.lbl_NoLicActual);
+            this.gb_DatoActual.Controls.Add(this.label23);
+            this.gb_DatoActual.Controls.Add(this.lbl_LicActual);
+            this.gb_DatoActual.Location = new System.Drawing.Point(35, 17);
+            this.gb_DatoActual.Name = "gb_DatoActual";
+            this.gb_DatoActual.Size = new System.Drawing.Size(260, 258);
+            this.gb_DatoActual.TabIndex = 0;
+            this.gb_DatoActual.TabStop = false;
+            this.gb_DatoActual.Visible = false;
             // 
             // btn_Editactual
             // 
@@ -199,16 +200,17 @@ namespace RegistroLicenciasChihuahua
             this.lbl_EditAct.Size = new System.Drawing.Size(31, 13);
             this.lbl_EditAct.TabIndex = 32;
             this.lbl_EditAct.Text = "idAct";
+            this.lbl_EditAct.Visible = false;
             // 
-            // label30
+            // lbl_NombreActual
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(16, 16);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(58, 16);
-            this.label30.TabIndex = 17;
-            this.label30.Text = "Nombre";
+            this.lbl_NombreActual.AutoSize = true;
+            this.lbl_NombreActual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NombreActual.Location = new System.Drawing.Point(16, 16);
+            this.lbl_NombreActual.Name = "lbl_NombreActual";
+            this.lbl_NombreActual.Size = new System.Drawing.Size(58, 16);
+            this.lbl_NombreActual.TabIndex = 17;
+            this.lbl_NombreActual.Text = "Nombre";
             // 
             // lbl_RfcActual
             // 
@@ -373,21 +375,22 @@ namespace RegistroLicenciasChihuahua
             this.gb_DatoHisto.Size = new System.Drawing.Size(260, 258);
             this.gb_DatoHisto.TabIndex = 0;
             this.gb_DatoHisto.TabStop = false;
+            this.gb_DatoHisto.Visible = false;
             // 
             // btn_EditHistorica
             // 
             this.btn_EditHistorica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(31)))), ((int)(((byte)(89)))));
             this.btn_EditHistorica.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditHistorica.ForeColor = System.Drawing.Color.White;
-            this.btn_EditHistorica.Image = ((System.Drawing.Image)(resources.GetObject("btn_EditHistorica.Image")));
             this.btn_EditHistorica.Location = new System.Drawing.Point(74, 206);
             this.btn_EditHistorica.Name = "btn_EditHistorica";
-            this.btn_EditHistorica.Size = new System.Drawing.Size(99, 38);
+            this.btn_EditHistorica.Size = new System.Drawing.Size(102, 38);
             this.btn_EditHistorica.TabIndex = 16;
-            this.btn_EditHistorica.Text = "Editar";
+            this.btn_EditHistorica.Text = "Visualizar";
             this.btn_EditHistorica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_EditHistorica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_EditHistorica.UseVisualStyleBackColor = false;
+            this.btn_EditHistorica.Click += new System.EventHandler(this.btn_EditHistorica_Click);
             // 
             // lbl_EditHistorica
             // 
@@ -397,6 +400,7 @@ namespace RegistroLicenciasChihuahua
             this.lbl_EditHistorica.Size = new System.Drawing.Size(33, 13);
             this.lbl_EditHistorica.TabIndex = 15;
             this.lbl_EditHistorica.Text = "idHist";
+            this.lbl_EditHistorica.Visible = false;
             // 
             // lbl_Rfc
             // 
@@ -668,6 +672,7 @@ namespace RegistroLicenciasChihuahua
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label1
             // 
@@ -694,8 +699,8 @@ namespace RegistroLicenciasChihuahua
             this.panelbusqueda.ResumeLayout(false);
             this.panelbusqueda.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gb_DatoActual.ResumeLayout(false);
+            this.gb_DatoActual.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.gb_DatoHisto.ResumeLayout(false);
             this.gb_DatoHisto.PerformLayout();
@@ -711,11 +716,11 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.Button btn_nuevoregistro;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gb_DatoActual;
         private System.Windows.Forms.Button btn_Editactual;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label lbl_EditAct;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lbl_NombreActual;
         private System.Windows.Forms.Label lbl_RfcActual;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label lbl_VencimientoActual;

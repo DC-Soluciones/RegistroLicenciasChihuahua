@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LicenciasCH_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="LicHistoricoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ASPStateTempApplications">
           <Key>
             <PropertyRef Name="AppId" />
@@ -233,7 +233,7 @@
           <Property Name="ProductoServicioId" Type="int" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtBancos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtBancos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="dtBancos">
           <Key>
             <PropertyRef Name="BancoId" />
@@ -1291,7 +1291,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtBancos' no tiene defini
           <Property Name="ValoresJson" Type="text" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtDocumentos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtDocumentos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="dtDocumentos">
           <Key>
             <PropertyRef Name="Id_Documento" />
@@ -1442,7 +1442,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtDocumentos' no tiene de
           <Property Name="EstadoNombre" Type="varchar" MaxLength="500" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtEstadoCivil' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtEstadoCivil' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="dtEstadoCivil">
           <Key>
             <PropertyRef Name="EstadoCivilId" />
@@ -1532,7 +1532,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtEstadoCivil' no tiene d
           <Property Name="CapAud" Type="bit" />
           <Property Name="NivelBajo" Type="bit" />
           <Property Name="NivelMedio" Type="bit" />
-          <Property Name="SinRes" Type="bit" />
+          <Property Name="NivelAlto" Type="bit" />
           <Property Name="Normal" Type="bit" />
           <Property Name="Apto" Type="bit" />
           <Property Name="Padecimiento" Type="bit" />
@@ -1652,6 +1652,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtEstadoCivil' no tiene d
           <Property Name="TipoSangre" Type="varchar" MaxLength="50" />
           <Property Name="Donador" Type="bit" />
           <Property Name="FolioSeguimiento" Type="varchar" MaxLength="50" />
+          <Property Name="SinRes" Type="bit" />
           <Property Name="Retencion" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="dtExamenPsicometrico">
@@ -3022,7 +3023,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtEstadoCivil' no tiene d
           <Property Name="Descripcion" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtTipoEmpleado' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtTipoEmpleado' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="dtTipoEmpleado">
           <Key>
             <PropertyRef Name="TipoEmpleadoId" />
@@ -3061,7 +3062,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtTipoEmpleado' no tiene 
           <Property Name="Estandar" Type="int" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtTipoMovPorProducto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtTipoMovPorProducto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="dtTipoMovPorProducto">
           <Key>
             <PropertyRef Name="RamoId" />
@@ -3302,9 +3303,6 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtTipoMovPorProducto' no 
           <Property Name="DescRobo" Type="varchar(max)" />
           <Property Name="DescExt" Type="varchar(max)" />
           <Property Name="TiempoExt" Type="varchar" MaxLength="50" />
-          <Property Name="MotivoRe" Type="varchar" MaxLength="100" />
-          <Property Name="FVialis" Type="varchar(max)" />
-          <Property Name="EstatusH" Type="varchar" MaxLength="5" />
         </EntityType>
         <EntityType Name="dtUnidadMedita">
           <Key>
@@ -3407,7 +3405,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtTipoMovPorProducto' no 
           <Property Name="Number" Type="int" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.Query' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.Query' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="Query">
           <Key>
             <PropertyRef Name="UsuarioId" />
@@ -3443,7 +3441,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.Query' no tiene definida 
           <Property Name="Curp" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfCatalogoGral' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfCatalogoGral' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfCatalogoGral">
           <Key>
             <PropertyRef Name="NumeroCatalogo" />
@@ -3459,7 +3457,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfCatalogoGral' no tiene
           <Property Name="Estatus" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfFolios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfFolios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfFolios">
           <Key>
             <PropertyRef Name="Proceso" />
@@ -3471,7 +3469,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfFolios' no tiene defin
           <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfLicenciasDigitales' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfLicenciasDigitales' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfLicenciasDigitales">
           <Key>
             <PropertyRef Name="FolioControl" />
@@ -3548,7 +3546,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfLicenciasDigitales' no
           <Property Name="NumeroOperacion" Type="bigint" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfLicenciasDigitalesHist' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfLicenciasDigitalesHist' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfLicenciasDigitalesHist">
           <Key>
             <PropertyRef Name="FolioControl" />
@@ -3611,7 +3609,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfLicenciasDigitalesHist
           <Property Name="OrigenTramite" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfLicenciasDigitalesTemp' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfLicenciasDigitalesTemp' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfLicenciasDigitalesTemp">
           <Key>
             <PropertyRef Name="FolioControl" />
@@ -3706,7 +3704,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfLicenciasDigitalesTemp
           <Property Name="fecha1raExpedicion" Type="datetime" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfServiciosConceptos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfServiciosConceptos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfServiciosConceptos">
           <Key>
             <PropertyRef Name="NumeroServicio" />
@@ -3723,18 +3721,8 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.spfServiciosConceptos' no
           <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="FechaSistema" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewContactoContestadas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewContactoContestadas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="ViewContactoContestadas">
           <Key>
             <PropertyRef Name="CampaniaId" />
@@ -3753,7 +3741,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewContactoContestadas' 
           <Property Name="NombreUsuarioContesto" Type="varchar" MaxLength="255" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestadas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="ViewUbicacionesContestadas">
           <Key>
             <PropertyRef Name="CampaniaId" />
@@ -8849,7 +8837,6 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
         </Function>
         <Function Name="CreateTempTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="DeleteExpiredSessions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="fnMailInbox" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="correo" Type="varchar" Mode="In" />
           <Parameter Name="EmpresaId" Type="int" Mode="In" />
@@ -8884,36 +8871,6 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <Parameter Name="lat2Degrees" Type="float" Mode="In" />
           <Parameter Name="lon2Degrees" Type="float" Mode="In" />
         </Function>
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sPConteoProductoSemanal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CampanaId" Type="int" Mode="In" />
           <Parameter Name="DestinoId" Type="int" Mode="In" />
@@ -9069,7 +9026,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <Parameter Name="fechaInicio" Type="datetime" Mode="In" />
           <Parameter Name="fechaFinal" Type="datetime" Mode="In" />
         </Function>
-        <EntityContainer Name="LicenciasCH_ModelStoreContainer">
+        <EntityContainer Name="LicHistoricoModelStoreContainer">
           <EntitySet Name="ASPStateTempApplications" EntityType="Self.ASPStateTempApplications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ASPStateTempSessions" EntityType="Self.ASPStateTempSessions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dtAccountType" EntityType="Self.dtAccountType" Schema="dbo" store:Type="Tables" />
@@ -9270,7 +9227,6 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <EntitySet Name="dtZona" EntityType="Self.dtZona" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Numbers" EntityType="Self.Numbers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="spfPadLicencias" EntityType="Self.spfPadLicencias" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dtBancos" EntityType="Self.dtBancos" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [dtBancos].[BancoId] AS [BancoId], 
@@ -11228,7 +11184,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="LicenciasCH_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="LicHistoricoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <ComplexType Name="fnMailInbox_Result">
           <Property Name="TrackId" Type="Int32" Nullable="false" />
           <Property Name="EmailId" Type="Int32" />
@@ -13060,7 +13016,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <Property Name="CapAud" Type="Boolean" />
           <Property Name="NivelBajo" Type="Boolean" />
           <Property Name="NivelMedio" Type="Boolean" />
-          <Property Name="SinRes" Type="Boolean" />
+          <Property Name="NivelAlto" Type="Boolean" />
           <Property Name="Normal" Type="Boolean" />
           <Property Name="Apto" Type="Boolean" />
           <Property Name="Padecimiento" Type="Boolean" />
@@ -13180,6 +13136,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <Property Name="TipoSangre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Donador" Type="Boolean" />
           <Property Name="FolioSeguimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SinRes" Type="Boolean" />
           <Property Name="Retencion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="dtTramite" Relationship="Self.FK_dtExamenMedico_dtTramites" FromRole="dtExamenMedico" ToRole="dtTramites" />
         </EntityType>
@@ -15116,9 +15073,6 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <Property Name="DescRobo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="DescExt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="TiempoExt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MotivoRe" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="FVialis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="EstatusH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="dtArchivoTramites" Relationship="Self.FK_dtArchivoTramite_dtTramites" FromRole="dtTramites" ToRole="dtArchivoTramite" />
           <NavigationProperty Name="dtCapacitacions" Relationship="Self.FK_dtCapacitacion_dtTramites" FromRole="dtTramites" ToRole="dtCapacitacion" />
           <NavigationProperty Name="dtContestadoFormularios" Relationship="Self.FK_dtContestadoFormulario_dtTramites" FromRole="dtTramites" ToRole="dtContestadoFormulario" />
@@ -15387,16 +15341,6 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <Property Name="expediente" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="fechaAntiguedad" Type="DateTime" Precision="3" />
           <Property Name="fecha1raExpedicion" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="dtBanco">
           <Key>
@@ -20771,7 +20715,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <End Role="dtTarea" Type="Self.dtTarea" Multiplicity="*" />
           <End Role="dtTarea1" Type="Self.dtTarea" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="LicenciasCH_Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LicHistoricoEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ASPStateTempApplications" EntityType="Self.ASPStateTempApplication" />
           <EntitySet Name="ASPStateTempSessions" EntityType="Self.ASPStateTempSession" />
           <EntitySet Name="dtAccountTypes" EntityType="Self.dtAccountType" />
@@ -20968,7 +20912,6 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <EntitySet Name="dtZonas" EntityType="Self.dtZona" />
           <EntitySet Name="Numbers" EntityType="Self.Number" />
           <EntitySet Name="spfPadLicencias" EntityType="Self.spfPadLicencia" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="dtBancos" EntityType="Self.dtBanco" />
           <EntitySet Name="dtDocumentos" EntityType="Self.dtDocumento" />
           <EntitySet Name="dtEstadoCivils" EntityType="Self.dtEstadoCivil" />
@@ -22651,7 +22594,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             <End Role="dtTarea" EntitySet="dtTareas" />
             <End Role="dtTarea1" EntitySet="dtTareas" />
           </AssociationSet>
-          <FunctionImport Name="fnMailInbox" IsComposable="true" ReturnType="Collection(LicenciasCH_Model.fnMailInbox_Result)">
+          <FunctionImport Name="fnMailInbox" IsComposable="true" ReturnType="Collection(LicHistoricoModel.fnMailInbox_Result)">
             <Parameter Name="correo" Mode="In" Type="String" />
             <Parameter Name="EmpresaId" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -22664,37 +22607,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <FunctionImport Name="GetMajorVersion">
             <Parameter Name="p_ver" Mode="InOut" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(LicenciasCH_Model.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(LicenciasCH_Model.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
-          <FunctionImport Name="sPConteoProductoSemanal" ReturnType="Collection(LicenciasCH_Model.sPConteoProductoSemanal_Result)">
+          <FunctionImport Name="sPConteoProductoSemanal" ReturnType="Collection(LicHistoricoModel.sPConteoProductoSemanal_Result)">
             <Parameter Name="CampanaId" Mode="In" Type="Int32" />
             <Parameter Name="DestinoId" Mode="In" Type="Int32" />
             <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
@@ -22706,11 +22619,11 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <FunctionImport Name="spProcesaMovimientos">
             <Parameter Name="Fecha" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="spSearchMail" ReturnType="Collection(LicenciasCH_Model.spSearchMail_Result)">
+          <FunctionImport Name="spSearchMail" ReturnType="Collection(LicHistoricoModel.spSearchMail_Result)">
             <Parameter Name="correo" Mode="In" Type="String" />
             <Parameter Name="EmpresaId" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sPVentaProductoSemanal" ReturnType="Collection(LicenciasCH_Model.sPVentaProductoSemanal_Result)">
+          <FunctionImport Name="sPVentaProductoSemanal" ReturnType="Collection(LicHistoricoModel.sPVentaProductoSemanal_Result)">
             <Parameter Name="CampanaId" Mode="In" Type="Int32" />
             <Parameter Name="DestinoId" Mode="In" Type="Int32" />
             <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
@@ -22823,35 +22736,24 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             <Parameter Name="codigoPostalIn" Mode="In" Type="String" />
             <Parameter Name="origenTramite" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="uspConsultaLicencias" ReturnType="Collection(LicenciasCH_Model.uspConsultaLicencias_Result)">
+          <FunctionImport Name="uspConsultaLicencias" ReturnType="Collection(LicHistoricoModel.uspConsultaLicencias_Result)">
             <Parameter Name="tipoConsulta" Mode="In" Type="Int32" />
             <Parameter Name="parametro" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="uspFoleadorLicencias">
             <Parameter Name="proceso" Mode="In" Type="Byte" />
           </FunctionImport>
-          <FunctionImport Name="uspLogin" ReturnType="Collection(LicenciasCH_Model.uspLogin_Result)">
+          <FunctionImport Name="uspLogin" ReturnType="Collection(LicHistoricoModel.uspLogin_Result)">
             <Parameter Name="usuario" Mode="In" Type="String" />
             <Parameter Name="password" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="uspReporteLicenciasEstatus" ReturnType="Collection(LicenciasCH_Model.uspReporteLicenciasEstatus_Result)">
+          <FunctionImport Name="uspReporteLicenciasEstatus" ReturnType="Collection(LicHistoricoModel.uspReporteLicenciasEstatus_Result)">
             <Parameter Name="usuario" Mode="In" Type="String" />
             <Parameter Name="oficina" Mode="In" Type="Int32" />
             <Parameter Name="fechaInicio" Mode="In" Type="DateTime" />
             <Parameter Name="fechaFinal" Mode="In" Type="DateTime" />
           </FunctionImport>
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
         <ComplexType Name="sPConteoProductoSemanal_Result">
           <Property Type="String" Name="Product" Nullable="true" MaxLength="180" />
           <Property Type="Decimal" Name="Domingo" Nullable="false" Precision="38" Scale="2" />
@@ -22945,9 +22847,9 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LicenciasCH_ModelStoreContainer" CdmEntityContainer="LicenciasCH_Entities">
+        <EntityContainerMapping StorageEntityContainer="LicHistoricoModelStoreContainer" CdmEntityContainer="LicHistoricoEntities">
           <EntitySetMapping Name="ASPStateTempApplications">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.ASPStateTempApplication">
+            <EntityTypeMapping TypeName="LicHistoricoModel.ASPStateTempApplication">
               <MappingFragment StoreEntitySet="ASPStateTempApplications">
                 <ScalarProperty Name="AppId" ColumnName="AppId" />
                 <ScalarProperty Name="AppName" ColumnName="AppName" />
@@ -22955,7 +22857,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ASPStateTempSessions">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.ASPStateTempSession">
+            <EntityTypeMapping TypeName="LicHistoricoModel.ASPStateTempSession">
               <MappingFragment StoreEntitySet="ASPStateTempSessions">
                 <ScalarProperty Name="SessionId" ColumnName="SessionId" />
                 <ScalarProperty Name="Created" ColumnName="Created" />
@@ -22972,7 +22874,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtAccountTypes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtAccountType">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtAccountType">
               <MappingFragment StoreEntitySet="dtAccountType">
                 <ScalarProperty Name="TypeId" ColumnName="TypeId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -22981,7 +22883,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtActividads">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtActividad">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtActividad">
               <MappingFragment StoreEntitySet="dtActividad">
                 <ScalarProperty Name="ActividadId" ColumnName="ActividadId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -22997,7 +22899,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtAgrupadors">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtAgrupador">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtAgrupador">
               <MappingFragment StoreEntitySet="dtAgrupador">
                 <ScalarProperty Name="AgrupadorId" ColumnName="AgrupadorId" />
                 <ScalarProperty Name="AgrupadorDescripcion" ColumnName="AgrupadorDescripcion" />
@@ -23006,7 +22908,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtAlmacens">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtAlmacen">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtAlmacen">
               <MappingFragment StoreEntitySet="dtAlmacen">
                 <ScalarProperty Name="AlmacenId" ColumnName="AlmacenId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23016,7 +22918,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtApartadoArchivoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtApartadoArchivo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtApartadoArchivo">
               <MappingFragment StoreEntitySet="dtApartadoArchivo">
                 <ScalarProperty Name="ApartadoArchivoId" ColumnName="ApartadoArchivoId" />
                 <ScalarProperty Name="ApartadoId" ColumnName="ApartadoId" />
@@ -23025,7 +22927,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtApartados">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtApartado">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtApartado">
               <MappingFragment StoreEntitySet="dtApartados">
                 <ScalarProperty Name="ApartadoId" ColumnName="ApartadoId" />
                 <ScalarProperty Name="ArchivoId" ColumnName="ArchivoId" />
@@ -23039,7 +22941,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtApiConfigs">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtApiConfig">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtApiConfig">
               <MappingFragment StoreEntitySet="dtApiConfig">
                 <ScalarProperty Name="AplicacionCodigo" ColumnName="AplicacionCodigo" />
                 <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
@@ -23048,7 +22950,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtAprobacionDatosPDVs">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtAprobacionDatosPDV">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtAprobacionDatosPDV">
               <MappingFragment StoreEntitySet="dtAprobacionDatosPDV">
                 <ScalarProperty Name="ComparacionId" ColumnName="ComparacionId" />
                 <ScalarProperty Name="NombreAtiende" ColumnName="NombreAtiende" />
@@ -23084,7 +22986,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtArchivoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtArchivo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtArchivo">
               <MappingFragment StoreEntitySet="dtArchivo">
                 <ScalarProperty Name="ArchivoId" ColumnName="ArchivoId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23112,7 +23014,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtArchivoTramites">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtArchivoTramite">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtArchivoTramite">
               <MappingFragment StoreEntitySet="dtArchivoTramite">
                 <ScalarProperty Name="ArchivoId" ColumnName="ArchivoId" />
                 <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
@@ -23125,7 +23027,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtAreas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtArea">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtArea">
               <MappingFragment StoreEntitySet="dtArea">
                 <ScalarProperty Name="AreaId" ColumnName="AreaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23137,7 +23039,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtAreaSols">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtAreaSol">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtAreaSol">
               <MappingFragment StoreEntitySet="dtAreaSol">
                 <ScalarProperty Name="AreaId" ColumnName="AreaId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -23146,7 +23048,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtAseguraPorRamoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtAseguraPorRamo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtAseguraPorRamo">
               <MappingFragment StoreEntitySet="dtAseguraPorRamo">
                 <ScalarProperty Name="AseguraPorRamoId" ColumnName="AseguraPorRamoId" />
                 <ScalarProperty Name="RamoId" ColumnName="RamoId" />
@@ -23155,7 +23057,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtAsignacionUsuarioDestinoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtAsignacionUsuarioDestino">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtAsignacionUsuarioDestino">
               <MappingFragment StoreEntitySet="dtAsignacionUsuarioDestino">
                 <ScalarProperty Name="AsignacionUsuarioDestinoId" ColumnName="AsignacionUsuarioDestinoId" />
                 <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
@@ -23166,7 +23068,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtAtributoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtAtributo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtAtributo">
               <MappingFragment StoreEntitySet="dtAtributo">
                 <ScalarProperty Name="AtributoId" ColumnName="AtributoId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23178,7 +23080,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtAtributoValors">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtAtributoValor">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtAtributoValor">
               <MappingFragment StoreEntitySet="dtAtributoValor">
                 <ScalarProperty Name="AtributoValorId" ColumnName="AtributoValorId" />
                 <ScalarProperty Name="AtributoId" ColumnName="AtributoId" />
@@ -23192,7 +23094,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtBitacoras">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtBitacora">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtBitacora">
               <MappingFragment StoreEntitySet="dtBitacora">
                 <ScalarProperty Name="BitacoraId" ColumnName="BitacoraId" />
                 <ScalarProperty Name="ModuloClave" ColumnName="ModuloClave" />
@@ -23206,7 +23108,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtBitacoraAlmacens">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtBitacoraAlmacen">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtBitacoraAlmacen">
               <MappingFragment StoreEntitySet="dtBitacoraAlmacen">
                 <ScalarProperty Name="BitacoraAlmacenId" ColumnName="BitacoraAlmacenId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23225,7 +23127,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtBitacoraAlmacenEvidencias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtBitacoraAlmacenEvidencia">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtBitacoraAlmacenEvidencia">
               <MappingFragment StoreEntitySet="dtBitacoraAlmacenEvidencia">
                 <ScalarProperty Name="BitacoraAlmacenEvidenciaId" ColumnName="BitacoraAlmacenEvidenciaId" />
                 <ScalarProperty Name="MovimientoId" ColumnName="MovimientoId" />
@@ -23235,7 +23137,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtBitacoraDocumentosConcesiones">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtBitacoraDocumentosConcesione">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtBitacoraDocumentosConcesione">
               <MappingFragment StoreEntitySet="dtBitacoraDocumentosConcesiones">
                 <ScalarProperty Name="BitacoraId" ColumnName="BitacoraId" />
                 <ScalarProperty Name="FolioInicial" ColumnName="FolioInicial" />
@@ -23251,7 +23153,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtBitacoraLicencias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtBitacoraLicencia">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtBitacoraLicencia">
               <MappingFragment StoreEntitySet="dtBitacoraLicencias">
                 <ScalarProperty Name="BitacoraId" ColumnName="BitacoraId" />
                 <ScalarProperty Name="FolioInicial" ColumnName="FolioInicial" />
@@ -23266,7 +23168,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCadenas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCadena">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCadena">
               <MappingFragment StoreEntitySet="dtCadena">
                 <ScalarProperty Name="CadenaId" ColumnName="CadenaId" />
                 <ScalarProperty Name="NombreCadena" ColumnName="NombreCadena" />
@@ -23278,7 +23180,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampanias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampania">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampania">
               <MappingFragment StoreEntitySet="dtCampania">
                 <ScalarProperty Name="CampanaId" ColumnName="CampanaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23297,7 +23199,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampaniaContactoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampaniaContacto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampaniaContacto">
               <MappingFragment StoreEntitySet="dtCampaniaContacto">
                 <ScalarProperty Name="CampaniaContactoId" ColumnName="CampaniaContactoId" />
                 <ScalarProperty Name="CampaniaId" ColumnName="CampaniaId" />
@@ -23310,7 +23212,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampaniaContactoAsignadoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampaniaContactoAsignado">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampaniaContactoAsignado">
               <MappingFragment StoreEntitySet="dtCampaniaContactoAsignado">
                 <ScalarProperty Name="CampaniaAsignadoId" ColumnName="CampaniaAsignadoId" />
                 <ScalarProperty Name="CampanaId" ColumnName="CampanaId" />
@@ -23321,7 +23223,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampaniaContactoContestadoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampaniaContactoContestado">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampaniaContactoContestado">
               <MappingFragment StoreEntitySet="dtCampaniaContactoContestado">
                 <ScalarProperty Name="ContactoContestadoId" ColumnName="ContactoContestadoId" />
                 <ScalarProperty Name="CampaniaId" ColumnName="CampaniaId" />
@@ -23338,7 +23240,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampaniaContactoCuestionarios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampaniaContactoCuestionario">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampaniaContactoCuestionario">
               <MappingFragment StoreEntitySet="dtCampaniaContactoCuestionario">
                 <ScalarProperty Name="CampanaId" ColumnName="CampanaId" />
                 <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
@@ -23348,7 +23250,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampaniaDestinoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampaniaDestino">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampaniaDestino">
               <MappingFragment StoreEntitySet="dtCampaniaDestino">
                 <ScalarProperty Name="CampaniaDestinoId" ColumnName="CampaniaDestinoId" />
                 <ScalarProperty Name="CampaniaId" ColumnName="CampaniaId" />
@@ -23360,7 +23262,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampaniaProductoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampaniaProducto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampaniaProducto">
               <MappingFragment StoreEntitySet="dtCampaniaProducto">
                 <ScalarProperty Name="CampaniaProductoId" ColumnName="CampaniaProductoId" />
                 <ScalarProperty Name="CampaniaId" ColumnName="CampaniaId" />
@@ -23371,7 +23273,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampaniaTipoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampaniaTipo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampaniaTipo">
               <MappingFragment StoreEntitySet="dtCampaniaTipo">
                 <ScalarProperty Name="TipoCampaniaId" ColumnName="TipoCampaniaId" />
                 <ScalarProperty Name="NombreTipo" ColumnName="NombreTipo" />
@@ -23379,7 +23281,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampaniaUbicacionAsignadoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampaniaUbicacionAsignado">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampaniaUbicacionAsignado">
               <MappingFragment StoreEntitySet="dtCampaniaUbicacionAsignado">
                 <ScalarProperty Name="CampaniaAsignadoId" ColumnName="CampaniaAsignadoId" />
                 <ScalarProperty Name="CampanaId" ColumnName="CampanaId" />
@@ -23390,7 +23292,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampaniaUbicacionContestadoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampaniaUbicacionContestado">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampaniaUbicacionContestado">
               <MappingFragment StoreEntitySet="dtCampaniaUbicacionContestado">
                 <ScalarProperty Name="UbicacionContestadoId" ColumnName="UbicacionContestadoId" />
                 <ScalarProperty Name="CampaniaId" ColumnName="CampaniaId" />
@@ -23408,7 +23310,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampaniaUbicacionCuestionarios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampaniaUbicacionCuestionario">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampaniaUbicacionCuestionario">
               <MappingFragment StoreEntitySet="dtCampaniaUbicacionCuestionario">
                 <ScalarProperty Name="CampanaId" ColumnName="CampanaId" />
                 <ScalarProperty Name="DestinoId" ColumnName="DestinoId" />
@@ -23420,7 +23322,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampoGrupoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampoGrupo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampoGrupo">
               <MappingFragment StoreEntitySet="dtCampoGrupo">
                 <ScalarProperty Name="CampoGrupoId" ColumnName="CampoGrupoId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23429,7 +23331,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampoRespuestas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampoRespuesta">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampoRespuesta">
               <MappingFragment StoreEntitySet="dtCampoRespuesta">
                 <ScalarProperty Name="RespuestaId" ColumnName="RespuestaId" />
                 <ScalarProperty Name="CampoId" ColumnName="CampoId" />
@@ -23442,7 +23344,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCampos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCampos">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCampos">
               <MappingFragment StoreEntitySet="dtCampos">
                 <ScalarProperty Name="CampoId" ColumnName="CampoId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23462,7 +23364,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCanals">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCanal">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCanal">
               <MappingFragment StoreEntitySet="dtCanal">
                 <ScalarProperty Name="CanalId" ColumnName="CanalId" />
                 <ScalarProperty Name="NombreCanal" ColumnName="NombreCanal" />
@@ -23474,7 +23376,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCapacitacions">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCapacitacion">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCapacitacion">
               <MappingFragment StoreEntitySet="dtCapacitacion">
                 <ScalarProperty Name="CapacitacionId" ColumnName="CapacitacionId" />
                 <ScalarProperty Name="TipoLicencia" ColumnName="TipoLicencia" />
@@ -23558,7 +23460,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCasoDocumentoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCasoDocumento">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCasoDocumento">
               <MappingFragment StoreEntitySet="dtCasoDocumento">
                 <ScalarProperty Name="CasoDocumentoId" ColumnName="CasoDocumentoId" />
                 <ScalarProperty Name="TipoCreditoId" ColumnName="TipoCreditoId" />
@@ -23573,7 +23475,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCategorias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCategoria">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCategoria">
               <MappingFragment StoreEntitySet="dtCategoria">
                 <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
@@ -23586,7 +23488,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCategoriaProductoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCategoriaProducto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCategoriaProducto">
               <MappingFragment StoreEntitySet="dtCategoriaProducto">
                 <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23597,7 +23499,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCeckListSeccion1">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCeckListSeccion1">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCeckListSeccion1">
               <MappingFragment StoreEntitySet="dtCeckListSeccion1">
                 <ScalarProperty Name="SeccionId" ColumnName="SeccionId" />
                 <ScalarProperty Name="CheckListId" ColumnName="CheckListId" />
@@ -23609,7 +23511,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCheckList1">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCheckList1">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCheckList1">
               <MappingFragment StoreEntitySet="dtCheckList1">
                 <ScalarProperty Name="CheckListId" ColumnName="CheckListId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23633,7 +23535,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCheckListPreguntas1">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCheckListPreguntas1">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCheckListPreguntas1">
               <MappingFragment StoreEntitySet="dtCheckListPreguntas1">
                 <ScalarProperty Name="PreguntaId" ColumnName="PreguntaId" />
                 <ScalarProperty Name="SeccionId" ColumnName="SeccionId" />
@@ -23657,7 +23559,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCiudadanoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCiudadano">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCiudadano">
               <MappingFragment StoreEntitySet="dtCiudadano">
                 <ScalarProperty Name="CiudadanoId" ColumnName="CiudadanoId" />
                 <ScalarProperty Name="Curp" ColumnName="Curp" />
@@ -23700,7 +23602,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtClavesDesctoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtClavesDescto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtClavesDescto">
               <MappingFragment StoreEntitySet="dtClavesDescto">
                 <ScalarProperty Name="ClaveDesctoId" ColumnName="ClaveDesctoId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -23708,7 +23610,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtColonias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtColonia">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtColonia">
               <MappingFragment StoreEntitySet="dtColonia">
                 <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
                 <ScalarProperty Name="MunicipioId" ColumnName="MunicipioId" />
@@ -23721,7 +23623,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtConceptos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtConcepto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtConcepto">
               <MappingFragment StoreEntitySet="dtConceptos">
                 <ScalarProperty Name="NoConcepto" ColumnName="NoConcepto" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -23731,7 +23633,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtConcesiones">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtConcesione">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtConcesione">
               <MappingFragment StoreEntitySet="dtConcesiones">
                 <ScalarProperty Name="ConcesionId" ColumnName="ConcesionId" />
                 <ScalarProperty Name="NoConcesion" ColumnName="NoConcesion" />
@@ -23857,7 +23759,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCondicionesCreditoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCondicionesCredito">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCondicionesCredito">
               <MappingFragment StoreEntitySet="dtCondicionesCredito">
                 <ScalarProperty Name="CondicionesCreditoId" ColumnName="CondicionesCreditoId" />
                 <ScalarProperty Name="TieneEquipo" ColumnName="TieneEquipo" />
@@ -23873,7 +23775,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtContactoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtContacto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtContacto">
               <MappingFragment StoreEntitySet="dtContacto">
                 <ScalarProperty Name="ContactId" ColumnName="ContactId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23906,7 +23808,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtContestadoFormularios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtContestadoFormulario">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtContestadoFormulario">
               <MappingFragment StoreEntitySet="dtContestadoFormulario">
                 <ScalarProperty Name="ContestadoId" ColumnName="ContestadoId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -23941,7 +23843,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtContestadoFormularioRespuestas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtContestadoFormularioRespuesta">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtContestadoFormularioRespuesta">
               <MappingFragment StoreEntitySet="dtContestadoFormularioRespuestas">
                 <ScalarProperty Name="ContetadoDetalleId" ColumnName="ContetadoDetalleId" />
                 <ScalarProperty Name="ContestadoId" ColumnName="ContestadoId" />
@@ -23965,7 +23867,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCoordenadas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCoordenada">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCoordenada">
               <MappingFragment StoreEntitySet="dtCoordenada">
                 <ScalarProperty Name="GeopointId" ColumnName="GeopointId" />
                 <ScalarProperty Name="Latitude" ColumnName="Latitude" />
@@ -23982,7 +23884,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCoordenadaGeoCercas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCoordenadaGeoCerca">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCoordenadaGeoCerca">
               <MappingFragment StoreEntitySet="dtCoordenadaGeoCerca">
                 <ScalarProperty Name="GeopointId" ColumnName="GeopointId" />
                 <ScalarProperty Name="DestinoId" ColumnName="DestinoId" />
@@ -23991,7 +23893,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCorreoHistorials">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCorreoHistorial">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCorreoHistorial">
               <MappingFragment StoreEntitySet="dtCorreoHistorial">
                 <ScalarProperty Name="TrackId" ColumnName="TrackId" />
                 <ScalarProperty Name="CorrreoDe" ColumnName="CorrreoDe" />
@@ -24015,7 +23917,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCotizacions">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCotizacion">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCotizacion">
               <MappingFragment StoreEntitySet="dtCotizacion">
                 <ScalarProperty Name="CotizacionId" ColumnName="CotizacionId" />
                 <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
@@ -24053,7 +23955,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCotizacionDetalles">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCotizacionDetalle">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCotizacionDetalle">
               <MappingFragment StoreEntitySet="dtCotizacionDetalle">
                 <ScalarProperty Name="CotizacionDetalleId" ColumnName="CotizacionDetalleId" />
                 <ScalarProperty Name="CotizacionId" ColumnName="CotizacionId" />
@@ -24105,7 +24007,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCotizacionDetalleSvas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCotizacionDetalleSva">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCotizacionDetalleSva">
               <MappingFragment StoreEntitySet="dtCotizacionDetalleSva">
                 <ScalarProperty Name="CotizacionDetalleSVAId" ColumnName="CotizacionDetalleSVAId" />
                 <ScalarProperty Name="CotizacionId" ColumnName="CotizacionId" />
@@ -24118,7 +24020,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCrmAsignacions">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCrmAsignacion">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCrmAsignacion">
               <MappingFragment StoreEntitySet="dtCrmAsignacion">
                 <ScalarProperty Name="RegistroId" ColumnName="RegistroId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24133,7 +24035,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCuentas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCuenta">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCuenta">
               <MappingFragment StoreEntitySet="dtCuenta">
                 <ScalarProperty Name="CuentaId" ColumnName="CuentaId" />
                 <ScalarProperty Name="ParentCuentaId" ColumnName="ParentCuentaId" />
@@ -24171,7 +24073,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCuentaCorreos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCuentaCorreo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCuentaCorreo">
               <MappingFragment StoreEntitySet="dtCuentaCorreo">
                 <ScalarProperty Name="EmailId" ColumnName="EmailId" />
                 <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
@@ -24185,7 +24087,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtCuotasPDVs">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtCuotasPDV">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtCuotasPDV">
               <MappingFragment StoreEntitySet="dtCuotasPDV">
                 <ScalarProperty Name="CuotaId" ColumnName="CuotaId" />
                 <ScalarProperty Name="DestinoId" ColumnName="DestinoId" />
@@ -24203,7 +24105,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtDestinos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtDestino">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtDestino">
               <MappingFragment StoreEntitySet="dtDestinos">
                 <ScalarProperty Name="DestinoId" ColumnName="DestinoId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24256,7 +24158,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtDispositivoHistorials">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtDispositivoHistorial">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtDispositivoHistorial">
               <MappingFragment StoreEntitySet="dtDispositivoHistorial">
                 <ScalarProperty Name="DispositivoHistorialId" ColumnName="DispositivoHistorialId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24274,7 +24176,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtDomicilioEnvios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtDomicilioEnvio">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtDomicilioEnvio">
               <MappingFragment StoreEntitySet="dtDomicilioEnvio">
                 <ScalarProperty Name="DomiciliolEnvId" ColumnName="DomiciliolEnvId" />
                 <ScalarProperty Name="AseguradoId" ColumnName="AseguradoId" />
@@ -24309,7 +24211,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEmpresas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEmpresa">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEmpresa">
               <MappingFragment StoreEntitySet="dtEmpresa">
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
                 <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
@@ -24350,7 +24252,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEmpresaUsuarios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEmpresaUsuario">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEmpresaUsuario">
               <MappingFragment StoreEntitySet="dtEmpresaUsuario">
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
                 <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
@@ -24359,7 +24261,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEncuestaCuestionarios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEncuestaCuestionario">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEncuestaCuestionario">
               <MappingFragment StoreEntitySet="dtEncuestaCuestionario">
                 <ScalarProperty Name="EncuestaCuestionarioId" ColumnName="EncuestaCuestionarioId" />
                 <ScalarProperty Name="EncuestaId" ColumnName="EncuestaId" />
@@ -24370,7 +24272,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEncuestas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEncuesta">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEncuesta">
               <MappingFragment StoreEntitySet="dtEncuestas">
                 <ScalarProperty Name="EncuestaId" ColumnName="EncuestaId" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -24381,7 +24283,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEncuestaUsuarios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEncuestaUsuario">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEncuestaUsuario">
               <MappingFragment StoreEntitySet="dtEncuestaUsuario">
                 <ScalarProperty Name="EncuestaUsuarioId" ColumnName="EncuestaUsuarioId" />
                 <ScalarProperty Name="MovimientoId" ColumnName="MovimientoId" />
@@ -24395,7 +24297,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEstadoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEstado">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEstado">
               <MappingFragment StoreEntitySet="dtEstado">
                 <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
                 <ScalarProperty Name="PaisId" ColumnName="PaisId" />
@@ -24404,7 +24306,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEstandarTipoMovs">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEstandarTipoMov">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEstandarTipoMov">
               <MappingFragment StoreEntitySet="dtEstandarTipoMov">
                 <ScalarProperty Name="EstandarTipoMovId" ColumnName="EstandarTipoMovId" />
                 <ScalarProperty Name="TipoMovId" ColumnName="TipoMovId" />
@@ -24415,7 +24317,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEstatus">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEstatu">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEstatu">
               <MappingFragment StoreEntitySet="dtEstatus">
                 <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -24428,7 +24330,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEstatusLicencias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEstatusLicencia">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEstatusLicencia">
               <MappingFragment StoreEntitySet="dtEstatusLicencia">
                 <ScalarProperty Name="EstatusLicenciaId" ColumnName="EstatusLicenciaId" />
                 <ScalarProperty Name="Estatus" ColumnName="Estatus" />
@@ -24436,7 +24338,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEstatusSols">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEstatusSol">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEstatusSol">
               <MappingFragment StoreEntitySet="dtEstatusSol">
                 <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -24444,7 +24346,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEtapas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEtapa">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEtapa">
               <MappingFragment StoreEntitySet="dtEtapa">
                 <ScalarProperty Name="EtapaId" ColumnName="EtapaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24454,7 +24356,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEtapaTemplates">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEtapaTemplate">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEtapaTemplate">
               <MappingFragment StoreEntitySet="dtEtapaTemplate">
                 <ScalarProperty Name="EtapaId" ColumnName="EtapaId" />
                 <ScalarProperty Name="EtapaNombre" ColumnName="EtapaNombre" />
@@ -24463,7 +24365,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEvaluacions">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEvaluacion">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEvaluacion">
               <MappingFragment StoreEntitySet="dtEvaluacion">
                 <ScalarProperty Name="EvaluacionId" ColumnName="EvaluacionId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24474,7 +24376,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtExamenMedicoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtExamenMedico">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtExamenMedico">
               <MappingFragment StoreEntitySet="dtExamenMedico">
                 <ScalarProperty Name="ExamenMedicoId" ColumnName="ExamenMedicoId" />
                 <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
@@ -24490,7 +24392,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
                 <ScalarProperty Name="CapAud" ColumnName="CapAud" />
                 <ScalarProperty Name="NivelBajo" ColumnName="NivelBajo" />
                 <ScalarProperty Name="NivelMedio" ColumnName="NivelMedio" />
-                <ScalarProperty Name="SinRes" ColumnName="SinRes" />
+                <ScalarProperty Name="NivelAlto" ColumnName="NivelAlto" />
                 <ScalarProperty Name="Normal" ColumnName="Normal" />
                 <ScalarProperty Name="Apto" ColumnName="Apto" />
                 <ScalarProperty Name="Padecimiento" ColumnName="Padecimiento" />
@@ -24610,12 +24512,13 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
                 <ScalarProperty Name="TipoSangre" ColumnName="TipoSangre" />
                 <ScalarProperty Name="Donador" ColumnName="Donador" />
                 <ScalarProperty Name="FolioSeguimiento" ColumnName="FolioSeguimiento" />
+                <ScalarProperty Name="SinRes" ColumnName="SinRes" />
                 <ScalarProperty Name="Retencion" ColumnName="Retencion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtExamenPsicometricoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtExamenPsicometrico">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtExamenPsicometrico">
               <MappingFragment StoreEntitySet="dtExamenPsicometrico">
                 <ScalarProperty Name="PsicometricoId" ColumnName="PsicometricoId" />
                 <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
@@ -24656,7 +24559,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtExamenToxicoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtExamenToxico">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtExamenToxico">
               <MappingFragment StoreEntitySet="dtExamenToxico">
                 <ScalarProperty Name="ExamenToxicoId" ColumnName="ExamenToxicoId" />
                 <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
@@ -24680,7 +24583,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtFacturas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtFactura">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtFactura">
               <MappingFragment StoreEntitySet="dtFactura">
                 <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24714,7 +24617,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtFacturaCategorias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtFacturaCategoria">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtFacturaCategoria">
               <MappingFragment StoreEntitySet="dtFacturaCategoria">
                 <ScalarProperty Name="FacturaCategoriaId" ColumnName="FacturaCategoriaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24723,7 +24626,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtFolioConocers">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtFolioConocer">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtFolioConocer">
               <MappingFragment StoreEntitySet="dtFolioConocer">
                 <ScalarProperty Name="FolioConocerId" ColumnName="FolioConocerId" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -24743,7 +24646,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtFormaEjecutivas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtFormaEjecutiva">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtFormaEjecutiva">
               <MappingFragment StoreEntitySet="dtFormaEjecutiva">
                 <ScalarProperty Name="FormaEjecutivaId" ColumnName="FormaEjecutivaId" />
                 <ScalarProperty Name="Folio" ColumnName="Folio" />
@@ -24761,7 +24664,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtGalerias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtGaleria">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtGaleria">
               <MappingFragment StoreEntitySet="dtGaleria">
                 <ScalarProperty Name="GaleriaId" ColumnName="GaleriaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24771,7 +24674,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtGaleriaDetalles">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtGaleriaDetalle">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtGaleriaDetalle">
               <MappingFragment StoreEntitySet="dtGaleriaDetalle">
                 <ScalarProperty Name="DetalleId" ColumnName="DetalleId" />
                 <ScalarProperty Name="GaleriaId" ColumnName="GaleriaId" />
@@ -24783,7 +24686,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtGastoReportes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtGastoReporte">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtGastoReporte">
               <MappingFragment StoreEntitySet="dtGastoReporte">
                 <ScalarProperty Name="GastoReporteId" ColumnName="GastoReporteId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24797,7 +24700,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtGestionCanals">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtGestionCanal">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtGestionCanal">
               <MappingFragment StoreEntitySet="dtGestionCanal">
                 <ScalarProperty Name="GestionCanalId" ColumnName="GestionCanalId" />
                 <ScalarProperty Name="NombreGestionCanal" ColumnName="NombreGestionCanal" />
@@ -24809,7 +24712,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtGrupoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtGrupo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtGrupo">
               <MappingFragment StoreEntitySet="dtGrupo">
                 <ScalarProperty Name="GrupoId" ColumnName="GrupoId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24824,7 +24727,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtGrupoUsuarios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtGrupoUsuario">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtGrupoUsuario">
               <MappingFragment StoreEntitySet="dtGrupoUsuario">
                 <ScalarProperty Name="GrupoId" ColumnName="GrupoId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24834,7 +24737,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtImportes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtImporte">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtImporte">
               <MappingFragment StoreEntitySet="dtImporte">
                 <ScalarProperty Name="ImporteId" ColumnName="ImporteId" />
                 <ScalarProperty Name="VigenciaId" ColumnName="VigenciaId" />
@@ -24850,7 +24753,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtJerarquias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtJerarquia">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtJerarquia">
               <MappingFragment StoreEntitySet="dtJerarquia">
                 <ScalarProperty Name="JerarquiaId" ColumnName="JerarquiaId" />
                 <ScalarProperty Name="DI_EEVV" ColumnName="DI_EEVV" />
@@ -24869,7 +24772,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtLicencias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtLicencia">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtLicencia">
               <MappingFragment StoreEntitySet="dtLicencias">
                 <ScalarProperty Name="LicenciaId" ColumnName="LicenciaId" />
                 <ScalarProperty Name="Folio" ColumnName="Folio" />
@@ -24887,7 +24790,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtListaPrecios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtListaPrecio">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtListaPrecio">
               <MappingFragment StoreEntitySet="dtListaPrecios">
                 <ScalarProperty Name="ListaPreciosId" ColumnName="ListaPreciosId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24897,7 +24800,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtLlamadaMotivoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtLlamadaMotivo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtLlamadaMotivo">
               <MappingFragment StoreEntitySet="dtLlamadaMotivo">
                 <ScalarProperty Name="MotivoId" ColumnName="MotivoId" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -24905,7 +24808,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtLogBloqueoCiudadanos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtLogBloqueoCiudadano">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtLogBloqueoCiudadano">
               <MappingFragment StoreEntitySet="dtLogBloqueoCiudadanos">
                 <ScalarProperty Name="BloqueoCiudadanoId" ColumnName="BloqueoCiudadanoId" />
                 <ScalarProperty Name="CiudadanoId" ColumnName="CiudadanoId" />
@@ -24917,7 +24820,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMarkers">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMarker">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMarker">
               <MappingFragment StoreEntitySet="dtMarkers">
                 <ScalarProperty Name="MarkersId" ColumnName="MarkersId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24935,7 +24838,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMetas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMeta">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMeta">
               <MappingFragment StoreEntitySet="dtMeta">
                 <ScalarProperty Name="MetaId" ColumnName="MetaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24958,7 +24861,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMetricas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMetrica">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMetrica">
               <MappingFragment StoreEntitySet="dtMetrica">
                 <ScalarProperty Name="MetricaId" ColumnName="MetricaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -24967,7 +24870,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtModuloes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtModulo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtModulo">
               <MappingFragment StoreEntitySet="dtModulo">
                 <ScalarProperty Name="ModuloClave" ColumnName="ModuloClave" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -24977,7 +24880,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtModuloAsignacions">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtModuloAsignacion">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtModuloAsignacion">
               <MappingFragment StoreEntitySet="dtModuloAsignacion">
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
                 <ScalarProperty Name="ModuloClave" ColumnName="ModuloClave" />
@@ -24992,7 +24895,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtModuloDetalleComentarios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtModuloDetalleComentario">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtModuloDetalleComentario">
               <MappingFragment StoreEntitySet="dtModuloDetalleComentario">
                 <ScalarProperty Name="ComentarioId" ColumnName="ComentarioId" />
                 <ScalarProperty Name="MuroDetalleId" ColumnName="MuroDetalleId" />
@@ -25003,7 +24906,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtModuloRespuestas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtModuloRespuesta">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtModuloRespuesta">
               <MappingFragment StoreEntitySet="dtModuloRespuesta">
                 <ScalarProperty Name="RespuestaValorId" ColumnName="RespuestaValorId" />
                 <ScalarProperty Name="ModuloClave" ColumnName="ModuloClave" />
@@ -25021,7 +24924,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtModuloRespuestaOpcions">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtModuloRespuestaOpcion">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtModuloRespuestaOpcion">
               <MappingFragment StoreEntitySet="dtModuloRespuestaOpcion">
                 <ScalarProperty Name="ModuloClave" ColumnName="ModuloClave" />
                 <ScalarProperty Name="VinculoId" ColumnName="VinculoId" />
@@ -25031,7 +24934,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMotivosEndosoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMotivosEndoso">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMotivosEndoso">
               <MappingFragment StoreEntitySet="dtMotivosEndoso">
                 <ScalarProperty Name="MotivoEndosoID" ColumnName="MotivoEndosoID" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -25039,7 +24942,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMovimientos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMovimiento">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMovimiento">
               <MappingFragment StoreEntitySet="dtMovimientos">
                 <ScalarProperty Name="MovimientoId" ColumnName="MovimientoId" />
                 <ScalarProperty Name="MesaControlId" ColumnName="MesaControlId" />
@@ -25084,7 +24987,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMovimientosHistorials">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMovimientosHistorial">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMovimientosHistorial">
               <MappingFragment StoreEntitySet="dtMovimientosHistorial">
                 <ScalarProperty Name="MovHistoriaId" ColumnName="MovHistoriaId" />
                 <ScalarProperty Name="MovimientoId" ColumnName="MovimientoId" />
@@ -25111,7 +25014,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMoviqFormaPagoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMoviqFormaPago">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMoviqFormaPago">
               <MappingFragment StoreEntitySet="dtMoviqFormaPago">
                 <ScalarProperty Name="FormaPagoId" ColumnName="FormaPagoId" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -25119,7 +25022,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMoviqScorings">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMoviqScoring">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMoviqScoring">
               <MappingFragment StoreEntitySet="dtMoviqScoring">
                 <ScalarProperty Name="ScoringId" ColumnName="ScoringId" />
                 <ScalarProperty Name="FullPriceInicial" ColumnName="FullPriceInicial" />
@@ -25133,7 +25036,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMoviqServicios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMoviqServicio">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMoviqServicio">
               <MappingFragment StoreEntitySet="dtMoviqServicios">
                 <ScalarProperty Name="ServicioId" ColumnName="ServicioId" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -25145,7 +25048,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMoviqSocrinTipoClientes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMoviqSocrinTipoCliente">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMoviqSocrinTipoCliente">
               <MappingFragment StoreEntitySet="dtMoviqSocrinTipoCliente">
                 <ScalarProperty Name="TipoClienteScoringId" ColumnName="TipoClienteScoringId" />
                 <ScalarProperty Name="ScoringId" ColumnName="ScoringId" />
@@ -25159,7 +25062,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMoviqSvas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMoviqSva">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMoviqSva">
               <MappingFragment StoreEntitySet="dtMoviqSva">
                 <ScalarProperty Name="SvaId" ColumnName="SvaId" />
                 <ScalarProperty Name="ServicioId" ColumnName="ServicioId" />
@@ -25178,7 +25081,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMoviqTipoClientes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMoviqTipoCliente">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMoviqTipoCliente">
               <MappingFragment StoreEntitySet="dtMoviqTipoCliente">
                 <ScalarProperty Name="TipoClienteId" ColumnName="TipoClienteId" />
                 <ScalarProperty Name="Clave" ColumnName="Clave" />
@@ -25193,7 +25096,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMunicipios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMunicipio">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMunicipio">
               <MappingFragment StoreEntitySet="dtMunicipio">
                 <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
                 <ScalarProperty Name="MunicipioId" ColumnName="MunicipioId" />
@@ -25202,7 +25105,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMuroes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMuro">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMuro">
               <MappingFragment StoreEntitySet="dtMuro">
                 <ScalarProperty Name="MuroId" ColumnName="MuroId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25215,7 +25118,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMuroDetalles">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMuroDetalle">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMuroDetalle">
               <MappingFragment StoreEntitySet="dtMuroDetalle">
                 <ScalarProperty Name="MuroDetalleId" ColumnName="MuroDetalleId" />
                 <ScalarProperty Name="MuroId" ColumnName="MuroId" />
@@ -25229,7 +25132,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMuroDetalleUsuarios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMuroDetalleUsuario">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMuroDetalleUsuario">
               <MappingFragment StoreEntitySet="dtMuroDetalleUsuarios">
                 <ScalarProperty Name="MuroDetalleId" ColumnName="MuroDetalleId" />
                 <ScalarProperty Name="UsuarioDestinoId" ColumnName="UsuarioDestinoId" />
@@ -25239,7 +25142,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMuroDetalleVisitadoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMuroDetalleVisitado">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMuroDetalleVisitado">
               <MappingFragment StoreEntitySet="dtMuroDetalleVisitado">
                 <ScalarProperty Name="MuroDetalleId" ColumnName="MuroDetalleId" />
                 <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
@@ -25248,7 +25151,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtMuroLikes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtMuroLike">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtMuroLike">
               <MappingFragment StoreEntitySet="dtMuroLike">
                 <ScalarProperty Name="MeGustaId" ColumnName="MeGustaId" />
                 <ScalarProperty Name="MuroDetalleId" ColumnName="MuroDetalleId" />
@@ -25259,7 +25162,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtNotas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtNota">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtNota">
               <MappingFragment StoreEntitySet="dtNotas">
                 <ScalarProperty Name="NotaId" ColumnName="NotaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25278,7 +25181,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtNoticias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtNoticia">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtNoticia">
               <MappingFragment StoreEntitySet="dtNoticia">
                 <ScalarProperty Name="NoticiaId" ColumnName="NoticiaId" />
                 <ScalarProperty Name="Titulo" ColumnName="Titulo" />
@@ -25295,7 +25198,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtObjetivoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtObjetivo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtObjetivo">
               <MappingFragment StoreEntitySet="dtObjetivo">
                 <ScalarProperty Name="ObjetivoId" ColumnName="ObjetivoId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25315,7 +25218,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtObjetivoHistorials">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtObjetivoHistorial">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtObjetivoHistorial">
               <MappingFragment StoreEntitySet="dtObjetivoHistorial">
                 <ScalarProperty Name="ObjetivoTrackId" ColumnName="ObjetivoTrackId" />
                 <ScalarProperty Name="ObjetivoId" ColumnName="ObjetivoId" />
@@ -25328,7 +25231,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtOportunidads">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtOportunidad">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtOportunidad">
               <MappingFragment StoreEntitySet="dtOportunidad">
                 <ScalarProperty Name="OportunidadId" ColumnName="OportunidadId" />
                 <ScalarProperty Name="EtapaId" ColumnName="EtapaId" />
@@ -25354,7 +25257,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtOportunidadContactoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtOportunidadContacto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtOportunidadContacto">
               <MappingFragment StoreEntitySet="dtOportunidadContacto">
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
                 <ScalarProperty Name="OportunidadId" ColumnName="OportunidadId" />
@@ -25365,7 +25268,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtOportunidadHistorials">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtOportunidadHistorial">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtOportunidadHistorial">
               <MappingFragment StoreEntitySet="dtOportunidadHistorial">
                 <ScalarProperty Name="HistorialId" ColumnName="HistorialId" />
                 <ScalarProperty Name="OportunidadId" ColumnName="OportunidadId" />
@@ -25380,7 +25283,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtOportunidadProductoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtOportunidadProducto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtOportunidadProducto">
               <MappingFragment StoreEntitySet="dtOportunidadProducto">
                 <ScalarProperty Name="OportunidadProductoId" ColumnName="OportunidadProductoId" />
                 <ScalarProperty Name="OportunidadId" ColumnName="OportunidadId" />
@@ -25393,7 +25296,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtPagoHistorials">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtPagoHistorial">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtPagoHistorial">
               <MappingFragment StoreEntitySet="dtPagoHistorial">
                 <ScalarProperty Name="PagoId" ColumnName="PagoId" />
                 <ScalarProperty Name="Monto" ColumnName="Monto" />
@@ -25408,7 +25311,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtPais">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtPai">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtPai">
               <MappingFragment StoreEntitySet="dtPais">
                 <ScalarProperty Name="PaisId" ColumnName="PaisId" />
                 <ScalarProperty Name="PaisNombre" ColumnName="PaisNombre" />
@@ -25419,7 +25322,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtPaquetes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtPaquete">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtPaquete">
               <MappingFragment StoreEntitySet="dtPaquete">
                 <ScalarProperty Name="PaqueteCodigo" ColumnName="PaqueteCodigo" />
                 <ScalarProperty Name="PaqueteNombre" ColumnName="PaqueteNombre" />
@@ -25430,7 +25333,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtPermisoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtPermiso">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtPermiso">
               <MappingFragment StoreEntitySet="dtPermiso">
                 <ScalarProperty Name="PermisoCode" ColumnName="PermisoCode" />
                 <ScalarProperty Name="ParentPermisoCode" ColumnName="ParentPermisoCode" />
@@ -25440,7 +25343,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtPlans">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtPlan">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtPlan">
               <MappingFragment StoreEntitySet="dtPlan">
                 <ScalarProperty Name="CodigoPlan" ColumnName="CodigoPlan" />
                 <ScalarProperty Name="Segmento" ColumnName="Segmento" />
@@ -25459,7 +25362,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtPlanProductoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtPlanProducto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtPlanProducto">
               <MappingFragment StoreEntitySet="dtPlanProducto">
                 <ScalarProperty Name="PlanProductoId" ColumnName="PlanProductoId" />
                 <ScalarProperty Name="CodigoPlan" ColumnName="CodigoPlan" />
@@ -25480,7 +25383,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtPotencials">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtPotencial">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtPotencial">
               <MappingFragment StoreEntitySet="dtPotencial">
                 <ScalarProperty Name="PotencialID" ColumnName="PotencialID" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -25488,7 +25391,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtPreguntasEncuestas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtPreguntasEncuesta">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtPreguntasEncuesta">
               <MappingFragment StoreEntitySet="dtPreguntasEncuesta">
                 <ScalarProperty Name="PreguntaId" ColumnName="PreguntaId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -25498,7 +25401,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtPrioridads">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtPrioridad">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtPrioridad">
               <MappingFragment StoreEntitySet="dtPrioridad">
                 <ScalarProperty Name="PrioridadId" ColumnName="PrioridadId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -25511,7 +25414,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtProductoAlmacens">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtProductoAlmacen">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtProductoAlmacen">
               <MappingFragment StoreEntitySet="dtProductoAlmacen">
                 <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
                 <ScalarProperty Name="AlmacenId" ColumnName="AlmacenId" />
@@ -25520,7 +25423,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtProductoApartadoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtProductoApartado">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtProductoApartado">
               <MappingFragment StoreEntitySet="dtProductoApartado">
                 <ScalarProperty Name="ProductoApartadoId" ColumnName="ProductoApartadoId" />
                 <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
@@ -25532,7 +25435,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtProductoCompetidors">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtProductoCompetidor">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtProductoCompetidor">
               <MappingFragment StoreEntitySet="dtProductoCompetidor">
                 <ScalarProperty Name="ProductoCompetidorId" ColumnName="ProductoCompetidorId" />
                 <ScalarProperty Name="CuentaId" ColumnName="CuentaId" />
@@ -25546,7 +25449,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtProductoImagens">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtProductoImagen">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtProductoImagen">
               <MappingFragment StoreEntitySet="dtProductoImagen">
                 <ScalarProperty Name="ImagenId" ColumnName="ImagenId" />
                 <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
@@ -25555,7 +25458,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtProductoServicios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtProductoServicio">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtProductoServicio">
               <MappingFragment StoreEntitySet="dtProductoServicio">
                 <ScalarProperty Name="ProductoServicioId" ColumnName="ProductoServicioId" />
                 <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
@@ -25580,7 +25483,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtProyectoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtProyecto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtProyecto">
               <MappingFragment StoreEntitySet="dtProyecto">
                 <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
                 <ScalarProperty Name="ProyectoPadreId" ColumnName="ProyectoPadreId" />
@@ -25599,7 +25502,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtProyectoRoles">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtProyectoRole">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtProyectoRole">
               <MappingFragment StoreEntitySet="dtProyectoRoles">
                 <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
                 <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
@@ -25608,7 +25511,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtPuestoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtPuesto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtPuesto">
               <MappingFragment StoreEntitySet="dtPuesto">
                 <ScalarProperty Name="PuestoId" ColumnName="PuestoId" />
                 <ScalarProperty Name="AreaId" ColumnName="AreaId" />
@@ -25620,7 +25523,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtRamoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtRamo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtRamo">
               <MappingFragment StoreEntitySet="dtRamo">
                 <ScalarProperty Name="RamoId" ColumnName="RamoId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -25628,7 +25531,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtRegions">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtRegion">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtRegion">
               <MappingFragment StoreEntitySet="dtRegion">
                 <ScalarProperty Name="RegionId" ColumnName="RegionId" />
                 <ScalarProperty Name="NombreRegion" ColumnName="NombreRegion" />
@@ -25640,7 +25543,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtRegistroEquipoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtRegistroEquipo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtRegistroEquipo">
               <MappingFragment StoreEntitySet="dtRegistroEquipo">
                 <ScalarProperty Name="RegistroEquipoId" ColumnName="RegistroEquipoId" />
                 <ScalarProperty Name="Equipo" ColumnName="Equipo" />
@@ -25652,7 +25555,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtRegistroTokens">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtRegistroToken">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtRegistroToken">
               <MappingFragment StoreEntitySet="dtRegistroToken">
                 <ScalarProperty Name="TokenId" ColumnName="TokenId" />
                 <ScalarProperty Name="Token" ColumnName="Token" />
@@ -25666,7 +25569,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtReunions">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtReunion">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtReunion">
               <MappingFragment StoreEntitySet="dtReunion">
                 <ScalarProperty Name="ReunionId" ColumnName="ReunionId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25680,7 +25583,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtReunionAcuerdoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtReunionAcuerdo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtReunionAcuerdo">
               <MappingFragment StoreEntitySet="dtReunionAcuerdo">
                 <ScalarProperty Name="ReunionAcuerdoId" ColumnName="ReunionAcuerdoId" />
                 <ScalarProperty Name="ReunioinId" ColumnName="ReunioinId" />
@@ -25690,7 +25593,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtReunionIntegrantes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtReunionIntegrante">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtReunionIntegrante">
               <MappingFragment StoreEntitySet="dtReunionIntegrantes">
                 <ScalarProperty Name="ReunionIntegranteId" ColumnName="ReunionIntegranteId" />
                 <ScalarProperty Name="ReunionId" ColumnName="ReunionId" />
@@ -25702,7 +25605,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtRols">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtRol">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtRol">
               <MappingFragment StoreEntitySet="dtRol">
                 <ScalarProperty Name="RolId" ColumnName="RolId" />
                 <ScalarProperty Name="Rol" ColumnName="Rol" />
@@ -25712,7 +25615,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtRsses">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtRss">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtRss">
               <MappingFragment StoreEntitySet="dtRss">
                 <ScalarProperty Name="RssId" ColumnName="RssId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25723,7 +25626,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtSources">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtSource">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtSource">
               <MappingFragment StoreEntitySet="dtSource">
                 <ScalarProperty Name="SourceId" ColumnName="SourceId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25732,7 +25635,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtStatus">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtStatu">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtStatu">
               <MappingFragment StoreEntitySet="dtStatus">
                 <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25742,7 +25645,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtSubCanals">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtSubCanal">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtSubCanal">
               <MappingFragment StoreEntitySet="dtSubCanal">
                 <ScalarProperty Name="SubCanalId" ColumnName="SubCanalId" />
                 <ScalarProperty Name="NombreSubCanal" ColumnName="NombreSubCanal" />
@@ -25754,7 +25657,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtSubCategorias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtSubCategoria">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtSubCategoria">
               <MappingFragment StoreEntitySet="dtSubCategoria">
                 <ScalarProperty Name="SubCategoriaId" ColumnName="SubCategoriaId" />
                 <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
@@ -25768,7 +25671,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTags">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTag">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTag">
               <MappingFragment StoreEntitySet="dtTag">
                 <ScalarProperty Name="TagId" ColumnName="TagId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25779,7 +25682,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTagModuloes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTagModulo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTagModulo">
               <MappingFragment StoreEntitySet="dtTagModulo">
                 <ScalarProperty Name="TagId" ColumnName="TagId" />
                 <ScalarProperty Name="ModuloClave" ColumnName="ModuloClave" />
@@ -25789,7 +25692,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTareas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTarea">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTarea">
               <MappingFragment StoreEntitySet="dtTarea">
                 <ScalarProperty Name="TareaId" ColumnName="TareaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25827,7 +25730,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTareaFrecuencias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTareaFrecuencia">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTareaFrecuencia">
               <MappingFragment StoreEntitySet="dtTareaFrecuencia">
                 <ScalarProperty Name="RecurrenteId" ColumnName="RecurrenteId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25843,7 +25746,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTareaPasoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTareaPaso">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTareaPaso">
               <MappingFragment StoreEntitySet="dtTareaPaso">
                 <ScalarProperty Name="PasoId" ColumnName="PasoId" />
                 <ScalarProperty Name="TareaId" ColumnName="TareaId" />
@@ -25859,7 +25762,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTareaPasoArchivoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTareaPasoArchivo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTareaPasoArchivo">
               <MappingFragment StoreEntitySet="dtTareaPasoArchivo">
                 <ScalarProperty Name="PasoId" ColumnName="PasoId" />
                 <ScalarProperty Name="ArchivoId" ColumnName="ArchivoId" />
@@ -25868,7 +25771,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTareaRecursos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTareaRecurso">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTareaRecurso">
               <MappingFragment StoreEntitySet="dtTareaRecursos">
                 <ScalarProperty Name="RelacionId" ColumnName="RelacionId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25883,7 +25786,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTareaTipoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTareaTipo">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTareaTipo">
               <MappingFragment StoreEntitySet="dtTareaTipo">
                 <ScalarProperty Name="TipoCode" ColumnName="TipoCode" />
                 <ScalarProperty Name="TipoNombre" ColumnName="TipoNombre" />
@@ -25891,7 +25794,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTarjetasCirculacionConcesiones">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTarjetasCirculacionConcesione">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTarjetasCirculacionConcesione">
               <MappingFragment StoreEntitySet="dtTarjetasCirculacionConcesiones">
                 <ScalarProperty Name="TarjetaCirculacionConcesionId" ColumnName="TarjetaCirculacionConcesionId" />
                 <ScalarProperty Name="Folio" ColumnName="Folio" />
@@ -25910,7 +25813,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTarjetonesConcesiones">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTarjetonesConcesione">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTarjetonesConcesione">
               <MappingFragment StoreEntitySet="dtTarjetonesConcesiones">
                 <ScalarProperty Name="TarjetonConcesionId" ColumnName="TarjetonConcesionId" />
                 <ScalarProperty Name="Folio" ColumnName="Folio" />
@@ -25929,7 +25832,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTarjetonesMercantiles">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTarjetonesMercantile">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTarjetonesMercantile">
               <MappingFragment StoreEntitySet="dtTarjetonesMercantiles">
                 <ScalarProperty Name="TartejetonMercantilId" ColumnName="TartejetonMercantilId" />
                 <ScalarProperty Name="Folio" ColumnName="Folio" />
@@ -25947,7 +25850,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTemplatePasos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTemplatePaso">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTemplatePaso">
               <MappingFragment StoreEntitySet="dtTemplatePasos">
                 <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -25959,7 +25862,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTemplatePasosTareas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTemplatePasosTarea">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTemplatePasosTarea">
               <MappingFragment StoreEntitySet="dtTemplatePasosTareas">
                 <ScalarProperty Name="PasoTareaId" ColumnName="PasoTareaId" />
                 <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
@@ -25968,7 +25871,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTerritorios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTerritorio">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTerritorio">
               <MappingFragment StoreEntitySet="dtTerritorio">
                 <ScalarProperty Name="TerritorioId" ColumnName="TerritorioId" />
                 <ScalarProperty Name="NombreTerritorio" ColumnName="NombreTerritorio" />
@@ -25980,7 +25883,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTickets">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTicket">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTicket">
               <MappingFragment StoreEntitySet="dtTicket">
                 <ScalarProperty Name="TicketId" ColumnName="TicketId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -26002,7 +25905,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTicketServicios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTicketServicio">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTicketServicio">
               <MappingFragment StoreEntitySet="dtTicketServicio">
                 <ScalarProperty Name="TicketServicioId" ColumnName="TicketServicioId" />
                 <ScalarProperty Name="SolicitanteId" ColumnName="SolicitanteId" />
@@ -26028,7 +25931,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTipoDomEnvios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTipoDomEnvio">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTipoDomEnvio">
               <MappingFragment StoreEntitySet="dtTipoDomEnvio">
                 <ScalarProperty Name="TipoDomEnvId" ColumnName="TipoDomEnvId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -26036,7 +25939,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTipoLicencias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTipoLicencia">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTipoLicencia">
               <MappingFragment StoreEntitySet="dtTipoLicencias">
                 <ScalarProperty Name="TipoLicenciaId" ColumnName="TipoLicenciaId" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -26053,7 +25956,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTipoMovimientoSols">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTipoMovimientoSol">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTipoMovimientoSol">
               <MappingFragment StoreEntitySet="dtTipoMovimientoSol">
                 <ScalarProperty Name="TipoMovId" ColumnName="TipoMovId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -26067,7 +25970,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTipoMovRequisitos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTipoMovRequisito">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTipoMovRequisito">
               <MappingFragment StoreEntitySet="dtTipoMovRequisitos">
                 <ScalarProperty Name="TipoMovReqId" ColumnName="TipoMovReqId" />
                 <ScalarProperty Name="TipoMovId" ColumnName="TipoMovId" />
@@ -26079,7 +25982,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTipoNominas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTipoNomina">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTipoNomina">
               <MappingFragment StoreEntitySet="dtTipoNomina">
                 <ScalarProperty Name="TipoNominaId" ColumnName="TipoNominaId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -26087,7 +25990,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTipoSubscripcions">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTipoSubscripcion">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTipoSubscripcion">
               <MappingFragment StoreEntitySet="dtTipoSubscripcion">
                 <ScalarProperty Name="TipoSubscripcionCode" ColumnName="TipoSubscripcionCode" />
                 <ScalarProperty Name="TipoNombre" ColumnName="TipoNombre" />
@@ -26096,7 +25999,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTitulosConcesiones">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTitulosConcesione">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTitulosConcesione">
               <MappingFragment StoreEntitySet="dtTitulosConcesiones">
                 <ScalarProperty Name="TituloConcesionId" ColumnName="TituloConcesionId" />
                 <ScalarProperty Name="Folio" ColumnName="Folio" />
@@ -26115,7 +26018,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTokens">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtToken">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtToken">
               <MappingFragment StoreEntitySet="dtToken">
                 <ScalarProperty Name="TokenId" ColumnName="TokenId" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
@@ -26127,7 +26030,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTokenLogins">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTokenLogin">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTokenLogin">
               <MappingFragment StoreEntitySet="dtTokenLogin">
                 <ScalarProperty Name="TokenId" ColumnName="TokenId" />
                 <ScalarProperty Name="Token" ColumnName="Token" />
@@ -26141,7 +26044,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTramites">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTramite">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTramite">
               <MappingFragment StoreEntitySet="dtTramites">
                 <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
                 <ScalarProperty Name="FolioAsignadoPlastico" ColumnName="FolioAsignadoPlastico" />
@@ -26296,14 +26199,11 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
                 <ScalarProperty Name="DescRobo" ColumnName="DescRobo" />
                 <ScalarProperty Name="DescExt" ColumnName="DescExt" />
                 <ScalarProperty Name="TiempoExt" ColumnName="TiempoExt" />
-                <ScalarProperty Name="MotivoRe" ColumnName="MotivoRe" />
-                <ScalarProperty Name="FVialis" ColumnName="FVialis" />
-                <ScalarProperty Name="EstatusH" ColumnName="EstatusH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtUnidadMeditas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtUnidadMedita">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtUnidadMedita">
               <MappingFragment StoreEntitySet="dtUnidadMedita">
                 <ScalarProperty Name="UnidadMedidaId" ColumnName="UnidadMedidaId" />
                 <ScalarProperty Name="UnidadMedidaDsc" ColumnName="UnidadMedidaDsc" />
@@ -26312,7 +26212,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtUsuarios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtUsuario">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtUsuario">
               <MappingFragment StoreEntitySet="dtUsuario">
                 <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -26347,7 +26247,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtUsuarioAreas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtUsuarioArea">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtUsuarioArea">
               <MappingFragment StoreEntitySet="dtUsuarioArea">
                 <ScalarProperty Name="UsuarioAreaId" ColumnName="UsuarioAreaId" />
                 <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
@@ -26356,7 +26256,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtUsuarioZonas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtUsuarioZona">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtUsuarioZona">
               <MappingFragment StoreEntitySet="dtUsuarioZona">
                 <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
                 <ScalarProperty Name="ZonaId" ColumnName="ZonaId" />
@@ -26365,7 +26265,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtValors">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtValor">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtValor">
               <MappingFragment StoreEntitySet="dtValor">
                 <ScalarProperty Name="ValorId" ColumnName="ValorId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -26374,7 +26274,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtVigencias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtVigencia">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtVigencia">
               <MappingFragment StoreEntitySet="dtVigencia">
                 <ScalarProperty Name="VigenciaId" ColumnName="VigenciaId" />
                 <ScalarProperty Name="TipoTramite" ColumnName="TipoTramite" />
@@ -26391,7 +26291,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtZonas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtZona">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtZona">
               <MappingFragment StoreEntitySet="dtZona">
                 <ScalarProperty Name="ZonaId" ColumnName="ZonaId" />
                 <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
@@ -26403,14 +26303,14 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Numbers">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.Number">
+            <EntityTypeMapping TypeName="LicHistoricoModel.Number">
               <MappingFragment StoreEntitySet="Numbers">
                 <ScalarProperty Name="Number1" ColumnName="Number" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="spfPadLicencias">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.spfPadLicencia">
+            <EntityTypeMapping TypeName="LicHistoricoModel.spfPadLicencia">
               <MappingFragment StoreEntitySet="spfPadLicencias">
                 <ScalarProperty Name="idPersona" ColumnName="idPersona" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -26427,19 +26327,8 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="dtBancos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtBanco">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtBanco">
               <MappingFragment StoreEntitySet="dtBancos">
                 <ScalarProperty Name="BancoId" ColumnName="BancoId" />
                 <ScalarProperty Name="Descripción" ColumnName="Descripción" />
@@ -26447,7 +26336,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtDocumentos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtDocumento">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtDocumento">
               <MappingFragment StoreEntitySet="dtDocumentos">
                 <ScalarProperty Name="Id_Documento" ColumnName="Id_Documento" />
                 <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
@@ -26472,7 +26361,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtEstadoCivils">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtEstadoCivil">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtEstadoCivil">
               <MappingFragment StoreEntitySet="dtEstadoCivil">
                 <ScalarProperty Name="EstadoCivilId" ColumnName="EstadoCivilId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -26480,7 +26369,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTipoEmpleadoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTipoEmpleado">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTipoEmpleado">
               <MappingFragment StoreEntitySet="dtTipoEmpleado">
                 <ScalarProperty Name="TipoEmpleadoId" ColumnName="TipoEmpleadoId" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -26488,7 +26377,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dtTipoMovPorProductoes">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.dtTipoMovPorProducto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTipoMovPorProducto">
               <MappingFragment StoreEntitySet="dtTipoMovPorProducto">
                 <ScalarProperty Name="RamoId" ColumnName="RamoId" />
                 <ScalarProperty Name="AseguradoraId" ColumnName="AseguradoraId" />
@@ -26501,7 +26390,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Queries">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.Query">
+            <EntityTypeMapping TypeName="LicHistoricoModel.Query">
               <MappingFragment StoreEntitySet="Query">
                 <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -26534,7 +26423,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="spfCatalogoGrals">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.spfCatalogoGral">
+            <EntityTypeMapping TypeName="LicHistoricoModel.spfCatalogoGral">
               <MappingFragment StoreEntitySet="spfCatalogoGral">
                 <ScalarProperty Name="NumeroCatalogo" ColumnName="NumeroCatalogo" />
                 <ScalarProperty Name="ClaveCatalogo" ColumnName="ClaveCatalogo" />
@@ -26545,7 +26434,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="spfFolios">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.spfFolio">
+            <EntityTypeMapping TypeName="LicHistoricoModel.spfFolio">
               <MappingFragment StoreEntitySet="spfFolios">
                 <ScalarProperty Name="Proceso" ColumnName="Proceso" />
                 <ScalarProperty Name="Folio" ColumnName="Folio" />
@@ -26554,7 +26443,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="spfLicenciasDigitales">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.spfLicenciasDigitale">
+            <EntityTypeMapping TypeName="LicHistoricoModel.spfLicenciasDigitale">
               <MappingFragment StoreEntitySet="spfLicenciasDigitales">
                 <ScalarProperty Name="FolioControl" ColumnName="FolioControl" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -26603,7 +26492,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="spfLicenciasDigitalesHists">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.spfLicenciasDigitalesHist">
+            <EntityTypeMapping TypeName="LicHistoricoModel.spfLicenciasDigitalesHist">
               <MappingFragment StoreEntitySet="spfLicenciasDigitalesHist">
                 <ScalarProperty Name="FolioControl" ColumnName="FolioControl" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -26642,7 +26531,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="spfLicenciasDigitalesTemps">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.spfLicenciasDigitalesTemp">
+            <EntityTypeMapping TypeName="LicHistoricoModel.spfLicenciasDigitalesTemp">
               <MappingFragment StoreEntitySet="spfLicenciasDigitalesTemp">
                 <ScalarProperty Name="FolioControl" ColumnName="FolioControl" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -26691,7 +26580,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="spfServiciosConceptos">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.spfServiciosConcepto">
+            <EntityTypeMapping TypeName="LicHistoricoModel.spfServiciosConcepto">
               <MappingFragment StoreEntitySet="spfServiciosConceptos">
                 <ScalarProperty Name="NumeroServicio" ColumnName="NumeroServicio" />
                 <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
@@ -26703,7 +26592,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ViewContactoContestadas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.ViewContactoContestada">
+            <EntityTypeMapping TypeName="LicHistoricoModel.ViewContactoContestada">
               <MappingFragment StoreEntitySet="ViewContactoContestadas">
                 <ScalarProperty Name="CampaniaId" ColumnName="CampaniaId" />
                 <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
@@ -26719,7 +26608,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ViewUbicacionesContestadas">
-            <EntityTypeMapping TypeName="LicenciasCH_Model.ViewUbicacionesContestada">
+            <EntityTypeMapping TypeName="LicHistoricoModel.ViewUbicacionesContestada">
               <MappingFragment StoreEntitySet="ViewUbicacionesContestadas">
                 <ScalarProperty Name="CampaniaId" ColumnName="CampaniaId" />
                 <ScalarProperty Name="Destinoid" ColumnName="Destinoid" />
@@ -26734,7 +26623,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="dtCorreoHistorialEmpresa" TypeName="LicenciasCH_Model.dtCorreoHistorialEmpresa" StoreEntitySet="dtCorreoHistorialEmpresa">
+          <AssociationSetMapping Name="dtCorreoHistorialEmpresa" TypeName="LicHistoricoModel.dtCorreoHistorialEmpresa" StoreEntitySet="dtCorreoHistorialEmpresa">
             <EndProperty Name="dtCorreoHistorial">
               <ScalarProperty Name="TrackId" ColumnName="TrackId" />
             </EndProperty>
@@ -26742,7 +26631,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="dtPuestoReporta" TypeName="LicenciasCH_Model.dtPuestoReporta" StoreEntitySet="dtPuestoReporta">
+          <AssociationSetMapping Name="dtPuestoReporta" TypeName="LicHistoricoModel.dtPuestoReporta" StoreEntitySet="dtPuestoReporta">
             <EndProperty Name="dtPuesto">
               <ScalarProperty Name="PuestoId" ColumnName="PuestoId" />
             </EndProperty>
@@ -26750,7 +26639,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               <ScalarProperty Name="PuestoId" ColumnName="PuestoPadreId" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="dtRolPermiso" TypeName="LicenciasCH_Model.dtRolPermiso" StoreEntitySet="dtRolPermiso">
+          <AssociationSetMapping Name="dtRolPermiso" TypeName="LicHistoricoModel.dtRolPermiso" StoreEntitySet="dtRolPermiso">
             <EndProperty Name="dtPermiso">
               <ScalarProperty Name="PermisoCode" ColumnName="PermisoCode" />
             </EndProperty>
@@ -26758,7 +26647,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               <ScalarProperty Name="RolId" ColumnName="RolId" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="dtTareaDependencia" TypeName="LicenciasCH_Model.dtTareaDependencia" StoreEntitySet="dtTareaDependencia">
+          <AssociationSetMapping Name="dtTareaDependencia" TypeName="LicHistoricoModel.dtTareaDependencia" StoreEntitySet="dtTareaDependencia">
             <EndProperty Name="dtTarea">
               <ScalarProperty Name="TareaId" ColumnName="TareaId" />
             </EndProperty>
@@ -26766,9 +26655,9 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               <ScalarProperty Name="TareaId" ColumnName="ParentTareaId" />
             </EndProperty>
           </AssociationSetMapping>
-          <FunctionImportMapping FunctionName="LicenciasCH_Model.Store.fnMailInbox" FunctionImportName="fnMailInbox">
+          <FunctionImportMapping FunctionName="LicHistoricoModel.Store.fnMailInbox" FunctionImportName="fnMailInbox">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="LicenciasCH_Model.fnMailInbox_Result">
+              <ComplexTypeMapping TypeName="LicHistoricoModel.fnMailInbox_Result">
                 <ScalarProperty Name="TrackId" ColumnName="TrackId" />
                 <ScalarProperty Name="EmailId" ColumnName="EmailId" />
                 <ScalarProperty Name="Subject" ColumnName="Subject" />
@@ -26783,37 +26672,13 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="CreateTempTables" FunctionName="LicenciasCH_Model.Store.CreateTempTables" />
-          <FunctionImportMapping FunctionImportName="DeleteExpiredSessions" FunctionName="LicenciasCH_Model.Store.DeleteExpiredSessions" />
-          <FunctionImportMapping FunctionImportName="GetHashCode" FunctionName="LicenciasCH_Model.Store.GetHashCode" />
-          <FunctionImportMapping FunctionImportName="GetMajorVersion" FunctionName="LicenciasCH_Model.Store.GetMajorVersion" />
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="LicenciasCH_Model.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="LicenciasCH_Model.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="LicenciasCH_Model.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="LicenciasCH_Model.Store.sp_helpdiagramdefinition">
+          <FunctionImportMapping FunctionImportName="CreateTempTables" FunctionName="LicHistoricoModel.Store.CreateTempTables" />
+          <FunctionImportMapping FunctionImportName="DeleteExpiredSessions" FunctionName="LicHistoricoModel.Store.DeleteExpiredSessions" />
+          <FunctionImportMapping FunctionImportName="GetHashCode" FunctionName="LicHistoricoModel.Store.GetHashCode" />
+          <FunctionImportMapping FunctionImportName="GetMajorVersion" FunctionName="LicHistoricoModel.Store.GetMajorVersion" />
+          <FunctionImportMapping FunctionImportName="sPConteoProductoSemanal" FunctionName="LicHistoricoModel.Store.sPConteoProductoSemanal">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="LicenciasCH_Model.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="LicenciasCH_Model.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="LicenciasCH_Model.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="LicenciasCH_Model.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="LicenciasCH_Model.Store.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="sPConteoProductoSemanal" FunctionName="LicenciasCH_Model.Store.sPConteoProductoSemanal">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="LicenciasCH_Model.sPConteoProductoSemanal_Result">
+              <ComplexTypeMapping TypeName="LicHistoricoModel.sPConteoProductoSemanal_Result">
                 <ScalarProperty Name="Product" ColumnName="Product" />
                 <ScalarProperty Name="Domingo" ColumnName="Domingo" />
                 <ScalarProperty Name="Lunes" ColumnName="Lunes" />
@@ -26826,11 +26691,11 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spProcesaLicencias" FunctionName="LicenciasCH_Model.Store.spProcesaLicencias" />
-          <FunctionImportMapping FunctionImportName="spProcesaMovimientos" FunctionName="LicenciasCH_Model.Store.spProcesaMovimientos" />
-          <FunctionImportMapping FunctionImportName="spSearchMail" FunctionName="LicenciasCH_Model.Store.spSearchMail">
+          <FunctionImportMapping FunctionImportName="spProcesaLicencias" FunctionName="LicHistoricoModel.Store.spProcesaLicencias" />
+          <FunctionImportMapping FunctionImportName="spProcesaMovimientos" FunctionName="LicHistoricoModel.Store.spProcesaMovimientos" />
+          <FunctionImportMapping FunctionImportName="spSearchMail" FunctionName="LicHistoricoModel.Store.spSearchMail">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="LicenciasCH_Model.spSearchMail_Result">
+              <ComplexTypeMapping TypeName="LicHistoricoModel.spSearchMail_Result">
                 <ScalarProperty Name="Subject" ColumnName="Subject" />
                 <ScalarProperty Name="Texto" ColumnName="Texto" />
                 <ScalarProperty Name="CorreoPara" ColumnName="CorreoPara" />
@@ -26843,9 +26708,9 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sPVentaProductoSemanal" FunctionName="LicenciasCH_Model.Store.sPVentaProductoSemanal">
+          <FunctionImportMapping FunctionImportName="sPVentaProductoSemanal" FunctionName="LicHistoricoModel.Store.sPVentaProductoSemanal">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="LicenciasCH_Model.sPVentaProductoSemanal_Result">
+              <ComplexTypeMapping TypeName="LicHistoricoModel.sPVentaProductoSemanal_Result">
                 <ScalarProperty Name="Product" ColumnName="Product" />
                 <ScalarProperty Name="Domingo" ColumnName="Domingo" />
                 <ScalarProperty Name="Lunes" ColumnName="Lunes" />
@@ -26858,28 +26723,28 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="TempGetAppID" FunctionName="LicenciasCH_Model.Store.TempGetAppID" />
-          <FunctionImportMapping FunctionImportName="TempGetStateItem" FunctionName="LicenciasCH_Model.Store.TempGetStateItem" />
-          <FunctionImportMapping FunctionImportName="TempGetStateItem2" FunctionName="LicenciasCH_Model.Store.TempGetStateItem2" />
-          <FunctionImportMapping FunctionImportName="TempGetStateItem3" FunctionName="LicenciasCH_Model.Store.TempGetStateItem3" />
-          <FunctionImportMapping FunctionImportName="TempGetStateItemExclusive" FunctionName="LicenciasCH_Model.Store.TempGetStateItemExclusive" />
-          <FunctionImportMapping FunctionImportName="TempGetStateItemExclusive2" FunctionName="LicenciasCH_Model.Store.TempGetStateItemExclusive2" />
-          <FunctionImportMapping FunctionImportName="TempGetStateItemExclusive3" FunctionName="LicenciasCH_Model.Store.TempGetStateItemExclusive3" />
-          <FunctionImportMapping FunctionImportName="TempGetVersion" FunctionName="LicenciasCH_Model.Store.TempGetVersion" />
-          <FunctionImportMapping FunctionImportName="TempInsertStateItemLong" FunctionName="LicenciasCH_Model.Store.TempInsertStateItemLong" />
-          <FunctionImportMapping FunctionImportName="TempInsertStateItemShort" FunctionName="LicenciasCH_Model.Store.TempInsertStateItemShort" />
-          <FunctionImportMapping FunctionImportName="TempInsertUninitializedItem" FunctionName="LicenciasCH_Model.Store.TempInsertUninitializedItem" />
-          <FunctionImportMapping FunctionImportName="TempReleaseStateItemExclusive" FunctionName="LicenciasCH_Model.Store.TempReleaseStateItemExclusive" />
-          <FunctionImportMapping FunctionImportName="TempRemoveStateItem" FunctionName="LicenciasCH_Model.Store.TempRemoveStateItem" />
-          <FunctionImportMapping FunctionImportName="TempResetTimeout" FunctionName="LicenciasCH_Model.Store.TempResetTimeout" />
-          <FunctionImportMapping FunctionImportName="TempUpdateStateItemLong" FunctionName="LicenciasCH_Model.Store.TempUpdateStateItemLong" />
-          <FunctionImportMapping FunctionImportName="TempUpdateStateItemLongNullShort" FunctionName="LicenciasCH_Model.Store.TempUpdateStateItemLongNullShort" />
-          <FunctionImportMapping FunctionImportName="TempUpdateStateItemShort" FunctionName="LicenciasCH_Model.Store.TempUpdateStateItemShort" />
-          <FunctionImportMapping FunctionImportName="TempUpdateStateItemShortNullLong" FunctionName="LicenciasCH_Model.Store.TempUpdateStateItemShortNullLong" />
-          <FunctionImportMapping FunctionImportName="uspConsLicenciaDigital" FunctionName="LicenciasCH_Model.Store.uspConsLicenciaDigital" />
-          <FunctionImportMapping FunctionImportName="uspConsultaLicencias" FunctionName="LicenciasCH_Model.Store.uspConsultaLicencias">
+          <FunctionImportMapping FunctionImportName="TempGetAppID" FunctionName="LicHistoricoModel.Store.TempGetAppID" />
+          <FunctionImportMapping FunctionImportName="TempGetStateItem" FunctionName="LicHistoricoModel.Store.TempGetStateItem" />
+          <FunctionImportMapping FunctionImportName="TempGetStateItem2" FunctionName="LicHistoricoModel.Store.TempGetStateItem2" />
+          <FunctionImportMapping FunctionImportName="TempGetStateItem3" FunctionName="LicHistoricoModel.Store.TempGetStateItem3" />
+          <FunctionImportMapping FunctionImportName="TempGetStateItemExclusive" FunctionName="LicHistoricoModel.Store.TempGetStateItemExclusive" />
+          <FunctionImportMapping FunctionImportName="TempGetStateItemExclusive2" FunctionName="LicHistoricoModel.Store.TempGetStateItemExclusive2" />
+          <FunctionImportMapping FunctionImportName="TempGetStateItemExclusive3" FunctionName="LicHistoricoModel.Store.TempGetStateItemExclusive3" />
+          <FunctionImportMapping FunctionImportName="TempGetVersion" FunctionName="LicHistoricoModel.Store.TempGetVersion" />
+          <FunctionImportMapping FunctionImportName="TempInsertStateItemLong" FunctionName="LicHistoricoModel.Store.TempInsertStateItemLong" />
+          <FunctionImportMapping FunctionImportName="TempInsertStateItemShort" FunctionName="LicHistoricoModel.Store.TempInsertStateItemShort" />
+          <FunctionImportMapping FunctionImportName="TempInsertUninitializedItem" FunctionName="LicHistoricoModel.Store.TempInsertUninitializedItem" />
+          <FunctionImportMapping FunctionImportName="TempReleaseStateItemExclusive" FunctionName="LicHistoricoModel.Store.TempReleaseStateItemExclusive" />
+          <FunctionImportMapping FunctionImportName="TempRemoveStateItem" FunctionName="LicHistoricoModel.Store.TempRemoveStateItem" />
+          <FunctionImportMapping FunctionImportName="TempResetTimeout" FunctionName="LicHistoricoModel.Store.TempResetTimeout" />
+          <FunctionImportMapping FunctionImportName="TempUpdateStateItemLong" FunctionName="LicHistoricoModel.Store.TempUpdateStateItemLong" />
+          <FunctionImportMapping FunctionImportName="TempUpdateStateItemLongNullShort" FunctionName="LicHistoricoModel.Store.TempUpdateStateItemLongNullShort" />
+          <FunctionImportMapping FunctionImportName="TempUpdateStateItemShort" FunctionName="LicHistoricoModel.Store.TempUpdateStateItemShort" />
+          <FunctionImportMapping FunctionImportName="TempUpdateStateItemShortNullLong" FunctionName="LicHistoricoModel.Store.TempUpdateStateItemShortNullLong" />
+          <FunctionImportMapping FunctionImportName="uspConsLicenciaDigital" FunctionName="LicHistoricoModel.Store.uspConsLicenciaDigital" />
+          <FunctionImportMapping FunctionImportName="uspConsultaLicencias" FunctionName="LicHistoricoModel.Store.uspConsultaLicencias">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="LicenciasCH_Model.uspConsultaLicencias_Result">
+              <ComplexTypeMapping TypeName="LicHistoricoModel.uspConsultaLicencias_Result">
                 <ScalarProperty Name="FotoLic" ColumnName="FotoLic" />
                 <ScalarProperty Name="NumeroLicencia" ColumnName="NumeroLicencia" />
                 <ScalarProperty Name="RFC" ColumnName="RFC" />
@@ -26922,10 +26787,10 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="uspFoleadorLicencias" FunctionName="LicenciasCH_Model.Store.uspFoleadorLicencias" />
-          <FunctionImportMapping FunctionImportName="uspLogin" FunctionName="LicenciasCH_Model.Store.uspLogin">
+          <FunctionImportMapping FunctionImportName="uspFoleadorLicencias" FunctionName="LicHistoricoModel.Store.uspFoleadorLicencias" />
+          <FunctionImportMapping FunctionImportName="uspLogin" FunctionName="LicHistoricoModel.Store.uspLogin">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="LicenciasCH_Model.uspLogin_Result">
+              <ComplexTypeMapping TypeName="LicHistoricoModel.uspLogin_Result">
                 <ScalarProperty Name="EstatusEjecucion" ColumnName="EstatusEjecucion" />
                 <ScalarProperty Name="MensajeCiudadano" ColumnName="MensajeCiudadano" />
                 <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
@@ -26937,9 +26802,9 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="uspReporteLicenciasEstatus" FunctionName="LicenciasCH_Model.Store.uspReporteLicenciasEstatus">
+          <FunctionImportMapping FunctionImportName="uspReporteLicenciasEstatus" FunctionName="LicHistoricoModel.Store.uspReporteLicenciasEstatus">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="LicenciasCH_Model.uspReporteLicenciasEstatus_Result">
+              <ComplexTypeMapping TypeName="LicHistoricoModel.uspReporteLicenciasEstatus_Result">
                 <ScalarProperty Name="Folio" ColumnName="Folio" />
                 <ScalarProperty Name="Estatus" ColumnName="Estatus" />
               </ComplexTypeMapping>
