@@ -25,85 +25,90 @@ namespace RegistroLicenciasChihuahua
         {
             InitializeComponent();
 
-
-            _context = new LicenciasCH_Entities();
-            cb_Tlicencia.DataSource = _context.dtTipoLicencias.Where(x => x.Activo == true).ToList();
-            Usuario = usuario;
-            CURPC = curp;
-
-            if (id != 0)
+            if (curp != "")
             {
-                txt_Id.Text = id.ToString();
-                CargarEdicion(id, bd);
-            }
-            else
-            {
-                txt_Curp.Text = CURPC;
-                txt_Fexpedicion.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
-                txt_Fantiguedad.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
+                _context = new LicenciasCH_Entities();
+                cb_Tlicencia.DataSource = _context.dtTipoLicencias.Where(x => x.Activo == true).ToList();
+                Usuario = usuario;
+                CURPC = curp;
 
-                string anio = CURPC.Substring(4, 2);
-                string mes = CURPC.Substring(6, 2);
-                string dia = CURPC.Substring(8, 2);
-                string fecha = dia + '-' + mes + '-' + anio;
-                txt_Fnacimiento.Text = fecha;
-                if (CURPC != "")
+                if (id != 0)
                 {
+                    txt_Id.Text = id.ToString();
+                    CargarEdicion(id, bd);
+                }
+                else
+                {
+                    txt_Curp.Text = CURPC;
+                    txt_Fexpedicion.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
+                    txt_Fantiguedad.Text = System.DateTime.Now.ToString("dd/MM/yyyy");
 
-                    _context = new LicenciasCH_Entities();
-                    ciudadano = (from d in _context.dtTramites
-                                 where d.Curp == txt_Curp.Text
-                                 select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
-
-                    if (ciudadano != null)
-                    {
-                        txt_Nombre.Text = ciudadano.Nombre;
-                        txt_ApellidoP.Text = ciudadano.ApellidoPaterno;
-                        txt_ApellidoM.Text = ciudadano.ApellidoMaterno;
-                        cb_Ecivil.Text = ciudadano.EstadoCivil;
-                        //  txt_Fnacimiento.Text = ciudadano.FechaNacimiento.Value.ToShortDateString();
-                        txt_Rfc.Text = ciudadano.RFC;
-                        cb_Sexo.Text = ciudadano.Sexo == "M" ? "Masculino" : "Femenino";
-                        cb_Nacionalidad.Text = ciudadano.Nacionalidad;
-                        cb_Tidentificacion.Text = ciudadano.TipoIdentificacion;
-                        txt_NoIdentificacion.Text = ciudadano.NoId;
-                        txt_Telefono.Text = ciudadano.Telefono;
-                        cb_ComprobanteDom.Text = ciudadano.ComporbanteDomicilio;
-                        txt_NoComprobante.Text = ciudadano.NoComprobante;
-                        txt_Ocupacion.Text = ciudadano.Ocupacion;
-                    }
-                    else
+                    string anio = CURPC.Substring(4, 2);
+                    string mes = CURPC.Substring(6, 2);
+                    string dia = CURPC.Substring(8, 2);
+                    string fecha = dia + '-' + mes + '-' + anio;
+                    txt_Fnacimiento.Text = fecha;
+                    if (CURPC != "")
                     {
 
-                        using (_contextHist = new LicHistoricoEntities())
+                        _context = new LicenciasCH_Entities();
+                        ciudadano = (from d in _context.dtTramites
+                                     where d.Curp == txt_Curp.Text
+                                     select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
+
+                        if (ciudadano != null)
+                        {
+                            txt_Nombre.Text = ciudadano.Nombre;
+                            txt_ApellidoP.Text = ciudadano.ApellidoPaterno;
+                            txt_ApellidoM.Text = ciudadano.ApellidoMaterno;
+                            cb_Ecivil.Text = ciudadano.EstadoCivil;
+                            //  txt_Fnacimiento.Text = ciudadano.FechaNacimiento.Value.ToShortDateString();
+                            txt_Rfc.Text = ciudadano.RFC;
+                            cb_Sexo.Text = ciudadano.Sexo == "M" ? "Masculino" : "Femenino";
+                            cb_Nacionalidad.Text = ciudadano.Nacionalidad;
+                            cb_Tidentificacion.Text = ciudadano.TipoIdentificacion;
+                            txt_NoIdentificacion.Text = ciudadano.NoId;
+                            txt_Telefono.Text = ciudadano.Telefono;
+                            cb_ComprobanteDom.Text = ciudadano.ComporbanteDomicilio;
+                            txt_NoComprobante.Text = ciudadano.NoComprobante;
+                            txt_Ocupacion.Text = ciudadano.Ocupacion;
+                        }
+                        else
                         {
 
-                            ciudadano = (from d in _contextHist.dtTramites
-                                         where d.Curp == txt_Curp.Text
-                                         select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
-                            if (ciudadano != null)
+                            using (_contextHist = new LicHistoricoEntities())
                             {
 
-                                txt_Nombre.Text = ciudadano.Nombre;
-                                txt_ApellidoP.Text = ciudadano.ApellidoPaterno;
-                                txt_ApellidoM.Text = ciudadano.ApellidoMaterno;
-                                cb_Ecivil.Text = ciudadano.EstadoCivil;
-                                //txt_Fnacimiento.Text = ciudadano.FechaNacimiento.Value.ToShortDateString();
-                                txt_Rfc.Text = ciudadano.RFC;
-                                cb_Sexo.Text = ciudadano.Sexo == "M" ? "Masculino" : "Femenino";
-                                cb_Nacionalidad.Text = ciudadano.Nacionalidad;
-                                cb_Tidentificacion.Text = ciudadano.TipoIdentificacion;
-                                txt_NoIdentificacion.Text = ciudadano.NoId;
-                                txt_Telefono.Text = ciudadano.Telefono;
-                                cb_ComprobanteDom.Text = ciudadano.ComporbanteDomicilio;
-                                txt_NoComprobante.Text = ciudadano.NoComprobante;
-                                txt_Ocupacion.Text = ciudadano.Ocupacion;
+                                ciudadano = (from d in _contextHist.dtTramites
+                                             where d.Curp == txt_Curp.Text
+                                             select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
+                                if (ciudadano != null)
+                                {
+
+                                    txt_Nombre.Text = ciudadano.Nombre;
+                                    txt_ApellidoP.Text = ciudadano.ApellidoPaterno;
+                                    txt_ApellidoM.Text = ciudadano.ApellidoMaterno;
+                                    cb_Ecivil.Text = ciudadano.EstadoCivil;
+                                    //txt_Fnacimiento.Text = ciudadano.FechaNacimiento.Value.ToShortDateString();
+                                    txt_Rfc.Text = ciudadano.RFC;
+                                    cb_Sexo.Text = ciudadano.Sexo == "M" ? "Masculino" : "Femenino";
+                                    cb_Nacionalidad.Text = ciudadano.Nacionalidad;
+                                    cb_Tidentificacion.Text = ciudadano.TipoIdentificacion;
+                                    txt_NoIdentificacion.Text = ciudadano.NoId;
+                                    txt_Telefono.Text = ciudadano.Telefono;
+                                    cb_ComprobanteDom.Text = ciudadano.ComporbanteDomicilio;
+                                    txt_NoComprobante.Text = ciudadano.NoComprobante;
+                                    txt_Ocupacion.Text = ciudadano.Ocupacion;
+                                }
                             }
                         }
                     }
                 }
             }
-
+            else
+            {
+                MessageBox.Show("Favor de ingresar datos correctos");
+            }
         }
 
 

@@ -241,7 +241,7 @@ namespace RegistroLicenciasChihuahua
                     lbl_RfcActual.Text = cdActual.RFC;
                     gb_DatoActual.Visible = true;
                     lbl_EditAct.Text = cdActual.TramiteId.ToString();
-
+                    txt_Curp.Text = cdActual.Curp;
 
                     code = Encriptar(lbl_EditAct.Text);
                     Qr(code);
@@ -289,6 +289,7 @@ namespace RegistroLicenciasChihuahua
                         lbl_Rfc.Text = cIUDADANO.RFC;
                         gb_DatoHisto.Visible = true;
                         lbl_EditHistorica.Text = cIUDADANO.TramiteId.ToString();
+                        txt_Curp.Text = cIUDADANO.Curp;
                         if (listcd.Count > 1)
                         {
                             //btn_Siguiente.Visible = true;

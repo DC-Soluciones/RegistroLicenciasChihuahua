@@ -65,11 +65,6 @@ namespace RegistroLicenciasChihuahua
             this.rFCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.municipioNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoTelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ladaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ben2NombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ben3PorcentajeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Tramites)).BeginInit();
@@ -244,12 +239,7 @@ namespace RegistroLicenciasChihuahua
             this.mensajePagoDataGridViewTextBoxColumn,
             this.rFCDataGridViewTextBoxColumn,
             this.fechaNacimientoDataGridViewTextBoxColumn,
-            this.municipioNDataGridViewTextBoxColumn,
-            this.tipoTelDataGridViewTextBoxColumn,
-            this.ladaDataGridViewTextBoxColumn,
-            this.ben2NombreDataGridViewTextBoxColumn,
-            this.ben3PorcentajeDataGridViewTextBoxColumn,
-            this.taxiDataGridViewCheckBoxColumn});
+            this.municipioNDataGridViewTextBoxColumn});
             this.gv_Tramites.DataSource = this.dtTramitesBindingSource;
             this.gv_Tramites.Location = new System.Drawing.Point(15, 148);
             this.gv_Tramites.Name = "gv_Tramites";
@@ -381,36 +371,6 @@ namespace RegistroLicenciasChihuahua
             this.municipioNDataGridViewTextBoxColumn.HeaderText = "MunicipioN";
             this.municipioNDataGridViewTextBoxColumn.Name = "municipioNDataGridViewTextBoxColumn";
             // 
-            // tipoTelDataGridViewTextBoxColumn
-            // 
-            this.tipoTelDataGridViewTextBoxColumn.DataPropertyName = "TipoTel";
-            this.tipoTelDataGridViewTextBoxColumn.HeaderText = "TipoTel";
-            this.tipoTelDataGridViewTextBoxColumn.Name = "tipoTelDataGridViewTextBoxColumn";
-            // 
-            // ladaDataGridViewTextBoxColumn
-            // 
-            this.ladaDataGridViewTextBoxColumn.DataPropertyName = "Lada";
-            this.ladaDataGridViewTextBoxColumn.HeaderText = "Lada";
-            this.ladaDataGridViewTextBoxColumn.Name = "ladaDataGridViewTextBoxColumn";
-            // 
-            // ben2NombreDataGridViewTextBoxColumn
-            // 
-            this.ben2NombreDataGridViewTextBoxColumn.DataPropertyName = "Ben2Nombre";
-            this.ben2NombreDataGridViewTextBoxColumn.HeaderText = "Ben2Nombre";
-            this.ben2NombreDataGridViewTextBoxColumn.Name = "ben2NombreDataGridViewTextBoxColumn";
-            // 
-            // ben3PorcentajeDataGridViewTextBoxColumn
-            // 
-            this.ben3PorcentajeDataGridViewTextBoxColumn.DataPropertyName = "Ben3Porcentaje";
-            this.ben3PorcentajeDataGridViewTextBoxColumn.HeaderText = "Ben3Porcentaje";
-            this.ben3PorcentajeDataGridViewTextBoxColumn.Name = "ben3PorcentajeDataGridViewTextBoxColumn";
-            // 
-            // taxiDataGridViewCheckBoxColumn
-            // 
-            this.taxiDataGridViewCheckBoxColumn.DataPropertyName = "Taxi";
-            this.taxiDataGridViewCheckBoxColumn.HeaderText = "Taxi";
-            this.taxiDataGridViewCheckBoxColumn.Name = "taxiDataGridViewCheckBoxColumn";
-            // 
             // Mistramites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,10 +430,5 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.DataGridViewTextBoxColumn rFCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimientoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn municipioNDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoTelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ladaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ben2NombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ben3PorcentajeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn taxiDataGridViewCheckBoxColumn;
     }
 }
