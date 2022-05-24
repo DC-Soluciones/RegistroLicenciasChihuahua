@@ -24,6 +24,7 @@ namespace RegistroLicenciasChihuahua
             using (_context = new LicenciasCH_Entities())
             {
                 var rol = _context.dtRols.Where(x => x.RolId == usuario.RolId).FirstOrDefault();
+                idUser = usuario.UsuarioId;
                 lbl_UserName.Text = usuario.NombreUsuario;
                 lbl_Rol.Text = rol.Rol;
                 userDashboard = usuario.NombreUsuario;
@@ -53,7 +54,7 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_mistramites_Click(object sender, EventArgs e)
         {
-            loadform(new Mistramites(RolUsuario, userDashboard));
+            loadform(new Mistramites(RolUsuario, idUser));
         }
 
         private void button1_Click(object sender, EventArgs e)

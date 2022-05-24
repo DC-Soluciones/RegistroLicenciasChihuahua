@@ -31,7 +31,7 @@ namespace RegistroLicenciasChihuahua
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mistramites));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,14 +58,14 @@ namespace RegistroLicenciasChihuahua
             this.fechaVencimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sexoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complexionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mensajePagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rFCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.municipioNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtTramitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licenciasCH_QADataSet = new RegistroLicenciasChihuahua.LicenciasCH_QADataSet();
             this.dtTramitesTableAdapter = new RegistroLicenciasChihuahua.LicenciasCH_QADataSetTableAdapters.dtTramitesTableAdapter();
+            this.dtp_Inicio = new System.Windows.Forms.DateTimePicker();
+            this.dtp_Fin = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Tramites)).BeginInit();
@@ -101,6 +101,8 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel1.Controls.Add(this.button1, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.button2, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.button3, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dtp_Inicio, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dtp_Fin, 4, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -141,21 +143,21 @@ namespace RegistroLicenciasChihuahua
             // 
             // txt_Busqueda
             // 
-            this.txt_Busqueda.Location = new System.Drawing.Point(3, 21);
+            this.txt_Busqueda.Location = new System.Drawing.Point(3, 29);
             this.txt_Busqueda.Name = "txt_Busqueda";
             this.txt_Busqueda.Size = new System.Drawing.Size(141, 20);
             this.txt_Busqueda.TabIndex = 5;
             // 
             // txt_Nombre
             // 
-            this.txt_Nombre.Location = new System.Drawing.Point(150, 21);
+            this.txt_Nombre.Location = new System.Drawing.Point(150, 29);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(141, 20);
             this.txt_Nombre.TabIndex = 6;
             // 
             // txt_Licencia
             // 
-            this.txt_Licencia.Location = new System.Drawing.Point(297, 21);
+            this.txt_Licencia.Location = new System.Drawing.Point(297, 29);
             this.txt_Licencia.Name = "txt_Licencia";
             this.txt_Licencia.Size = new System.Drawing.Size(141, 20);
             this.txt_Licencia.TabIndex = 7;
@@ -166,7 +168,7 @@ namespace RegistroLicenciasChihuahua
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(444, 21);
+            this.button1.Location = new System.Drawing.Point(444, 29);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 38);
             this.button1.TabIndex = 8;
@@ -182,7 +184,7 @@ namespace RegistroLicenciasChihuahua
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(551, 21);
+            this.button2.Location = new System.Drawing.Point(551, 29);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 38);
             this.button2.TabIndex = 9;
@@ -198,7 +200,7 @@ namespace RegistroLicenciasChihuahua
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(660, 21);
+            this.button3.Location = new System.Drawing.Point(660, 29);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 38);
             this.button3.TabIndex = 10;
@@ -221,14 +223,14 @@ namespace RegistroLicenciasChihuahua
             // gv_Tramites
             // 
             this.gv_Tramites.AutoGenerateColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gv_Tramites.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gv_Tramites.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gv_Tramites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gv_Tramites.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tramiteIdDataGridViewTextBoxColumn,
@@ -244,8 +246,6 @@ namespace RegistroLicenciasChihuahua
             this.fechaVencimientoDataGridViewTextBoxColumn,
             this.estatusDataGridViewTextBoxColumn,
             this.sexoDataGridViewTextBoxColumn,
-            this.complexionDataGridViewTextBoxColumn,
-            this.mensajePagoDataGridViewTextBoxColumn,
             this.rFCDataGridViewTextBoxColumn,
             this.fechaNacimientoDataGridViewTextBoxColumn,
             this.municipioNDataGridViewTextBoxColumn});
@@ -268,7 +268,7 @@ namespace RegistroLicenciasChihuahua
             // folioSeguimientoDataGridViewTextBoxColumn
             // 
             this.folioSeguimientoDataGridViewTextBoxColumn.DataPropertyName = "FolioSeguimiento";
-            this.folioSeguimientoDataGridViewTextBoxColumn.HeaderText = "FolioSeguimiento";
+            this.folioSeguimientoDataGridViewTextBoxColumn.HeaderText = "Folio Seguimiento";
             this.folioSeguimientoDataGridViewTextBoxColumn.Name = "folioSeguimientoDataGridViewTextBoxColumn";
             // 
             // curpDataGridViewTextBoxColumn
@@ -286,43 +286,43 @@ namespace RegistroLicenciasChihuahua
             // apellidoPaternoDataGridViewTextBoxColumn
             // 
             this.apellidoPaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoPaterno";
-            this.apellidoPaternoDataGridViewTextBoxColumn.HeaderText = "ApellidoPaterno";
+            this.apellidoPaternoDataGridViewTextBoxColumn.HeaderText = "Apellido Paterno";
             this.apellidoPaternoDataGridViewTextBoxColumn.Name = "apellidoPaternoDataGridViewTextBoxColumn";
             // 
             // apellidoMaternoDataGridViewTextBoxColumn
             // 
             this.apellidoMaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoMaterno";
-            this.apellidoMaternoDataGridViewTextBoxColumn.HeaderText = "ApellidoMaterno";
+            this.apellidoMaternoDataGridViewTextBoxColumn.HeaderText = "Apellido Materno";
             this.apellidoMaternoDataGridViewTextBoxColumn.Name = "apellidoMaternoDataGridViewTextBoxColumn";
             // 
             // tipoLicenciaDataGridViewTextBoxColumn
             // 
             this.tipoLicenciaDataGridViewTextBoxColumn.DataPropertyName = "TipoLicencia";
-            this.tipoLicenciaDataGridViewTextBoxColumn.HeaderText = "TipoLicencia";
+            this.tipoLicenciaDataGridViewTextBoxColumn.HeaderText = "Tipo de Licencia";
             this.tipoLicenciaDataGridViewTextBoxColumn.Name = "tipoLicenciaDataGridViewTextBoxColumn";
             // 
             // tipoTramiteDataGridViewTextBoxColumn
             // 
             this.tipoTramiteDataGridViewTextBoxColumn.DataPropertyName = "TipoTramite";
-            this.tipoTramiteDataGridViewTextBoxColumn.HeaderText = "TipoTramite";
+            this.tipoTramiteDataGridViewTextBoxColumn.HeaderText = "Tipo Tramite";
             this.tipoTramiteDataGridViewTextBoxColumn.Name = "tipoTramiteDataGridViewTextBoxColumn";
             // 
             // aniosVigenciaDataGridViewTextBoxColumn
             // 
             this.aniosVigenciaDataGridViewTextBoxColumn.DataPropertyName = "AniosVigencia";
-            this.aniosVigenciaDataGridViewTextBoxColumn.HeaderText = "AniosVigencia";
+            this.aniosVigenciaDataGridViewTextBoxColumn.HeaderText = "Años de Vigencia";
             this.aniosVigenciaDataGridViewTextBoxColumn.Name = "aniosVigenciaDataGridViewTextBoxColumn";
             // 
             // fechaExpedicionDataGridViewTextBoxColumn
             // 
             this.fechaExpedicionDataGridViewTextBoxColumn.DataPropertyName = "FechaExpedicion";
-            this.fechaExpedicionDataGridViewTextBoxColumn.HeaderText = "FechaExpedicion";
+            this.fechaExpedicionDataGridViewTextBoxColumn.HeaderText = "Fecha Expedicion";
             this.fechaExpedicionDataGridViewTextBoxColumn.Name = "fechaExpedicionDataGridViewTextBoxColumn";
             // 
             // fechaVencimientoDataGridViewTextBoxColumn
             // 
             this.fechaVencimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaVencimiento";
-            this.fechaVencimientoDataGridViewTextBoxColumn.HeaderText = "FechaVencimiento";
+            this.fechaVencimientoDataGridViewTextBoxColumn.HeaderText = "Fecha Vencimiento";
             this.fechaVencimientoDataGridViewTextBoxColumn.Name = "fechaVencimientoDataGridViewTextBoxColumn";
             // 
             // estatusDataGridViewTextBoxColumn
@@ -337,18 +337,6 @@ namespace RegistroLicenciasChihuahua
             this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
             this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
             // 
-            // complexionDataGridViewTextBoxColumn
-            // 
-            this.complexionDataGridViewTextBoxColumn.DataPropertyName = "Complexion";
-            this.complexionDataGridViewTextBoxColumn.HeaderText = "Complexion";
-            this.complexionDataGridViewTextBoxColumn.Name = "complexionDataGridViewTextBoxColumn";
-            // 
-            // mensajePagoDataGridViewTextBoxColumn
-            // 
-            this.mensajePagoDataGridViewTextBoxColumn.DataPropertyName = "MensajePago";
-            this.mensajePagoDataGridViewTextBoxColumn.HeaderText = "MensajePago";
-            this.mensajePagoDataGridViewTextBoxColumn.Name = "mensajePagoDataGridViewTextBoxColumn";
-            // 
             // rFCDataGridViewTextBoxColumn
             // 
             this.rFCDataGridViewTextBoxColumn.DataPropertyName = "RFC";
@@ -358,13 +346,13 @@ namespace RegistroLicenciasChihuahua
             // fechaNacimientoDataGridViewTextBoxColumn
             // 
             this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
-            this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "Fecha Nacimiento";
             this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
             // 
             // municipioNDataGridViewTextBoxColumn
             // 
             this.municipioNDataGridViewTextBoxColumn.DataPropertyName = "MunicipioN";
-            this.municipioNDataGridViewTextBoxColumn.HeaderText = "MunicipioN";
+            this.municipioNDataGridViewTextBoxColumn.HeaderText = "Municipio";
             this.municipioNDataGridViewTextBoxColumn.Name = "municipioNDataGridViewTextBoxColumn";
             // 
             // dtTramitesBindingSource
@@ -380,6 +368,20 @@ namespace RegistroLicenciasChihuahua
             // dtTramitesTableAdapter
             // 
             this.dtTramitesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dtp_Inicio
+            // 
+            this.dtp_Inicio.Location = new System.Drawing.Point(444, 3);
+            this.dtp_Inicio.Name = "dtp_Inicio";
+            this.dtp_Inicio.Size = new System.Drawing.Size(101, 20);
+            this.dtp_Inicio.TabIndex = 11;
+            // 
+            // dtp_Fin
+            // 
+            this.dtp_Fin.Location = new System.Drawing.Point(551, 3);
+            this.dtp_Fin.Name = "dtp_Fin";
+            this.dtp_Fin.Size = new System.Drawing.Size(103, 20);
+            this.dtp_Fin.TabIndex = 12;
             // 
             // Mistramites
             // 
@@ -435,10 +437,10 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaVencimientoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn complexionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mensajePagoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rFCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimientoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn municipioNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DateTimePicker dtp_Inicio;
+        private System.Windows.Forms.DateTimePicker dtp_Fin;
     }
 }
