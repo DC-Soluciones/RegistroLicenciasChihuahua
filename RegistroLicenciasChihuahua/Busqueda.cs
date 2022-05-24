@@ -74,13 +74,13 @@ namespace RegistroLicenciasChihuahua
 
 
                 var licenciasact = (from d in _context.dtTramites
-                                where d.Curp == txt_Curp.Text
+                                where d.Curp == txt_Curp.Text  && d.FechaVencimiento > System.DateTime.Now
                                 select d).OrderByDescending(x => x.FechaCreacion).ToList();
                 foreach(var l in licenciasact)
                 {
                     var tplic = _context.dtTipoLicencias.Where(x => x.Clave == l.TipoLicencia).FirstOrDefault();
                     
-                    tbc_actual.TabPages.Add(l.NumeroLicencia,  tplic.Nombre);
+                    tbc_actual.TabPages.Add(l.TramiteId.ToString(),  tplic.Nombre);
                 }
 
                 var cdActual = (from d in _context.dtTramites
@@ -267,7 +267,48 @@ namespace RegistroLicenciasChihuahua
 
         private void tbc_actual_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int currentTab = tbc_actual.SelectedIndex;
+            int tabName = Convert.ToInt32(tbc_actual.TabPages[currentTab].Name);
+            _context = new LicenciasCH_Entities();
 
+            var cdActual = (from d in _context.dtTramites
+                            where d.TramiteId == tabName
+                            select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
+
+            if (cdActual != null)
+            {
+                pnl_noRegistro.Visible = false;
+                pnl_registro.Visible = true;
+                txt_Nombre.Text = cdActual.Nombre;
+                txt_ApellidoP.Text = cdActual.ApellidoPaterno;
+                txt_ApellidoM.Text = cdActual.ApellidoMaterno;
+
+                lbl_NombreActual.Text = cdActual.Nombre + " " + cdActual.ApellidoPaterno + " " + cdActual.ApellidoMaterno;
+                lbl_NoLicActual.Text = cdActual.NumeroLicencia;
+                lbl_LicActual.Text = cdActual.TipoLicencia;
+                lbl_StatusActual.Text = cdActual.Estatus;
+                lbl_VigenciaActual.Text = cdActual.AniosVigencia.ToString();
+                lbl_ExpedicionActual.Text = cdActual.FechaExpedicion.Value.ToShortDateString();
+                lbl_VencimientoActual.Text = cdActual.FechaVencimiento.Value.ToShortDateString();
+                lbl_RfcActual.Text = cdActual.RFC;
+                gb_DatoActual.Visible = true;
+                txt_actual.Visible = false;
+                lbl_EditAct.Text = cdActual.TramiteId.ToString();
+                try
+                {
+                    MemoryStream ms = new MemoryStream(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
+                    ms.Write(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
+                    Image returnImage = Image.FromStream(ms, true);
+                    pb_Ciudadano.Image = returnImage;
+                    pb_Ciudadano.Visible = true;
+                }
+                catch
+                {
+                    pb_Ciudadano.Image = null; pb_Ciudadano.Visible = false;
+                }
+
+   
+            }
         }
     }
 }
