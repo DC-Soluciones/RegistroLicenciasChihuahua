@@ -27,8 +27,13 @@ namespace RegistroLicenciasChihuahua
 
             if (curp != "")
             {
-                _context = new LicenciasCH_Entities();
-                cb_Tlicencia.DataSource = _context.dtTipoLicencias.Where(x => x.Activo == true).ToList();
+                using (var _context = new LicenciasCH_Entities())
+                {
+                    cb_Tlicencia.DataSource = _context.dtTipoLicencias.Where(x => x.Activo == true).ToList();
+                    cb_Municipio.DataSource = _context.dtMunicipios.Where(x => x.EstadoId == 30).ToList();
+                    cb_Municipio.DisplayMember = "MunicipioNombre";
+                    cb_Municipio.ValueMember = "MunicipioId";
+                }
                 Usuario = usuario;
                 CURPC = curp;
 
@@ -206,7 +211,7 @@ namespace RegistroLicenciasChihuahua
             txt_NoInterior.Text = ciudadano.NoInterior;
             txt_CP.Text = ciudadano.CodigoPostal;
             cb_Estado.Text = ciudadano.EstadoN;
-            cb_Municipio.SelectedText = ciudadano.MunicipioN;
+            cb_Municipio.Text = ciudadano.MunicipioN;
             txt_Colonia.Text = ciudadano.ColoniaN;
             txt_NTutor.Text = ciudadano.NombreTutor;
             txt_APTutor.Text = ciudadano.APaternoTutor;
