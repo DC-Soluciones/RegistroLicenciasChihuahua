@@ -77,6 +77,8 @@ namespace RegistroLicenciasChihuahua
 
                 if (cdActual != null)
                 {
+                    pnl_noRegistro.Visible = false;
+                    pnl_registro.Visible = true;
                     txt_Nombre.Text = cdActual.Nombre;
                     txt_ApellidoP.Text = cdActual.ApellidoPaterno;
                     txt_ApellidoM.Text = cdActual.ApellidoMaterno;
@@ -90,6 +92,7 @@ namespace RegistroLicenciasChihuahua
                     lbl_VencimientoActual.Text = cdActual.FechaVencimiento.Value.ToShortDateString();
                     lbl_RfcActual.Text = cdActual.RFC;
                     gb_DatoActual.Visible = true;
+                    txt_actual.Visible = false;
                     lbl_EditAct.Text = cdActual.TramiteId.ToString();
                     try
                     {
@@ -111,7 +114,9 @@ namespace RegistroLicenciasChihuahua
                 }
                 else
                 {
+                    pnl_noRegistro.Visible = true;
                     gb_DatoActual.Visible = false;
+                    txt_actual.Visible = true;
                     //btn_LeerQ3.Visible = false;
                     //pictureBox1.Visible = false;
                 }
@@ -161,6 +166,7 @@ namespace RegistroLicenciasChihuahua
                     }
                     else
                     {
+                        txt_historica.Visible = true;
                         gb_DatoHisto.Visible = false;
                     }
 
