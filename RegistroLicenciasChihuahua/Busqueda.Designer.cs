@@ -31,6 +31,7 @@ namespace RegistroLicenciasChihuahua
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Busqueda));
             this.panelbusqueda = new System.Windows.Forms.Panel();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
             this.pnl_registro = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pb_Ciudadano = new System.Windows.Forms.PictureBox();
@@ -90,7 +91,6 @@ namespace RegistroLicenciasChihuahua
             this.txt_ApellidoM = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
             this.panelbusqueda.SuspendLayout();
             this.pnl_registro.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -105,7 +105,6 @@ namespace RegistroLicenciasChihuahua
             // 
             // panelbusqueda
             // 
-            this.panelbusqueda.Controls.Add(this.btn_Limpiar);
             this.panelbusqueda.Controls.Add(this.pnl_registro);
             this.panelbusqueda.Controls.Add(this.pnl_noRegistro);
             this.panelbusqueda.Controls.Add(this.tableLayoutPanel1);
@@ -115,6 +114,22 @@ namespace RegistroLicenciasChihuahua
             this.panelbusqueda.Name = "panelbusqueda";
             this.panelbusqueda.Size = new System.Drawing.Size(1496, 800);
             this.panelbusqueda.TabIndex = 0;
+            // 
+            // btn_Limpiar
+            // 
+            this.btn_Limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(64)))), ((int)(((byte)(115)))));
+            this.btn_Limpiar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Limpiar.ForeColor = System.Drawing.Color.White;
+            this.btn_Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.Image")));
+            this.btn_Limpiar.Location = new System.Drawing.Point(985, 37);
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.Size = new System.Drawing.Size(131, 39);
+            this.btn_Limpiar.TabIndex = 35;
+            this.btn_Limpiar.Text = "Limpiar";
+            this.btn_Limpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Limpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // pnl_registro
             // 
@@ -126,7 +141,7 @@ namespace RegistroLicenciasChihuahua
             this.pnl_registro.Controls.Add(this.panel2);
             this.pnl_registro.Controls.Add(this.lbl_Nombre);
             this.pnl_registro.Controls.Add(this.label13);
-            this.pnl_registro.Location = new System.Drawing.Point(13, 161);
+            this.pnl_registro.Location = new System.Drawing.Point(12, 217);
             this.pnl_registro.Name = "pnl_registro";
             this.pnl_registro.Size = new System.Drawing.Size(1319, 600);
             this.pnl_registro.TabIndex = 34;
@@ -629,7 +644,7 @@ namespace RegistroLicenciasChihuahua
             // 
             this.pnl_noRegistro.Controls.Add(this.label15);
             this.pnl_noRegistro.Controls.Add(this.btn_nuevoregistro);
-            this.pnl_noRegistro.Location = new System.Drawing.Point(450, 105);
+            this.pnl_noRegistro.Location = new System.Drawing.Point(446, 143);
             this.pnl_noRegistro.Name = "pnl_noRegistro";
             this.pnl_noRegistro.Size = new System.Drawing.Size(454, 68);
             this.pnl_noRegistro.TabIndex = 32;
@@ -663,7 +678,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 9;
+            this.tableLayoutPanel1.ColumnCount = 10;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -673,6 +688,7 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txt_Curp, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
@@ -681,13 +697,15 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel1.Controls.Add(this.txt_ApellidoP, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.txt_ApellidoM, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 8, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 6, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btn_Limpiar, 7, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 56);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1315, 43);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1421, 81);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // label2
@@ -753,7 +771,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // txt_ApellidoM
             // 
-            this.txt_ApellidoM.Location = new System.Drawing.Point(975, 3);
+            this.txt_ApellidoM.Location = new System.Drawing.Point(985, 3);
             this.txt_ApellidoM.Name = "txt_ApellidoM";
             this.txt_ApellidoM.Size = new System.Drawing.Size(200, 20);
             this.txt_ApellidoM.TabIndex = 7;
@@ -764,7 +782,7 @@ namespace RegistroLicenciasChihuahua
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1181, 3);
+            this.button1.Location = new System.Drawing.Point(848, 37);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 37);
             this.button1.TabIndex = 8;
@@ -783,21 +801,6 @@ namespace RegistroLicenciasChihuahua
             this.label1.Size = new System.Drawing.Size(200, 19);
             this.label1.TabIndex = 7;
             this.label1.Text = "Búsqueda del ciudadano";
-            // 
-            // btn_Limpiar
-            // 
-            this.btn_Limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(9)))), ((int)(((byte)(115)))));
-            this.btn_Limpiar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Limpiar.ForeColor = System.Drawing.Color.White;
-            this.btn_Limpiar.Location = new System.Drawing.Point(1201, 118);
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.Size = new System.Drawing.Size(131, 37);
-            this.btn_Limpiar.TabIndex = 35;
-            this.btn_Limpiar.Text = "Limpiar";
-            this.btn_Limpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Limpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // Busqueda
             // 
