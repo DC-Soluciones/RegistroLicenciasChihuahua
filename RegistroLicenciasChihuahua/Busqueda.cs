@@ -40,15 +40,22 @@ namespace RegistroLicenciasChihuahua
         }
         private void btn_nuevoregistro_Click(object sender, EventArgs e)
         {
-            if (this.panelbusqueda.Controls.Count > 0)
-                this.panelbusqueda.Controls.RemoveAt(0);
-            Registro registro = new Registro(txt_Curp.Text, usuario, 0, "");
-            registro.TopLevel = false;
-            registro.Dock = DockStyle.Fill;
-            panelbusqueda.Controls.Clear();
-            panelbusqueda.Controls.Add(registro);
-            panelbusqueda.Tag = registro;
-            registro.Show();
+            if (txt_Curp.Text != "")
+            {
+                if (this.panelbusqueda.Controls.Count > 0)
+                    this.panelbusqueda.Controls.RemoveAt(0);
+                Registro registro = new Registro(txt_Curp.Text, usuario, 0, "");
+                registro.TopLevel = false;
+                registro.Dock = DockStyle.Fill;
+                panelbusqueda.Controls.Clear();
+                panelbusqueda.Controls.Add(registro);
+                panelbusqueda.Tag = registro;
+                registro.Show();
+            }
+            else
+            {
+                MessageBox.Show("Favor de ingresar datos correctos");
+            }
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -84,10 +91,21 @@ namespace RegistroLicenciasChihuahua
                     lbl_RfcActual.Text = cdActual.RFC;
                     gb_DatoActual.Visible = true;
                     lbl_EditAct.Text = cdActual.TramiteId.ToString();
+                    try
+                    {
+                        MemoryStream ms = new MemoryStream(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
+                        ms.Write(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
+                        Image returnImage = Image.FromStream(ms, true);
+                        pb_Ciudadano.Image = returnImage;
+                        pb_Ciudadano.Visible = true;
+                    }
+                    catch
+                    {
+                        pb_Ciudadano.Image = null; pb_Ciudadano.Visible = false;
+                    }
 
-
-                    code = Encriptar(lbl_EditAct.Text);
-                    Qr(code);
+                    //code = Encriptar(lbl_EditAct.Text);
+                    //Qr(code);
                     //btn_LeerQ3.Visible = true;
                     //var codedes = DesEncriptar(code);
                 }
@@ -123,6 +141,19 @@ namespace RegistroLicenciasChihuahua
                         lbl_Rfc.Text = cIUDADANO.RFC;
                         gb_DatoHisto.Visible = true;
                         lbl_EditHistorica.Text = cIUDADANO.TramiteId.ToString();
+                        try
+                        {
+                            MemoryStream ms = new MemoryStream(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
+                            ms.Write(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
+                            Image returnImage = Image.FromStream(ms, true);
+                            pb_Ciudadano.Image = returnImage;
+                            pb_Ciudadano.Visible = true;
+                        }
+                        catch
+                        {
+                            pb_Ciudadano.Image = null;
+                            pb_Ciudadano.Visible = false;
+                        }
                         if (listcd.Count > 1)
                         {
                             //btn_Siguiente.Visible = true;
