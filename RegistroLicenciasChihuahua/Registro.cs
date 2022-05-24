@@ -392,15 +392,21 @@ namespace RegistroLicenciasChihuahua
             using (_context = new LicenciasCH_Entities())
             {
                 int vigid = Convert.ToInt32(cb_Vigencia.SelectedValue);
+                int vig = _context.dtVigencias.Where(x => x.VigenciaId == vigid).Select(x => x.AniosVigencia).FirstOrDefault().Value;
+
                 var impo = _context.dtImportes.Where(x => x.VigenciaId == vigid).FirstOrDefault();
-                if (impo != null)
+
+                txt_Importe.Text = impo.Monto.ToString("0.00");
+                if (txt_Fexpedicion.Text != "")
                 {
-                    txt_Importe.Text = impo.Monto.ToString("0.00");
+                    DateTime exp = Convert.ToDateTime(txt_Fexpedicion.Text);
+                    txt_Fvencimiento.Text = exp.AddYears(vig).ToString("dd/MM/yyyy");
                 }
                 else
                 {
-                    txt_Importe.Text = "";
+                    txt_Fvencimiento.Text = System.DateTime.Now.AddYears(vig).ToString("dd/MM/yyyy");
                 }
+              
             }
         }
 
@@ -638,89 +644,91 @@ namespace RegistroLicenciasChihuahua
 
                 var anv = _context.dtVigencias.Where(x => x.Nombre == cb_Vigencia.Text).FirstOrDefault();
 
-
-                dtramite.TipoLicencia = cb_Tlicencia.SelectedValue.ToString();
-                if (cb_Ttramite.SelectedItem.ToString() == "Nueva")
-                {
-                    dtramite.TipoTramite = "E";
-                }
-                if (cb_Ttramite.SelectedItem.ToString() == "Reposición")
-                {
-                    dtramite.TipoTramite = "R";
-                }
-                if (cb_Ttramite.SelectedItem.ToString() == "Renovación")
-                {
-                    dtramite.TipoTramite = "C";
-                }
-                if (cb_Ttramite.SelectedItem.ToString() == "Reimpresión")
-                {
-                    dtramite.TipoTramite = "I";
-                }
-                if (cb_Ttramite.SelectedItem.ToString() == "Robo")
-                {
-                    dtramite.TipoTramite = "O";
-                }
-                if (cb_Ttramite.SelectedItem.ToString() == "Extravio")
-                {
-                    dtramite.TipoTramite = "X";
-                }
-                dtramite.UsuarioCreador = Convert.ToInt32(usId);
-                // dtramite.TipoTramite = Convert.ToString(cb_Ttramite.SelectedValue);
-                dtramite.AniosVigencia = Convert.ToInt32(cb_Vigencia.SelectedValue);
-                dtramite.Importe = Convert.ToDecimal(txt_Importe.Text);
-                dtramite.FolioSeguimiento = txt_Folio.Text;
-                dtramite.FechaExpedicion = DateTime.Parse(txt_Fexpedicion.Text);
-                dtramite.FechaVencimiento = DateTime.Parse(txt_Fvencimiento.Text);
-                dtramite.FechaAntiguedad = txt_Fantiguedad.Text != "" ? DateTime.Parse(txt_Fantiguedad.Text) : DateTime.Parse(System.DateTime.Now.ToString());
-                dtramite.LicenciaAnterior = txt_Licanterior.Text;
-                dtramite.Nombre = txt_Nombre.Text;
-                dtramite.ApellidoPaterno = txt_ApellidoP.Text;
-                dtramite.ApellidoMaterno = txt_ApellidoM.Text;
-                dtramite.FechaCreacion = DateTime.Parse(System.DateTime.Now.ToString());
-                if (cb_Sexo.Text == "Masculino")
-                {
-                    dtramite.Sexo = "M";
-                }
-                if (cb_Sexo.Text == "Femenino")
-                {
-                    dtramite.Sexo = "F";
-                }
-                if (cb_Sexo.Text == "Otro")
-                {
-                    dtramite.Sexo = "O";
-                }
-                dtramite.DestinoId = 29;//iduser.Modulo;
-                                        //revisar generacion
-                                        //dtramite.FolioSeguimiento = dtramite.TramiteId.ToString().PadLeft(8, '0');
-                dtramite.Curp = txt_Curp.Text;
-                dtramite.FechaNacimiento = DateTime.Parse(txt_Fnacimiento.Text);
-                dtramite.RFC = txt_Rfc.Text;
-                dtramite.EstadoCivil = cb_Ecivil.SelectedItem.ToString();
-                dtramite.Nacionalidad = cb_Nacionalidad.SelectedItem.ToString();
-                dtramite.Telefono = txt_Telefono.Text;
-                dtramite.Ocupacion = txt_Ocupacion.Text;
-                dtramite.TipoIdentificacion = cb_Tidentificacion.SelectedItem.ToString();
-                dtramite.NoId = txt_NoIdentificacion.Text;
-                dtramite.ComporbanteDomicilio = cb_ComprobanteDom.SelectedItem.ToString();
-                dtramite.NoComprobante = txt_NoComprobante.Text;
-                dtramite.Ben1Nombre = txt_NContacto.Text;
-                dtramite.Ben1AMaterno = txt_AMContacto.Text;
-                dtramite.Ben1APaterno = txt_APContacto.Text;
-                dtramite.TipoTel = txt_TelContacto.Text;
-                dtramite.Calle = txt_Calle.Text;
-                dtramite.NoExterior = txt_NoExterior.Text;
-                dtramite.NoInterior = txt_NoInterior.Text;
-                dtramite.CodigoPostal = txt_CP.Text;
-                dtramite.EstadoN = cb_Estado.SelectedItem.ToString();
-                dtramite.MunicipioN = cb_Municipio.Text;
-                dtramite.ColoniaN = txt_Colonia.Text;
-                dtramite.NombreTutor = txt_NTutor.Text;
-                dtramite.APaternoTutor = txt_APTutor.Text;
-                dtramite.AMaternoTutor = txt_AMTutor.Text;
-                dtramite.Estatus = "Registro";
-                dtramite.FechaEstatus = DateTime.Parse(txt_Fnacimiento.Text);
                 try
                 {
+                        dtramite.TipoLicencia = cb_Tlicencia.SelectedValue.ToString();
+                    if (cb_Ttramite.SelectedItem.ToString() == "Nueva")
+                    {
+                        dtramite.TipoTramite = "E";
+                    }
+                    if (cb_Ttramite.SelectedItem.ToString() == "Reposición")
+                    {
+                        dtramite.TipoTramite = "R";
+                    }
+                    if (cb_Ttramite.SelectedItem.ToString() == "Renovación")
+                    {
+                        dtramite.TipoTramite = "C";
+                    }
+                    if (cb_Ttramite.SelectedItem.ToString() == "Reimpresión")
+                    {
+                        dtramite.TipoTramite = "I";
+                    }
+                    if (cb_Ttramite.SelectedItem.ToString() == "Robo")
+                    {
+                        dtramite.TipoTramite = "O";
+                    }
+                    if (cb_Ttramite.SelectedItem.ToString() == "Extravio")
+                    {
+                        dtramite.TipoTramite = "X";
+                    }
+                    dtramite.UsuarioCreador = Convert.ToInt32(usId);
+                    int idv = Convert.ToInt32(cb_Vigencia.SelectedValue.ToString());
+                    var aniosvig = _context.dtVigencias.Where(x => x.VigenciaId == idv).FirstOrDefault();
+                    // dtramite.TipoTramite = Convert.ToString(cb_Ttramite.SelectedValue);
+                    dtramite.AniosVigencia = aniosvig.AniosVigencia.Value;
+                    dtramite.Importe = Convert.ToDecimal(txt_Importe.Text);
+                    dtramite.FolioSeguimiento = txt_Folio.Text;
+                    dtramite.FechaExpedicion = DateTime.Parse(txt_Fexpedicion.Text);
+                    dtramite.FechaVencimiento = DateTime.Parse(txt_Fvencimiento.Text);
+                    dtramite.FechaAntiguedad = txt_Fantiguedad.Text != "" ? DateTime.Parse(txt_Fantiguedad.Text) : DateTime.Parse(System.DateTime.Now.ToString());
+                    dtramite.LicenciaAnterior = txt_Licanterior.Text;
+                    dtramite.Nombre = txt_Nombre.Text;
+                    dtramite.ApellidoPaterno = txt_ApellidoP.Text;
+                    dtramite.ApellidoMaterno = txt_ApellidoM.Text;
+                    dtramite.FechaCreacion = DateTime.Parse(System.DateTime.Now.ToString());
+                    if (cb_Sexo.Text == "Masculino")
+                    {
+                        dtramite.Sexo = "M";
+                    }
+                    if (cb_Sexo.Text == "Femenino")
+                    {
+                        dtramite.Sexo = "F";
+                    }
+                    if (cb_Sexo.Text == "Otro")
+                    {
+                        dtramite.Sexo = "O";
+                    }
+                    dtramite.DestinoId = 29;//iduser.Modulo;
+                                            //revisar generacion
+                                            //dtramite.FolioSeguimiento = dtramite.TramiteId.ToString().PadLeft(8, '0');
+                    dtramite.Curp = txt_Curp.Text;
+                    dtramite.FechaNacimiento = DateTime.Parse(txt_Fnacimiento.Text);
+                    dtramite.RFC = txt_Rfc.Text;
+                    dtramite.EstadoCivil = cb_Ecivil.SelectedItem.ToString();
+                    dtramite.Nacionalidad = cb_Nacionalidad.SelectedItem.ToString();
+                    dtramite.Telefono = txt_Telefono.Text;
+                    dtramite.Ocupacion = txt_Ocupacion.Text;
+                    dtramite.TipoIdentificacion = cb_Tidentificacion.SelectedItem.ToString();
+                    dtramite.NoId = txt_NoIdentificacion.Text;
+                        dtramite.ComporbanteDomicilio = cb_ComprobanteDom.Text;
+                    dtramite.NoComprobante = txt_NoComprobante.Text;
+                    dtramite.Ben1Nombre = txt_NContacto.Text;
+                    dtramite.Ben1AMaterno = txt_AMContacto.Text;
+                    dtramite.Ben1APaterno = txt_APContacto.Text;
+                    dtramite.TipoTel = txt_TelContacto.Text;
+                    dtramite.Calle = txt_Calle.Text;
+                    dtramite.NoExterior = txt_NoExterior.Text;
+                    dtramite.NoInterior = txt_NoInterior.Text;
+                    dtramite.CodigoPostal = txt_CP.Text;
+                    dtramite.EstadoN = cb_Estado.SelectedItem.ToString();
+                    dtramite.MunicipioN = cb_Municipio.Text;
+                    dtramite.ColoniaN = txt_Colonia.Text;
+                    dtramite.NombreTutor = txt_NTutor.Text;
+                    dtramite.APaternoTutor = txt_APTutor.Text;
+                    dtramite.AMaternoTutor = txt_AMTutor.Text;
+                    dtramite.Estatus = "Registro";
+                    dtramite.FechaEstatus = DateTime.Parse(txt_Fnacimiento.Text);
+              
                     _context.SaveChanges();
                     MessageBox.Show("Tramite actualizado exitosamente");
                 }
