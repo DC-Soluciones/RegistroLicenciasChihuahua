@@ -31,7 +31,7 @@ namespace RegistroLicenciasChihuahua
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mistramites));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,9 +40,11 @@ namespace RegistroLicenciasChihuahua
             this.txt_Busqueda = new System.Windows.Forms.TextBox();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.txt_Licencia = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dtp_Inicio = new System.Windows.Forms.DateTimePicker();
+            this.dtp_Fin = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gv_Tramites = new System.Windows.Forms.DataGridView();
             this.tramiteIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,8 +66,6 @@ namespace RegistroLicenciasChihuahua
             this.dtTramitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licenciasCH_QADataSet = new RegistroLicenciasChihuahua.LicenciasCH_QADataSet();
             this.dtTramitesTableAdapter = new RegistroLicenciasChihuahua.LicenciasCH_QADataSetTableAdapters.dtTramitesTableAdapter();
-            this.dtp_Inicio = new System.Windows.Forms.DateTimePicker();
-            this.dtp_Fin = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Tramites)).BeginInit();
@@ -85,30 +85,32 @@ namespace RegistroLicenciasChihuahua
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.16216F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.38739F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.9009F));
+            this.tableLayoutPanel1.ColumnCount = 8;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txt_Busqueda, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txt_Nombre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txt_Licencia, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dtp_Inicio, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dtp_Fin, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button3, 7, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 6, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dtp_Inicio, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dtp_Fin, 4, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(888, 62);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1515, 62);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label2
@@ -125,7 +127,7 @@ namespace RegistroLicenciasChihuahua
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(150, 0);
+            this.label3.Location = new System.Drawing.Point(135, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 16);
             this.label3.TabIndex = 2;
@@ -135,7 +137,7 @@ namespace RegistroLicenciasChihuahua
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(297, 0);
+            this.label4.Location = new System.Drawing.Point(267, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 16);
             this.label4.TabIndex = 4;
@@ -143,56 +145,24 @@ namespace RegistroLicenciasChihuahua
             // 
             // txt_Busqueda
             // 
-            this.txt_Busqueda.Location = new System.Drawing.Point(3, 29);
+            this.txt_Busqueda.Location = new System.Drawing.Point(3, 21);
             this.txt_Busqueda.Name = "txt_Busqueda";
-            this.txt_Busqueda.Size = new System.Drawing.Size(141, 20);
+            this.txt_Busqueda.Size = new System.Drawing.Size(126, 20);
             this.txt_Busqueda.TabIndex = 5;
             // 
             // txt_Nombre
             // 
-            this.txt_Nombre.Location = new System.Drawing.Point(150, 29);
+            this.txt_Nombre.Location = new System.Drawing.Point(135, 21);
             this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(141, 20);
+            this.txt_Nombre.Size = new System.Drawing.Size(126, 20);
             this.txt_Nombre.TabIndex = 6;
             // 
             // txt_Licencia
             // 
-            this.txt_Licencia.Location = new System.Drawing.Point(297, 29);
+            this.txt_Licencia.Location = new System.Drawing.Point(267, 21);
             this.txt_Licencia.Name = "txt_Licencia";
-            this.txt_Licencia.Size = new System.Drawing.Size(141, 20);
+            this.txt_Licencia.Size = new System.Drawing.Size(126, 20);
             this.txt_Licencia.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(9)))), ((int)(((byte)(115)))));
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(444, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 38);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Buscar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(31)))), ((int)(((byte)(89)))));
-            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(551, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 38);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Todo";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -200,7 +170,7 @@ namespace RegistroLicenciasChihuahua
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(660, 29);
+            this.button3.Location = new System.Drawing.Point(1069, 21);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 38);
             this.button3.TabIndex = 10;
@@ -210,6 +180,52 @@ namespace RegistroLicenciasChihuahua
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(31)))), ((int)(((byte)(89)))));
+            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(961, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(102, 38);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Todo";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(9)))), ((int)(((byte)(115)))));
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(854, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 38);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Buscar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dtp_Inicio
+            // 
+            this.dtp_Inicio.Location = new System.Drawing.Point(399, 21);
+            this.dtp_Inicio.Name = "dtp_Inicio";
+            this.dtp_Inicio.Size = new System.Drawing.Size(226, 20);
+            this.dtp_Inicio.TabIndex = 11;
+            // 
+            // dtp_Fin
+            // 
+            this.dtp_Fin.Location = new System.Drawing.Point(631, 21);
+            this.dtp_Fin.Name = "dtp_Fin";
+            this.dtp_Fin.Size = new System.Drawing.Size(217, 20);
+            this.dtp_Fin.TabIndex = 12;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
@@ -217,20 +233,20 @@ namespace RegistroLicenciasChihuahua
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(916, 136);
+            this.panel1.Size = new System.Drawing.Size(1580, 136);
             this.panel1.TabIndex = 2;
             // 
             // gv_Tramites
             // 
             this.gv_Tramites.AutoGenerateColumns = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gv_Tramites.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gv_Tramites.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gv_Tramites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gv_Tramites.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tramiteIdDataGridViewTextBoxColumn,
@@ -253,7 +269,7 @@ namespace RegistroLicenciasChihuahua
             this.gv_Tramites.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gv_Tramites.Location = new System.Drawing.Point(0, 136);
             this.gv_Tramites.Name = "gv_Tramites";
-            this.gv_Tramites.Size = new System.Drawing.Size(916, 402);
+            this.gv_Tramites.Size = new System.Drawing.Size(1580, 402);
             this.gv_Tramites.TabIndex = 3;
             this.gv_Tramites.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv_Tramites_CellContentDoubleClick);
             // 
@@ -369,26 +385,12 @@ namespace RegistroLicenciasChihuahua
             // 
             this.dtTramitesTableAdapter.ClearBeforeFill = true;
             // 
-            // dtp_Inicio
-            // 
-            this.dtp_Inicio.Location = new System.Drawing.Point(444, 3);
-            this.dtp_Inicio.Name = "dtp_Inicio";
-            this.dtp_Inicio.Size = new System.Drawing.Size(101, 20);
-            this.dtp_Inicio.TabIndex = 11;
-            // 
-            // dtp_Fin
-            // 
-            this.dtp_Fin.Location = new System.Drawing.Point(551, 3);
-            this.dtp_Fin.Name = "dtp_Fin";
-            this.dtp_Fin.Size = new System.Drawing.Size(103, 20);
-            this.dtp_Fin.TabIndex = 12;
-            // 
             // Mistramites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(916, 538);
+            this.ClientSize = new System.Drawing.Size(1580, 538);
             this.Controls.Add(this.gv_Tramites);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
