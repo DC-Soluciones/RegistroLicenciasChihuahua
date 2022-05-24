@@ -60,6 +60,7 @@ namespace RegistroLicenciasChihuahua
 
         private async void button1_Click(object sender, EventArgs e)
         {
+            tbc_actual.TabPages.Clear();
             if (txt_Curp.Text != "")
             {
                 Loading loading = new Loading();
@@ -70,6 +71,17 @@ namespace RegistroLicenciasChihuahua
                 await task;
 
                 _context = new LicenciasCH_Entities();
+
+
+                var licenciasact = (from d in _context.dtTramites
+                                where d.Curp == txt_Curp.Text
+                                select d).OrderByDescending(x => x.FechaCreacion).ToList();
+                foreach(var l in licenciasact)
+                {
+                    var tplic = _context.dtTipoLicencias.Where(x => x.Clave == l.TipoLicencia).FirstOrDefault();
+                    
+                    tbc_actual.TabPages.Add(l.NumeroLicencia,  tplic.Nombre);
+                }
 
                 var cdActual = (from d in _context.dtTramites
                                 where d.Curp == txt_Curp.Text
@@ -251,6 +263,11 @@ namespace RegistroLicenciasChihuahua
             txt_ApellidoP.Text = "";
             txt_ApellidoM.Text = "";
             
+        }
+
+        private void tbc_actual_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
