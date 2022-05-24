@@ -175,8 +175,8 @@ namespace RegistroLicenciasChihuahua
          
             txt_Curp.Text = ciudadano.Curp;
             cb_Tlicencia.SelectedValue = ciudadano.TipoLicencia;
-
-            cb_Vigencia.SelectedItem = ciudadano.AniosVigencia;
+            LoadTramiteVigencia(ciudadano.AniosVigencia);
+         //   cb_Vigencia.Text.Contains(ciudadano.AniosVigencia.ToString());
             txt_Importe.Text = ciudadano.Importe.ToString();
             txt_Folio.Text = ciudadano.FolioSeguimiento;
             txt_Fexpedicion.Text = ciudadano.FechaExpedicion.Value.ToShortDateString();
@@ -212,7 +212,7 @@ namespace RegistroLicenciasChihuahua
             txt_APTutor.Text = ciudadano.APaternoTutor;
             txt_AMTutor.Text = ciudadano.AMaternoTutor;
             txt_Licanterior.Text = ciudadano.LicenciaAnterior == null ? ciudadano.NumeroLicencia : ciudadano.LicenciaAnterior;
-            Vigencia();
+            //Vigencia();
 
         }
         public Boolean IsValid(Form form)
@@ -277,9 +277,7 @@ namespace RegistroLicenciasChihuahua
                 string tipolic1 = cb_Tlicencia.SelectedValue == null ? "B" : cb_Tlicencia.SelectedValue.ToString();
                 var tplic = _context.dtTipoLicencias.Where(x => x.Clave == tipolic1).Select(x => x).FirstOrDefault();
                 int tipolic = tplic.TipoLicenciaId;
-                cb_Vigencia.ValueMember = "VigenciaId";
-                cb_Vigencia.DisplayMember = "Nombre";
-
+          
                 if (cb_Ttramite.Text == "Nueva")
                 {
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "E" && x.TipoLicenciaId == tipolic).ToList();
@@ -305,7 +303,68 @@ namespace RegistroLicenciasChihuahua
                 {
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "X" && x.TipoLicenciaId == tipolic).ToList();
                 }
+                cb_Vigencia.ValueMember = "VigenciaId";
+                cb_Vigencia.DisplayMember = "Nombre";
 
+                using (_context = new LicenciasCH_Entities())
+                {
+                    int vigid = Convert.ToInt32(cb_Vigencia.SelectedValue);
+                    var impo = _context.dtImportes.Where(x => x.VigenciaId == vigid).FirstOrDefault();
+                    if (impo != null)
+                    {
+                        txt_Importe.Text = impo.Monto.ToString("0.00");
+                    }
+                    else
+                    {
+                        txt_Importe.Text = "";
+                    }
+                }
+            }
+        }
+
+
+        public void LoadTramiteVigencia(int anios)
+        {
+            using (_context = new LicenciasCH_Entities())
+            {
+
+                string tipolic1 = cb_Tlicencia.SelectedValue == null ? "B" : cb_Tlicencia.SelectedValue.ToString();
+                var tplic = _context.dtTipoLicencias.Where(x => x.Clave == tipolic1).Select(x => x).FirstOrDefault();
+                int tipolic = tplic.TipoLicenciaId;
+             
+
+                if (cb_Ttramite.Text == "Nueva")
+                {
+                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "E" && x.TipoLicenciaId == tipolic).ToList();
+                    
+
+                }
+                else if (cb_Ttramite.Text == "Reposición")
+                {
+                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "R" && x.TipoLicenciaId == tipolic).ToList();
+                }
+                else if (cb_Ttramite.Text == "Renovación")
+                {
+                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "C" && x.TipoLicenciaId == tipolic).ToList();
+                    cb_Vigencia.ValueMember = "VigenciaId";
+                    cb_Vigencia.DisplayMember = "Nombre";
+                    var SELECT  = _context.dtVigencias.Where(x => x.TipoTramite == "C" && x.TipoLicenciaId == tipolic && x.AniosVigencia == anios).Select(X=>X.VigenciaId).FirstOrDefault();
+                    cb_Vigencia.SelectedValue = SELECT;
+                }
+                else if (cb_Ttramite.Text == "Reimpresión")
+                {
+                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "I" && x.TipoLicenciaId == tipolic).ToList();
+                }
+                else if (cb_Ttramite.Text == "Robo")
+                {
+                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "O" && x.TipoLicenciaId == tipolic).ToList();
+                }
+                else if (cb_Ttramite.Text == "Extravio")
+                {
+                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "X" && x.TipoLicenciaId == tipolic).ToList();
+                }
+             
+         
                 using (_context = new LicenciasCH_Entities())
                 {
                     int vigid = Convert.ToInt32(cb_Vigencia.SelectedValue);
@@ -329,7 +388,20 @@ namespace RegistroLicenciasChihuahua
 
         private void cb_Vigencia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Vigencia();
+            //Vigencia();
+            using (_context = new LicenciasCH_Entities())
+            {
+                int vigid = Convert.ToInt32(cb_Vigencia.SelectedValue);
+                var impo = _context.dtImportes.Where(x => x.VigenciaId == vigid).FirstOrDefault();
+                if (impo != null)
+                {
+                    txt_Importe.Text = impo.Monto.ToString("0.00");
+                }
+                else
+                {
+                    txt_Importe.Text = "";
+                }
+            }
         }
 
         private void btn_Guardar_Click(object sender, EventArgs e)

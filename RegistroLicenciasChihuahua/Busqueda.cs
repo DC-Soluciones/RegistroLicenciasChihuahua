@@ -143,8 +143,8 @@ namespace RegistroLicenciasChihuahua
                         lbl_EditHistorica.Text = cIUDADANO.TramiteId.ToString();
                         try
                         {
-                            MemoryStream ms = new MemoryStream(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
-                            ms.Write(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
+                            MemoryStream ms = new MemoryStream(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
+                            ms.Write(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
                             Image returnImage = Image.FromStream(ms, true);
                             pb_Ciudadano.Image = returnImage;
                             pb_Ciudadano.Visible = true;
