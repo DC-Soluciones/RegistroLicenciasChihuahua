@@ -61,6 +61,7 @@ namespace RegistroLicenciasChihuahua
         private async void button1_Click(object sender, EventArgs e)
         {
             tbc_actual.TabPages.Clear();
+            tbc_Historica.TabPages.Clear();
             if (txt_Curp.Text != "")
             {
                 Loading loading = new Loading();
@@ -139,7 +140,12 @@ namespace RegistroLicenciasChihuahua
                     var listcd = (from d in _contextHist.dtTramites
                                   where d.Curp == txt_Curp.Text
                                   select d).ToList();
+                    foreach (var l in listcd)
+                    {
+                        var tplic = _context.dtTipoLicencias.Where(x => x.Clave == l.TipoLicencia).FirstOrDefault();
 
+                        tbc_Historica.TabPages.Add(l.TramiteId.ToString(), tplic.Nombre);
+                    }
                     if (listcd.Count() > 0)
                     {
                         cIUDADANO = listcd.OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
@@ -309,6 +315,48 @@ namespace RegistroLicenciasChihuahua
 
    
             }
+        }
+
+        private void tbc_Historica_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int currentTab = tbc_actual.SelectedIndex;
+            int tabName = Convert.ToInt32(tbc_Historica.TabPages[currentTab].Name);
+            using (_contextHist = new LicHistoricoEntities())
+            {
+
+                var listcd = (from d in _contextHist.dtTramites
+                              where d.TramiteId == tabName
+                              select d).FirstOrDefault();
+            
+                txt_Nombre.Text = cIUDADANO.Nombre;
+                txt_ApellidoP.Text = cIUDADANO.ApellidoPaterno;
+                txt_ApellidoM.Text = cIUDADANO.ApellidoMaterno;
+
+                lbl_Nombre.Text = cIUDADANO.Nombre + " " + cIUDADANO.ApellidoPaterno + " " + cIUDADANO.ApellidoMaterno;
+                lbl_NoLicencia.Text = cIUDADANO.NumeroLicencia;
+                lbl_Licencia.Text = cIUDADANO.TipoLicencia;
+                lbl_Status.Text = cIUDADANO.Estatus;
+                lbl_Vigencia.Text = cIUDADANO.AniosVigencia.ToString();
+                lbl_Expedicion.Text = cIUDADANO.FechaExpedicion.Value.ToShortDateString();
+                lbl_Vencimiento.Text = cIUDADANO.FechaVencimiento.Value.ToShortDateString();
+                lbl_Rfc.Text = cIUDADANO.RFC;
+                gb_DatoHisto.Visible = true;
+                lbl_EditHistorica.Text = cIUDADANO.TramiteId.ToString();
+                try
+                {
+                    MemoryStream ms = new MemoryStream(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
+                    ms.Write(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
+                    Image returnImage = Image.FromStream(ms, true);
+                    pb_Ciudadano.Image = returnImage;
+                    pb_Ciudadano.Visible = true;
+                }
+                catch
+                {
+                    pb_Ciudadano.Image = null;
+                    pb_Ciudadano.Visible = false;
+                }
+            }
+
         }
     }
 }
