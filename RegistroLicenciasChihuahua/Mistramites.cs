@@ -43,7 +43,7 @@ namespace RegistroLicenciasChihuahua
                 {
                     if (userRol == "Supervisor" || userRol == "Administrador")
                     {
-                        gv_Tramites.DataSource = _context.dtTramites.Where(x=>x.FechaCreacion.Date.Year == System.DateTime.Now.Year && x.FechaCreacion.Date.Month == System.DateTime.Now.Month && x.FechaCreacion.Date.Day == System.DateTime.Now.Day).ToList();
+                        gv_Tramites.DataSource = _context.dtTramites.Where(x=>x.FechaCreacion.Year == System.DateTime.Now.Year && x.FechaCreacion.Month == System.DateTime.Now.Month && x.FechaCreacion.Day == System.DateTime.Now.Day).ToList();
                     }
                     else
                     {

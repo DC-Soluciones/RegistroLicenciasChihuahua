@@ -243,5 +243,14 @@ namespace RegistroLicenciasChihuahua
             registro.Size = new Size(1300, 850);
             registro.Show();
         }
+
+        private void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            txt_Curp.Text = "";
+            txt_Nombre.Text = "";
+            txt_ApellidoP.Text = "";
+            txt_ApellidoM.Text = "";
+            
+        }
     }
 }
