@@ -130,7 +130,7 @@ namespace RegistroLicenciasChihuahua
                 registro.FormBorderStyle = FormBorderStyle.Sizable;
                 registro.StartPosition = FormStartPosition.CenterScreen;
                 registro.Size = new Size(1200, 750);
-                registro.Show();
+                registro.ShowDialog();
             }
         }
     }

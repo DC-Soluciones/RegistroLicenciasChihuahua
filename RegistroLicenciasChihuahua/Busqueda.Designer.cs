@@ -32,6 +32,10 @@ namespace RegistroLicenciasChihuahua
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Busqueda));
             this.panelbusqueda = new System.Windows.Forms.Panel();
             this.pnl_registro = new System.Windows.Forms.Panel();
+            this.pnl_TextActual = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pnl_histoText = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.pnl_histo = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tbc_Historica = new System.Windows.Forms.TabControl();
@@ -82,9 +86,9 @@ namespace RegistroLicenciasChihuahua
             this.lbl_RfcActual = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btn_nuevoregistro = new System.Windows.Forms.Button();
             this.pnl_noRegistro = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.btn_nuevoregistro = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Curp = new System.Windows.Forms.TextBox();
@@ -97,12 +101,10 @@ namespace RegistroLicenciasChihuahua
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnl_histoText = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.pnl_TextActual = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
             this.panelbusqueda.SuspendLayout();
             this.pnl_registro.SuspendLayout();
+            this.pnl_TextActual.SuspendLayout();
+            this.pnl_histoText.SuspendLayout();
             this.pnl_histo.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tbc_Historica.SuspendLayout();
@@ -115,8 +117,6 @@ namespace RegistroLicenciasChihuahua
             ((System.ComponentModel.ISupportInitialize)(this.pb_Ciudadano)).BeginInit();
             this.pnl_noRegistro.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.pnl_histoText.SuspendLayout();
-            this.pnl_TextActual.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelbusqueda
@@ -145,6 +145,51 @@ namespace RegistroLicenciasChihuahua
             this.pnl_registro.Size = new System.Drawing.Size(1319, 738);
             this.pnl_registro.TabIndex = 34;
             this.pnl_registro.Visible = false;
+            // 
+            // pnl_TextActual
+            // 
+            this.pnl_TextActual.Controls.Add(this.label16);
+            this.pnl_TextActual.Location = new System.Drawing.Point(61, 37);
+            this.pnl_TextActual.Name = "pnl_TextActual";
+            this.pnl_TextActual.Size = new System.Drawing.Size(364, 29);
+            this.pnl_TextActual.TabIndex = 37;
+            this.pnl_TextActual.Visible = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(64)))), ((int)(((byte)(115)))));
+            this.label16.Location = new System.Drawing.Point(0, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(323, 19);
+            this.label16.TabIndex = 37;
+            this.label16.Text = "No se encontaron datos en la base actual\r\n";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnl_histoText
+            // 
+            this.pnl_histoText.Controls.Add(this.label13);
+            this.pnl_histoText.Location = new System.Drawing.Point(760, 37);
+            this.pnl_histoText.Name = "pnl_histoText";
+            this.pnl_histoText.Size = new System.Drawing.Size(364, 29);
+            this.pnl_histoText.TabIndex = 36;
+            this.pnl_histoText.Visible = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(64)))), ((int)(((byte)(115)))));
+            this.label13.Location = new System.Drawing.Point(0, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(343, 19);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "No se encontaron datos en la base histórica";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // pnl_histo
             // 
@@ -197,7 +242,7 @@ namespace RegistroLicenciasChihuahua
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(572, 2);
+            this.tabPage4.Size = new System.Drawing.Size(333, 2);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -466,7 +511,7 @@ namespace RegistroLicenciasChihuahua
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(572, 17);
+            this.tabPage2.Size = new System.Drawing.Size(332, 17);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -704,6 +749,23 @@ namespace RegistroLicenciasChihuahua
             this.label6.TabIndex = 9;
             this.label6.Text = "Base histórica";
             // 
+            // btn_nuevoregistro
+            // 
+            this.btn_nuevoregistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btn_nuevoregistro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_nuevoregistro.ForeColor = System.Drawing.Color.White;
+            this.btn_nuevoregistro.Image = ((System.Drawing.Image)(resources.GetObject("btn_nuevoregistro.Image")));
+            this.btn_nuevoregistro.Location = new System.Drawing.Point(977, 146);
+            this.btn_nuevoregistro.Name = "btn_nuevoregistro";
+            this.btn_nuevoregistro.Size = new System.Drawing.Size(159, 38);
+            this.btn_nuevoregistro.TabIndex = 13;
+            this.btn_nuevoregistro.Text = "Nuevo registro";
+            this.btn_nuevoregistro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_nuevoregistro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_nuevoregistro.UseVisualStyleBackColor = false;
+            this.btn_nuevoregistro.Visible = false;
+            this.btn_nuevoregistro.Click += new System.EventHandler(this.btn_nuevoregistro_Click);
+            // 
             // pnl_noRegistro
             // 
             this.pnl_noRegistro.Controls.Add(this.label15);
@@ -722,23 +784,6 @@ namespace RegistroLicenciasChihuahua
             this.label15.Size = new System.Drawing.Size(247, 19);
             this.label15.TabIndex = 14;
             this.label15.Text = "No se encontró ningún registro";
-            // 
-            // btn_nuevoregistro
-            // 
-            this.btn_nuevoregistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btn_nuevoregistro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_nuevoregistro.ForeColor = System.Drawing.Color.White;
-            this.btn_nuevoregistro.Image = ((System.Drawing.Image)(resources.GetObject("btn_nuevoregistro.Image")));
-            this.btn_nuevoregistro.Location = new System.Drawing.Point(977, 146);
-            this.btn_nuevoregistro.Name = "btn_nuevoregistro";
-            this.btn_nuevoregistro.Size = new System.Drawing.Size(159, 38);
-            this.btn_nuevoregistro.TabIndex = 13;
-            this.btn_nuevoregistro.Text = "Nuevo registro";
-            this.btn_nuevoregistro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_nuevoregistro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_nuevoregistro.UseVisualStyleBackColor = false;
-            this.btn_nuevoregistro.Visible = false;
-            this.btn_nuevoregistro.Click += new System.EventHandler(this.btn_nuevoregistro_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -882,51 +927,6 @@ namespace RegistroLicenciasChihuahua
             this.label1.TabIndex = 7;
             this.label1.Text = "Búsqueda del ciudadano";
             // 
-            // pnl_histoText
-            // 
-            this.pnl_histoText.Controls.Add(this.label13);
-            this.pnl_histoText.Location = new System.Drawing.Point(760, 37);
-            this.pnl_histoText.Name = "pnl_histoText";
-            this.pnl_histoText.Size = new System.Drawing.Size(364, 29);
-            this.pnl_histoText.TabIndex = 36;
-            this.pnl_histoText.Visible = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(64)))), ((int)(((byte)(115)))));
-            this.label13.Location = new System.Drawing.Point(0, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(343, 19);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "No se encontaron datos en la base histórica";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // pnl_TextActual
-            // 
-            this.pnl_TextActual.Controls.Add(this.label16);
-            this.pnl_TextActual.Location = new System.Drawing.Point(61, 37);
-            this.pnl_TextActual.Name = "pnl_TextActual";
-            this.pnl_TextActual.Size = new System.Drawing.Size(364, 29);
-            this.pnl_TextActual.TabIndex = 37;
-            this.pnl_TextActual.Visible = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(64)))), ((int)(((byte)(115)))));
-            this.label16.Location = new System.Drawing.Point(0, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(323, 19);
-            this.label16.TabIndex = 37;
-            this.label16.Text = "No se encontaron datos en la base actual\r\n";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Busqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -943,6 +943,10 @@ namespace RegistroLicenciasChihuahua
             this.panelbusqueda.PerformLayout();
             this.pnl_registro.ResumeLayout(false);
             this.pnl_registro.PerformLayout();
+            this.pnl_TextActual.ResumeLayout(false);
+            this.pnl_TextActual.PerformLayout();
+            this.pnl_histoText.ResumeLayout(false);
+            this.pnl_histoText.PerformLayout();
             this.pnl_histo.ResumeLayout(false);
             this.pnl_histo.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -961,10 +965,6 @@ namespace RegistroLicenciasChihuahua
             this.pnl_noRegistro.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.pnl_histoText.ResumeLayout(false);
-            this.pnl_histoText.PerformLayout();
-            this.pnl_TextActual.ResumeLayout(false);
-            this.pnl_TextActual.PerformLayout();
             this.ResumeLayout(false);
 
         }

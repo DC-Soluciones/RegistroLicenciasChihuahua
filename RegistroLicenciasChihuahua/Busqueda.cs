@@ -50,7 +50,7 @@ namespace RegistroLicenciasChihuahua
                 panelbusqueda.Controls.Clear();
                 panelbusqueda.Controls.Add(registro);
                 panelbusqueda.Tag = registro;
-                registro.Show();
+                registro.ShowDialog(); 
             }
             else
             {
@@ -258,7 +258,9 @@ namespace RegistroLicenciasChihuahua
             registro.FormBorderStyle = FormBorderStyle.Sizable;
             registro.StartPosition = FormStartPosition.CenterScreen;
             registro.Size = new Size(1300, 850);
-            registro.Show();
+
+            registro.ShowDialog();
+          
         }
 
         private void btn_Editactual_Click(object sender, EventArgs e)
@@ -268,7 +270,7 @@ namespace RegistroLicenciasChihuahua
             registro.FormBorderStyle = FormBorderStyle.Sizable;
             registro.StartPosition = FormStartPosition.CenterScreen;
             registro.Size = new Size(1300, 850);
-            registro.Show();
+            registro.ShowDialog(); 
         }
 
         private void btn_Limpiar_Click(object sender, EventArgs e)

@@ -224,6 +224,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_Biometricos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Biometricos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Biometricos.UseVisualStyleBackColor = false;
+            this.btn_Biometricos.Visible = false;
             this.btn_Biometricos.Click += new System.EventHandler(this.btn_Biometricos_Click);
             // 
             // btn_Escaneo
@@ -240,6 +241,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_Escaneo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Escaneo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Escaneo.UseVisualStyleBackColor = false;
+            this.btn_Escaneo.Visible = false;
             // 
             // pnl_Menor
             // 

@@ -665,6 +665,8 @@ namespace RegistroLicenciasChihuahua
                                     _context.SaveChanges();
 
                                     MessageBox.Show("Registro guardado exitosamente!");
+                                    btn_Escaneo.Visible = true;
+                                    btn_Biometricos.Visible = true;
                                     dtramite.FolioSeguimiento = dtramite.TramiteId.ToString().PadLeft(8, '0');
                                     _context.SaveChanges();
                                     txt_Folio.Text = dtramite.FolioSeguimiento;
