@@ -33,7 +33,7 @@ namespace RegistroLicenciasChihuahua
             this.panelbusqueda = new System.Windows.Forms.Panel();
             this.pnl_registro = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tbc_Historica = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.gb_DatoHisto = new System.Windows.Forms.GroupBox();
@@ -98,12 +98,10 @@ namespace RegistroLicenciasChihuahua
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panelbusqueda.SuspendLayout();
             this.pnl_registro.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tbc_Historica.SuspendLayout();
             this.gb_DatoHisto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -112,8 +110,6 @@ namespace RegistroLicenciasChihuahua
             ((System.ComponentModel.ISupportInitialize)(this.pb_Ciudadano)).BeginInit();
             this.pnl_noRegistro.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelbusqueda
@@ -146,7 +142,7 @@ namespace RegistroLicenciasChihuahua
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel4.Controls.Add(this.panel2);
+            this.panel4.Controls.Add(this.tbc_Historica);
             this.panel4.Controls.Add(this.gb_DatoHisto);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.label36);
@@ -158,16 +154,16 @@ namespace RegistroLicenciasChihuahua
             this.panel4.Size = new System.Drawing.Size(538, 289);
             this.panel4.TabIndex = 35;
             // 
-            // tabControl1
+            // tbc_Historica
             // 
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 4);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(580, 31);
-            this.tabControl1.TabIndex = 34;
+            this.tbc_Historica.Controls.Add(this.tabPage3);
+            this.tbc_Historica.Controls.Add(this.tabPage4);
+            this.tbc_Historica.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbc_Historica.Location = new System.Drawing.Point(155, 56);
+            this.tbc_Historica.Name = "tbc_Historica";
+            this.tbc_Historica.SelectedIndex = 0;
+            this.tbc_Historica.Size = new System.Drawing.Size(580, 31);
+            this.tbc_Historica.TabIndex = 34;
             // 
             // tabPage3
             // 
@@ -405,7 +401,7 @@ namespace RegistroLicenciasChihuahua
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Controls.Add(this.tbc_actual);
             this.panel3.Controls.Add(this.gb_DatoActual);
             this.panel3.Controls.Add(this.pb_Ciudadano);
             this.panel3.Controls.Add(this.label23);
@@ -422,10 +418,10 @@ namespace RegistroLicenciasChihuahua
             this.tbc_actual.Controls.Add(this.tabPage1);
             this.tbc_actual.Controls.Add(this.tabPage2);
             this.tbc_actual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbc_actual.Location = new System.Drawing.Point(3, 4);
+            this.tbc_actual.Location = new System.Drawing.Point(155, 56);
             this.tbc_actual.Name = "tbc_actual";
             this.tbc_actual.SelectedIndex = 0;
-            this.tbc_actual.Size = new System.Drawing.Size(556, 31);
+            this.tbc_actual.Size = new System.Drawing.Size(580, 31);
             this.tbc_actual.TabIndex = 34;
             this.tbc_actual.SelectedIndexChanged += new System.EventHandler(this.tbc_actual_SelectedIndexChanged);
             // 
@@ -434,7 +430,7 @@ namespace RegistroLicenciasChihuahua
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(548, 2);
+            this.tabPage1.Size = new System.Drawing.Size(572, 2);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -929,7 +925,7 @@ namespace RegistroLicenciasChihuahua
             this.pnl_registro.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tbc_Historica.ResumeLayout(false);
             this.gb_DatoHisto.ResumeLayout(false);
             this.gb_DatoHisto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -943,8 +939,6 @@ namespace RegistroLicenciasChihuahua
             this.pnl_noRegistro.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1012,7 +1006,7 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tbc_Historica;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.PictureBox pictureBox1;
