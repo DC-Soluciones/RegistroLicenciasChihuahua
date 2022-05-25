@@ -141,6 +141,9 @@ namespace RegistroLicenciasChihuahua
                 ciudadano = (from d in _contextHist.dtTramites
                              where d.TramiteId == id
                              select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
+                btn_Biometricos.Enabled = false;
+                btn_Guardar.Enabled = false;
+                btn_Escaneo.Enabled = false;
             }
 
             if (ciudadano.Sexo == "M")

@@ -35,7 +35,7 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_Biometricos = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Escaneo = new System.Windows.Forms.Button();
             this.pnl_Menor = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label43 = new System.Windows.Forms.Label();
@@ -182,10 +182,10 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.5045F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel6.Controls.Add(this.btn_Guardar, 3, 0);
             this.tableLayoutPanel6.Controls.Add(this.btn_Biometricos, 2, 0);
-            this.tableLayoutPanel6.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btn_Escaneo, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 711);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -200,7 +200,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_Guardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Guardar.ForeColor = System.Drawing.Color.White;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(1384, 3);
+            this.btn_Guardar.Location = new System.Drawing.Point(1383, 3);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(177, 35);
             this.btn_Guardar.TabIndex = 0;
@@ -216,7 +216,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_Biometricos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Biometricos.ForeColor = System.Drawing.Color.White;
             this.btn_Biometricos.Image = ((System.Drawing.Image)(resources.GetObject("btn_Biometricos.Image")));
-            this.btn_Biometricos.Location = new System.Drawing.Point(1225, 3);
+            this.btn_Biometricos.Location = new System.Drawing.Point(1224, 3);
             this.btn_Biometricos.Name = "btn_Biometricos";
             this.btn_Biometricos.Size = new System.Drawing.Size(146, 35);
             this.btn_Biometricos.TabIndex = 1;
@@ -226,20 +226,20 @@ namespace RegistroLicenciasChihuahua
             this.btn_Biometricos.UseVisualStyleBackColor = false;
             this.btn_Biometricos.Click += new System.EventHandler(this.btn_Biometricos_Click);
             // 
-            // button1
+            // btn_Escaneo
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(962, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(257, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Escaneo de documentos";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Escaneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_Escaneo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Escaneo.ForeColor = System.Drawing.Color.White;
+            this.btn_Escaneo.Image = ((System.Drawing.Image)(resources.GetObject("btn_Escaneo.Image")));
+            this.btn_Escaneo.Location = new System.Drawing.Point(962, 3);
+            this.btn_Escaneo.Name = "btn_Escaneo";
+            this.btn_Escaneo.Size = new System.Drawing.Size(256, 35);
+            this.btn_Escaneo.TabIndex = 2;
+            this.btn_Escaneo.Text = "Escaneo de documentos";
+            this.btn_Escaneo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Escaneo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Escaneo.UseVisualStyleBackColor = false;
             // 
             // pnl_Menor
             // 
@@ -1343,7 +1343,7 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Button btn_Biometricos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Escaneo;
         private System.Windows.Forms.Panel pnl_Menor;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label43;
