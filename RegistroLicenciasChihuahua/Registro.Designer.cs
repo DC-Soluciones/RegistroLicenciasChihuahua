@@ -59,8 +59,6 @@ namespace RegistroLicenciasChihuahua
             this.cb_Estado = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
             this.cb_Municipio = new System.Windows.Forms.ComboBox();
-            this.dtMunicipioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.licenciasCHDataSetMunicipios = new RegistroLicenciasChihuahua.LicenciasCHDataSetMunicipios();
             this.label41 = new System.Windows.Forms.Label();
             this.txt_Colonia = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -134,6 +132,8 @@ namespace RegistroLicenciasChihuahua
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dtMunicipioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.licenciasCHDataSetMunicipios = new RegistroLicenciasChihuahua.LicenciasCHDataSetMunicipios();
             this.dtMunicipioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtTipoLicenciasTableAdapter = new RegistroLicenciasChihuahua.LicenciasCHDataSetTableAdapters.dtTipoLicenciasTableAdapter();
             this.dtMunicipioTableAdapter = new RegistroLicenciasChihuahua.LicenciasCHDataSetMunicipiosTableAdapters.dtMunicipioTableAdapter();
@@ -142,13 +142,13 @@ namespace RegistroLicenciasChihuahua
             this.pnl_Menor.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSetMunicipios)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtTipoLicenciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSetMunicipios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,7 +182,7 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.5045F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel6.Controls.Add(this.btn_Guardar, 3, 0);
             this.tableLayoutPanel6.Controls.Add(this.btn_Biometricos, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.button1, 1, 0);
@@ -200,7 +200,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_Guardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Guardar.ForeColor = System.Drawing.Color.White;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(1385, 3);
+            this.btn_Guardar.Location = new System.Drawing.Point(1384, 3);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(177, 35);
             this.btn_Guardar.TabIndex = 0;
@@ -216,7 +216,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_Biometricos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Biometricos.ForeColor = System.Drawing.Color.White;
             this.btn_Biometricos.Image = ((System.Drawing.Image)(resources.GetObject("btn_Biometricos.Image")));
-            this.btn_Biometricos.Location = new System.Drawing.Point(1226, 3);
+            this.btn_Biometricos.Location = new System.Drawing.Point(1225, 3);
             this.btn_Biometricos.Name = "btn_Biometricos";
             this.btn_Biometricos.Size = new System.Drawing.Size(146, 35);
             this.btn_Biometricos.TabIndex = 1;
@@ -232,7 +232,7 @@ namespace RegistroLicenciasChihuahua
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(963, 3);
+            this.button1.Location = new System.Drawing.Point(962, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(257, 35);
             this.button1.TabIndex = 2;
@@ -492,16 +492,6 @@ namespace RegistroLicenciasChihuahua
             this.cb_Municipio.Name = "cb_Municipio";
             this.cb_Municipio.Size = new System.Drawing.Size(136, 21);
             this.cb_Municipio.TabIndex = 11;
-            // 
-            // dtMunicipioBindingSource1
-            // 
-            this.dtMunicipioBindingSource1.DataMember = "dtMunicipio";
-            this.dtMunicipioBindingSource1.DataSource = this.licenciasCHDataSetMunicipios;
-            // 
-            // licenciasCHDataSetMunicipios
-            // 
-            this.licenciasCHDataSetMunicipios.DataSetName = "LicenciasCHDataSetMunicipios";
-            this.licenciasCHDataSetMunicipios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label41
             // 
@@ -1082,7 +1072,7 @@ namespace RegistroLicenciasChihuahua
             // cb_Tlicencia
             // 
             this.cb_Tlicencia.DataSource = this.dtTipoLicenciasBindingSource;
-            this.cb_Tlicencia.DisplayMember = "Nombre";
+            this.cb_Tlicencia.DisplayMember = "NombreCorto";
             this.cb_Tlicencia.FormattingEnabled = true;
             this.cb_Tlicencia.Location = new System.Drawing.Point(152, 3);
             this.cb_Tlicencia.Name = "cb_Tlicencia";
@@ -1288,6 +1278,16 @@ namespace RegistroLicenciasChihuahua
             this.label1.TabIndex = 16;
             this.label1.Text = "Registro de solicitante";
             // 
+            // dtMunicipioBindingSource1
+            // 
+            this.dtMunicipioBindingSource1.DataMember = "dtMunicipio";
+            this.dtMunicipioBindingSource1.DataSource = this.licenciasCHDataSetMunicipios;
+            // 
+            // licenciasCHDataSetMunicipios
+            // 
+            this.licenciasCHDataSetMunicipios.DataSetName = "LicenciasCHDataSetMunicipios";
+            this.licenciasCHDataSetMunicipios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dtMunicipioBindingSource
             // 
             this.dtMunicipioBindingSource.DataMember = "dtMunicipio";
@@ -1322,8 +1322,6 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSetMunicipios)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1332,6 +1330,8 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtTipoLicenciasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSetMunicipios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource)).EndInit();
             this.ResumeLayout(false);
 

@@ -90,7 +90,7 @@ namespace RegistroLicenciasChihuahua
 
                 if (cdActual != null)
                 {
-                    pnl_noRegistro.Visible = false;
+                    pnl_noRegistro.Visible = true;
                     pnl_registro.Visible = true;
                     txt_Nombre.Text = cdActual.Nombre;
                     txt_ApellidoP.Text = cdActual.ApellidoPaterno;

@@ -262,16 +262,30 @@ namespace RegistroLicenciasChihuahua
 
         private void cb_Tlicencia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Vigencia();
+            using (_context = new LicenciasCH_Entities())
+            {
+                var tramites = _context.dtTramites.Where(x => x.Curp == txt_Curp.Text && x.TipoLicencia == Convert.ToString(cb_Tlicencia.SelectedValue) && x.FechaVencimiento > System.DateTime.Now).FirstOrDefault();
+                if(tramites== null)
+                {
 
-            if (Convert.ToString(cb_Tlicencia.SelectedValue) == "E" || Convert.ToString(cb_Tlicencia.SelectedValue) == "P")
-            {
-                pnl_Menor.Visible = true;
+                    Vigencia();
+
+                    if (Convert.ToString(cb_Tlicencia.SelectedValue) == "E" || Convert.ToString(cb_Tlicencia.SelectedValue) == "P")
+                    {
+                        pnl_Menor.Visible = true;
+                    }
+                    else
+                    {
+                        pnl_Menor.Visible = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El ciudadano tiene una licencia vigente de este tipo");
+                    btn_Guardar.Enabled = false;
+                }
             }
-            else
-            {
-                pnl_Menor.Visible = false;
-            }
+       
         }
 
         public void Vigencia()
