@@ -138,7 +138,7 @@ namespace RegistroLicenciasChihuahua
                 {
 
                     var listcd = (from d in _contextHist.dtTramites
-                                  where d.Curp == txt_Curp.Text
+                                  where d.Curp == txt_Curp.Text && d.FechaVencimiento > System.DateTime.Now
                                   select d).ToList();
                     foreach (var l in listcd)
                     {
@@ -302,7 +302,7 @@ namespace RegistroLicenciasChihuahua
                     gb_DatoActual.Visible = true;
                     //txt_actual.Visible = false;
                     lbl_EditAct.Text = cdActual.TramiteId.ToString();
-                    try
+                    if(cdActual.FotoLic!=null)
                     {
                         MemoryStream ms = new MemoryStream(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
                         ms.Write(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
@@ -310,7 +310,7 @@ namespace RegistroLicenciasChihuahua
                         pb_Ciudadano.Image = returnImage;
                         pb_Ciudadano.Visible = true;
                     }
-                    catch
+                    else
                     {
                         pb_Ciudadano.Image = null; pb_Ciudadano.Visible = false;
                     }
@@ -349,7 +349,7 @@ namespace RegistroLicenciasChihuahua
                 lbl_Rfc.Text = cIUDADANO.RFC;
                 gb_DatoHisto.Visible = true;
                 lbl_EditHistorica.Text = cIUDADANO.TramiteId.ToString();
-                try
+                if(cIUDADANO.FotoLic!=null)
                 {
                     MemoryStream ms = new MemoryStream(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
                     ms.Write(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
@@ -357,7 +357,7 @@ namespace RegistroLicenciasChihuahua
                     pb_Ciudadano.Image = returnImage;
                     pb_Ciudadano.Visible = true;
                 }
-                catch
+                else
                 {
                     pb_Ciudadano.Image = null;
                     pb_Ciudadano.Visible = false;
