@@ -57,7 +57,7 @@ namespace RegistroLicenciasChihuahua
             this.lbl_Nombre = new System.Windows.Forms.Label();
             this.lbl_Rfc = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.scroll1 = new System.Windows.Forms.Panel();
             this.tbc_actual = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -105,7 +105,7 @@ namespace RegistroLicenciasChihuahua
             this.gb_DatoHisto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.scroll1.SuspendLayout();
             this.tbc_actual.SuspendLayout();
             this.gb_DatoActual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Ciudadano)).BeginInit();
@@ -409,7 +409,7 @@ namespace RegistroLicenciasChihuahua
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Controls.Add(this.scroll1);
             this.panel3.Controls.Add(this.gb_DatoActual);
             this.panel3.Controls.Add(this.pb_Ciudadano);
             this.panel3.Controls.Add(this.label23);
@@ -421,14 +421,14 @@ namespace RegistroLicenciasChihuahua
             this.panel3.Size = new System.Drawing.Size(538, 289);
             this.panel3.TabIndex = 33;
             // 
-            // panel1
+            // scroll1
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.tbc_actual);
-            this.panel1.Location = new System.Drawing.Point(154, 57);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 52);
-            this.panel1.TabIndex = 32;
+            this.scroll1.AutoScroll = true;
+            this.scroll1.Controls.Add(this.tbc_actual);
+            this.scroll1.Location = new System.Drawing.Point(154, 57);
+            this.scroll1.Name = "scroll1";
+            this.scroll1.Size = new System.Drawing.Size(374, 52);
+            this.scroll1.TabIndex = 32;
             // 
             // tbc_actual
             // 
@@ -898,7 +898,7 @@ namespace RegistroLicenciasChihuahua
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.scroll1.ResumeLayout(false);
             this.tbc_actual.ResumeLayout(false);
             this.gb_DatoActual.ResumeLayout(false);
             this.gb_DatoActual.PerformLayout();
@@ -979,6 +979,6 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.Label lbl_Nombre;
         private System.Windows.Forms.Label lbl_Rfc;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel scroll1;
     }
 }
