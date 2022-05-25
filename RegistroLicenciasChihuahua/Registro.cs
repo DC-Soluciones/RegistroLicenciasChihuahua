@@ -141,9 +141,9 @@ namespace RegistroLicenciasChihuahua
                 ciudadano = (from d in _contextHist.dtTramites
                              where d.TramiteId == id
                              select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
-                btn_Biometricos.Enabled = false;
-                btn_Guardar.Enabled = false;
-                btn_Escaneo.Enabled = false;
+                btn_Biometricos.Visible = false;
+                btn_Guardar.Visible = false;
+                btn_Escaneo.Visible = false;
             }
 
             if (ciudadano.Sexo == "M")
@@ -265,7 +265,9 @@ namespace RegistroLicenciasChihuahua
 
         private void cb_Tlicencia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Vigencia();
+            try
+            {
+                Vigencia();
 
                 if (Convert.ToString(cb_Tlicencia.SelectedValue) == "E" || Convert.ToString(cb_Tlicencia.SelectedValue) == "P")
                 {
@@ -276,13 +278,11 @@ namespace RegistroLicenciasChihuahua
                     pnl_Menor.Visible = false;
                 }
 
-            _context = new LicenciasCH_Entities();
-            var tipo = Convert.ToString(cb_Tlicencia.SelectedValue);
-            var tramites = _context.dtTramites.Where(x => x.Curp == txt_Curp.Text && x.TipoLicencia == tipo && x.FechaVencimiento > System.DateTime.Now).FirstOrDefault();
-            if (tramites != null)
+           
+            }
+            catch
             {
-                MessageBox.Show("El ciudadano tiene una licencia vigente de este tipo");
-                btn_Guardar.Enabled = false;
+
             }
         }
 
