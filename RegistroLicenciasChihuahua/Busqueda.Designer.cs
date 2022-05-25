@@ -33,6 +33,7 @@ namespace RegistroLicenciasChihuahua
             this.panelbusqueda = new System.Windows.Forms.Panel();
             this.pnl_registro = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tbc_Historica = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -53,9 +54,10 @@ namespace RegistroLicenciasChihuahua
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
+            this.lbl_Nombre = new System.Windows.Forms.Label();
+            this.lbl_Rfc = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tbc_actual = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -78,11 +80,8 @@ namespace RegistroLicenciasChihuahua
             this.label23 = new System.Windows.Forms.Label();
             this.lbl_NombreActual = new System.Windows.Forms.Label();
             this.lbl_RfcActual = new System.Windows.Forms.Label();
-            this.lbl_Rfc = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lbl_Nombre = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.pnl_noRegistro = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.btn_nuevoregistro = new System.Windows.Forms.Button();
@@ -98,22 +97,20 @@ namespace RegistroLicenciasChihuahua
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panelbusqueda.SuspendLayout();
             this.pnl_registro.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tbc_Historica.SuspendLayout();
             this.gb_DatoHisto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tbc_actual.SuspendLayout();
             this.gb_DatoActual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Ciudadano)).BeginInit();
             this.pnl_noRegistro.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelbusqueda
@@ -132,11 +129,8 @@ namespace RegistroLicenciasChihuahua
             // 
             this.pnl_registro.Controls.Add(this.panel4);
             this.pnl_registro.Controls.Add(this.panel3);
-            this.pnl_registro.Controls.Add(this.lbl_Rfc);
             this.pnl_registro.Controls.Add(this.label14);
             this.pnl_registro.Controls.Add(this.label6);
-            this.pnl_registro.Controls.Add(this.lbl_Nombre);
-            this.pnl_registro.Controls.Add(this.label13);
             this.pnl_registro.Location = new System.Drawing.Point(12, 195);
             this.pnl_registro.Name = "pnl_registro";
             this.pnl_registro.Size = new System.Drawing.Size(1319, 738);
@@ -150,13 +144,22 @@ namespace RegistroLicenciasChihuahua
             this.panel4.Controls.Add(this.gb_DatoHisto);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.label36);
-            this.panel4.Controls.Add(this.label37);
-            this.panel4.Controls.Add(this.label38);
+            this.panel4.Controls.Add(this.lbl_Nombre);
+            this.panel4.Controls.Add(this.lbl_Rfc);
             this.panel4.ForeColor = System.Drawing.Color.Black;
             this.panel4.Location = new System.Drawing.Point(650, 37);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(538, 289);
             this.panel4.TabIndex = 35;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.tbc_Historica);
+            this.panel2.Location = new System.Drawing.Point(151, 53);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(374, 52);
+            this.panel2.TabIndex = 36;
             // 
             // tbc_Historica
             // 
@@ -168,6 +171,7 @@ namespace RegistroLicenciasChihuahua
             this.tbc_Historica.SelectedIndex = 0;
             this.tbc_Historica.Size = new System.Drawing.Size(580, 31);
             this.tbc_Historica.TabIndex = 34;
+            this.tbc_Historica.SelectedIndexChanged += new System.EventHandler(this.tbc_Historica_SelectedIndexChanged);
             // 
             // tabPage3
             // 
@@ -380,27 +384,27 @@ namespace RegistroLicenciasChihuahua
             this.label36.TabIndex = 24;
             this.label36.Text = "RFC:";
             // 
-            // label37
+            // lbl_Nombre
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(64)))), ((int)(((byte)(115)))));
-            this.label37.Location = new System.Drawing.Point(150, 12);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(83, 22);
-            this.label37.TabIndex = 17;
-            this.label37.Text = "Nombre";
+            this.lbl_Nombre.AutoSize = true;
+            this.lbl_Nombre.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(64)))), ((int)(((byte)(115)))));
+            this.lbl_Nombre.Location = new System.Drawing.Point(150, 12);
+            this.lbl_Nombre.Name = "lbl_Nombre";
+            this.lbl_Nombre.Size = new System.Drawing.Size(83, 22);
+            this.lbl_Nombre.TabIndex = 17;
+            this.lbl_Nombre.Text = "Nombre";
             // 
-            // label38
+            // lbl_Rfc
             // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(64)))), ((int)(((byte)(115)))));
-            this.label38.Location = new System.Drawing.Point(206, 35);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(67, 18);
-            this.label38.TabIndex = 31;
-            this.label38.Text = "Licencia";
+            this.lbl_Rfc.AutoSize = true;
+            this.lbl_Rfc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Rfc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(64)))), ((int)(((byte)(115)))));
+            this.lbl_Rfc.Location = new System.Drawing.Point(206, 35);
+            this.lbl_Rfc.Name = "lbl_Rfc";
+            this.lbl_Rfc.Size = new System.Drawing.Size(67, 18);
+            this.lbl_Rfc.TabIndex = 31;
+            this.lbl_Rfc.Text = "Licencia";
             // 
             // panel3
             // 
@@ -416,6 +420,15 @@ namespace RegistroLicenciasChihuahua
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(538, 289);
             this.panel3.TabIndex = 33;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.tbc_actual);
+            this.panel1.Location = new System.Drawing.Point(154, 57);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(374, 52);
+            this.panel1.TabIndex = 32;
             // 
             // tbc_actual
             // 
@@ -444,7 +457,7 @@ namespace RegistroLicenciasChihuahua
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(572, 2);
+            this.tabPage2.Size = new System.Drawing.Size(572, 17);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -662,17 +675,6 @@ namespace RegistroLicenciasChihuahua
             this.lbl_RfcActual.TabIndex = 31;
             this.lbl_RfcActual.Text = "Licencia";
             // 
-            // lbl_Rfc
-            // 
-            this.lbl_Rfc.AutoSize = true;
-            this.lbl_Rfc.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rfc.Location = new System.Drawing.Point(920, 310);
-            this.lbl_Rfc.Name = "lbl_Rfc";
-            this.lbl_Rfc.Size = new System.Drawing.Size(56, 16);
-            this.lbl_Rfc.TabIndex = 14;
-            this.lbl_Rfc.Text = "Licencia";
-            this.lbl_Rfc.Visible = false;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -692,28 +694,6 @@ namespace RegistroLicenciasChihuahua
             this.label6.Size = new System.Drawing.Size(118, 19);
             this.label6.TabIndex = 9;
             this.label6.Text = "Base histórica";
-            // 
-            // lbl_Nombre
-            // 
-            this.lbl_Nombre.AutoSize = true;
-            this.lbl_Nombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Nombre.Location = new System.Drawing.Point(876, 382);
-            this.lbl_Nombre.Name = "lbl_Nombre";
-            this.lbl_Nombre.Size = new System.Drawing.Size(58, 16);
-            this.lbl_Nombre.TabIndex = 0;
-            this.lbl_Nombre.Text = "Nombre";
-            this.lbl_Nombre.Visible = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(876, 366);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(38, 16);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "RFC:";
-            this.label13.Visible = false;
             // 
             // pnl_noRegistro
             // 
@@ -893,24 +873,6 @@ namespace RegistroLicenciasChihuahua
             this.label1.TabIndex = 7;
             this.label1.Text = "Búsqueda del ciudadano";
             // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.tbc_actual);
-            this.panel1.Location = new System.Drawing.Point(154, 57);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 52);
-            this.panel1.TabIndex = 32;
-            // 
-            // panel2
-            // 
-            this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.tbc_Historica);
-            this.panel2.Location = new System.Drawing.Point(151, 53);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(374, 52);
-            this.panel2.TabIndex = 36;
-            // 
             // Busqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -929,12 +891,14 @@ namespace RegistroLicenciasChihuahua
             this.pnl_registro.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.tbc_Historica.ResumeLayout(false);
             this.gb_DatoHisto.ResumeLayout(false);
             this.gb_DatoHisto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.tbc_actual.ResumeLayout(false);
             this.gb_DatoActual.ResumeLayout(false);
             this.gb_DatoActual.PerformLayout();
@@ -943,8 +907,6 @@ namespace RegistroLicenciasChihuahua
             this.pnl_noRegistro.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -975,14 +937,12 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.GroupBox gb_DatoHisto;
         private System.Windows.Forms.Button btn_EditHistorica;
         private System.Windows.Forms.Label lbl_EditHistorica;
-        private System.Windows.Forms.Label lbl_Rfc;
         private System.Windows.Forms.Label lbl_Vencimiento;
         private System.Windows.Forms.Label lbl_Expedicion;
         private System.Windows.Forms.Label lbl_Vigencia;
         private System.Windows.Forms.Label lbl_Status;
         private System.Windows.Forms.Label lbl_NoLicencia;
         private System.Windows.Forms.Label lbl_Licencia;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -1006,7 +966,6 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.Panel pnl_noRegistro;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnl_registro;
-        private System.Windows.Forms.Label lbl_Nombre;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.TabControl tbc_actual;
         private System.Windows.Forms.TabPage tabPage1;
@@ -1017,8 +976,8 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label lbl_Nombre;
+        private System.Windows.Forms.Label lbl_Rfc;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
     }
