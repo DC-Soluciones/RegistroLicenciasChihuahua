@@ -107,7 +107,7 @@ namespace RegistroLicenciasChihuahua
                     gb_DatoActual.Visible = true;
                     //txt_actual.Visible = false;
                     lbl_EditAct.Text = cdActual.TramiteId.ToString();
-                    try
+                    if(cdActual.FotoLic!=null)
                     {
                         MemoryStream ms = new MemoryStream(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
                         ms.Write(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
@@ -115,7 +115,7 @@ namespace RegistroLicenciasChihuahua
                         pb_Ciudadano.Image = returnImage;
                         pb_Ciudadano.Visible = true;
                     }
-                    catch
+                    else
                     {
                         pb_Ciudadano.Image = null; pb_Ciudadano.Visible = false;
                     }
@@ -164,7 +164,7 @@ namespace RegistroLicenciasChihuahua
                         lbl_Rfc.Text = cIUDADANO.RFC;
                         gb_DatoHisto.Visible = true;
                         lbl_EditHistorica.Text = cIUDADANO.TramiteId.ToString();
-                        try
+                        if(cIUDADANO.FotoLic!=null)
                         {
                             MemoryStream ms = new MemoryStream(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
                             ms.Write(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
@@ -172,7 +172,7 @@ namespace RegistroLicenciasChihuahua
                             pb_Ciudadano.Image = returnImage;
                             pb_Ciudadano.Visible = true;
                         }
-                        catch
+                        else
                         {
                             pb_Ciudadano.Image = null;
                             pb_Ciudadano.Visible = false;
@@ -245,7 +245,7 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_EditHistorica_Click(object sender, EventArgs e)
         {
-            Registro registro = new Registro("", "", Convert.ToInt32(lbl_EditHistorica.Text), "Historica");
+            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditHistorica.Text), "Historica");
             registro.FormBorderStyle = FormBorderStyle.Sizable;
             registro.StartPosition = FormStartPosition.CenterScreen;
             registro.Size = new Size(1300, 850);
