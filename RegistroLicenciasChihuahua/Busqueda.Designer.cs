@@ -98,6 +98,8 @@ namespace RegistroLicenciasChihuahua
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelbusqueda.SuspendLayout();
             this.pnl_registro.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -110,6 +112,8 @@ namespace RegistroLicenciasChihuahua
             ((System.ComponentModel.ISupportInitialize)(this.pb_Ciudadano)).BeginInit();
             this.pnl_noRegistro.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelbusqueda
@@ -142,7 +146,7 @@ namespace RegistroLicenciasChihuahua
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel4.Controls.Add(this.tbc_Historica);
+            this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.gb_DatoHisto);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.label36);
@@ -159,7 +163,7 @@ namespace RegistroLicenciasChihuahua
             this.tbc_Historica.Controls.Add(this.tabPage3);
             this.tbc_Historica.Controls.Add(this.tabPage4);
             this.tbc_Historica.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbc_Historica.Location = new System.Drawing.Point(155, 56);
+            this.tbc_Historica.Location = new System.Drawing.Point(3, 10);
             this.tbc_Historica.Name = "tbc_Historica";
             this.tbc_Historica.SelectedIndex = 0;
             this.tbc_Historica.Size = new System.Drawing.Size(580, 31);
@@ -202,7 +206,7 @@ namespace RegistroLicenciasChihuahua
             this.gb_DatoHisto.Controls.Add(this.label9);
             this.gb_DatoHisto.Controls.Add(this.label8);
             this.gb_DatoHisto.Controls.Add(this.label7);
-            this.gb_DatoHisto.Location = new System.Drawing.Point(159, 93);
+            this.gb_DatoHisto.Location = new System.Drawing.Point(155, 111);
             this.gb_DatoHisto.Name = "gb_DatoHisto";
             this.gb_DatoHisto.Size = new System.Drawing.Size(366, 174);
             this.gb_DatoHisto.TabIndex = 0;
@@ -401,7 +405,7 @@ namespace RegistroLicenciasChihuahua
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel3.Controls.Add(this.tbc_actual);
+            this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.gb_DatoActual);
             this.panel3.Controls.Add(this.pb_Ciudadano);
             this.panel3.Controls.Add(this.label23);
@@ -418,10 +422,10 @@ namespace RegistroLicenciasChihuahua
             this.tbc_actual.Controls.Add(this.tabPage1);
             this.tbc_actual.Controls.Add(this.tabPage2);
             this.tbc_actual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbc_actual.Location = new System.Drawing.Point(155, 56);
+            this.tbc_actual.Location = new System.Drawing.Point(5, 6);
             this.tbc_actual.Name = "tbc_actual";
             this.tbc_actual.SelectedIndex = 0;
-            this.tbc_actual.Size = new System.Drawing.Size(580, 31);
+            this.tbc_actual.Size = new System.Drawing.Size(580, 46);
             this.tbc_actual.TabIndex = 34;
             this.tbc_actual.SelectedIndexChanged += new System.EventHandler(this.tbc_actual_SelectedIndexChanged);
             // 
@@ -430,7 +434,7 @@ namespace RegistroLicenciasChihuahua
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(572, 2);
+            this.tabPage1.Size = new System.Drawing.Size(572, 17);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -462,7 +466,7 @@ namespace RegistroLicenciasChihuahua
             this.gb_DatoActual.Controls.Add(this.label24);
             this.gb_DatoActual.Controls.Add(this.lbl_NoLicActual);
             this.gb_DatoActual.Controls.Add(this.lbl_LicActual);
-            this.gb_DatoActual.Location = new System.Drawing.Point(159, 93);
+            this.gb_DatoActual.Location = new System.Drawing.Point(155, 111);
             this.gb_DatoActual.Name = "gb_DatoActual";
             this.gb_DatoActual.Size = new System.Drawing.Size(364, 168);
             this.gb_DatoActual.TabIndex = 0;
@@ -889,6 +893,24 @@ namespace RegistroLicenciasChihuahua
             this.label1.TabIndex = 7;
             this.label1.Text = "Búsqueda del ciudadano";
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.tbc_actual);
+            this.panel1.Location = new System.Drawing.Point(154, 57);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(374, 52);
+            this.panel1.TabIndex = 32;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.tbc_Historica);
+            this.panel2.Location = new System.Drawing.Point(151, 53);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(374, 52);
+            this.panel2.TabIndex = 36;
+            // 
             // Busqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -921,6 +943,8 @@ namespace RegistroLicenciasChihuahua
             this.pnl_noRegistro.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -995,5 +1019,7 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
