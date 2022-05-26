@@ -433,7 +433,7 @@ namespace RegistroLicenciasChihuahua
                 var impo = _context.dtImportes.Where(x => x.VigenciaId == vigid).FirstOrDefault();
 
                 txt_Importe.Text = impo.Monto.ToString("0.00");
-                if (txt_Fexpedicion.Text != "")
+                if (txt_Fexpedicion.Text != "  /  /")
                 {
                     DateTime exp = Convert.ToDateTime(txt_Fexpedicion.Text);
                     txt_Fvencimiento.Text = exp.AddYears(vig).ToString("dd/MM/yyyy");
