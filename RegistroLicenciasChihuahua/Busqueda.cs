@@ -35,7 +35,7 @@ namespace RegistroLicenciasChihuahua
             {
                 btn_Editactual.Text = "Visualizar";
                 btn_Editactual.Image = null;
-                
+                btn_Editactual.TextAlign = ContentAlignment.MiddleCenter;
                 //btn_Editactual.Visible = false;
             }
         }
