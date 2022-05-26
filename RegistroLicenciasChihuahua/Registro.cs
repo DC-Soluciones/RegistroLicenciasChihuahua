@@ -21,11 +21,14 @@ namespace RegistroLicenciasChihuahua
         dtTramite ciudadano;
         string Usuario;
         int usuarioid1 = 0;
-
+        int rolID;
         public Registro(string curp, string usuario, int id, string bd, int IdUserC)
         {
             InitializeComponent();
             usuarioid1 = IdUserC;
+            _context = new LicenciasCH_Entities();
+            var rol = _context.dtUsuarios.Where(x => x.UsuarioId == usuarioid1).FirstOrDefault();
+            rolID = rol.RolId;
             if (curp != "")
             {
                 using (var _context = new LicenciasCH_Entities())
@@ -123,6 +126,11 @@ namespace RegistroLicenciasChihuahua
         private void CargarEdicion(int id, string bd)
         {
             _context = new LicenciasCH_Entities();
+            
+            if(rolID != 1 && rolID != 2)
+            {
+                btn_Guardar.Enabled = false;
+            }
 
 
             if (bd == "Actual" || bd == "")
@@ -376,7 +384,7 @@ namespace RegistroLicenciasChihuahua
 
             _context = new LicenciasCH_Entities();
             var rol = _context.dtUsuarios.Where(x => x.UsuarioId == usuarioid1).FirstOrDefault();
-
+            rolID = rol.RolId;
             if (rol.RolId == 1 || rol.RolId == 2)
             {
                 txt_Fexpedicion.Enabled = true;

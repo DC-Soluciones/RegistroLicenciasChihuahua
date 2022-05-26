@@ -86,7 +86,6 @@ namespace RegistroLicenciasChihuahua
             this.label17 = new System.Windows.Forms.Label();
             this.txt_Curp = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.txt_Fnacimiento = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_Rfc = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -124,7 +123,6 @@ namespace RegistroLicenciasChihuahua
             this.txt_Folio = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txt_Fantiguedad = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_Licanterior = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -137,6 +135,8 @@ namespace RegistroLicenciasChihuahua
             this.dtMunicipioTableAdapter = new RegistroLicenciasChihuahua.LicenciasCHDataSetMunicipiosTableAdapters.dtMunicipioTableAdapter();
             this.txt_Fexpedicion = new System.Windows.Forms.MaskedTextBox();
             this.txt_Fvencimiento = new System.Windows.Forms.MaskedTextBox();
+            this.txt_Fantiguedad = new System.Windows.Forms.MaskedTextBox();
+            this.txt_Fnacimiento = new System.Windows.Forms.MaskedTextBox();
             this.panelregistro.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.pnl_Menor.SuspendLayout();
@@ -670,7 +670,6 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel2.Controls.Add(this.label17, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.txt_Curp, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label18, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txt_Fnacimiento, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.label19, 4, 1);
             this.tableLayoutPanel2.Controls.Add(this.txt_Rfc, 5, 1);
             this.tableLayoutPanel2.Controls.Add(this.label20, 0, 2);
@@ -689,6 +688,7 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel2.Controls.Add(this.cb_ComprobanteDom, 5, 3);
             this.tableLayoutPanel2.Controls.Add(this.label27, 6, 3);
             this.tableLayoutPanel2.Controls.Add(this.txt_NoComprobante, 7, 3);
+            this.tableLayoutPanel2.Controls.Add(this.txt_Fnacimiento, 3, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(14, 226);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -802,13 +802,6 @@ namespace RegistroLicenciasChihuahua
             this.label18.Size = new System.Drawing.Size(79, 32);
             this.label18.TabIndex = 10;
             this.label18.Text = "Fecha de nacimiento";
-            // 
-            // txt_Fnacimiento
-            // 
-            this.txt_Fnacimiento.Location = new System.Drawing.Point(429, 30);
-            this.txt_Fnacimiento.Name = "txt_Fnacimiento";
-            this.txt_Fnacimiento.Size = new System.Drawing.Size(136, 20);
-            this.txt_Fnacimiento.TabIndex = 11;
             // 
             // label19
             // 
@@ -1047,11 +1040,11 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel1.Controls.Add(this.txt_Folio, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label9, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Fantiguedad, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label11, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.txt_Licanterior, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.txt_Fexpedicion, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.txt_Fvencimiento, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Fantiguedad, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 78);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -1211,13 +1204,6 @@ namespace RegistroLicenciasChihuahua
             this.label10.TabIndex = 15;
             this.label10.Text = "Fecha de antigüedad";
             // 
-            // txt_Fantiguedad
-            // 
-            this.txt_Fantiguedad.Location = new System.Drawing.Point(152, 56);
-            this.txt_Fantiguedad.Name = "txt_Fantiguedad";
-            this.txt_Fantiguedad.Size = new System.Drawing.Size(150, 20);
-            this.txt_Fantiguedad.TabIndex = 16;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -1304,6 +1290,20 @@ namespace RegistroLicenciasChihuahua
             this.txt_Fvencimiento.Size = new System.Drawing.Size(150, 20);
             this.txt_Fvencimiento.TabIndex = 20;
             this.txt_Fvencimiento.ValidatingType = typeof(System.DateTime);
+            // 
+            // txt_Fantiguedad
+            // 
+            this.txt_Fantiguedad.Location = new System.Drawing.Point(152, 56);
+            this.txt_Fantiguedad.Name = "txt_Fantiguedad";
+            this.txt_Fantiguedad.Size = new System.Drawing.Size(150, 20);
+            this.txt_Fantiguedad.TabIndex = 21;
+            // 
+            // txt_Fnacimiento
+            // 
+            this.txt_Fnacimiento.Location = new System.Drawing.Point(429, 30);
+            this.txt_Fnacimiento.Name = "txt_Fnacimiento";
+            this.txt_Fnacimiento.Size = new System.Drawing.Size(136, 20);
+            this.txt_Fnacimiento.TabIndex = 30;
             // 
             // Registro
             // 
@@ -1398,7 +1398,6 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txt_Curp;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txt_Fnacimiento;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txt_Rfc;
         private System.Windows.Forms.Label label20;
@@ -1434,7 +1433,6 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.TextBox txt_Folio;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txt_Fantiguedad;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txt_Licanterior;
         private System.Windows.Forms.Panel panel1;
@@ -1449,5 +1447,7 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.BindingSource dtMunicipioBindingSource1;
         private System.Windows.Forms.MaskedTextBox txt_Fexpedicion;
         private System.Windows.Forms.MaskedTextBox txt_Fvencimiento;
+        private System.Windows.Forms.MaskedTextBox txt_Fnacimiento;
+        private System.Windows.Forms.MaskedTextBox txt_Fantiguedad;
     }
 }
