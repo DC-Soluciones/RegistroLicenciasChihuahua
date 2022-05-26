@@ -875,7 +875,7 @@ namespace RegistroLicenciasChihuahua
                     {
                         dtramite.TipoTramite = "X";
                     }
-                    dtramite.UsuarioCreador = Convert.ToInt32(usId);
+                    dtramite.UsuarioModifico = Convert.ToInt32(usId);
                     int idv = Convert.ToInt32(cb_Vigencia.SelectedValue.ToString());
                     var aniosvig = _context.dtVigencias.Where(x => x.VigenciaId == idv).FirstOrDefault();
                     // dtramite.TipoTramite = Convert.ToString(cb_Ttramite.SelectedValue);
@@ -914,7 +914,7 @@ namespace RegistroLicenciasChihuahua
                     dtramite.Ocupacion = txt_Ocupacion.Text;
                     dtramite.TipoIdentificacion = cb_Tidentificacion.SelectedItem.ToString();
                     dtramite.NoId = txt_NoIdentificacion.Text;
-                        dtramite.ComporbanteDomicilio = cb_ComprobanteDom.Text;
+                    dtramite.ComporbanteDomicilio = cb_ComprobanteDom.Text;
                     dtramite.NoComprobante = txt_NoComprobante.Text;
                     dtramite.Ben1Nombre = txt_NContacto.Text;
                     dtramite.Ben1AMaterno = txt_AMContacto.Text;
