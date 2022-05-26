@@ -50,7 +50,7 @@ namespace RegistroLicenciasChihuahua
                 panelbusqueda.Controls.Clear();
                 panelbusqueda.Controls.Add(registro);
                 panelbusqueda.Tag = registro;
-                registro.ShowDialog(); 
+                registro.Show(); 
             }
             else
             {
