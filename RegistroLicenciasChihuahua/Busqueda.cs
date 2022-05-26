@@ -24,11 +24,13 @@ namespace RegistroLicenciasChihuahua
         string usuario;
         public static string UserRol;
         string code = null;
-        public Busqueda(string user, string userRol)
+        int idusuarioc;
+        public Busqueda(string user, string userRol, int IDuser)
         {
             InitializeComponent();
             usuario = user;
             UserRol = userRol;
+            idusuarioc = IDuser;
             if (userRol != "Supervisor" && userRol != "Administrador" &&  userRol != "Capturista")
             {
                 btn_Editactual.Visible = false;
@@ -44,7 +46,7 @@ namespace RegistroLicenciasChihuahua
             {
                 if (this.panelbusqueda.Controls.Count > 0)
                     this.panelbusqueda.Controls.RemoveAt(0);
-                Registro registro = new Registro(txt_Curp.Text, usuario, 0, "");
+                Registro registro = new Registro(txt_Curp.Text, usuario, 0, "", idusuarioc);
                 registro.TopLevel = false;
                 registro.Dock = DockStyle.Fill;
                 panelbusqueda.Controls.Clear();
@@ -254,7 +256,7 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_EditHistorica_Click(object sender, EventArgs e)
         {
-            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditHistorica.Text), "Historica");
+            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditHistorica.Text), "Historica", idusuarioc);
             registro.FormBorderStyle = FormBorderStyle.Sizable;
             registro.StartPosition = FormStartPosition.CenterScreen;
             registro.Size = new Size(1300, 850);
@@ -265,7 +267,7 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_Editactual_Click(object sender, EventArgs e)
         {
-            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditAct.Text), "Actual");
+            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditAct.Text), "Actual", idusuarioc);
 
             registro.FormBorderStyle = FormBorderStyle.Sizable;
             registro.StartPosition = FormStartPosition.CenterScreen;

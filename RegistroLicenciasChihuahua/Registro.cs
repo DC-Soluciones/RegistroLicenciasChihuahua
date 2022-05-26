@@ -20,11 +20,12 @@ namespace RegistroLicenciasChihuahua
         LicenciasCH_Entities _context;
         dtTramite ciudadano;
         string Usuario;
+        int usuarioid1 = 0;
 
-        public Registro(string curp, string usuario, int id, string bd)
+        public Registro(string curp, string usuario, int id, string bd, int IdUserC)
         {
             InitializeComponent();
-
+            usuarioid1 = IdUserC;
             if (curp != "")
             {
                 using (var _context = new LicenciasCH_Entities())
@@ -225,14 +226,144 @@ namespace RegistroLicenciasChihuahua
         }
         public Boolean IsValid(Form form)
         {
+            
+
+
             if (cb_Tlicencia.SelectedValue.ToString() == "E" || cb_Tlicencia.SelectedValue.ToString() == "P")
             {
-                return form.Controls.OfType<TextBox>().Any(x => x.Tag.ToString() == "Required"
-                 && string.IsNullOrEmpty(x.Text) && Visible == true);
+                if(txt_Nombre.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar nombre");
+                    return false;
+                }
+                if (txt_ApellidoP.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar apellido paterno");
+                    return false;
+                }
+                if (txt_ApellidoM.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar apellido materno");
+                    return false;
+                }
+                if (txt_Curp.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la curp correcta");
+                    return false;
+                }
+                if (txt_Rfc.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar el RFC correcto");
+                    return false;
+                }
+                if (txt_Telefono.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar número telefónico");
+                    return false;
+                }
+                if (txt_Ocupacion.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la ocupación");
+                    return false;
+                }
+                if (txt_NoIdentificacion.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la número de identificación");
+                    return false;
+                }
+                if (txt_NoComprobante.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la número de de comprobante");
+                    return false;
+                }
+                if (txt_NContacto.Text == "" || txt_APContacto.Text == "" || txt_AMContacto.Text == "" || txt_TelContacto.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar información de contacto ");
+                    return false;
+                }
+                if (txt_NTutor.Text == "" || txt_APTutor.Text == "" || txt_AMTutor.Text == "" )
+                {
+                    MessageBox.Show("Favor de ingresar información de tutor ");
+                    return false;
+                }
+
+                if (txt_Calle.Text == "" || txt_Colonia.Text == "" || txt_CP.Text == "" || txt_NoExterior.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar dirección completa");
+                    return false;
+
+                }
+                else
+                {
+                    return true;
+                }
+
+
             }
             else
             {
-                return true;
+                if (txt_Nombre.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar nombre");
+                    return false;
+                }
+                if (txt_ApellidoP.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar apellido paterno");
+                    return false;
+                }
+                if (txt_ApellidoM.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar apellido materno");
+                    return false;
+                }
+                if (txt_Curp.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la curp correcta");
+                    return false;
+                }
+                if (txt_Rfc.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar el RFC correcto");
+                    return false;
+                }
+                if (txt_Telefono.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar número telefónico");
+                    return false;
+                }
+                if (txt_Ocupacion.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la ocupación");
+                    return false;
+                }
+                if (txt_NoIdentificacion.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la número de identificación");
+                    return false;
+                }
+                if (txt_NoComprobante.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la número de de comprobante");
+                    return false;
+                }
+                if (txt_NContacto.Text == "" || txt_APContacto.Text == "" || txt_AMContacto.Text == "" || txt_TelContacto.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar información de contacto ");
+                    return false;
+                }
+           
+
+                if (txt_Calle.Text == "" || txt_Colonia.Text == "" && txt_CP.Text == "" || txt_NoExterior.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar dirección completa");
+                    return false;
+
+                }
+                else
+                {
+                    return true;
+                }
             }
 
         }
@@ -242,6 +373,20 @@ namespace RegistroLicenciasChihuahua
             this.dtMunicipioTableAdapter.Fill(this.licenciasCHDataSetMunicipios.dtMunicipio);
             // TODO: esta línea de código carga datos en la tabla 'licenciasCHDataSet.dtTipoLicencias' Puede moverla o quitarla según sea necesario.
             this.dtTipoLicenciasTableAdapter.Fill(this.licenciasCHDataSet.dtTipoLicencias);
+
+            _context = new LicenciasCH_Entities();
+            var rol = _context.dtUsuarios.Where(x => x.UsuarioId == usuarioid1).FirstOrDefault();
+
+            if (rol.RolId == 1 || rol.RolId == 2)
+            {
+                txt_Fexpedicion.Enabled = true;
+                txt_Fvencimiento.Enabled = true;
+            }
+            else
+            {
+                txt_Fexpedicion.Enabled = false;
+                txt_Fvencimiento.Enabled = false;
+            }
 
         }
 
@@ -451,7 +596,7 @@ namespace RegistroLicenciasChihuahua
 
     
                 var iduser = new dtUsuario();
-                var usuarioid1 = 0;
+               
                 using (_context = new LicenciasCH_Entities())
                 {
                     iduser = _context.dtUsuarios.Where(x => x.NombreUsuario == Usuario).FirstOrDefault();
