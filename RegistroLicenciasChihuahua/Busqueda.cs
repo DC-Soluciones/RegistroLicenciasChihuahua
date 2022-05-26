@@ -34,6 +34,8 @@ namespace RegistroLicenciasChihuahua
             if (userRol != "Supervisor" && userRol != "Administrador" &&  userRol != "Capturista")
             {
                 btn_Editactual.Text = "Visualizar";
+                btn_Editactual.Image = null;
+                
                 //btn_Editactual.Visible = false;
             }
         }
