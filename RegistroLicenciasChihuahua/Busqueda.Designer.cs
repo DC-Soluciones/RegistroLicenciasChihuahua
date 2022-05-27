@@ -929,12 +929,12 @@ namespace RegistroLicenciasChihuahua
             // 
             // panel1
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.tbc_actual);
-            this.panel1.Location = new System.Drawing.Point(154, 56);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(393, 53);
-            this.panel1.TabIndex = 35;
+            this.pnl_actual.AutoScroll = true;
+            this.pnl_actual.Controls.Add(this.tbc_actual);
+            this.pnl_actual.Location = new System.Drawing.Point(154, 56);
+            this.pnl_actual.Name = "panel1";
+            this.pnl_actual.Size = new System.Drawing.Size(393, 53);
+            this.pnl_actual.TabIndex = 35;
             // 
             // panel2
             // 

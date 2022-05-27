@@ -77,5 +77,11 @@ namespace RegistroLicenciasChihuahua
         {
             System.Environment.Exit(0);
         }
+
+        private void btn_escaner_Click(object sender, EventArgs e)
+        {
+            Escanear escanear = new Escanear();
+            escanear.Show();
+        }
     }
 }
