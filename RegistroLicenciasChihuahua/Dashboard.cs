@@ -49,7 +49,7 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_menu_busqueda_Click(object sender, EventArgs e)
         {
-            loadform(new Busqueda(userDashboard, RolUsuario));
+            loadform(new Busqueda(userDashboard, RolUsuario, idUser));
         }
 
         private void btn_mistramites_Click(object sender, EventArgs e)

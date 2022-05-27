@@ -20,11 +20,15 @@ namespace RegistroLicenciasChihuahua
         LicenciasCH_Entities _context;
         dtTramite ciudadano;
         string Usuario;
-
-        public Registro(string curp, string usuario, int id, string bd)
+        int usuarioid1 = 0;
+        int rolID;
+        public Registro(string curp, string usuario, int id, string bd, int IdUserC)
         {
             InitializeComponent();
-
+            usuarioid1 = IdUserC;
+            _context = new LicenciasCH_Entities();
+            var rol = _context.dtUsuarios.Where(x => x.UsuarioId == usuarioid1).FirstOrDefault();
+            rolID = rol.RolId;
             if (curp != "")
             {
                 using (var _context = new LicenciasCH_Entities())
@@ -122,6 +126,11 @@ namespace RegistroLicenciasChihuahua
         private void CargarEdicion(int id, string bd)
         {
             _context = new LicenciasCH_Entities();
+            
+            if(rolID != 1 && rolID != 2)
+            {
+                btn_Guardar.Enabled = false;
+            }
 
 
             if (bd == "Actual" || bd == "")
@@ -141,6 +150,9 @@ namespace RegistroLicenciasChihuahua
                 ciudadano = (from d in _contextHist.dtTramites
                              where d.TramiteId == id
                              select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
+                btn_Biometricos.Visible = false;
+                btn_Guardar.Visible = false;
+                btn_Escaneo.Visible = false;
             }
 
             if (ciudadano.Sexo == "M")
@@ -222,14 +234,144 @@ namespace RegistroLicenciasChihuahua
         }
         public Boolean IsValid(Form form)
         {
+            
+
+
             if (cb_Tlicencia.SelectedValue.ToString() == "E" || cb_Tlicencia.SelectedValue.ToString() == "P")
             {
-                return form.Controls.OfType<TextBox>().Any(x => x.Tag.ToString() == "Required"
-                 && string.IsNullOrEmpty(x.Text) && Visible == true);
+                if(txt_Nombre.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar nombre");
+                    return false;
+                }
+                if (txt_ApellidoP.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar apellido paterno");
+                    return false;
+                }
+                if (txt_ApellidoM.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar apellido materno");
+                    return false;
+                }
+                if (txt_Curp.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la curp correcta");
+                    return false;
+                }
+                if (txt_Rfc.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar el RFC correcto");
+                    return false;
+                }
+                if (txt_Telefono.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar número telefónico");
+                    return false;
+                }
+                if (txt_Ocupacion.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la ocupación");
+                    return false;
+                }
+                if (txt_NoIdentificacion.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la número de identificación");
+                    return false;
+                }
+                if (txt_NoComprobante.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la número de de comprobante");
+                    return false;
+                }
+                if (txt_NContacto.Text == "" || txt_APContacto.Text == "" || txt_AMContacto.Text == "" || txt_TelContacto.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar información de contacto ");
+                    return false;
+                }
+                if (txt_NTutor.Text == "" || txt_APTutor.Text == "" || txt_AMTutor.Text == "" )
+                {
+                    MessageBox.Show("Favor de ingresar información de tutor ");
+                    return false;
+                }
+
+                if (txt_Calle.Text == "" || txt_Colonia.Text == "" || txt_CP.Text == "" || txt_NoExterior.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar dirección completa");
+                    return false;
+
+                }
+                else
+                {
+                    return true;
+                }
+
+
             }
             else
             {
-                return true;
+                if (txt_Nombre.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar nombre");
+                    return false;
+                }
+                if (txt_ApellidoP.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar apellido paterno");
+                    return false;
+                }
+                if (txt_ApellidoM.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar apellido materno");
+                    return false;
+                }
+                if (txt_Curp.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la curp correcta");
+                    return false;
+                }
+                if (txt_Rfc.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar el RFC correcto");
+                    return false;
+                }
+                if (txt_Telefono.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar número telefónico");
+                    return false;
+                }
+                if (txt_Ocupacion.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la ocupación");
+                    return false;
+                }
+                if (txt_NoIdentificacion.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la número de identificación");
+                    return false;
+                }
+                if (txt_NoComprobante.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar la número de de comprobante");
+                    return false;
+                }
+                if (txt_NContacto.Text == "" || txt_APContacto.Text == "" || txt_AMContacto.Text == "" || txt_TelContacto.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar información de contacto ");
+                    return false;
+                }
+           
+
+                if (txt_Calle.Text == "" || txt_Colonia.Text == "" && txt_CP.Text == "" || txt_NoExterior.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar dirección completa");
+                    return false;
+
+                }
+                else
+                {
+                    return true;
+                }
             }
 
         }
@@ -239,6 +381,20 @@ namespace RegistroLicenciasChihuahua
             this.dtMunicipioTableAdapter.Fill(this.licenciasCHDataSetMunicipios.dtMunicipio);
             // TODO: esta línea de código carga datos en la tabla 'licenciasCHDataSet.dtTipoLicencias' Puede moverla o quitarla según sea necesario.
             this.dtTipoLicenciasTableAdapter.Fill(this.licenciasCHDataSet.dtTipoLicencias);
+
+            _context = new LicenciasCH_Entities();
+            var rol = _context.dtUsuarios.Where(x => x.UsuarioId == usuarioid1).FirstOrDefault();
+            rolID = rol.RolId;
+            if (rol.RolId == 1 || rol.RolId == 2)
+            {
+                txt_Fexpedicion.Enabled = true;
+                txt_Fvencimiento.Enabled = true;
+            }
+            else
+            {
+                txt_Fexpedicion.Enabled = false;
+                txt_Fvencimiento.Enabled = false;
+            }
 
         }
 
@@ -262,15 +418,24 @@ namespace RegistroLicenciasChihuahua
 
         private void cb_Tlicencia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Vigencia();
+            try
+            {
+                Vigencia();
 
-            if (Convert.ToString(cb_Tlicencia.SelectedValue) == "E" || Convert.ToString(cb_Tlicencia.SelectedValue) == "P")
-            {
-                pnl_Menor.Visible = true;
+                if (Convert.ToString(cb_Tlicencia.SelectedValue) == "E" || Convert.ToString(cb_Tlicencia.SelectedValue) == "P")
+                {
+                    pnl_Menor.Visible = true;
+                }
+                else
+                {
+                    pnl_Menor.Visible = false;
+                }
+
+           
             }
-            else
+            catch
             {
-                pnl_Menor.Visible = false;
+
             }
         }
 
@@ -421,7 +586,7 @@ namespace RegistroLicenciasChihuahua
                 var impo = _context.dtImportes.Where(x => x.VigenciaId == vigid).FirstOrDefault();
 
                 txt_Importe.Text = impo.Monto.ToString("0.00");
-                if (txt_Fexpedicion.Text != "")
+                if (txt_Fexpedicion.Text != "  /  /")
                 {
                     DateTime exp = Convert.ToDateTime(txt_Fexpedicion.Text);
                     txt_Fvencimiento.Text = exp.AddYears(vig).ToString("dd/MM/yyyy");
@@ -436,223 +601,238 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            var iduser = new dtUsuario();
-            var usuarioid1 = 0;
-            using (_context = new LicenciasCH_Entities())
-            {
-                iduser = _context.dtUsuarios.Where(x => x.NombreUsuario == Usuario).FirstOrDefault();
 
-                if (iduser == null)
+    
+                var iduser = new dtUsuario();
+               
+                using (_context = new LicenciasCH_Entities())
                 {
-                    usuarioid1 = 5;
-                }
-                else
-                {
-                    usuarioid1 = iduser.UsuarioId;
-                }
-                if (!IsValid(this))
-                {
-                    MessageBox.Show("Necesita llenar campos obligatorios");
-                }
-                else
-                {
-                    dtTramite dtramite = new dtTramite();
-                    if (txt_Id.Text != "")
-                    {
-                        int idtr = Convert.ToInt32(txt_Id.Text);
-                        dtramite = _context.dtTramites.Where(x => x.TramiteId == idtr).FirstOrDefault();
+                    iduser = _context.dtUsuarios.Where(x => x.NombreUsuario == Usuario).FirstOrDefault();
 
-                    }
-                    if (dtramite != null && txt_Id.Text != "")
+                    if (iduser == null)
                     {
-                        updateTramite(usuarioid1);
+                        usuarioid1 = 5;
                     }
                     else
                     {
-
-                        try
+                        usuarioid1 = iduser.UsuarioId;
+                    }
+                    if (!IsValid(this))
+                    {
+                        MessageBox.Show("Necesita llenar campos obligatorios");
+                    }
+                    else
+                    {
+                        dtTramite dtramite = new dtTramite();
+                        if (txt_Id.Text != "")
                         {
-                            dtCiudadano dciudadano = new dtCiudadano();
-                            dtramite = new dtTramite();
+                            int idtr = Convert.ToInt32(txt_Id.Text);
+                            dtramite = _context.dtTramites.Where(x => x.TramiteId == idtr).FirstOrDefault();
 
-                            var anv = _context.dtVigencias.Where(x => x.Nombre == cb_Vigencia.Text).FirstOrDefault();
-                            var clave = cb_Tlicencia.SelectedValue.ToString();
-                            var tlic = _context.dtTipoLicencias.Where(x => x.Clave == clave).FirstOrDefault();
-                            dciudadano.Activo = true;
-                            dciudadano.AMaterno = txt_ApellidoM.Text;
-                            dciudadano.AniosVigencia = anv.AniosVigencia;
-                            dciudadano.APaterno = txt_ApellidoP.Text;
-                            dciudadano.Calle = txt_Calle.Text;
-                            dciudadano.Colonia = 0;
-                            dciudadano.CP = txt_CP.Text;
-                            dciudadano.Curp = txt_Curp.Text;
-                            dciudadano.FechaCreacion = System.DateTime.Now;
-                            dciudadano.Nombre = txt_Nombre.Text;
-                            dciudadano.NumExt = txt_NoExterior.Text;
-                            dciudadano.NumInt = txt_NoInterior.Text;
-                            dciudadano.TipoLicencia = tlic.TipoLicenciaId;
-                            dciudadano.UsuarioCreador = Convert.ToInt32(usuarioid1);
-
-                            dtramite.TipoLicencia = cb_Tlicencia.SelectedValue.ToString();
-                            if (cb_Ttramite.SelectedItem.ToString() == "Nueva")
+                        }
+                        if (dtramite != null && txt_Id.Text != "")
+                        {
+                            updateTramite(usuarioid1);
+                        }
+                        else
+                        {
+                        //_context = new LicenciasCH_Entities();
+                            var tipo = Convert.ToString(cb_Tlicencia.SelectedValue);
+                            var tramites = _context.dtTramites.Where(x => x.Curp == txt_Curp.Text && x.TipoLicencia == tipo && x.FechaVencimiento > System.DateTime.Now).FirstOrDefault();
+                            if (tramites != null)
                             {
-                                dtramite.TipoTramite = "E";
-                            }
-                            if (cb_Ttramite.SelectedItem.ToString() == "Reposición")
-                            {
-                                dtramite.TipoTramite = "R";
-                            }
-                            if (cb_Ttramite.SelectedItem.ToString() == "Renovación")
-                            {
-                                dtramite.TipoTramite = "C";
-                            }
-                            if (cb_Ttramite.SelectedItem.ToString() == "Reimpresión")
-                            {
-                                dtramite.TipoTramite = "I";
-                            }
-                            if (cb_Ttramite.SelectedItem.ToString() == "Robo")
-                            {
-                                dtramite.TipoTramite = "O";
-                            }
-                            if (cb_Ttramite.SelectedItem.ToString() == "Extravio")
-                            {
-                                dtramite.TipoTramite = "X";
-                            }
-                            dtramite.UsuarioCreador = Convert.ToInt32(usuarioid1);
-                            // dtramite.TipoTramite = Convert.ToString(cb_Ttramite.SelectedValue);
-                            dtramite.AniosVigencia = Convert.ToInt32(anv.AniosVigencia);
-                            dtramite.Importe = Convert.ToDecimal(txt_Importe.Text);
-                            dtramite.FolioSeguimiento = txt_Folio.Text;
-                            dtramite.FechaExpedicion = DateTime.Parse(txt_Fexpedicion.Text);
-                            dtramite.FechaVencimiento = DateTime.Parse(txt_Fvencimiento.Text);
-                            dtramite.FechaAntiguedad = txt_Fantiguedad.Text != "" ? DateTime.Parse(txt_Fantiguedad.Text) : DateTime.Parse(System.DateTime.Now.ToString());
-                            dtramite.LicenciaAnterior = txt_Licanterior.Text;
-                            dtramite.Nombre = txt_Nombre.Text;
-                            dtramite.ApellidoPaterno = txt_ApellidoP.Text;
-                            dtramite.ApellidoMaterno = txt_ApellidoM.Text;
-                            dtramite.FechaCreacion = DateTime.Parse(System.DateTime.Now.ToString());
-                            if (cb_Sexo.Text == "Masculino")
-                            {
-                                dtramite.Sexo = "M";
-                            }
-                            if (cb_Sexo.Text == "Femenino")
-                            {
-                                dtramite.Sexo = "F";
-                            }
-                            if (cb_Sexo.Text == "Otro")
-                            {
-                                dtramite.Sexo = "O";
-                            }
-                            dtramite.DestinoId = 29;//iduser.Modulo;
-                                                    //revisar generacion
-                            dtramite.FolioSeguimiento = dtramite.TramiteId.ToString().PadLeft(8, '0');
-                            dtramite.Curp = txt_Curp.Text;
-                            dtramite.FechaNacimiento = DateTime.Parse(txt_Fnacimiento.Text);
-                            dtramite.RFC = txt_Rfc.Text;
-                            dtramite.EstadoCivil = cb_Ecivil.SelectedItem.ToString();
-                            dtramite.Nacionalidad = cb_Nacionalidad.SelectedItem.ToString();
-                            dtramite.Telefono = txt_Telefono.Text;
-                            dtramite.Ocupacion = txt_Ocupacion.Text;
-                            dtramite.TipoIdentificacion = cb_Tidentificacion.SelectedItem.ToString();
-                            dtramite.NoId = txt_NoIdentificacion.Text;
-                            dtramite.ComporbanteDomicilio = cb_ComprobanteDom.SelectedItem.ToString();
-                            dtramite.NoComprobante = txt_NoComprobante.Text;
-                            dtramite.Ben1Nombre = txt_NContacto.Text;
-                            dtramite.Ben1AMaterno = txt_AMContacto.Text;
-                            dtramite.Ben1APaterno = txt_APContacto.Text;
-                            dtramite.TipoTel = txt_TelContacto.Text;
-                            dtramite.Calle = txt_Calle.Text;
-                            dtramite.NoExterior = txt_NoExterior.Text;
-                            dtramite.NoInterior = txt_NoInterior.Text;
-                            dtramite.CodigoPostal = txt_CP.Text;
-                            dtramite.EstadoN = cb_Estado.SelectedItem.ToString();
-                            dtramite.MunicipioN = cb_Municipio.Text;
-                            dtramite.ColoniaN = txt_Colonia.Text;
-                            dtramite.NombreTutor = txt_NTutor.Text;
-                            dtramite.APaternoTutor = txt_APTutor.Text;
-                            dtramite.AMaternoTutor = txt_AMTutor.Text;
-                            dtramite.Estatus = "Registro";
-                            dtramite.FechaEstatus = DateTime.Parse(txt_Fnacimiento.Text);
-                            int consecutivo = 1;
-                            string CodigoDestino = "";
-                            string NumeroLicencia = "";
-                            string letraConsecutiva = "A";
-                            int minimoBloque = 1;
-                            int maximoBloque = 999999;
-
-                            var conseclic = (from c in _context.dtTramites
-                                             where c.DestinoId == 29//iduser.Modulo
-                                             orderby c.ConsecutivoDestino descending
-                                             select new
-                                             {
-                                                 c.ConsecutivoDestino,
-                                                 c.LetraConsecutiva
-                                             }).FirstOrDefault();
-                            if (conseclic != null)
-                            {
-                                //Obtenemos la letra consecutiva general
-
-
-                                //Si nos pasamos del maximo en el consecutivo parcial, reiniciamos la cuenta y nos vamos a la siguiente letra
-                                if (conseclic.ConsecutivoDestino >= maximoBloque)
-                                {
-                                    consecutivo = minimoBloque;
-                                    if (conseclic.LetraConsecutiva == null || conseclic.LetraConsecutiva == "")
-                                    {
-
-                                        letraConsecutiva = "A";
-                                    }
-                                    else
-                                    {
-                                        letraConsecutiva = conseclic.LetraConsecutiva;
-                                    }
-                                    letraConsecutiva = VarUtil.FindNextChar(letraConsecutiva.ToUpper());
-
-                                }
-                                else
-                                {
-                                    //Si no hemos revasado el último bloque solo sumamos uno al consecutivo parcial
-                                    if (conseclic.LetraConsecutiva == null)
-                                    {
-                                        letraConsecutiva = "A";
-                                    }
-                                    else
-                                    {
-                                        letraConsecutiva = conseclic.LetraConsecutiva;
-                                    }
-                                    consecutivo = VarUtil.getInt(conseclic.ConsecutivoDestino) + 1;
-                                }
+                                MessageBox.Show("El ciudadano tiene una licencia vigente de este tipo");
 
                             }
                             else
                             {
-                                letraConsecutiva = "A";
 
-                                consecutivo = 1;
-                            }
-
-                            dtramite.ConsecutivoDestino = consecutivo;
-                            dtramite.LetraConsecutiva = letraConsecutiva;
-                            using (_context = new LicenciasCH_Entities())
+                            try
                             {
-                                _context.dtCiudadanoes.Add(dciudadano);
-                                dtramite.CiudadanoId = dciudadano.CiudadanoId;
-                                _context.dtTramites.Add(dtramite);
-                                _context.SaveChanges();
+                                dtCiudadano dciudadano = new dtCiudadano();
+                                dtramite = new dtTramite();
 
-                                MessageBox.Show("Registro guardado exitosamente!");
+                                var anv = _context.dtVigencias.Where(x => x.Nombre == cb_Vigencia.Text).FirstOrDefault();
+                                var clave = cb_Tlicencia.SelectedValue.ToString();
+                                var tlic = _context.dtTipoLicencias.Where(x => x.Clave == clave).FirstOrDefault();
+                                dciudadano.Activo = true;
+                                dciudadano.AMaterno = txt_ApellidoM.Text;
+                                dciudadano.AniosVigencia = anv.AniosVigencia;
+                                dciudadano.APaterno = txt_ApellidoP.Text;
+                                dciudadano.Calle = txt_Calle.Text;
+                                dciudadano.Colonia = 0;
+                                dciudadano.CP = txt_CP.Text;
+                                dciudadano.Curp = txt_Curp.Text;
+                                dciudadano.FechaCreacion = System.DateTime.Now;
+                                dciudadano.Nombre = txt_Nombre.Text;
+                                dciudadano.NumExt = txt_NoExterior.Text;
+                                dciudadano.NumInt = txt_NoInterior.Text;
+                                dciudadano.TipoLicencia = tlic.TipoLicenciaId;
+                                dciudadano.UsuarioCreador = Convert.ToInt32(usuarioid1);
+
+                                dtramite.TipoLicencia = cb_Tlicencia.SelectedValue.ToString();
+                                if (cb_Ttramite.SelectedItem.ToString() == "Nueva")
+                                {
+                                    dtramite.TipoTramite = "E";
+                                }
+                                if (cb_Ttramite.SelectedItem.ToString() == "Reposición")
+                                {
+                                    dtramite.TipoTramite = "R";
+                                }
+                                if (cb_Ttramite.SelectedItem.ToString() == "Renovación")
+                                {
+                                    dtramite.TipoTramite = "C";
+                                }
+                                if (cb_Ttramite.SelectedItem.ToString() == "Reimpresión")
+                                {
+                                    dtramite.TipoTramite = "I";
+                                }
+                                if (cb_Ttramite.SelectedItem.ToString() == "Robo")
+                                {
+                                    dtramite.TipoTramite = "O";
+                                }
+                                if (cb_Ttramite.SelectedItem.ToString() == "Extravio")
+                                {
+                                    dtramite.TipoTramite = "X";
+                                }
+                                dtramite.UsuarioCreador = Convert.ToInt32(usuarioid1);
+                                // dtramite.TipoTramite = Convert.ToString(cb_Ttramite.SelectedValue);
+                                dtramite.AniosVigencia = Convert.ToInt32(anv.AniosVigencia);
+                                dtramite.Importe = Convert.ToDecimal(txt_Importe.Text);
+                                dtramite.FolioSeguimiento = txt_Folio.Text;
+                                dtramite.FechaExpedicion = DateTime.Parse(txt_Fexpedicion.Text);
+                                dtramite.FechaVencimiento = DateTime.Parse(txt_Fvencimiento.Text);
+                                dtramite.FechaAntiguedad = txt_Fantiguedad.Text != "" ? DateTime.Parse(txt_Fantiguedad.Text) : DateTime.Parse(System.DateTime.Now.ToString());
+                                dtramite.LicenciaAnterior = txt_Licanterior.Text;
+                                dtramite.Nombre = txt_Nombre.Text;
+                                dtramite.ApellidoPaterno = txt_ApellidoP.Text;
+                                dtramite.ApellidoMaterno = txt_ApellidoM.Text;
+                                dtramite.FechaCreacion = DateTime.Parse(System.DateTime.Now.ToString());
+                                if (cb_Sexo.Text == "Masculino")
+                                {
+                                    dtramite.Sexo = "M";
+                                }
+                                if (cb_Sexo.Text == "Femenino")
+                                {
+                                    dtramite.Sexo = "F";
+                                }
+                                if (cb_Sexo.Text == "Otro")
+                                {
+                                    dtramite.Sexo = "O";
+                                }
+                                dtramite.DestinoId = 29;//iduser.Modulo;
+                                                        //revisar generacion
                                 dtramite.FolioSeguimiento = dtramite.TramiteId.ToString().PadLeft(8, '0');
-                                _context.SaveChanges();
-                                txt_Folio.Text = dtramite.FolioSeguimiento;
+                                dtramite.Curp = txt_Curp.Text;
+                                dtramite.FechaNacimiento = DateTime.Parse(txt_Fnacimiento.Text);
+                                dtramite.RFC = txt_Rfc.Text;
+                                dtramite.EstadoCivil = cb_Ecivil.SelectedItem.ToString();
+                                dtramite.Nacionalidad = cb_Nacionalidad.SelectedItem.ToString();
+                                dtramite.Telefono = txt_Telefono.Text;
+                                dtramite.Ocupacion = txt_Ocupacion.Text;
+                                dtramite.TipoIdentificacion = cb_Tidentificacion.SelectedItem.ToString();
+                                dtramite.NoId = txt_NoIdentificacion.Text;
+                                dtramite.ComporbanteDomicilio = cb_ComprobanteDom.SelectedItem.ToString();
+                                dtramite.NoComprobante = txt_NoComprobante.Text;
+                                dtramite.Ben1Nombre = txt_NContacto.Text;
+                                dtramite.Ben1AMaterno = txt_AMContacto.Text;
+                                dtramite.Ben1APaterno = txt_APContacto.Text;
+                                dtramite.TipoTel = txt_TelContacto.Text;
+                                dtramite.Calle = txt_Calle.Text;
+                                dtramite.NoExterior = txt_NoExterior.Text;
+                                dtramite.NoInterior = txt_NoInterior.Text;
+                                dtramite.CodigoPostal = txt_CP.Text;
+                                dtramite.EstadoN = cb_Estado.SelectedItem.ToString();
+                                dtramite.MunicipioN = cb_Municipio.Text;
+                                dtramite.ColoniaN = txt_Colonia.Text;
+                                dtramite.NombreTutor = txt_NTutor.Text;
+                                dtramite.APaternoTutor = txt_APTutor.Text;
+                                dtramite.AMaternoTutor = txt_AMTutor.Text;
+                                dtramite.Estatus = "Registro";
+                                dtramite.FechaEstatus = DateTime.Parse(txt_Fnacimiento.Text);
+                                int consecutivo = 1;
+                                string CodigoDestino = "";
+                                string NumeroLicencia = "";
+                                string letraConsecutiva = "A";
+                                int minimoBloque = 1;
+                                int maximoBloque = 999999;
 
-                                btn_Biometricos.Visible = true;
+                                var conseclic = (from c in _context.dtTramites
+                                                 where c.DestinoId == 29//iduser.Modulo
+                                                 orderby c.ConsecutivoDestino descending
+                                                 select new
+                                                 {
+                                                     c.ConsecutivoDestino,
+                                                     c.LetraConsecutiva
+                                                 }).FirstOrDefault();
+                                if (conseclic != null)
+                                {
+                                    //Obtenemos la letra consecutiva general
+
+
+                                    //Si nos pasamos del maximo en el consecutivo parcial, reiniciamos la cuenta y nos vamos a la siguiente letra
+                                    if (conseclic.ConsecutivoDestino >= maximoBloque)
+                                    {
+                                        consecutivo = minimoBloque;
+                                        if (conseclic.LetraConsecutiva == null || conseclic.LetraConsecutiva == "")
+                                        {
+
+                                            letraConsecutiva = "A";
+                                        }
+                                        else
+                                        {
+                                            letraConsecutiva = conseclic.LetraConsecutiva;
+                                        }
+                                        letraConsecutiva = VarUtil.FindNextChar(letraConsecutiva.ToUpper());
+
+                                    }
+                                    else
+                                    {
+                                        //Si no hemos revasado el último bloque solo sumamos uno al consecutivo parcial
+                                        if (conseclic.LetraConsecutiva == null)
+                                        {
+                                            letraConsecutiva = "A";
+                                        }
+                                        else
+                                        {
+                                            letraConsecutiva = conseclic.LetraConsecutiva;
+                                        }
+                                        consecutivo = VarUtil.getInt(conseclic.ConsecutivoDestino) + 1;
+                                    }
+
+                                }
+                                else
+                                {
+                                    letraConsecutiva = "A";
+
+                                    consecutivo = 1;
+                                }
+
+                                dtramite.ConsecutivoDestino = consecutivo;
+                                dtramite.LetraConsecutiva = letraConsecutiva;
+                                using (_context = new LicenciasCH_Entities())
+                                {
+                                    _context.dtCiudadanoes.Add(dciudadano);
+                                    dtramite.CiudadanoId = dciudadano.CiudadanoId;
+                                    _context.dtTramites.Add(dtramite);
+                                    _context.SaveChanges();
+
+                                    MessageBox.Show("Registro guardado exitosamente!");
+                                    btn_Escaneo.Visible = true;
+                                    btn_Biometricos.Visible = true;
+                                    dtramite.FolioSeguimiento = dtramite.TramiteId.ToString().PadLeft(8, '0');
+                                    _context.SaveChanges();
+                                    txt_Folio.Text = dtramite.FolioSeguimiento;
+
+                                    btn_Biometricos.Visible = true;
+                                }
+
                             }
-
-                        }
-                        catch (Exception ex)
-                        {
-                            string error = ex.Message;
-                            MessageBox.Show("Ocurrio un problema al guardar el registro, favor de revisar los datos.");
+                            catch (Exception ex)
+                            {
+                                string error = ex.Message;
+                                MessageBox.Show("Ocurrio un problema al guardar el registro, favor de revisar los datos.");
+                            }
                         }
                     }
                 }
@@ -695,7 +875,7 @@ namespace RegistroLicenciasChihuahua
                     {
                         dtramite.TipoTramite = "X";
                     }
-                    dtramite.UsuarioCreador = Convert.ToInt32(usId);
+                    dtramite.UsuarioModifico = Convert.ToInt32(usId);
                     int idv = Convert.ToInt32(cb_Vigencia.SelectedValue.ToString());
                     var aniosvig = _context.dtVigencias.Where(x => x.VigenciaId == idv).FirstOrDefault();
                     // dtramite.TipoTramite = Convert.ToString(cb_Ttramite.SelectedValue);
@@ -734,7 +914,7 @@ namespace RegistroLicenciasChihuahua
                     dtramite.Ocupacion = txt_Ocupacion.Text;
                     dtramite.TipoIdentificacion = cb_Tidentificacion.SelectedItem.ToString();
                     dtramite.NoId = txt_NoIdentificacion.Text;
-                        dtramite.ComporbanteDomicilio = cb_ComprobanteDom.Text;
+                    dtramite.ComporbanteDomicilio = cb_ComprobanteDom.Text;
                     dtramite.NoComprobante = txt_NoComprobante.Text;
                     dtramite.Ben1Nombre = txt_NContacto.Text;
                     dtramite.Ben1AMaterno = txt_AMContacto.Text;

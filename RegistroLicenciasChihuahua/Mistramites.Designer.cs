@@ -47,6 +47,9 @@ namespace RegistroLicenciasChihuahua
             this.dtp_Fin = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gv_Tramites = new System.Windows.Forms.DataGridView();
+            this.dtTramitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.licenciasCH_QADataSet = new RegistroLicenciasChihuahua.LicenciasCH_QADataSet();
+            this.dtTramitesTableAdapter = new RegistroLicenciasChihuahua.LicenciasCH_QADataSetTableAdapters.dtTramitesTableAdapter();
             this.tramiteIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.folioSeguimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,9 +66,6 @@ namespace RegistroLicenciasChihuahua
             this.rFCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.municipioNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtTramitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.licenciasCH_QADataSet = new RegistroLicenciasChihuahua.LicenciasCH_QADataSet();
-            this.dtTramitesTableAdapter = new RegistroLicenciasChihuahua.LicenciasCH_QADataSetTableAdapters.dtTramitesTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Tramites)).BeginInit();
@@ -273,104 +273,6 @@ namespace RegistroLicenciasChihuahua
             this.gv_Tramites.TabIndex = 3;
             this.gv_Tramites.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv_Tramites_CellContentDoubleClick);
             // 
-            // tramiteIdDataGridViewTextBoxColumn
-            // 
-            this.tramiteIdDataGridViewTextBoxColumn.DataPropertyName = "TramiteId";
-            this.tramiteIdDataGridViewTextBoxColumn.HeaderText = "TramiteId";
-            this.tramiteIdDataGridViewTextBoxColumn.Name = "tramiteIdDataGridViewTextBoxColumn";
-            this.tramiteIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tramiteIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // folioSeguimientoDataGridViewTextBoxColumn
-            // 
-            this.folioSeguimientoDataGridViewTextBoxColumn.DataPropertyName = "FolioSeguimiento";
-            this.folioSeguimientoDataGridViewTextBoxColumn.HeaderText = "Folio Seguimiento";
-            this.folioSeguimientoDataGridViewTextBoxColumn.Name = "folioSeguimientoDataGridViewTextBoxColumn";
-            // 
-            // curpDataGridViewTextBoxColumn
-            // 
-            this.curpDataGridViewTextBoxColumn.DataPropertyName = "Curp";
-            this.curpDataGridViewTextBoxColumn.HeaderText = "Curp";
-            this.curpDataGridViewTextBoxColumn.Name = "curpDataGridViewTextBoxColumn";
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidoPaternoDataGridViewTextBoxColumn
-            // 
-            this.apellidoPaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoPaterno";
-            this.apellidoPaternoDataGridViewTextBoxColumn.HeaderText = "Apellido Paterno";
-            this.apellidoPaternoDataGridViewTextBoxColumn.Name = "apellidoPaternoDataGridViewTextBoxColumn";
-            // 
-            // apellidoMaternoDataGridViewTextBoxColumn
-            // 
-            this.apellidoMaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoMaterno";
-            this.apellidoMaternoDataGridViewTextBoxColumn.HeaderText = "Apellido Materno";
-            this.apellidoMaternoDataGridViewTextBoxColumn.Name = "apellidoMaternoDataGridViewTextBoxColumn";
-            // 
-            // tipoLicenciaDataGridViewTextBoxColumn
-            // 
-            this.tipoLicenciaDataGridViewTextBoxColumn.DataPropertyName = "TipoLicencia";
-            this.tipoLicenciaDataGridViewTextBoxColumn.HeaderText = "Tipo de Licencia";
-            this.tipoLicenciaDataGridViewTextBoxColumn.Name = "tipoLicenciaDataGridViewTextBoxColumn";
-            // 
-            // tipoTramiteDataGridViewTextBoxColumn
-            // 
-            this.tipoTramiteDataGridViewTextBoxColumn.DataPropertyName = "TipoTramite";
-            this.tipoTramiteDataGridViewTextBoxColumn.HeaderText = "Tipo Tramite";
-            this.tipoTramiteDataGridViewTextBoxColumn.Name = "tipoTramiteDataGridViewTextBoxColumn";
-            // 
-            // aniosVigenciaDataGridViewTextBoxColumn
-            // 
-            this.aniosVigenciaDataGridViewTextBoxColumn.DataPropertyName = "AniosVigencia";
-            this.aniosVigenciaDataGridViewTextBoxColumn.HeaderText = "Años de Vigencia";
-            this.aniosVigenciaDataGridViewTextBoxColumn.Name = "aniosVigenciaDataGridViewTextBoxColumn";
-            // 
-            // fechaExpedicionDataGridViewTextBoxColumn
-            // 
-            this.fechaExpedicionDataGridViewTextBoxColumn.DataPropertyName = "FechaExpedicion";
-            this.fechaExpedicionDataGridViewTextBoxColumn.HeaderText = "Fecha Expedicion";
-            this.fechaExpedicionDataGridViewTextBoxColumn.Name = "fechaExpedicionDataGridViewTextBoxColumn";
-            // 
-            // fechaVencimientoDataGridViewTextBoxColumn
-            // 
-            this.fechaVencimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaVencimiento";
-            this.fechaVencimientoDataGridViewTextBoxColumn.HeaderText = "Fecha Vencimiento";
-            this.fechaVencimientoDataGridViewTextBoxColumn.Name = "fechaVencimientoDataGridViewTextBoxColumn";
-            // 
-            // estatusDataGridViewTextBoxColumn
-            // 
-            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
-            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
-            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
-            // 
-            // sexoDataGridViewTextBoxColumn
-            // 
-            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
-            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
-            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
-            // 
-            // rFCDataGridViewTextBoxColumn
-            // 
-            this.rFCDataGridViewTextBoxColumn.DataPropertyName = "RFC";
-            this.rFCDataGridViewTextBoxColumn.HeaderText = "RFC";
-            this.rFCDataGridViewTextBoxColumn.Name = "rFCDataGridViewTextBoxColumn";
-            // 
-            // fechaNacimientoDataGridViewTextBoxColumn
-            // 
-            this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
-            this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "Fecha Nacimiento";
-            this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
-            // 
-            // municipioNDataGridViewTextBoxColumn
-            // 
-            this.municipioNDataGridViewTextBoxColumn.DataPropertyName = "MunicipioN";
-            this.municipioNDataGridViewTextBoxColumn.HeaderText = "Municipio";
-            this.municipioNDataGridViewTextBoxColumn.Name = "municipioNDataGridViewTextBoxColumn";
-            // 
             // dtTramitesBindingSource
             // 
             this.dtTramitesBindingSource.DataMember = "dtTramites";
@@ -384,6 +286,119 @@ namespace RegistroLicenciasChihuahua
             // dtTramitesTableAdapter
             // 
             this.dtTramitesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tramiteIdDataGridViewTextBoxColumn
+            // 
+            this.tramiteIdDataGridViewTextBoxColumn.DataPropertyName = "TramiteId";
+            this.tramiteIdDataGridViewTextBoxColumn.HeaderText = "TramiteId";
+            this.tramiteIdDataGridViewTextBoxColumn.Name = "tramiteIdDataGridViewTextBoxColumn";
+            this.tramiteIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tramiteIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // folioSeguimientoDataGridViewTextBoxColumn
+            // 
+            this.folioSeguimientoDataGridViewTextBoxColumn.DataPropertyName = "FolioSeguimiento";
+            this.folioSeguimientoDataGridViewTextBoxColumn.HeaderText = "Folio Seguimiento";
+            this.folioSeguimientoDataGridViewTextBoxColumn.Name = "folioSeguimientoDataGridViewTextBoxColumn";
+            this.folioSeguimientoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curpDataGridViewTextBoxColumn
+            // 
+            this.curpDataGridViewTextBoxColumn.DataPropertyName = "Curp";
+            this.curpDataGridViewTextBoxColumn.HeaderText = "Curp";
+            this.curpDataGridViewTextBoxColumn.Name = "curpDataGridViewTextBoxColumn";
+            this.curpDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apellidoPaternoDataGridViewTextBoxColumn
+            // 
+            this.apellidoPaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoPaterno";
+            this.apellidoPaternoDataGridViewTextBoxColumn.HeaderText = "Apellido Paterno";
+            this.apellidoPaternoDataGridViewTextBoxColumn.Name = "apellidoPaternoDataGridViewTextBoxColumn";
+            this.apellidoPaternoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apellidoMaternoDataGridViewTextBoxColumn
+            // 
+            this.apellidoMaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoMaterno";
+            this.apellidoMaternoDataGridViewTextBoxColumn.HeaderText = "Apellido Materno";
+            this.apellidoMaternoDataGridViewTextBoxColumn.Name = "apellidoMaternoDataGridViewTextBoxColumn";
+            this.apellidoMaternoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoLicenciaDataGridViewTextBoxColumn
+            // 
+            this.tipoLicenciaDataGridViewTextBoxColumn.DataPropertyName = "TipoLicencia";
+            this.tipoLicenciaDataGridViewTextBoxColumn.HeaderText = "Tipo de Licencia";
+            this.tipoLicenciaDataGridViewTextBoxColumn.Name = "tipoLicenciaDataGridViewTextBoxColumn";
+            this.tipoLicenciaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoTramiteDataGridViewTextBoxColumn
+            // 
+            this.tipoTramiteDataGridViewTextBoxColumn.DataPropertyName = "TipoTramite";
+            this.tipoTramiteDataGridViewTextBoxColumn.HeaderText = "Tipo Tramite";
+            this.tipoTramiteDataGridViewTextBoxColumn.Name = "tipoTramiteDataGridViewTextBoxColumn";
+            this.tipoTramiteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aniosVigenciaDataGridViewTextBoxColumn
+            // 
+            this.aniosVigenciaDataGridViewTextBoxColumn.DataPropertyName = "AniosVigencia";
+            this.aniosVigenciaDataGridViewTextBoxColumn.HeaderText = "Años de Vigencia";
+            this.aniosVigenciaDataGridViewTextBoxColumn.Name = "aniosVigenciaDataGridViewTextBoxColumn";
+            this.aniosVigenciaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaExpedicionDataGridViewTextBoxColumn
+            // 
+            this.fechaExpedicionDataGridViewTextBoxColumn.DataPropertyName = "FechaExpedicion";
+            this.fechaExpedicionDataGridViewTextBoxColumn.HeaderText = "Fecha Expedicion";
+            this.fechaExpedicionDataGridViewTextBoxColumn.Name = "fechaExpedicionDataGridViewTextBoxColumn";
+            this.fechaExpedicionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaVencimientoDataGridViewTextBoxColumn
+            // 
+            this.fechaVencimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaVencimiento";
+            this.fechaVencimientoDataGridViewTextBoxColumn.HeaderText = "Fecha Vencimiento";
+            this.fechaVencimientoDataGridViewTextBoxColumn.Name = "fechaVencimientoDataGridViewTextBoxColumn";
+            this.fechaVencimientoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            this.estatusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sexoDataGridViewTextBoxColumn
+            // 
+            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
+            this.sexoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rFCDataGridViewTextBoxColumn
+            // 
+            this.rFCDataGridViewTextBoxColumn.DataPropertyName = "RFC";
+            this.rFCDataGridViewTextBoxColumn.HeaderText = "RFC";
+            this.rFCDataGridViewTextBoxColumn.Name = "rFCDataGridViewTextBoxColumn";
+            this.rFCDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaNacimientoDataGridViewTextBoxColumn
+            // 
+            this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "Fecha Nacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
+            this.fechaNacimientoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // municipioNDataGridViewTextBoxColumn
+            // 
+            this.municipioNDataGridViewTextBoxColumn.DataPropertyName = "MunicipioN";
+            this.municipioNDataGridViewTextBoxColumn.HeaderText = "Municipio";
+            this.municipioNDataGridViewTextBoxColumn.Name = "municipioNDataGridViewTextBoxColumn";
+            this.municipioNDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Mistramites
             // 
@@ -426,6 +441,8 @@ namespace RegistroLicenciasChihuahua
         private LicenciasCH_QADataSet licenciasCH_QADataSet;
         private System.Windows.Forms.BindingSource dtTramitesBindingSource;
         private LicenciasCH_QADataSetTableAdapters.dtTramitesTableAdapter dtTramitesTableAdapter;
+        private System.Windows.Forms.DateTimePicker dtp_Inicio;
+        private System.Windows.Forms.DateTimePicker dtp_Fin;
         private System.Windows.Forms.DataGridViewTextBoxColumn tramiteIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn folioSeguimientoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn curpDataGridViewTextBoxColumn;
@@ -442,7 +459,5 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.DataGridViewTextBoxColumn rFCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimientoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn municipioNDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DateTimePicker dtp_Inicio;
-        private System.Windows.Forms.DateTimePicker dtp_Fin;
     }
 }

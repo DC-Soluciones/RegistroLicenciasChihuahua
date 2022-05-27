@@ -24,14 +24,19 @@ namespace RegistroLicenciasChihuahua
         string usuario;
         public static string UserRol;
         string code = null;
-        public Busqueda(string user, string userRol)
+        int idusuarioc;
+        public Busqueda(string user, string userRol, int IDuser)
         {
             InitializeComponent();
             usuario = user;
             UserRol = userRol;
+            idusuarioc = IDuser;
             if (userRol != "Supervisor" && userRol != "Administrador" &&  userRol != "Capturista")
             {
-                btn_Editactual.Visible = false;
+                btn_Editactual.Text = "Visualizar";
+                btn_Editactual.Image = null;
+                btn_Editactual.TextAlign = ContentAlignment.MiddleCenter;
+                //btn_Editactual.Visible = false;
             }
         }
         public void Load()
@@ -44,13 +49,13 @@ namespace RegistroLicenciasChihuahua
             {
                 if (this.panelbusqueda.Controls.Count > 0)
                     this.panelbusqueda.Controls.RemoveAt(0);
-                Registro registro = new Registro(txt_Curp.Text, usuario, 0, "");
+                Registro registro = new Registro(txt_Curp.Text, usuario, 0, "", idusuarioc);
                 registro.TopLevel = false;
                 registro.Dock = DockStyle.Fill;
                 panelbusqueda.Controls.Clear();
                 panelbusqueda.Controls.Add(registro);
                 panelbusqueda.Tag = registro;
-                registro.Show();
+                registro.Show(); 
             }
             else
             {
@@ -90,6 +95,8 @@ namespace RegistroLicenciasChihuahua
 
                 if (cdActual != null)
                 {
+                    pnl_TextActual.Visible = false;
+                    btn_nuevoregistro.Visible = true;
                     pnl_noRegistro.Visible = false;
                     pnl_registro.Visible = true;
                     txt_Nombre.Text = cdActual.Nombre;
@@ -105,9 +112,9 @@ namespace RegistroLicenciasChihuahua
                     lbl_VencimientoActual.Text = cdActual.FechaVencimiento.Value.ToShortDateString();
                     lbl_RfcActual.Text = cdActual.RFC;
                     gb_DatoActual.Visible = true;
-                    //txt_actual.Visible = false;
+                    pnl_TextActual.Visible = false;
                     lbl_EditAct.Text = cdActual.TramiteId.ToString();
-                    try
+                    if(cdActual.FotoLic!=null)
                     {
                         MemoryStream ms = new MemoryStream(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
                         ms.Write(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
@@ -115,7 +122,7 @@ namespace RegistroLicenciasChihuahua
                         pb_Ciudadano.Image = returnImage;
                         pb_Ciudadano.Visible = true;
                     }
-                    catch
+                    else
                     {
                         pb_Ciudadano.Image = null; pb_Ciudadano.Visible = false;
                     }
@@ -127,8 +134,11 @@ namespace RegistroLicenciasChihuahua
                 }
                 else
                 {
+                    btn_nuevoregistro.Visible = true;
                     pnl_noRegistro.Visible = true;
                     gb_DatoActual.Visible = false;
+                    pnl_actual.Visible = true;
+                    pnl_TextActual.Visible = true;
                     //txt_actual.Visible = true;
                     //btn_LeerQ3.Visible = false;
                     //pictureBox1.Visible = false;
@@ -138,7 +148,7 @@ namespace RegistroLicenciasChihuahua
                 {
 
                     var listcd = (from d in _contextHist.dtTramites
-                                  where d.Curp == txt_Curp.Text
+                                  where d.Curp == txt_Curp.Text && d.FechaVencimiento > System.DateTime.Now
                                   select d).ToList();
                     foreach (var l in listcd)
                     {
@@ -149,6 +159,9 @@ namespace RegistroLicenciasChihuahua
                     if (listcd.Count() > 0)
                     {
                         cIUDADANO = listcd.OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
+
+                        pnl_histo.Visible = true;
+                        pnl_histoText.Visible = false;
 
                         txt_Nombre.Text = cIUDADANO.Nombre;
                         txt_ApellidoP.Text = cIUDADANO.ApellidoPaterno;
@@ -164,7 +177,7 @@ namespace RegistroLicenciasChihuahua
                         lbl_Rfc.Text = cIUDADANO.RFC;
                         gb_DatoHisto.Visible = true;
                         lbl_EditHistorica.Text = cIUDADANO.TramiteId.ToString();
-                        try
+                        if(cIUDADANO.FotoLic!=null)
                         {
                             MemoryStream ms = new MemoryStream(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
                             ms.Write(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
@@ -172,7 +185,7 @@ namespace RegistroLicenciasChihuahua
                             pb_Ciudadano.Image = returnImage;
                             pb_Ciudadano.Visible = true;
                         }
-                        catch
+                        else
                         {
                             pb_Ciudadano.Image = null;
                             pb_Ciudadano.Visible = false;
@@ -184,8 +197,9 @@ namespace RegistroLicenciasChihuahua
                     }
                     else
                     {
-                        //txt_historica.Visible = true;
                         gb_DatoHisto.Visible = false;
+                        pnl_histo.Visible = false;
+                        pnl_histoText.Visible = true;
                     }
 
 
@@ -245,21 +259,23 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_EditHistorica_Click(object sender, EventArgs e)
         {
-            Registro registro = new Registro("", "", Convert.ToInt32(lbl_EditHistorica.Text), "Historica");
+            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditHistorica.Text), "Historica", idusuarioc);
             registro.FormBorderStyle = FormBorderStyle.Sizable;
             registro.StartPosition = FormStartPosition.CenterScreen;
             registro.Size = new Size(1300, 850);
-            registro.Show();
+
+            registro.ShowDialog();
+          
         }
 
         private void btn_Editactual_Click(object sender, EventArgs e)
         {
-            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditAct.Text), "Actual");
+            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditAct.Text), "Actual", idusuarioc);
 
             registro.FormBorderStyle = FormBorderStyle.Sizable;
             registro.StartPosition = FormStartPosition.CenterScreen;
             registro.Size = new Size(1300, 850);
-            registro.Show();
+            registro.ShowDialog(); 
         }
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
@@ -268,52 +284,61 @@ namespace RegistroLicenciasChihuahua
             txt_Nombre.Text = "";
             txt_ApellidoP.Text = "";
             txt_ApellidoM.Text = "";
-            
+            pnl_registro.Visible = false;
+            pnl_noRegistro.Visible = false;
+            btn_nuevoregistro.Visible = false;
         }
 
         private void tbc_actual_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int currentTab = tbc_actual.SelectedIndex;
-            int tabName = Convert.ToInt32(tbc_actual.TabPages[currentTab].Name);
-            _context = new LicenciasCH_Entities();
-
-            var cdActual = (from d in _context.dtTramites
-                            where d.TramiteId == tabName
-                            select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
-
-            if (cdActual != null)
+            try
             {
-                pnl_noRegistro.Visible = false;
-                pnl_registro.Visible = true;
-                txt_Nombre.Text = cdActual.Nombre;
-                txt_ApellidoP.Text = cdActual.ApellidoPaterno;
-                txt_ApellidoM.Text = cdActual.ApellidoMaterno;
+                int currentTab = tbc_actual.SelectedIndex;
+                int tabName = Convert.ToInt32(tbc_actual.TabPages[currentTab].Name);
+                _context = new LicenciasCH_Entities();
 
-                lbl_NombreActual.Text = cdActual.Nombre + " " + cdActual.ApellidoPaterno + " " + cdActual.ApellidoMaterno;
-                lbl_NoLicActual.Text = cdActual.NumeroLicencia;
-                lbl_LicActual.Text = cdActual.TipoLicencia;
-                lbl_StatusActual.Text = cdActual.Estatus;
-                lbl_VigenciaActual.Text = cdActual.AniosVigencia.ToString();
-                lbl_ExpedicionActual.Text = cdActual.FechaExpedicion.Value.ToShortDateString();
-                lbl_VencimientoActual.Text = cdActual.FechaVencimiento.Value.ToShortDateString();
-                lbl_RfcActual.Text = cdActual.RFC;
-                gb_DatoActual.Visible = true;
-                //txt_actual.Visible = false;
-                lbl_EditAct.Text = cdActual.TramiteId.ToString();
-                try
-                {
-                    MemoryStream ms = new MemoryStream(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
-                    ms.Write(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
-                    Image returnImage = Image.FromStream(ms, true);
-                    pb_Ciudadano.Image = returnImage;
-                    pb_Ciudadano.Visible = true;
-                }
-                catch
-                {
-                    pb_Ciudadano.Image = null; pb_Ciudadano.Visible = false;
-                }
+                var cdActual = (from d in _context.dtTramites
+                                where d.TramiteId == tabName
+                                select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
 
-   
+                if (cdActual != null)
+                {
+                    pnl_noRegistro.Visible = false;
+                    pnl_registro.Visible = true;
+                    txt_Nombre.Text = cdActual.Nombre;
+                    txt_ApellidoP.Text = cdActual.ApellidoPaterno;
+                    txt_ApellidoM.Text = cdActual.ApellidoMaterno;
+
+                    lbl_NombreActual.Text = cdActual.Nombre + " " + cdActual.ApellidoPaterno + " " + cdActual.ApellidoMaterno;
+                    lbl_NoLicActual.Text = cdActual.NumeroLicencia;
+                    lbl_LicActual.Text = cdActual.TipoLicencia;
+                    lbl_StatusActual.Text = cdActual.Estatus;
+                    lbl_VigenciaActual.Text = cdActual.AniosVigencia.ToString();
+                    lbl_ExpedicionActual.Text = cdActual.FechaExpedicion.Value.ToShortDateString();
+                    lbl_VencimientoActual.Text = cdActual.FechaVencimiento.Value.ToShortDateString();
+                    lbl_RfcActual.Text = cdActual.RFC;
+                    gb_DatoActual.Visible = true;
+                    //txt_actual.Visible = false;
+                    lbl_EditAct.Text = cdActual.TramiteId.ToString();
+                    if(cdActual.FotoLic!=null)
+                    {
+                        MemoryStream ms = new MemoryStream(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
+                        ms.Write(cdActual.FotoLic, 0, cdActual.FotoLic.Length);
+                        Image returnImage = Image.FromStream(ms, true);
+                        pb_Ciudadano.Image = returnImage;
+                        pb_Ciudadano.Visible = true;
+                    }
+                    else
+                    {
+                        pb_Ciudadano.Image = null; pb_Ciudadano.Visible = false;
+                    }
+
+
+                }
+            }
+            catch
+            {
+
             }
         }
 
@@ -342,7 +367,7 @@ namespace RegistroLicenciasChihuahua
                 lbl_Rfc.Text = cIUDADANO.RFC;
                 gb_DatoHisto.Visible = true;
                 lbl_EditHistorica.Text = cIUDADANO.TramiteId.ToString();
-                try
+                if(cIUDADANO.FotoLic!=null)
                 {
                     MemoryStream ms = new MemoryStream(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
                     ms.Write(cIUDADANO.FotoLic, 0, cIUDADANO.FotoLic.Length);
@@ -350,12 +375,17 @@ namespace RegistroLicenciasChihuahua
                     pb_Ciudadano.Image = returnImage;
                     pb_Ciudadano.Visible = true;
                 }
-                catch
+                else
                 {
                     pb_Ciudadano.Image = null;
                     pb_Ciudadano.Visible = false;
                 }
             }
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
 
         }
     }

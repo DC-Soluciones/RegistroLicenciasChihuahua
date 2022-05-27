@@ -35,7 +35,7 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_Biometricos = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Escaneo = new System.Windows.Forms.Button();
             this.pnl_Menor = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label43 = new System.Windows.Forms.Label();
@@ -59,8 +59,6 @@ namespace RegistroLicenciasChihuahua
             this.cb_Estado = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
             this.cb_Municipio = new System.Windows.Forms.ComboBox();
-            this.dtMunicipioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.licenciasCHDataSetMunicipios = new RegistroLicenciasChihuahua.LicenciasCHDataSetMunicipios();
             this.label41 = new System.Windows.Forms.Label();
             this.txt_Colonia = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -88,7 +86,6 @@ namespace RegistroLicenciasChihuahua
             this.label17 = new System.Windows.Forms.Label();
             this.txt_Curp = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.txt_Fnacimiento = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_Rfc = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -124,31 +121,34 @@ namespace RegistroLicenciasChihuahua
             this.txt_Id = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_Folio = new System.Windows.Forms.TextBox();
-            this.txt_Fexpedicion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txt_Fvencimiento = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txt_Fantiguedad = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_Licanterior = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dtMunicipioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.licenciasCHDataSetMunicipios = new RegistroLicenciasChihuahua.LicenciasCHDataSetMunicipios();
             this.dtMunicipioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtTipoLicenciasTableAdapter = new RegistroLicenciasChihuahua.LicenciasCHDataSetTableAdapters.dtTipoLicenciasTableAdapter();
             this.dtMunicipioTableAdapter = new RegistroLicenciasChihuahua.LicenciasCHDataSetMunicipiosTableAdapters.dtMunicipioTableAdapter();
+            this.txt_Fexpedicion = new System.Windows.Forms.MaskedTextBox();
+            this.txt_Fvencimiento = new System.Windows.Forms.MaskedTextBox();
+            this.txt_Fantiguedad = new System.Windows.Forms.MaskedTextBox();
+            this.txt_Fnacimiento = new System.Windows.Forms.MaskedTextBox();
             this.panelregistro.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.pnl_Menor.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSetMunicipios)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtTipoLicenciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSetMunicipios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,10 +182,10 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.5045F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel6.Controls.Add(this.btn_Guardar, 3, 0);
             this.tableLayoutPanel6.Controls.Add(this.btn_Biometricos, 2, 0);
-            this.tableLayoutPanel6.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btn_Escaneo, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 711);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -200,7 +200,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_Guardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Guardar.ForeColor = System.Drawing.Color.White;
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(1385, 3);
+            this.btn_Guardar.Location = new System.Drawing.Point(1382, 3);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(177, 35);
             this.btn_Guardar.TabIndex = 0;
@@ -216,7 +216,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_Biometricos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Biometricos.ForeColor = System.Drawing.Color.White;
             this.btn_Biometricos.Image = ((System.Drawing.Image)(resources.GetObject("btn_Biometricos.Image")));
-            this.btn_Biometricos.Location = new System.Drawing.Point(1226, 3);
+            this.btn_Biometricos.Location = new System.Drawing.Point(1223, 3);
             this.btn_Biometricos.Name = "btn_Biometricos";
             this.btn_Biometricos.Size = new System.Drawing.Size(146, 35);
             this.btn_Biometricos.TabIndex = 1;
@@ -224,22 +224,24 @@ namespace RegistroLicenciasChihuahua
             this.btn_Biometricos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Biometricos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Biometricos.UseVisualStyleBackColor = false;
+            this.btn_Biometricos.Visible = false;
             this.btn_Biometricos.Click += new System.EventHandler(this.btn_Biometricos_Click);
             // 
-            // button1
+            // btn_Escaneo
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(963, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(257, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Escaneo de documentos";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Escaneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_Escaneo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Escaneo.ForeColor = System.Drawing.Color.White;
+            this.btn_Escaneo.Image = ((System.Drawing.Image)(resources.GetObject("btn_Escaneo.Image")));
+            this.btn_Escaneo.Location = new System.Drawing.Point(961, 3);
+            this.btn_Escaneo.Name = "btn_Escaneo";
+            this.btn_Escaneo.Size = new System.Drawing.Size(256, 35);
+            this.btn_Escaneo.TabIndex = 2;
+            this.btn_Escaneo.Text = "Escaneo de documentos";
+            this.btn_Escaneo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Escaneo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Escaneo.UseVisualStyleBackColor = false;
+            this.btn_Escaneo.Visible = false;
             // 
             // pnl_Menor
             // 
@@ -493,16 +495,6 @@ namespace RegistroLicenciasChihuahua
             this.cb_Municipio.Size = new System.Drawing.Size(136, 21);
             this.cb_Municipio.TabIndex = 11;
             // 
-            // dtMunicipioBindingSource1
-            // 
-            this.dtMunicipioBindingSource1.DataMember = "dtMunicipio";
-            this.dtMunicipioBindingSource1.DataSource = this.licenciasCHDataSetMunicipios;
-            // 
-            // licenciasCHDataSetMunicipios
-            // 
-            this.licenciasCHDataSetMunicipios.DataSetName = "LicenciasCHDataSetMunicipios";
-            this.licenciasCHDataSetMunicipios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label41
             // 
             this.label41.AutoSize = true;
@@ -678,7 +670,6 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel2.Controls.Add(this.label17, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.txt_Curp, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label18, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txt_Fnacimiento, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.label19, 4, 1);
             this.tableLayoutPanel2.Controls.Add(this.txt_Rfc, 5, 1);
             this.tableLayoutPanel2.Controls.Add(this.label20, 0, 2);
@@ -697,6 +688,7 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel2.Controls.Add(this.cb_ComprobanteDom, 5, 3);
             this.tableLayoutPanel2.Controls.Add(this.label27, 6, 3);
             this.tableLayoutPanel2.Controls.Add(this.txt_NoComprobante, 7, 3);
+            this.tableLayoutPanel2.Controls.Add(this.txt_Fnacimiento, 3, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(14, 226);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -810,13 +802,6 @@ namespace RegistroLicenciasChihuahua
             this.label18.Size = new System.Drawing.Size(79, 32);
             this.label18.TabIndex = 10;
             this.label18.Text = "Fecha de nacimiento";
-            // 
-            // txt_Fnacimiento
-            // 
-            this.txt_Fnacimiento.Location = new System.Drawing.Point(429, 30);
-            this.txt_Fnacimiento.Name = "txt_Fnacimiento";
-            this.txt_Fnacimiento.Size = new System.Drawing.Size(136, 20);
-            this.txt_Fnacimiento.TabIndex = 11;
             // 
             // label19
             // 
@@ -1053,13 +1038,13 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel1.Controls.Add(this.txt_Id, 8, 0);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txt_Folio, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Fexpedicion, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label9, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Fvencimiento, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Fantiguedad, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label11, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.txt_Licanterior, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Fexpedicion, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Fvencimiento, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Fantiguedad, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 78);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -1082,7 +1067,7 @@ namespace RegistroLicenciasChihuahua
             // cb_Tlicencia
             // 
             this.cb_Tlicencia.DataSource = this.dtTipoLicenciasBindingSource;
-            this.cb_Tlicencia.DisplayMember = "Nombre";
+            this.cb_Tlicencia.DisplayMember = "NombreCorto";
             this.cb_Tlicencia.FormattingEnabled = true;
             this.cb_Tlicencia.Location = new System.Drawing.Point(152, 3);
             this.cb_Tlicencia.Name = "cb_Tlicencia";
@@ -1199,14 +1184,6 @@ namespace RegistroLicenciasChihuahua
             this.txt_Folio.Size = new System.Drawing.Size(150, 20);
             this.txt_Folio.TabIndex = 10;
             // 
-            // txt_Fexpedicion
-            // 
-            this.txt_Fexpedicion.Location = new System.Drawing.Point(479, 30);
-            this.txt_Fexpedicion.Name = "txt_Fexpedicion";
-            this.txt_Fexpedicion.ReadOnly = true;
-            this.txt_Fexpedicion.Size = new System.Drawing.Size(150, 20);
-            this.txt_Fexpedicion.TabIndex = 12;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -1217,14 +1194,6 @@ namespace RegistroLicenciasChihuahua
             this.label9.TabIndex = 13;
             this.label9.Text = "Fecha de vencimiento";
             // 
-            // txt_Fvencimiento
-            // 
-            this.txt_Fvencimiento.Location = new System.Drawing.Point(790, 30);
-            this.txt_Fvencimiento.Name = "txt_Fvencimiento";
-            this.txt_Fvencimiento.ReadOnly = true;
-            this.txt_Fvencimiento.Size = new System.Drawing.Size(150, 20);
-            this.txt_Fvencimiento.TabIndex = 14;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -1234,13 +1203,6 @@ namespace RegistroLicenciasChihuahua
             this.label10.Size = new System.Drawing.Size(143, 16);
             this.label10.TabIndex = 15;
             this.label10.Text = "Fecha de antigüedad";
-            // 
-            // txt_Fantiguedad
-            // 
-            this.txt_Fantiguedad.Location = new System.Drawing.Point(152, 56);
-            this.txt_Fantiguedad.Name = "txt_Fantiguedad";
-            this.txt_Fantiguedad.Size = new System.Drawing.Size(150, 20);
-            this.txt_Fantiguedad.TabIndex = 16;
             // 
             // label11
             // 
@@ -1288,6 +1250,16 @@ namespace RegistroLicenciasChihuahua
             this.label1.TabIndex = 16;
             this.label1.Text = "Registro de solicitante";
             // 
+            // dtMunicipioBindingSource1
+            // 
+            this.dtMunicipioBindingSource1.DataMember = "dtMunicipio";
+            this.dtMunicipioBindingSource1.DataSource = this.licenciasCHDataSetMunicipios;
+            // 
+            // licenciasCHDataSetMunicipios
+            // 
+            this.licenciasCHDataSetMunicipios.DataSetName = "LicenciasCHDataSetMunicipios";
+            this.licenciasCHDataSetMunicipios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dtMunicipioBindingSource
             // 
             this.dtMunicipioBindingSource.DataMember = "dtMunicipio";
@@ -1300,6 +1272,38 @@ namespace RegistroLicenciasChihuahua
             // dtMunicipioTableAdapter
             // 
             this.dtMunicipioTableAdapter.ClearBeforeFill = true;
+            // 
+            // txt_Fexpedicion
+            // 
+            this.txt_Fexpedicion.Location = new System.Drawing.Point(479, 30);
+            this.txt_Fexpedicion.Mask = "00/00/0000";
+            this.txt_Fexpedicion.Name = "txt_Fexpedicion";
+            this.txt_Fexpedicion.Size = new System.Drawing.Size(149, 20);
+            this.txt_Fexpedicion.TabIndex = 19;
+            this.txt_Fexpedicion.ValidatingType = typeof(System.DateTime);
+            // 
+            // txt_Fvencimiento
+            // 
+            this.txt_Fvencimiento.Location = new System.Drawing.Point(790, 30);
+            this.txt_Fvencimiento.Mask = "00/00/0000";
+            this.txt_Fvencimiento.Name = "txt_Fvencimiento";
+            this.txt_Fvencimiento.Size = new System.Drawing.Size(150, 20);
+            this.txt_Fvencimiento.TabIndex = 20;
+            this.txt_Fvencimiento.ValidatingType = typeof(System.DateTime);
+            // 
+            // txt_Fantiguedad
+            // 
+            this.txt_Fantiguedad.Location = new System.Drawing.Point(152, 56);
+            this.txt_Fantiguedad.Name = "txt_Fantiguedad";
+            this.txt_Fantiguedad.Size = new System.Drawing.Size(150, 20);
+            this.txt_Fantiguedad.TabIndex = 21;
+            // 
+            // txt_Fnacimiento
+            // 
+            this.txt_Fnacimiento.Location = new System.Drawing.Point(429, 30);
+            this.txt_Fnacimiento.Name = "txt_Fnacimiento";
+            this.txt_Fnacimiento.Size = new System.Drawing.Size(136, 20);
+            this.txt_Fnacimiento.TabIndex = 30;
             // 
             // Registro
             // 
@@ -1322,8 +1326,6 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSetMunicipios)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1332,6 +1334,8 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtTipoLicenciasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licenciasCHDataSetMunicipios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtMunicipioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1343,7 +1347,7 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Button btn_Biometricos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Escaneo;
         private System.Windows.Forms.Panel pnl_Menor;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label43;
@@ -1394,7 +1398,6 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txt_Curp;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txt_Fnacimiento;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txt_Rfc;
         private System.Windows.Forms.Label label20;
@@ -1428,11 +1431,8 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.TextBox txt_Id;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_Folio;
-        private System.Windows.Forms.TextBox txt_Fexpedicion;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txt_Fvencimiento;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txt_Fantiguedad;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txt_Licanterior;
         private System.Windows.Forms.Panel panel1;
@@ -1445,5 +1445,9 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.BindingSource dtMunicipioBindingSource;
         private LicenciasCHDataSetMunicipiosTableAdapters.dtMunicipioTableAdapter dtMunicipioTableAdapter;
         private System.Windows.Forms.BindingSource dtMunicipioBindingSource1;
+        private System.Windows.Forms.MaskedTextBox txt_Fexpedicion;
+        private System.Windows.Forms.MaskedTextBox txt_Fvencimiento;
+        private System.Windows.Forms.MaskedTextBox txt_Fnacimiento;
+        private System.Windows.Forms.MaskedTextBox txt_Fantiguedad;
     }
 }

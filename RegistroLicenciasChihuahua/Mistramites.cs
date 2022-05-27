@@ -125,12 +125,12 @@ namespace RegistroLicenciasChihuahua
             {
                 var myValue = gv_Tramites[0, e.RowIndex].Value.ToString();
                 var id = Convert.ToInt32(gv_Tramites[0, e.RowIndex].Value.ToString());
-                Registro registro = new Registro(myValue, "", id, "");
+                Registro registro = new Registro(myValue, "", id, "", userI);
 
                 registro.FormBorderStyle = FormBorderStyle.Sizable;
                 registro.StartPosition = FormStartPosition.CenterScreen;
                 registro.Size = new Size(1200, 750);
-                registro.Show();
+                registro.ShowDialog();
             }
         }
     }
