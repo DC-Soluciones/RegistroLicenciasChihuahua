@@ -901,7 +901,7 @@ namespace RegistroLicenciasChihuahua
             // panel2
             // 
             this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Controls.Add(this.tbc_Historica);
             this.panel2.Location = new System.Drawing.Point(155, 56);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(370, 53);
