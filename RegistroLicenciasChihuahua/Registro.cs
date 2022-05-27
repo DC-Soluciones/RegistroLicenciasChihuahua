@@ -955,5 +955,11 @@ namespace RegistroLicenciasChihuahua
             }
 
         }
+
+        private void btn_Escaneo_Click(object sender, EventArgs e)
+        {
+            Escanear escanear = new Escanear(cb_Ttramite.Text, txt_Folio.Text);
+            escanear.ShowDialog();
+        }
     }
 }

@@ -1,20 +1,57 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WIA;
 
 namespace RegistroLicenciasChihuahua
 {
     public partial class Escanear : Form
     {
-        public Escanear()
+        private string ruta = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        string Docs;
+
+        string tipotramite;
+        string foliotramite;
+
+        public Escanear(string ttramite, string folio)
         {
             InitializeComponent();
+            textBox1.Text = ttramite;
+            textBox2.Text = folio;
+        }
+        private void ListScanners()
+        {
+
+            // Clear the ListBox.
+            listBox1.Items.Clear();
+
+            // Create a DeviceManager instance
+            var deviceManager = new DeviceManager();
+
+            // Loop through the list of devices and add the name to the listbox
+            for (int i = 1; i <= deviceManager.DeviceInfos.Count; i++)
+            {
+                // Add the device only if it's a scanner
+                if (deviceManager.DeviceInfos[i].Type != WiaDeviceType.ScannerDeviceType)
+                {
+                    continue;
+                }
+
+                // Add the Scanner device to the listbox (the entire DeviceInfos object)
+                // Important: we store an object of type scanner (which ToString method returns the name of the scanner)
+                listBox1.Items.Add(
+                    new Scanner(deviceManager.DeviceInfos[i])
+                );
+            }
         }
 
         private void chbx_acta_CheckedChanged(object sender, EventArgs e)
@@ -101,6 +138,169 @@ namespace RegistroLicenciasChihuahua
                 chbx_reporte.ThreeState = false;
                 btn_reporte.Visible = false;
             }
+        }
+
+        private void escanear(string docucmento)
+        {
+            Scanner device = null;
+          
+
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                device = listBox1.SelectedItem as Scanner;
+            }));
+
+            if (device == null)
+            {
+                MessageBox.Show("Seleccione un Dispositivo de la Lista",
+                                "Warning",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ImageFile image = new ImageFile();
+
+
+
+            image = device.ScanPNG();
+            // Save the image
+
+
+            var path = Path.Combine(textBox1.Text + "/Escaneos", docucmento+".png");
+
+
+            if (File.Exists(path))
+            {
+
+                File.Delete(path);
+            }
+
+
+            image.SaveFile(path);
+
+            pictureBox1.Image = new Bitmap(path);
+
+
+
+
+            System.Drawing.Image img = System.Drawing.Image.FromFile(path);
+            Bitmap imgbitmap = new Bitmap(img);
+
+            Bitmap ImgCurp = new Bitmap(imgbitmap, new Size(600, 800));
+
+            /* var path2 = Path.Combine(textBox1.Text + "/EscaneosR", textBox2.Text+".png");
+
+
+             ImgCurp.Save(path2, System.Drawing.Imaging.ImageFormat.Png);*/
+
+            var nombreD = textBox2.Text + ".JPEG";
+
+
+            /* Bitmap ImgCurp = new Bitmap(imgbitmap, new Size(600, 800));*/
+
+            var CurpFull = ruta + "/Escaneos2/" + textBox2.Text + ".JPEG";
+
+            ImgCurp.Save(CurpFull, System.Drawing.Imaging.ImageFormat.Jpeg);
+        }
+        private void btn_acta_Click(object sender, EventArgs e)
+        {
+            escanear("Acta de Nacimiento");
+        }
+
+        private void btn_identificación_Click(object sender, EventArgs e)
+        {
+            escanear("Identificación");
+        }
+
+        private void btn_comprobante_Click(object sender, EventArgs e)
+        {
+            escanear("Comprobante de domicilio");
+        }
+
+        private void btn_licAnt_Click(object sender, EventArgs e)
+        {
+            escanear("licencia anterior");
+        }
+
+        private void btn_licActual_Click(object sender, EventArgs e)
+        {
+            escanear("licencia vigente");
+        }
+
+        private void btn_reporte_Click(object sender, EventArgs e)
+        {
+            escanear("Reporte de robo");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string PDF = ruta + "/ExpedienteElectronico/Expediente.pdf";
+
+            Document document = new Document(iTextSharp.text.PageSize.LETTER, 0, 0, 0, 0);
+            using (var stream = new FileStream(PDF, FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                PdfWriter.GetInstance(document, stream);
+                document.Open();
+
+                DirectoryInfo di = new DirectoryInfo(ruta + "/Escaneos2");
+                //Console.WriteLine("No search pattern returns:");
+                foreach (var fi in di.GetFiles())
+                {
+                    Docs = (ruta + "/Escaneos2/" + fi.Name);
+
+
+                    using (var imageStream = new FileStream(Docs, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    {
+
+                        var image = iTextSharp.text.Image.GetInstance(imageStream);
+                        document.Add(image);
+
+                    }
+
+                }
+
+
+
+
+
+                document.Close();
+
+
+
+
+                /* PARTE DE BORRADO*/
+                DirectoryInfo di3 = new DirectoryInfo(ruta + "/Escaneos");
+                FileInfo[] files = di3.GetFiles();
+                foreach (FileInfo file in files)
+                {
+                    file.Delete();
+                }
+                Console.WriteLine("Files deleted successfully");
+
+                DirectoryInfo di4 = new DirectoryInfo(ruta + "/Escaneos2");
+                FileInfo[] files2 = di4.GetFiles();
+                foreach (FileInfo file in files2)
+                {
+                    file.Delete();
+                }
+                Console.WriteLine("Files deleted successfully");
+
+
+
+
+
+
+
+                MessageBox.Show("Completado con Exito");
+            }
+
+
+
+        }
+
+        private void Escanear_Load(object sender, EventArgs e)
+        {
+            ListScanners();
         }
     }
 }

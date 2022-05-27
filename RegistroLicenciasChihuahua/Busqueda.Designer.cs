@@ -111,7 +111,6 @@ namespace RegistroLicenciasChihuahua
             this.gb_DatoHisto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_actual.SuspendLayout();
-            this.scroll1.SuspendLayout();
             this.tbc_actual.SuspendLayout();
             this.gb_DatoActual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Ciudadano)).BeginInit();
@@ -210,10 +209,10 @@ namespace RegistroLicenciasChihuahua
             // 
             this.panel2.AutoScroll = true;
             this.panel2.Controls.Add(this.tbc_Historica);
-            this.panel2.Location = new System.Drawing.Point(151, 53);
+            this.panel2.Location = new System.Drawing.Point(155, 56);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(337, 52);
-            this.panel2.TabIndex = 36;
+            this.panel2.Size = new System.Drawing.Size(370, 53);
+            this.panel2.TabIndex = 35;
             // 
             // tbc_Historica
             // 
@@ -462,6 +461,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // pnl_actual
             // 
+            this.pnl_actual.AutoScroll = true;
             this.pnl_actual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.pnl_actual.Controls.Add(this.scroll1);
             this.pnl_actual.Controls.Add(this.gb_DatoActual);
@@ -469,16 +469,16 @@ namespace RegistroLicenciasChihuahua
             this.pnl_actual.Controls.Add(this.label23);
             this.pnl_actual.Controls.Add(this.lbl_NombreActual);
             this.pnl_actual.Controls.Add(this.lbl_RfcActual);
+            this.pnl_actual.Controls.Add(this.tbc_actual);
             this.pnl_actual.ForeColor = System.Drawing.Color.Black;
-            this.pnl_actual.Location = new System.Drawing.Point(8, 72);
+            this.pnl_actual.Location = new System.Drawing.Point(154, 56);
             this.pnl_actual.Name = "pnl_actual";
-            this.pnl_actual.Size = new System.Drawing.Size(498, 289);
-            this.pnl_actual.TabIndex = 33;
+            this.pnl_actual.Size = new System.Drawing.Size(393, 53);
+            this.pnl_actual.TabIndex = 35;
             // 
             // scroll1
             // 
             this.scroll1.AutoScroll = true;
-            this.scroll1.Controls.Add(this.tbc_actual);
             this.scroll1.Location = new System.Drawing.Point(154, 57);
             this.scroll1.Name = "scroll1";
             this.scroll1.Size = new System.Drawing.Size(329, 52);
@@ -927,24 +927,6 @@ namespace RegistroLicenciasChihuahua
             this.label1.TabIndex = 7;
             this.label1.Text = "Búsqueda del ciudadano";
             // 
-            // panel1
-            // 
-            this.pnl_actual.AutoScroll = true;
-            this.pnl_actual.Controls.Add(this.tbc_actual);
-            this.pnl_actual.Location = new System.Drawing.Point(154, 56);
-            this.pnl_actual.Name = "panel1";
-            this.pnl_actual.Size = new System.Drawing.Size(393, 53);
-            this.pnl_actual.TabIndex = 35;
-            // 
-            // panel2
-            // 
-            this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.tbc_Historica);
-            this.panel2.Location = new System.Drawing.Point(155, 56);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(370, 53);
-            this.panel2.TabIndex = 35;
-            // 
             // Busqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -974,7 +956,6 @@ namespace RegistroLicenciasChihuahua
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_actual.ResumeLayout(false);
             this.pnl_actual.PerformLayout();
-            this.scroll1.ResumeLayout(false);
             this.tbc_actual.ResumeLayout(false);
             this.gb_DatoActual.ResumeLayout(false);
             this.gb_DatoActual.PerformLayout();

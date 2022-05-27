@@ -46,7 +46,6 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_escaner = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -58,7 +57,6 @@ namespace RegistroLicenciasChihuahua
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_escaner);
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -260,16 +258,6 @@ namespace RegistroLicenciasChihuahua
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // btn_escaner
-            // 
-            this.btn_escaner.Location = new System.Drawing.Point(67, 229);
-            this.btn_escaner.Name = "btn_escaner";
-            this.btn_escaner.Size = new System.Drawing.Size(75, 23);
-            this.btn_escaner.TabIndex = 9;
-            this.btn_escaner.Text = "escaner";
-            this.btn_escaner.UseVisualStyleBackColor = true;
-            this.btn_escaner.Click += new System.EventHandler(this.btn_escaner_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,7 +303,6 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btn_escaner;
     }
 }
 

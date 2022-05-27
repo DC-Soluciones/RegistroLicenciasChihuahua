@@ -67,6 +67,7 @@ namespace RegistroLicenciasChihuahua
             // 
             this.textBox1.Location = new System.Drawing.Point(147, 34);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(178, 20);
             this.textBox1.TabIndex = 1;
             // 
@@ -84,6 +85,7 @@ namespace RegistroLicenciasChihuahua
             // 
             this.textBox2.Location = new System.Drawing.Point(518, 33);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(166, 20);
             this.textBox2.TabIndex = 3;
             // 
@@ -142,6 +144,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_identificación.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_identificación.UseVisualStyleBackColor = false;
             this.btn_identificación.Visible = false;
+            this.btn_identificación.Click += new System.EventHandler(this.btn_identificación_Click);
             // 
             // btn_acta
             // 
@@ -158,6 +161,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_acta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_acta.UseVisualStyleBackColor = false;
             this.btn_acta.Visible = false;
+            this.btn_acta.Click += new System.EventHandler(this.btn_acta_Click);
             // 
             // btn_comprobante
             // 
@@ -174,6 +178,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_comprobante.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_comprobante.UseVisualStyleBackColor = false;
             this.btn_comprobante.Visible = false;
+            this.btn_comprobante.Click += new System.EventHandler(this.btn_comprobante_Click);
             // 
             // chbx_comprobante
             // 
@@ -201,6 +206,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_licAnt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_licAnt.UseVisualStyleBackColor = false;
             this.btn_licAnt.Visible = false;
+            this.btn_licAnt.Click += new System.EventHandler(this.btn_licAnt_Click);
             // 
             // chbx_licAnt
             // 
@@ -228,6 +234,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_licActual.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_licActual.UseVisualStyleBackColor = false;
             this.btn_licActual.Visible = false;
+            this.btn_licActual.Click += new System.EventHandler(this.btn_licActual_Click);
             // 
             // chbx_licActual
             // 
@@ -255,6 +262,7 @@ namespace RegistroLicenciasChihuahua
             this.btn_reporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_reporte.UseVisualStyleBackColor = false;
             this.btn_reporte.Visible = false;
+            this.btn_reporte.Click += new System.EventHandler(this.btn_reporte_Click);
             // 
             // chbx_reporte
             // 
@@ -289,6 +297,7 @@ namespace RegistroLicenciasChihuahua
             this.button1.Text = "Guardar";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Escanear
             // 
@@ -320,6 +329,7 @@ namespace RegistroLicenciasChihuahua
             this.Name = "Escanear";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Escanear";
+            this.Load += new System.EventHandler(this.Escanear_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
