@@ -180,7 +180,8 @@ namespace RegistroLicenciasChihuahua.Contexto
         public string DescRobo { get; set; }
         public string DescExt { get; set; }
         public string TiempoExt { get; set; }
-    
+        public byte[] Expediente { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<dtArchivoTramite> dtArchivoTramites { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

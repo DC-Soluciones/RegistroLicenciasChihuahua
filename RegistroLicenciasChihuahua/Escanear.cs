@@ -1,5 +1,6 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using RegistroLicenciasChihuahua.Contexto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace RegistroLicenciasChihuahua
 
         string tipotramite;
         string foliotramite;
-
+        LicenciasCH_Entities _context;
         public Escanear(string ttramite, string folio)
         {
             InitializeComponent();
@@ -234,7 +235,40 @@ namespace RegistroLicenciasChihuahua
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string PDF = ruta + "/ExpedienteElectronico/Expediente.pdf";
+            string PDF = ruta + "/ExpedienteElectronico1/Expediente1.pdf";
+
+
+            if (!Directory.Exists(PDF))
+            {
+                Console.WriteLine("Creando el directorio: {0}", ruta);
+                DirectoryInfo di = Directory.CreateDirectory(PDF);
+            }
+
+            using (_context = new LicenciasCH_Entities())
+            {
+                dtTramite tramite = _context.dtTramites.Where(x => x.FolioSeguimiento == textBox2.Text).FirstOrDefault();
+                using (var stream = new FileStream(PDF, FileMode.Open, FileAccess.Read))
+                {
+                    try
+                    {
+                        using (var reader = new BinaryReader(stream))
+                        {
+                            tramite.Expediente = reader.ReadBytes((int)stream.Length);
+                            
+
+                            _context.SaveChanges();
+                        }
+                    }
+                    catch(Exception m)
+                    {
+                        string error = m.Message;
+                    }
+                }
+
+               
+            }
+
+
 
             Document document = new Document(iTextSharp.text.PageSize.LETTER, 0, 0, 0, 0);
             using (var stream = new FileStream(PDF, FileMode.Create, FileAccess.Write, FileShare.None))
