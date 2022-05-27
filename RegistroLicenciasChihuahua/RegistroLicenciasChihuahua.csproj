@@ -773,6 +773,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Escanear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Escanear.Designer.cs">
+      <DependentUpon>Escanear.cs</DependentUpon>
+    </Compile>
     <Compile Include="LicenciasCHDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -826,6 +832,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Escanear.resx">
+      <DependentUpon>Escanear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>

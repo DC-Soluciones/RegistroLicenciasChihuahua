@@ -927,6 +927,24 @@ namespace RegistroLicenciasChihuahua
             this.label1.TabIndex = 7;
             this.label1.Text = "Búsqueda del ciudadano";
             // 
+            // panel1
+            // 
+            this.pnl_actual.AutoScroll = true;
+            this.pnl_actual.Controls.Add(this.tbc_actual);
+            this.pnl_actual.Location = new System.Drawing.Point(154, 56);
+            this.pnl_actual.Name = "panel1";
+            this.pnl_actual.Size = new System.Drawing.Size(393, 53);
+            this.pnl_actual.TabIndex = 35;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.tbc_Historica);
+            this.panel2.Location = new System.Drawing.Point(155, 56);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(370, 53);
+            this.panel2.TabIndex = 35;
+            // 
             // Busqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
