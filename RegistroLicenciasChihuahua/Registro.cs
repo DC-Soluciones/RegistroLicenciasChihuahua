@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -443,39 +444,50 @@ namespace RegistroLicenciasChihuahua
         {
             using (_context = new LicenciasCH_Entities())
             {
-
+                cb_Vigencia.Items.Clear();
                 string tipolic1 = cb_Tlicencia.SelectedValue == null ? "B" : cb_Tlicencia.SelectedValue.ToString();
                 var tplic = _context.dtTipoLicencias.Where(x => x.Clave == tipolic1).Select(x => x).FirstOrDefault();
                 int tipolic = tplic.TipoLicenciaId;
+                cb_Vigencia.Items.Insert(0, "Seleccione vigencia");
+                List<dtVigencia> vige = new List<dtVigencia>();
           
                 if (cb_Ttramite.Text == "Nueva")
                 {
-                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "E" && x.TipoLicenciaId == tipolic).ToList();
+                     vige = _context.dtVigencias.Where(x => x.TipoTramite == "E" && x.TipoLicenciaId == tipolic).ToList();
+                
+
+                    //cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "E" && x.TipoLicenciaId == tipolic).ToList();
 
                 }
                 else if (cb_Ttramite.Text == "Canje")
                 {
-                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "R" && x.TipoLicenciaId == tipolic).ToList();
+                    vige = _context.dtVigencias.Where(x => x.TipoTramite == "R" && x.TipoLicenciaId == tipolic).ToList();
                 }
                 else if (cb_Ttramite.Text == "Renovación")
                 {
-                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "C" && x.TipoLicenciaId == tipolic).ToList();
+                    vige = _context.dtVigencias.Where(x => x.TipoTramite == "C" && x.TipoLicenciaId == tipolic).ToList();
                 }
                 else if (cb_Ttramite.Text == "Reimpresión")
                 {
-                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "I" && x.TipoLicenciaId == tipolic).ToList();
+                    vige= _context.dtVigencias.Where(x => x.TipoTramite == "I" && x.TipoLicenciaId == tipolic).ToList();
                 }
                 else if (cb_Ttramite.Text == "Robo")
                 {
-                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "O" && x.TipoLicenciaId == tipolic).ToList();
+                    vige=  _context.dtVigencias.Where(x => x.TipoTramite == "O" && x.TipoLicenciaId == tipolic).ToList();
                 }
                 else if (cb_Ttramite.Text == "Extravio")
                 {
-                    cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "X" && x.TipoLicenciaId == tipolic).ToList();
+                    vige= _context.dtVigencias.Where(x => x.TipoTramite == "X" && x.TipoLicenciaId == tipolic).ToList();
+                }
+                foreach (var item in vige)
+                {
+                    cb_Vigencia.Items.Add(item);
                 }
                 cb_Vigencia.ValueMember = "VigenciaId";
                 cb_Vigencia.DisplayMember = "Nombre";
+                //cb_Vigencia.Items.Insert(0, "Seleccione una vigencia");
 
+                
                 using (_context = new LicenciasCH_Entities())
                 {
                     int vigid = Convert.ToInt32(cb_Vigencia.SelectedValue);
@@ -581,19 +593,19 @@ namespace RegistroLicenciasChihuahua
             using (_context = new LicenciasCH_Entities())
             {
                 int vigid = Convert.ToInt32(cb_Vigencia.SelectedValue);
-                int vig = _context.dtVigencias.Where(x => x.VigenciaId == vigid).Select(x => x.AniosVigencia).FirstOrDefault().Value;
+                var vig = _context.dtVigencias.Where(x => x.Nombre == cb_Vigencia.Text).FirstOrDefault();
 
-                var impo = _context.dtImportes.Where(x => x.VigenciaId == vigid).FirstOrDefault();
+                var impo = _context.dtImportes.Where(x => x.VigenciaId == vig.VigenciaId).FirstOrDefault();
 
                 txt_Importe.Text = impo.Monto.ToString("0.00");
                 if (txt_Fexpedicion.Text != "  /  /")
                 {
                     DateTime exp = Convert.ToDateTime(txt_Fexpedicion.Text);
-                    txt_Fvencimiento.Text = exp.AddYears(vig).ToString("dd/MM/yyyy");
+                    txt_Fvencimiento.Text = exp.AddYears(vig.AniosVigencia.Value).ToString("dd/MM/yyyy");
                 }
                 else
                 {
-                    txt_Fvencimiento.Text = System.DateTime.Now.AddYears(vig).ToString("dd/MM/yyyy");
+                    txt_Fvencimiento.Text = System.DateTime.Now.AddYears(vig.AniosVigencia.Value).ToString("dd/MM/yyyy");
                 }
               
             }
