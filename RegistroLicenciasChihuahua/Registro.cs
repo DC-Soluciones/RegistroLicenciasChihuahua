@@ -170,10 +170,10 @@ namespace RegistroLicenciasChihuahua
             switch (ciudadano.TipoTramite)
             {
                 case "E":
-                    cb_Ttramite.Text = "Reposición";
+                    cb_Ttramite.Text = "Nueva";
                     break;
                 case "R":
-                    cb_Ttramite.Text = "Reposición";
+                    cb_Ttramite.Text = "Canje";
                     break;
                 case "C":
                     cb_Ttramite.Text = "Renovación";
@@ -453,7 +453,7 @@ namespace RegistroLicenciasChihuahua
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "E" && x.TipoLicenciaId == tipolic).ToList();
 
                 }
-                else if (cb_Ttramite.Text == "Reposición")
+                else if (cb_Ttramite.Text == "Canje")
                 {
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "R" && x.TipoLicenciaId == tipolic).ToList();
                 }
@@ -512,7 +512,7 @@ namespace RegistroLicenciasChihuahua
                     cb_Vigencia.SelectedValue = SELECT;
 
                 }
-                else if (cb_Ttramite.Text == "Reposición")
+                else if (cb_Ttramite.Text == "Canje")
                 {
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "R" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
@@ -675,7 +675,7 @@ namespace RegistroLicenciasChihuahua
                                 {
                                     dtramite.TipoTramite = "E";
                                 }
-                                if (cb_Ttramite.SelectedItem.ToString() == "Reposición")
+                                if (cb_Ttramite.SelectedItem.ToString() == "Canje")
                                 {
                                     dtramite.TipoTramite = "R";
                                 }
@@ -855,7 +855,7 @@ namespace RegistroLicenciasChihuahua
                     {
                         dtramite.TipoTramite = "E";
                     }
-                    if (cb_Ttramite.SelectedItem.ToString() == "Reposición")
+                    if (cb_Ttramite.SelectedItem.ToString() == "Canje")
                     {
                         dtramite.TipoTramite = "R";
                     }
