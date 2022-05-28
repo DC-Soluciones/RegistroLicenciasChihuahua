@@ -520,6 +520,7 @@ namespace RegistroLicenciasChihuahua
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "E" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
                     cb_Vigencia.DisplayMember = "Nombre";
+                    _context = new LicenciasCH_Entities();
                     var SELECT = _context.dtVigencias.Where(x => x.TipoTramite == "E" && x.TipoLicenciaId == tipolic && x.AniosVigencia == anios).Select(X => X.VigenciaId).FirstOrDefault();
                     cb_Vigencia.SelectedValue = SELECT;
 
@@ -529,6 +530,7 @@ namespace RegistroLicenciasChihuahua
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "R" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
                     cb_Vigencia.DisplayMember = "Nombre";
+                    _context = new LicenciasCH_Entities();
                     var SELECT = _context.dtVigencias.Where(x => x.TipoTramite == "R" && x.TipoLicenciaId == tipolic && x.AniosVigencia == anios).Select(X => X.VigenciaId).FirstOrDefault();
                     cb_Vigencia.SelectedValue = SELECT;
                 }
@@ -537,6 +539,7 @@ namespace RegistroLicenciasChihuahua
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "C" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
                     cb_Vigencia.DisplayMember = "Nombre";
+                    _context = new LicenciasCH_Entities();
                     var SELECT = _context.dtVigencias.Where(x => x.TipoTramite == "C" && x.TipoLicenciaId == tipolic && x.AniosVigencia == anios).Select(X => X.VigenciaId).FirstOrDefault();
                     cb_Vigencia.SelectedValue = SELECT;
                 }
@@ -545,6 +548,7 @@ namespace RegistroLicenciasChihuahua
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "I" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
                     cb_Vigencia.DisplayMember = "Nombre";
+                    _context = new LicenciasCH_Entities();
                     var SELECT = _context.dtVigencias.Where(x => x.TipoTramite == "I" && x.TipoLicenciaId == tipolic && x.AniosVigencia == anios).Select(X => X.VigenciaId).FirstOrDefault();
                     cb_Vigencia.SelectedValue = SELECT;
                 }
@@ -553,6 +557,7 @@ namespace RegistroLicenciasChihuahua
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "O" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
                     cb_Vigencia.DisplayMember = "Nombre";
+                    _context = new LicenciasCH_Entities();
                     var SELECT = _context.dtVigencias.Where(x => x.TipoTramite == "O" && x.TipoLicenciaId == tipolic && x.AniosVigencia == anios).Select(X => X.VigenciaId).FirstOrDefault();
                     cb_Vigencia.SelectedValue = SELECT;
                 }
@@ -561,6 +566,7 @@ namespace RegistroLicenciasChihuahua
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "X" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
                     cb_Vigencia.DisplayMember = "Nombre";
+                    _context = new LicenciasCH_Entities();
                     var SELECT = _context.dtVigencias.Where(x => x.TipoTramite == "X" && x.TipoLicenciaId == tipolic && x.AniosVigencia == anios).Select(X => X.VigenciaId).FirstOrDefault();
                     cb_Vigencia.SelectedValue = SELECT;
                 }
