@@ -3305,6 +3305,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.dtTipoMovPorProducto' no 
           <Property Name="MotivoRe" Type="varchar" MaxLength="100" />
           <Property Name="FVialis" Type="varchar(max)" />
           <Property Name="EstatusH" Type="varchar" MaxLength="5" />
+			<Property Name="Expediente" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="dtUnidadMedita">
           <Key>
@@ -15119,6 +15120,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
           <Property Name="MotivoRe" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="FVialis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EstatusH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+			<Property Name="Expediente" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="dtArchivoTramites" Relationship="Self.FK_dtArchivoTramite_dtTramites" FromRole="dtTramites" ToRole="dtArchivoTramite" />
           <NavigationProperty Name="dtCapacitacions" Relationship="Self.FK_dtCapacitacion_dtTramites" FromRole="dtTramites" ToRole="dtCapacitacion" />
           <NavigationProperty Name="dtContestadoFormularios" Relationship="Self.FK_dtContestadoFormulario_dtTramites" FromRole="dtTramites" ToRole="dtContestadoFormulario" />
@@ -26299,6 +26301,7 @@ advertencia 6002: La tabla o vista 'LicenciasCH_QA.dbo.ViewUbicacionesContestada
                 <ScalarProperty Name="MotivoRe" ColumnName="MotivoRe" />
                 <ScalarProperty Name="FVialis" ColumnName="FVialis" />
                 <ScalarProperty Name="EstatusH" ColumnName="EstatusH" />
+				  <ScalarProperty Name="Expediente" ColumnName="Expediente" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

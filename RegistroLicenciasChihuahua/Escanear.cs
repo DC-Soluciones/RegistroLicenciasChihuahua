@@ -235,26 +235,32 @@ namespace RegistroLicenciasChihuahua
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string PDF = ruta + "/ExpedienteElectronico1/Expediente1.pdf";
+            string PDF = ruta + "/ExpedienteElectronico/document.pdf";
+            ruta = ruta + "/ExpedienteElectronico";
+            
 
 
-            if (!Directory.Exists(PDF))
+            if (!Directory.Exists(ruta))
             {
                 Console.WriteLine("Creando el directorio: {0}", ruta);
-                DirectoryInfo di = Directory.CreateDirectory(PDF);
+                DirectoryInfo di = Directory.CreateDirectory(ruta);
             }
 
             using (_context = new LicenciasCH_Entities())
             {
+               
                 dtTramite tramite = _context.dtTramites.Where(x => x.FolioSeguimiento == textBox2.Text).FirstOrDefault();
+
                 using (var stream = new FileStream(PDF, FileMode.Open, FileAccess.Read))
                 {
                     try
                     {
-                        using (var reader = new BinaryReader(stream))
+                        using (var reader = new  System.IO.BinaryReader(stream))
                         {
-                            tramite.Expediente = reader.ReadBytes((int)stream.Length);
-                            
+                            byte[] read = reader.ReadBytes((int)stream.Length);
+                            tramite.Expediente =(read);
+                            tramite.FolioAsignadoPlastico = "1";
+                            _context.Entry(tramite).State = System.Data.Entity.EntityState.Modified;
 
                             _context.SaveChanges();
                         }
