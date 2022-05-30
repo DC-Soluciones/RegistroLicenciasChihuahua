@@ -30,6 +30,7 @@ namespace RegistroLicenciasChihuahua
             edicion1 = edicion;
             InitializeComponent();
             usuarioid1 = IdUserC;
+         
             _context = new LicenciasCH_Entities();
             var rol = _context.dtUsuarios.Where(x => x.UsuarioId == usuarioid1).FirstOrDefault();
             rolID = rol.RolId;
@@ -41,6 +42,7 @@ namespace RegistroLicenciasChihuahua
                     cb_Municipio.DataSource = _context.dtMunicipios.Where(x => x.EstadoId == 30).ToList();
                     cb_Municipio.DisplayMember = "MunicipioNombre";
                     cb_Municipio.ValueMember = "MunicipioId";
+                    cb_Municipio.Text = "Seleccione un municipio";
                 }
                 Usuario = usuario;
                 CURPC = curp;
@@ -239,7 +241,14 @@ namespace RegistroLicenciasChihuahua
         public Boolean IsValid(Form form)
         {
             
-
+            if(cb_Vigencia.Text.Contains("seleccione"))
+            {
+                return false;
+            }
+            if(cb_Municipio.Text.Contains("Seleccione"))
+            {
+                return false;
+            }
 
             if (cb_Tlicencia.SelectedValue.ToString() == "E" || cb_Tlicencia.SelectedValue.ToString() == "P")
             {
@@ -605,6 +614,9 @@ namespace RegistroLicenciasChihuahua
 
         private void cb_Ttramite_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cb_Vigencia.Text = "Seleccione una vigencia";
+            txt_Fexpedicion.Text = System.DateTime.Now.ToShortDateString();
+            txt_Fvencimiento.Text = "";
             Vigencia();
         }
 
