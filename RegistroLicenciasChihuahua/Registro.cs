@@ -785,7 +785,7 @@ namespace RegistroLicenciasChihuahua
                                 dtramite.Ocupacion = txt_Ocupacion.Text;
                                 dtramite.TipoIdentificacion = cb_Tidentificacion.SelectedItem.ToString();
                                 dtramite.NoId = txt_NoIdentificacion.Text;
-                                dtramite.ComporbanteDomicilio = cb_ComprobanteDom.SelectedItem.ToString();
+                                dtramite.ComporbanteDomicilio = cb_ComprobanteDom.Text.ToString();
                                 dtramite.NoComprobante = txt_NoComprobante.Text;
                                 dtramite.Ben1Nombre = txt_NContacto.Text;
                                 dtramite.Ben1AMaterno = txt_AMContacto.Text;
