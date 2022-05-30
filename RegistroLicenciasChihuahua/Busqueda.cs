@@ -119,22 +119,31 @@ namespace RegistroLicenciasChihuahua
                 }
                 else
                 {
-                    licenciasact = (from d in _context.dtTramites
-                                    where d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text && d.FechaVencimiento > System.DateTime.Now
-                                    select d).OrderByDescending(x => x.FechaCreacion).ToList();
-                     cdActual = (from d in _context.dtTramites
+                    try { 
+                        licenciasact = (from d in _context.dtTramites
+                                        where d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text && d.FechaVencimiento > System.DateTime.Now
+                                        select d).OrderByDescending(x => x.FechaCreacion).ToList();
+                        cdActual = (from d in _context.dtTramites
                                     where d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text
                                     select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
-                    txt_Curp.Text = cdActual.Curp;
+                        txt_Curp.Text = cdActual.Curp;
+                    }
+                    catch
+                    {
+                        //MessageBox.Show("No existen registros con este nombre");
+                        
+                    }
                 }
 
-                foreach(var l in licenciasact)
+                if (licenciasact.Count>0) 
                 {
-                    var tplic = _context.dtTipoLicencias.Where(x => x.Clave == l.TipoLicencia).FirstOrDefault();
-                    
-                    tbc_actual.TabPages.Add(l.TramiteId.ToString(),  tplic.Nombre);
-                }
+                    foreach (var l in licenciasact)
+                    {
+                        var tplic = _context.dtTipoLicencias.Where(x => x.Clave == l.TipoLicencia).FirstOrDefault();
 
+                        tbc_actual.TabPages.Add(l.TramiteId.ToString(), tplic.Nombre);
+                    }
+                }
              
 
                 if (cdActual != null)
@@ -200,16 +209,26 @@ namespace RegistroLicenciasChihuahua
                     }
                     else
                     {
-                        listcd = (from d in _contextHist.dtTramites
-                                  where d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text && d.FechaVencimiento > System.DateTime.Now
-                                  select d).ToList();
-                        txt_Curp.Text = listcd.FirstOrDefault().Curp;
+                        try
+                        {
+                            listcd = (from d in _contextHist.dtTramites
+                                      where d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text && d.FechaVencimiento > System.DateTime.Now
+                                      select d).ToList();
+                            txt_Curp.Text = listcd.FirstOrDefault().Curp;
+                        }
+                        catch
+                        {
+                            //MessageBox.Show("No existen registros con este nombre");
+                        }
                     }
-                    foreach (var l in listcd)
+                    if (listcd.Count >0)
                     {
-                        var tplic = _context.dtTipoLicencias.Where(x => x.Clave == l.TipoLicencia).FirstOrDefault();
+                        foreach (var l in listcd)
+                        {
+                            var tplic = _context.dtTipoLicencias.Where(x => x.Clave == l.TipoLicencia).FirstOrDefault();
 
-                        tbc_Historica.TabPages.Add(l.TramiteId.ToString(), tplic.Nombre);
+                            tbc_Historica.TabPages.Add(l.TramiteId.ToString(), tplic.Nombre);
+                        }
                     }
                     if (listcd.Count() > 0)
                     {
