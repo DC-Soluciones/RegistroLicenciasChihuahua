@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,8 +24,10 @@ namespace RegistroLicenciasChihuahua
         string Usuario;
         int usuarioid1 = 0;
         int rolID;
-        public Registro(string curp, string usuario, int id, string bd, int IdUserC)
+        string edicion1;
+        public Registro(string curp, string usuario, int id, string bd, int IdUserC, string edicion)
         {
+            edicion1 = edicion;
             InitializeComponent();
             usuarioid1 = IdUserC;
             _context = new LicenciasCH_Entities();
@@ -285,7 +288,7 @@ namespace RegistroLicenciasChihuahua
                     MessageBox.Show("Favor de ingresar la número de de comprobante");
                     return false;
                 }
-                if (txt_NContacto.Text == "" || txt_APContacto.Text == "" || txt_AMContacto.Text == "" || txt_TelContacto.Text == "")
+                if (txt_NContacto.Text == "" || txt_APContacto.Text == "" || txt_TelContacto.Text == "")
                 {
                     MessageBox.Show("Favor de ingresar información de contacto ");
                     return false;
@@ -356,7 +359,7 @@ namespace RegistroLicenciasChihuahua
                     MessageBox.Show("Favor de ingresar la número de de comprobante");
                     return false;
                 }
-                if (txt_NContacto.Text == "" || txt_APContacto.Text == "" || txt_AMContacto.Text == "" || txt_TelContacto.Text == "")
+                if (txt_NContacto.Text == "" || txt_APContacto.Text == ""  || txt_TelContacto.Text == "")
                 {
                     MessageBox.Show("Favor de ingresar información de contacto ");
                     return false;
@@ -625,7 +628,7 @@ namespace RegistroLicenciasChihuahua
                
                 using (_context = new LicenciasCH_Entities())
                 {
-                    iduser = _context.dtUsuarios.Where(x => x.NombreUsuario == Usuario).FirstOrDefault();
+                    iduser = _context.dtUsuarios.Where(x => x.UsuarioId == usuarioid1).FirstOrDefault();
 
                     if (iduser == null)
                     {
@@ -648,7 +651,7 @@ namespace RegistroLicenciasChihuahua
                             dtramite = _context.dtTramites.Where(x => x.TramiteId == idtr).FirstOrDefault();
 
                         }
-                        if (dtramite != null && txt_Id.Text != "")
+                        if (dtramite != null && txt_Id.Text != "" && edicion1 == "edicion")
                         {
                             updateTramite(usuarioid1);
                         }

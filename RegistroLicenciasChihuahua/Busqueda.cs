@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -49,7 +50,7 @@ namespace RegistroLicenciasChihuahua
             {
                 if (this.panelbusqueda.Controls.Count > 0)
                     this.panelbusqueda.Controls.RemoveAt(0);
-                Registro registro = new Registro(txt_Curp.Text, usuario, 0, "", idusuarioc);
+                Registro registro = new Registro(txt_Curp.Text, usuario, 0, "", idusuarioc, "nuevo");
                 registro.TopLevel = false;
                 registro.Dock = DockStyle.Fill;
                 panelbusqueda.Controls.Clear();
@@ -62,12 +63,38 @@ namespace RegistroLicenciasChihuahua
                 MessageBox.Show("Favor de ingresar datos correctos");
             }
         }
+        private bool CurpValida(string curp)
+        {
+            var re = @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$";
+            Regex rx = new Regex(re, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            var validado = rx.IsMatch(curp);
 
+            if (!validado)  //Coincide con el formato general?
+                return false;
+
+            //Validar que coincida el dígito verificador
+            if (!curp.EndsWith(DigitoVerificador(curp.ToUpper())))
+                return false;
+
+            return true; //Validado
+        }
+        private string DigitoVerificador(string curp17)
+        {
+            //Fuente https://consultas.curp.gob.mx/CurpSP/
+            var diccionario = "0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+            var suma = 0.0;
+            var digito = 0.0;
+            for (var i = 0; i < 17; i++)
+                suma = suma + diccionario.IndexOf(curp17[i]) * (18 - i);
+            digito = 10 - suma % 10;
+            if (digito == 10) return "0";
+            return digito.ToString();
+        }
         private async void button1_Click(object sender, EventArgs e)
         {
             tbc_actual.TabPages.Clear();
             tbc_Historica.TabPages.Clear();
-            if (txt_Curp.Text != "")
+            if (txt_Curp.Text != "" && CurpValida(txt_Curp.Text))
             {
                 Loading loading = new Loading();
                 loading.Show();
@@ -259,7 +286,7 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_EditHistorica_Click(object sender, EventArgs e)
         {
-            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditHistorica.Text), "Historica", idusuarioc);
+            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditHistorica.Text), "Historica", idusuarioc, "nuevo");
             registro.FormBorderStyle = FormBorderStyle.Sizable;
             registro.StartPosition = FormStartPosition.CenterScreen;
             registro.Size = new Size(1300, 850);
@@ -270,7 +297,7 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_Editactual_Click(object sender, EventArgs e)
         {
-            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditAct.Text), "Actual", idusuarioc);
+            Registro registro = new Registro(txt_Curp.Text, "", Convert.ToInt32(lbl_EditAct.Text), "Actual", idusuarioc, "nuevo");
 
             registro.FormBorderStyle = FormBorderStyle.Sizable;
             registro.StartPosition = FormStartPosition.CenterScreen;
