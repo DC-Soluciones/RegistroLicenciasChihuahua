@@ -1125,8 +1125,8 @@ namespace RegistroLicenciasChihuahua
                 return false;
 
             //Validar que coincida el dígito verificador
-            if (!curp.EndsWith(DigitoVerificador(curp.ToUpper())))
-                return false;
+            //if (!curp.EndsWith(DigitoVerificador(curp.ToUpper())))
+            //    return false;
 
             return true; //Validado
         }
@@ -1149,6 +1149,16 @@ namespace RegistroLicenciasChihuahua
             {
                 MessageBox.Show("Curp no valida, ingrese de nuevo");
                 txt_Curp.Text = "";
+            }
+            else
+            {
+                string anio = txt_Curp.Text.Substring(4, 2);
+                string mes = txt_Curp.Text.Substring(6, 2);
+                string dia = txt_Curp.Text.Substring(8, 2);
+                string fecha = dia + '-' + mes + '-' + anio;
+                txt_Fnacimiento.Text = fecha;
+
+                txt_Rfc.Text = txt_Curp.Text.Substring(0,10);
             }
         }
 
