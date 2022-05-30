@@ -1314,7 +1314,7 @@ namespace RegistroLicenciasChihuahua
             // txt_Fnacimiento
             // 
             this.txt_Fnacimiento.Location = new System.Drawing.Point(429, 30);
-            this.txt_Fnacimiento.Mask = "00/00/00";
+            this.txt_Fnacimiento.Mask = "00/00/0000";
             this.txt_Fnacimiento.Name = "txt_Fnacimiento";
             this.txt_Fnacimiento.ReadOnly = true;
             this.txt_Fnacimiento.Size = new System.Drawing.Size(136, 20);
