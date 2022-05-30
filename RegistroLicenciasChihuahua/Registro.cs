@@ -425,6 +425,9 @@ namespace RegistroLicenciasChihuahua
             try
             {
                 cb_Ttramite.Text = "Seleccione tipo de tramite";
+                cb_Vigencia.Text = "Seleccione una vigencia";
+                txt_Fexpedicion.Text = System.DateTime.Now.ToShortDateString();
+                txt_Fvencimiento.Text = "";
                 Vigencia();
 
                 if (Convert.ToString(cb_Tlicencia.SelectedValue) == "E" || Convert.ToString(cb_Tlicencia.SelectedValue) == "P")
