@@ -424,6 +424,7 @@ namespace RegistroLicenciasChihuahua
         {
             try
             {
+                cb_Ttramite.Text = "Seleccione tipo de tramite";
                 Vigencia();
 
                 if (Convert.ToString(cb_Tlicencia.SelectedValue) == "E" || Convert.ToString(cb_Tlicencia.SelectedValue) == "P")
