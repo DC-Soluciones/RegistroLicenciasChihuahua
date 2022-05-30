@@ -1129,21 +1129,28 @@ namespace RegistroLicenciasChihuahua
 
         private void txt_Curp_Leave(object sender, EventArgs e)
         {
-            CurpValida(txt_Curp.Text);
+           if(! CurpValida(txt_Curp.Text))
+            {
+                MessageBox.Show("Curp no valida, ingrese de nuevo");
+                txt_Curp.Text = "";
+            }
         }
 
         private void txt_Rfc_Leave(object sender, EventArgs e)
         {
             if (txt_Curp.Text.Contains(txt_Rfc.Text))
             {
-                if (Regex.IsMatch(txt_Rfc.Text, "[A-z]{4}[0-9]{6}[A-z0-9]{3}") || Regex.IsMatch(txt_Rfc.Text, "[A-z]{3}[0-9]{6}[A-z0-9]{3}"))
-                {
-                  
-                }
-                else
-                {
-                    MessageBox.Show($"El texto: {txt_Rfc.Text} no es un RFC valido");
-                }
+                //if (Regex.IsMatch(this.txt_Rfc.Text, @"^([A-Z\s]{4})\d{6}([A-Z\w]{3})$"))
+                //{
+                //    MessageBox.Show("RFC valido");
+                //    this.txt_Rfc.Focus();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Teclee un RFC valido", "ERROR",
+                //   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    txt_Rfc.Text = "";
+                //}
             }
             else
             {
