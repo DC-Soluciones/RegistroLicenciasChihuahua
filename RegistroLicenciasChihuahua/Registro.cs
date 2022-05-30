@@ -466,7 +466,7 @@ namespace RegistroLicenciasChihuahua
                 }
                 catch
                 {
-
+                    //
                 }
                 cb_Vigencia.Items.Clear();
                 string tipolic1 = cb_Tlicencia.SelectedValue == null ? "B" : cb_Tlicencia.SelectedValue.ToString();
