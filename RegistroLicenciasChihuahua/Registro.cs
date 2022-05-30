@@ -437,9 +437,9 @@ namespace RegistroLicenciasChihuahua
 
            
             }
-            catch
+            catch (Exception error)
             {
-
+                MessageBox.Show(error.Message);
             }
         }
 
@@ -447,6 +447,14 @@ namespace RegistroLicenciasChihuahua
         {
             using (_context = new LicenciasCH_Entities())
             {
+                try
+                {
+                    cb_Vigencia.DataSource = null;
+                }
+                catch
+                {
+
+                }
                 cb_Vigencia.Items.Clear();
                 string tipolic1 = cb_Tlicencia.SelectedValue == null ? "B" : cb_Tlicencia.SelectedValue.ToString();
                 var tplic = _context.dtTipoLicencias.Where(x => x.Clave == tipolic1).Select(x => x).FirstOrDefault();
@@ -598,25 +606,33 @@ namespace RegistroLicenciasChihuahua
 
         private void cb_Vigencia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Vigencia();
-            using (_context = new LicenciasCH_Entities())
+            try
             {
-                int vigid = Convert.ToInt32(cb_Vigencia.SelectedValue);
-                var vig = _context.dtVigencias.Where(x => x.Nombre == cb_Vigencia.Text).FirstOrDefault();
-
-                var impo = _context.dtImportes.Where(x => x.VigenciaId == vig.VigenciaId).FirstOrDefault();
-
-                txt_Importe.Text = impo.Monto.ToString("0.00");
-                if (txt_Fexpedicion.Text != "  /  /")
+                //Vigencia();
+                using (_context = new LicenciasCH_Entities())
                 {
-                    DateTime exp = Convert.ToDateTime(txt_Fexpedicion.Text);
-                    txt_Fvencimiento.Text = exp.AddYears(vig.AniosVigencia.Value).ToString("dd/MM/yyyy");
+                    int vigid = Convert.ToInt32(cb_Vigencia.SelectedValue);
+                    var vig = _context.dtVigencias.Where(x => x.Nombre == cb_Vigencia.Text).FirstOrDefault();
+
+                    var impo = _context.dtImportes.Where(x => x.VigenciaId == vig.VigenciaId).FirstOrDefault();
+
+                    txt_Importe.Text = impo.Monto.ToString("0.00");
+                    if (txt_Fexpedicion.Text != "  /  /")
+                    {
+                        DateTime exp = Convert.ToDateTime(txt_Fexpedicion.Text);
+                        txt_Fvencimiento.Text = exp.AddYears(vig.AniosVigencia.Value).ToString("dd/MM/yyyy");
+                    }
+                    else
+                    {
+                        txt_Fvencimiento.Text = System.DateTime.Now.AddYears(vig.AniosVigencia.Value).ToString("dd/MM/yyyy");
+                    }
+
                 }
-                else
-                {
-                    txt_Fvencimiento.Text = System.DateTime.Now.AddYears(vig.AniosVigencia.Value).ToString("dd/MM/yyyy");
-                }
-              
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message);
+
             }
         }
 
@@ -1075,6 +1091,64 @@ namespace RegistroLicenciasChihuahua
             {
                 //el resto de teclas pulsadas se desactivan
                 e.Handled = true;
+            }
+        }
+
+        private void txt_Curp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool CurpValida(string curp)
+        {
+            var re = @"^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$";
+            Regex rx = new Regex(re, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            var validado = rx.IsMatch(curp);
+
+            if (!validado)  //Coincide con el formato general?
+                return false;
+
+            //Validar que coincida el dígito verificador
+            if (!curp.EndsWith(DigitoVerificador(curp.ToUpper())))
+                return false;
+
+            return true; //Validado
+        }
+        private string DigitoVerificador(string curp17)
+        {
+            //Fuente https://consultas.curp.gob.mx/CurpSP/
+            var diccionario = "0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+            var suma = 0.0;
+            var digito = 0.0;
+            for (var i = 0; i < 17; i++)
+                suma = suma + diccionario.IndexOf(curp17[i]) * (18 - i);
+            digito = 10 - suma % 10;
+            if (digito == 10) return "0";
+            return digito.ToString();
+        }
+
+        private void txt_Curp_Leave(object sender, EventArgs e)
+        {
+            CurpValida(txt_Curp.Text);
+        }
+
+        private void txt_Rfc_Leave(object sender, EventArgs e)
+        {
+            if (txt_Curp.Text.Contains(txt_Rfc.Text))
+            {
+                if (Regex.IsMatch(txt_Rfc.Text, "[A-z]{4}[0-9]{6}[A-z0-9]{3}") || Regex.IsMatch(txt_Rfc.Text, "[A-z]{3}[0-9]{6}[A-z0-9]{3}"))
+                {
+                  
+                }
+                else
+                {
+                    MessageBox.Show($"El texto: {txt_Rfc.Text} no es un RFC valido");
+                }
+            }
+            else
+            {
+                txt_Rfc.Text = "";
+                MessageBox.Show("RFC no valido");
             }
         }
     }

@@ -94,7 +94,7 @@ namespace RegistroLicenciasChihuahua
         {
             tbc_actual.TabPages.Clear();
             tbc_Historica.TabPages.Clear();
-            if (txt_Curp.Text != "" && CurpValida(txt_Curp.Text))
+            if ((txt_Curp.Text != "" && CurpValida(txt_Curp.Text)) || (txt_Nombre.Text !=""&& txt_ApellidoP.Text!= "" ))
             {
                 Loading loading = new Loading();
                 loading.Show();
@@ -105,10 +105,29 @@ namespace RegistroLicenciasChihuahua
 
                 _context = new LicenciasCH_Entities();
 
+                List<dtTramite> licenciasact = new List<dtTramite>();
+                dtTramite cdActual = new dtTramite();
 
-                var licenciasact = (from d in _context.dtTramites
-                                where d.Curp == txt_Curp.Text  && d.FechaVencimiento > System.DateTime.Now
-                                select d).OrderByDescending(x => x.FechaCreacion).ToList();
+                if (txt_Curp.Text != "")
+                {
+                    licenciasact = (from d in _context.dtTramites
+                                    where d.Curp == txt_Curp.Text && d.FechaVencimiento > System.DateTime.Now
+                                    select d).OrderByDescending(x => x.FechaCreacion).ToList();
+                     cdActual = (from d in _context.dtTramites
+                                    where d.Curp == txt_Curp.Text
+                                    select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
+                }
+                else
+                {
+                    licenciasact = (from d in _context.dtTramites
+                                    where d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text && d.FechaVencimiento > System.DateTime.Now
+                                    select d).OrderByDescending(x => x.FechaCreacion).ToList();
+                     cdActual = (from d in _context.dtTramites
+                                    where d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text
+                                    select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
+                    txt_Curp.Text = cdActual.Curp;
+                }
+
                 foreach(var l in licenciasact)
                 {
                     var tplic = _context.dtTipoLicencias.Where(x => x.Clave == l.TipoLicencia).FirstOrDefault();
@@ -116,9 +135,7 @@ namespace RegistroLicenciasChihuahua
                     tbc_actual.TabPages.Add(l.TramiteId.ToString(),  tplic.Nombre);
                 }
 
-                var cdActual = (from d in _context.dtTramites
-                                where d.Curp == txt_Curp.Text
-                                select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
+             
 
                 if (cdActual != null)
                 {
@@ -173,10 +190,21 @@ namespace RegistroLicenciasChihuahua
 
                 using (_contextHist = new LicHistoricoEntities())
                 {
+                    List<dtTramite> listcd = new List<dtTramite>();
+                    if (txt_Curp.Text != "")
+                    {
 
-                    var listcd = (from d in _contextHist.dtTramites
-                                  where d.Curp == txt_Curp.Text && d.FechaVencimiento > System.DateTime.Now
+                         listcd = (from d in _contextHist.dtTramites
+                                      where d.Curp == txt_Curp.Text && d.FechaVencimiento > System.DateTime.Now
+                                      select d).ToList();
+                    }
+                    else
+                    {
+                        listcd = (from d in _contextHist.dtTramites
+                                  where d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text && d.FechaVencimiento > System.DateTime.Now
                                   select d).ToList();
+                        txt_Curp.Text = listcd.FirstOrDefault().Curp;
+                    }
                     foreach (var l in listcd)
                     {
                         var tplic = _context.dtTipoLicencias.Where(x => x.Clave == l.TipoLicencia).FirstOrDefault();
