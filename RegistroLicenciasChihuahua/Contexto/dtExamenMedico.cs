@@ -28,10 +28,10 @@ namespace RegistroLicenciasChihuahua.Contexto
         public Nullable<bool> CapAud { get; set; }
         public Nullable<bool> NivelBajo { get; set; }
         public Nullable<bool> NivelMedio { get; set; }
-        public Nullable<bool> NivelAlto { get; set; }
+        public Nullable<bool> SinRes { get; set; }
         public Nullable<bool> Normal { get; set; }
         public Nullable<bool> Apto { get; set; }
-        public Nullable<bool> Padecimiento { get; set; }
+        public Nullable<bool> Negadas { get; set; }
         public Nullable<int> UsuarioCreadorId { get; set; }
         public Nullable<System.DateTime> FechaCreacion { get; set; }
         public Nullable<int> UsuarioModificoId { get; set; }
@@ -148,7 +148,6 @@ namespace RegistroLicenciasChihuahua.Contexto
         public string TipoSangre { get; set; }
         public Nullable<bool> Donador { get; set; }
         public string FolioSeguimiento { get; set; }
-        public Nullable<bool> SinRes { get; set; }
         public string Retencion { get; set; }
     
         public virtual dtTramite dtTramite { get; set; }

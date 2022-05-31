@@ -108,7 +108,6 @@ namespace RegistroLicenciasChihuahua.Contexto
         public virtual DbSet<dtEtapa> dtEtapas { get; set; }
         public virtual DbSet<dtEtapaTemplate> dtEtapaTemplates { get; set; }
         public virtual DbSet<dtEvaluacion> dtEvaluacions { get; set; }
-        public virtual DbSet<dtExamenMedico> dtExamenMedicoes { get; set; }
         public virtual DbSet<dtExamenPsicometrico> dtExamenPsicometricoes { get; set; }
         public virtual DbSet<dtExamenToxico> dtExamenToxicoes { get; set; }
         public virtual DbSet<dtFactura> dtFacturas { get; set; }
@@ -213,7 +212,6 @@ namespace RegistroLicenciasChihuahua.Contexto
         public virtual DbSet<dtTitulosConcesione> dtTitulosConcesiones { get; set; }
         public virtual DbSet<dtToken> dtTokens { get; set; }
         public virtual DbSet<dtTokenLogin> dtTokenLogins { get; set; }
-        public virtual DbSet<dtTramite> dtTramites { get; set; }
         public virtual DbSet<dtUnidadMedita> dtUnidadMeditas { get; set; }
         public virtual DbSet<dtUsuario> dtUsuarios { get; set; }
         public virtual DbSet<dtUsuarioArea> dtUsuarioAreas { get; set; }
@@ -238,6 +236,8 @@ namespace RegistroLicenciasChihuahua.Contexto
         public virtual DbSet<spfServiciosConcepto> spfServiciosConceptos { get; set; }
         public virtual DbSet<ViewContactoContestada> ViewContactoContestadas { get; set; }
         public virtual DbSet<ViewUbicacionesContestada> ViewUbicacionesContestadas { get; set; }
+        public virtual DbSet<dtTramite> dtTramites { get; set; }
+        public virtual DbSet<dtExamenMedico> dtExamenMedicoes { get; set; }
     
         [DbFunction("LicenciasCH_Entities", "fnMailInbox")]
         public virtual IQueryable<fnMailInbox_Result> fnMailInbox(string correo, Nullable<int> empresaId)

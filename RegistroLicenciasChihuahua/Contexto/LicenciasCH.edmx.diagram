@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="159fbf6a99214124bfeb07e2c8d5f04e" Name="Diagram1">
+      <Diagram DiagramId="159fbf6a99214124bfeb07e2c8d5f04e" Name="Diagram1" ZoomLevel="24">
         <EntityTypeShape EntityType="LicenciasCH_Model.ASPStateTempApplication" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.ASPStateTempSession" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.dtAccountType" Width="1.5" PointX="39.75" PointY="174" IsExpanded="true" />
@@ -86,7 +86,6 @@
         <EntityTypeShape EntityType="LicenciasCH_Model.dtEtapa" Width="1.5" PointX="33" PointY="235.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.dtEtapaTemplate" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.dtEvaluacion" Width="1.5" PointX="36" PointY="251.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicenciasCH_Model.dtExamenMedico" Width="1.5" PointX="10.5" PointY="157" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.dtExamenPsicometrico" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.dtExamenToxico" Width="1.5" PointX="10.5" PointY="151.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.dtFactura" Width="1.5" PointX="35.25" PointY="203" IsExpanded="true" />
@@ -191,7 +190,6 @@
         <EntityTypeShape EntityType="LicenciasCH_Model.dtTitulosConcesione" Width="1.5" PointX="50.25" PointY="186.5" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.dtToken" Width="1.5" PointX="2.75" PointY="17.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.dtTokenLogin" Width="1.5" PointX="51.5" PointY="202.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicenciasCH_Model.dtTramite" Width="1.5" PointX="8.25" PointY="151.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.dtUnidadMedita" Width="1.5" PointX="33" PointY="176.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.dtUsuario" Width="1.5" PointX="8.25" PointY="184.875" IsExpanded="true" />
         <EntityTypeShape EntityType="LicenciasCH_Model.dtUsuarioArea" Width="1.5" PointX="4.75" PointY="17.75" IsExpanded="true" />
@@ -247,7 +245,6 @@
         <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtTicketServicio" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivo_dtUsuario" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtTareaPasoArchivo_dtArchivo" ManuallyRouted="false" />
-        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivoTramite_dtTramites" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivoTramite_dtUsuario" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtArea_dtEmpresa" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtArea_dtUsuario" ManuallyRouted="false" />
@@ -312,7 +309,6 @@
         <AssociationConnector Association="LicenciasCH_Model.FK_dtDestinos_dtCanal" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtJerarquia_dtCanal" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtCapacitacion_dtCiudadano" ManuallyRouted="false" />
-        <AssociationConnector Association="LicenciasCH_Model.FK_dtCapacitacion_dtTramites" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtCapacitacion_dtUsuario" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtCapacitacion_dtUsuario1" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtCapacitacion_dtUsuario2" ManuallyRouted="false" />
@@ -350,7 +346,6 @@
         <AssociationConnector Association="LicenciasCH_Model.FK_dtTarea_dtContacto" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormulario_dtDestinos" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormulario_dtEmpresa" ManuallyRouted="false" />
-        <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormulario_dtTramites" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormularioRespuestas_dtContestadoFormulario" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtCoordenada_dtEmpresa" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtCoordenada_dtUsuario" ManuallyRouted="false" />
@@ -479,8 +474,6 @@
         <AssociationConnector Association="LicenciasCH_Model.FK_dtMeta_dtEtapa" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidad_dtEtapa" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtOportunidadHistorial_dtEtapa" ManuallyRouted="false" />
-        <AssociationConnector Association="LicenciasCH_Model.FK_dtExamenMedico_dtTramites" ManuallyRouted="false" />
-        <AssociationConnector Association="LicenciasCH_Model.FK_dtExamenToxico_dtTramites" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtFactura_dtFacturaCategoria" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtFactura_dtProyecto" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtFactura_dtTarea" ManuallyRouted="false" />
@@ -503,7 +496,6 @@
         <AssociationConnector Association="LicenciasCH_Model.FK_dtJerarquia_dtUsuario" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtJerarquia_dtUsuario1" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtJerarquia_dtUsuario2" ManuallyRouted="false" />
-        <AssociationConnector Association="LicenciasCH_Model.FK_dtLicencias_dtTramites" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtLicencias_dtUsuario" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtLicencias_dtUsuario1" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.FK_dtLicencias_dtUsuario2" ManuallyRouted="false" />
@@ -633,6 +625,14 @@
         <AssociationConnector Association="LicenciasCH_Model.dtPuestoReporta" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.dtRolPermiso" ManuallyRouted="false" />
         <AssociationConnector Association="LicenciasCH_Model.dtTareaDependencia" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtTramite" Width="1.5" PointX="0.75" PointY="182.875" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtArchivoTramite_dtTramites" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtCapacitacion_dtTramites" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtContestadoFormulario_dtTramites" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtExamenToxico_dtTramites" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtLicencias_dtTramites" />
+        <EntityTypeShape EntityType="LicenciasCH_Model.dtExamenMedico" Width="1.5" PointX="3" PointY="205.5" />
+        <AssociationConnector Association="LicenciasCH_Model.FK_dtExamenMedico_dtTramites" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

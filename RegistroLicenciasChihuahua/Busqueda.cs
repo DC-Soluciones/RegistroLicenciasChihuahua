@@ -192,6 +192,7 @@ namespace RegistroLicenciasChihuahua
                     gb_DatoActual.Visible = false;
                     pnl_actual.Visible = true;
                     pnl_TextActual.Visible = true;
+                    pnl_actual.Visible = false;
                     //txt_actual.Visible = true;
                     //btn_LeerQ3.Visible = false;
                     //pictureBox1.Visible = false;
@@ -223,12 +224,18 @@ namespace RegistroLicenciasChihuahua
                     }
                     if (listcd.Count >0)
                     {
+                        pnl_registro.Visible = true;
+                        pnl_noRegistro.Visible = false;
                         foreach (var l in listcd)
                         {
                             var tplic = _context.dtTipoLicencias.Where(x => x.Clave == l.TipoLicencia).FirstOrDefault();
 
                             tbc_Historica.TabPages.Add(l.TramiteId.ToString(), tplic.Nombre);
                         }
+                    }
+                    else
+                    {
+                        pnl_histo.Visible = false;
                     }
                     if (listcd.Count() > 0)
                     {

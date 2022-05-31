@@ -29,9 +29,9 @@ namespace RegistroLicenciasChihuahua.Contexto
     
         public virtual dtDestino dtDestino { get; set; }
         public virtual dtEstatusLicencia dtEstatusLicencia { get; set; }
-        public virtual dtTramite dtTramite { get; set; }
         public virtual dtUsuario dtUsuario { get; set; }
         public virtual dtUsuario dtUsuario1 { get; set; }
         public virtual dtUsuario dtUsuario2 { get; set; }
+        public virtual dtTramite dtTramite { get; set; }
     }
 }

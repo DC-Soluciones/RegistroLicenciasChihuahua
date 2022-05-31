@@ -20,14 +20,11 @@ namespace RegistroLicenciasChihuahua.Contexto
             this.dtArchivoTramites = new HashSet<dtArchivoTramite>();
             this.dtCapacitacions = new HashSet<dtCapacitacion>();
             this.dtContestadoFormularios = new HashSet<dtContestadoFormulario>();
-            this.dtExamenMedicoes = new HashSet<dtExamenMedico>();
             this.dtExamenToxicoes = new HashSet<dtExamenToxico>();
             this.dtLicencias = new HashSet<dtLicencia>();
+            this.dtExamenMedicoes = new HashSet<dtExamenMedico>();
         }
-        public byte[] Expediente { get; set; }
-        public string MotivoRe { get; set; }
-        public string FVialis { get; set; }
-        public string EstatusH { get; set; }
+    
         public int TramiteId { get; set; }
         public string FolioAsignadoPlastico { get; set; }
         public int TipoLicenciaId { get; set; }
@@ -181,8 +178,11 @@ namespace RegistroLicenciasChihuahua.Contexto
         public string DescRobo { get; set; }
         public string DescExt { get; set; }
         public string TiempoExt { get; set; }
-        
-
+        public string MotivoRe { get; set; }
+        public string FVialis { get; set; }
+        public string EstatusH { get; set; }
+        public byte[] Expediente { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<dtArchivoTramite> dtArchivoTramites { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -190,10 +190,10 @@ namespace RegistroLicenciasChihuahua.Contexto
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<dtContestadoFormulario> dtContestadoFormularios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<dtExamenMedico> dtExamenMedicoes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<dtExamenToxico> dtExamenToxicoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<dtLicencia> dtLicencias { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<dtExamenMedico> dtExamenMedicoes { get; set; }
     }
 }

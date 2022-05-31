@@ -54,8 +54,8 @@ namespace RegistroLicenciasChihuahua.Contexto
         public virtual dtCheckList1 dtCheckList1 { get; set; }
         public virtual dtDestino dtDestino { get; set; }
         public virtual dtEmpresa dtEmpresa { get; set; }
-        public virtual dtTramite dtTramite { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<dtContestadoFormularioRespuesta> dtContestadoFormularioRespuestas { get; set; }
+        public virtual dtTramite dtTramite { get; set; }
     }
 }

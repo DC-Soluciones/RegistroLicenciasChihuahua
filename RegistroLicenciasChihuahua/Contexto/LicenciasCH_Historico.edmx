@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LicHistoricoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LicHistoricoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ASPStateTempApplications">
           <Key>
             <PropertyRef Name="AppId" />
@@ -233,7 +233,7 @@
           <Property Name="ProductoServicioId" Type="int" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtBancos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.dtBancos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="dtBancos">
           <Key>
             <PropertyRef Name="BancoId" />
@@ -1291,7 +1291,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtBancos' no tiene definida
           <Property Name="ValoresJson" Type="text" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtDocumentos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.dtDocumentos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="dtDocumentos">
           <Key>
             <PropertyRef Name="Id_Documento" />
@@ -1442,7 +1442,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtDocumentos' no tiene defi
           <Property Name="EstadoNombre" Type="varchar" MaxLength="500" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtEstadoCivil' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.dtEstadoCivil' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="dtEstadoCivil">
           <Key>
             <PropertyRef Name="EstadoCivilId" />
@@ -1530,12 +1530,12 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtEstadoCivil' no tiene def
           <Property Name="Astigmatismo" Type="bit" />
           <Property Name="NormalAv" Type="bit" />
           <Property Name="CapAud" Type="bit" />
-          <Property Name="NivelBajo" Type="bit" />
+          <Property Name="NivelBajo" Type="bit" Nullable="false" />
           <Property Name="NivelMedio" Type="bit" />
-          <Property Name="NivelAlto" Type="bit" />
+          <Property Name="SinRes" Type="bit" />
           <Property Name="Normal" Type="bit" />
           <Property Name="Apto" Type="bit" />
-          <Property Name="Padecimiento" Type="bit" />
+          <Property Name="Negadas" Type="bit" />
           <Property Name="UsuarioCreadorId" Type="int" />
           <Property Name="FechaCreacion" Type="datetime" />
           <Property Name="UsuarioModificoId" Type="int" />
@@ -1652,7 +1652,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtEstadoCivil' no tiene def
           <Property Name="TipoSangre" Type="varchar" MaxLength="50" />
           <Property Name="Donador" Type="bit" />
           <Property Name="FolioSeguimiento" Type="varchar" MaxLength="50" />
-          <Property Name="SinRes" Type="bit" />
           <Property Name="Retencion" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="dtExamenPsicometrico">
@@ -3023,7 +3022,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtEstadoCivil' no tiene def
           <Property Name="Descripcion" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtTipoEmpleado' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.dtTipoEmpleado' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="dtTipoEmpleado">
           <Key>
             <PropertyRef Name="TipoEmpleadoId" />
@@ -3062,7 +3061,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtTipoEmpleado' no tiene de
           <Property Name="Estandar" Type="int" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtTipoMovPorProducto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.dtTipoMovPorProducto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="dtTipoMovPorProducto">
           <Key>
             <PropertyRef Name="RamoId" />
@@ -3243,7 +3242,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtTipoMovPorProducto' no ti
           <Property Name="ExamenAprobado" Type="bit" />
           <Property Name="LetraConsecutiva" Type="varchar" MaxLength="5" />
           <Property Name="TipoTel" Type="varchar" MaxLength="50" />
-          <Property Name="Lada" Type="varchar" MaxLength="5" />
+          <Property Name="EstatusH" Type="varchar" MaxLength="5" />
           <Property Name="RefAd" Type="varchar" MaxLength="500" />
           <Property Name="ImprimeDir" Type="bit" />
           <Property Name="NombreTutor" Type="varchar" MaxLength="50" />
@@ -3256,7 +3255,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtTipoMovPorProducto' no ti
           <Property Name="LentesContacto" Type="bit" />
           <Property Name="VehiculoAdaptado" Type="bit" />
           <Property Name="VehiculoAutomatico" Type="bit" />
-          <Property Name="Ben1Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Ben1Nombre" Type="varchar(max)" />
           <Property Name="Ben1APaterno" Type="varchar" MaxLength="50" />
           <Property Name="Ben1AMaterno" Type="varchar" MaxLength="50" />
           <Property Name="Ben1Parentezco" Type="varchar" MaxLength="50" />
@@ -3405,7 +3404,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.dtTipoMovPorProducto' no ti
           <Property Name="Number" Type="int" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.Query' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.Query' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="Query">
           <Key>
             <PropertyRef Name="UsuarioId" />
@@ -3441,7 +3440,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.Query' no tiene definida ni
           <Property Name="Curp" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfCatalogoGral' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.spfCatalogoGral' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfCatalogoGral">
           <Key>
             <PropertyRef Name="NumeroCatalogo" />
@@ -3457,7 +3456,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfCatalogoGral' no tiene d
           <Property Name="Estatus" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfFolios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.spfFolios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfFolios">
           <Key>
             <PropertyRef Name="Proceso" />
@@ -3469,7 +3468,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfFolios' no tiene definid
           <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfLicenciasDigitales' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.spfLicenciasDigitales' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfLicenciasDigitales">
           <Key>
             <PropertyRef Name="FolioControl" />
@@ -3546,7 +3545,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfLicenciasDigitales' no t
           <Property Name="NumeroOperacion" Type="bigint" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfLicenciasDigitalesHist' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.spfLicenciasDigitalesHist' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfLicenciasDigitalesHist">
           <Key>
             <PropertyRef Name="FolioControl" />
@@ -3609,7 +3608,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfLicenciasDigitalesHist' 
           <Property Name="OrigenTramite" Type="smallint" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfLicenciasDigitalesTemp' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.spfLicenciasDigitalesTemp' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfLicenciasDigitalesTemp">
           <Key>
             <PropertyRef Name="FolioControl" />
@@ -3704,7 +3703,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfLicenciasDigitalesTemp' 
           <Property Name="fecha1raExpedicion" Type="datetime" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfServiciosConceptos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.spfServiciosConceptos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="spfServiciosConceptos">
           <Key>
             <PropertyRef Name="NumeroServicio" />
@@ -3722,7 +3721,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.spfServiciosConceptos' no t
           <Property Name="FechaSistema" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewContactoContestadas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.ViewContactoContestadas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="ViewContactoContestadas">
           <Key>
             <PropertyRef Name="CampaniaId" />
@@ -3741,7 +3740,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewContactoContestadas' no
           <Property Name="NombreUsuarioContesto" Type="varchar" MaxLength="255" />
         </EntityType>
         <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'LicCH_Historico.dbo.ViewUbicacionesContestadas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="ViewUbicacionesContestadas">
           <Key>
             <PropertyRef Name="CampaniaId" />
@@ -11180,8 +11179,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             <End Role="dtProductoAlmacen" EntitySet="dtProductoAlmacen" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LicHistoricoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -11397,8 +11395,8 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <Property Name="UsuarioCreador" Type="Int32" />
           <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
           <Property Name="Nombre" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="dtTramite" Relationship="Self.FK_dtArchivoTramite_dtTramites" FromRole="dtArchivoTramite" ToRole="dtTramites" />
           <NavigationProperty Name="dtUsuario" Relationship="Self.FK_dtArchivoTramite_dtUsuario" FromRole="dtArchivoTramite" ToRole="dtUsuario" />
+          <NavigationProperty Name="dtTramite" Relationship="LicHistoricoModel.FK_dtArchivoTramite_dtTramites" FromRole="dtArchivoTramite" ToRole="dtTramite" />
         </EntityType>
         <EntityType Name="dtArea">
           <Key>
@@ -11884,10 +11882,10 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <Property Name="FolioConocer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Entidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="dtCiudadano" Relationship="Self.FK_dtCapacitacion_dtCiudadano" FromRole="dtCapacitacion" ToRole="dtCiudadano" />
-          <NavigationProperty Name="dtTramite" Relationship="Self.FK_dtCapacitacion_dtTramites" FromRole="dtCapacitacion" ToRole="dtTramites" />
           <NavigationProperty Name="dtUsuario" Relationship="Self.FK_dtCapacitacion_dtUsuario" FromRole="dtCapacitacion" ToRole="dtUsuario" />
           <NavigationProperty Name="dtUsuario1" Relationship="Self.FK_dtCapacitacion_dtUsuario1" FromRole="dtCapacitacion" ToRole="dtUsuario" />
           <NavigationProperty Name="dtUsuario2" Relationship="Self.FK_dtCapacitacion_dtUsuario2" FromRole="dtCapacitacion" ToRole="dtUsuario" />
+          <NavigationProperty Name="dtTramite" Relationship="LicHistoricoModel.FK_dtCapacitacion_dtTramites" FromRole="dtCapacitacion" ToRole="dtTramite" />
         </EntityType>
         <EntityType Name="dtCasoDocumento">
           <Key>
@@ -12307,8 +12305,8 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <NavigationProperty Name="dtCheckList1" Relationship="Self.FK_dtContestadoFormulario_dtCheckList" FromRole="dtContestadoFormulario" ToRole="dtCheckList1" />
           <NavigationProperty Name="dtDestino" Relationship="Self.FK_dtContestadoFormulario_dtDestinos" FromRole="dtContestadoFormulario" ToRole="dtDestinos" />
           <NavigationProperty Name="dtEmpresa" Relationship="Self.FK_dtContestadoFormulario_dtEmpresa" FromRole="dtContestadoFormulario" ToRole="dtEmpresa" />
-          <NavigationProperty Name="dtTramite" Relationship="Self.FK_dtContestadoFormulario_dtTramites" FromRole="dtContestadoFormulario" ToRole="dtTramites" />
           <NavigationProperty Name="dtContestadoFormularioRespuestas" Relationship="Self.FK_dtContestadoFormularioRespuestas_dtContestadoFormulario" FromRole="dtContestadoFormulario" ToRole="dtContestadoFormularioRespuestas" />
+          <NavigationProperty Name="dtTramite" Relationship="LicHistoricoModel.FK_dtContestadoFormulario_dtTramites" FromRole="dtContestadoFormulario" ToRole="dtTramite" />
         </EntityType>
         <EntityType Name="dtContestadoFormularioRespuesta">
           <Key>
@@ -12998,148 +12996,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <NavigationProperty Name="dtCheckList1" Relationship="Self.FK_dtEvaluacion_dtCheckList" FromRole="dtEvaluacion" ToRole="dtCheckList1" />
           <NavigationProperty Name="dtEmpresa" Relationship="Self.FK_dtEvaluacion_dtEmpresa" FromRole="dtEvaluacion" ToRole="dtEmpresa" />
         </EntityType>
-        <EntityType Name="dtExamenMedico">
-          <Key>
-            <PropertyRef Name="ExamenMedicoId" />
-          </Key>
-          <Property Name="ExamenMedicoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TramiteId" Type="Int32" Nullable="false" />
-          <Property Name="FechaInicioVigencia" Type="DateTime" Precision="3" />
-          <Property Name="FechaFinVigencia" Type="DateTime" Precision="3" />
-          <Property Name="Lentes" Type="Boolean" />
-          <Property Name="CapVs" Type="Boolean" />
-          <Property Name="Miopia" Type="Boolean" />
-          <Property Name="Ambiopia" Type="Boolean" />
-          <Property Name="Hiper" Type="Boolean" />
-          <Property Name="Astigmatismo" Type="Boolean" />
-          <Property Name="NormalAv" Type="Boolean" />
-          <Property Name="CapAud" Type="Boolean" />
-          <Property Name="NivelBajo" Type="Boolean" />
-          <Property Name="NivelMedio" Type="Boolean" />
-          <Property Name="NivelAlto" Type="Boolean" />
-          <Property Name="Normal" Type="Boolean" />
-          <Property Name="Apto" Type="Boolean" />
-          <Property Name="Padecimiento" Type="Boolean" />
-          <Property Name="UsuarioCreadorId" Type="Int32" />
-          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
-          <Property Name="UsuarioModificoId" Type="Int32" />
-          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
-          <Property Name="Comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="OjoIzquierdo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="OjoDerecho" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DestinoId" Type="Int32" />
-          <Property Name="CDelgada" Type="Boolean" />
-          <Property Name="CRegular" Type="Boolean" />
-          <Property Name="CAtletica" Type="Boolean" />
-          <Property Name="CObesa" Type="Boolean" />
-          <Property Name="CRobusta" Type="Boolean" />
-          <Property Name="PBlanco" Type="Boolean" />
-          <Property Name="PAmarillo" Type="Boolean" />
-          <Property Name="PMorenoClaro" Type="Boolean" />
-          <Property Name="PMoreno" Type="Boolean" />
-          <Property Name="PMorenoOscuro" Type="Boolean" />
-          <Property Name="PNegro" Type="Boolean" />
-          <Property Name="PCobriza" Type="Boolean" />
-          <Property Name="POtro" Type="Boolean" />
-          <Property Name="PAlbino" Type="Boolean" />
-          <Property Name="CaAlargada" Type="Boolean" />
-          <Property Name="CaCuadrada" Type="Boolean" />
-          <Property Name="CaOvalada" Type="Boolean" />
-          <Property Name="CaRedonda" Type="Boolean" />
-          <Property Name="CoAbundante" Type="Boolean" />
-          <Property Name="CoEscaso" Type="Boolean" />
-          <Property Name="CoRegular" Type="Boolean" />
-          <Property Name="CoSin" Type="Boolean" />
-          <Property Name="CoAlbino" Type="Boolean" />
-          <Property Name="CoTotal" Type="Boolean" />
-          <Property Name="CoCastanoClaro" Type="Boolean" />
-          <Property Name="CoCastanoOscuro" Type="Boolean" />
-          <Property Name="CoEntrecano" Type="Boolean" />
-          <Property Name="CoNegro" Type="Boolean" />
-          <Property Name="CoPelirrojo" Type="Boolean" />
-          <Property Name="CoRubio" Type="Boolean" />
-          <Property Name="CoCrespo" Type="Boolean" />
-          <Property Name="CoLacio" Type="Boolean" />
-          <Property Name="CoOndulado" Type="Boolean" />
-          <Property Name="CoRizado" Type="Boolean" />
-          <Property Name="CoParado" Type="Boolean" />
-          <Property Name="NGrande" Type="Boolean" />
-          <Property Name="NMediana" Type="Boolean" />
-          <Property Name="NPequena" Type="Boolean" />
-          <Property Name="NRecta" Type="Boolean" />
-          <Property Name="NRespingada" Type="Boolean" />
-          <Property Name="NAguilena" Type="Boolean" />
-          <Property Name="NAchatada" Type="Boolean" />
-          <Property Name="NConcavo" Type="Boolean" />
-          <Property Name="NConvexo" Type="Boolean" />
-          <Property Name="NRecto" Type="Boolean" />
-          <Property Name="NSinuoso" Type="Boolean" />
-          <Property Name="OAzul" Type="Boolean" />
-          <Property Name="OCafeClaro" Type="Boolean" />
-          <Property Name="OCafeOscuro" Type="Boolean" />
-          <Property Name="OMiel" Type="Boolean" />
-          <Property Name="OGris" Type="Boolean" />
-          <Property Name="Overde" Type="Boolean" />
-          <Property Name="ONegro" Type="Boolean" />
-          <Property Name="OOtro" Type="Boolean" />
-          <Property Name="OAlargados" Type="Boolean" />
-          <Property Name="ORedondos" Type="Boolean" />
-          <Property Name="OOvales" Type="Boolean" />
-          <Property Name="OGrandes" Type="Boolean" />
-          <Property Name="OPequenos" Type="Boolean" />
-          <Property Name="ORegulares" Type="Boolean" />
-          <Property Name="CEscasa" Type="Boolean" />
-          <Property Name="CRegulares" Type="Boolean" />
-          <Property Name="CPobladas" Type="Boolean" />
-          <Property Name="BGrande" Type="Boolean" />
-          <Property Name="BMediana" Type="Boolean" />
-          <Property Name="BPequena" Type="Boolean" />
-          <Property Name="BAbatidas" Type="Boolean" />
-          <Property Name="BElevadas" Type="Boolean" />
-          <Property Name="BSimetricas" Type="Boolean" />
-          <Property Name="BAsimetricas" Type="Boolean" />
-          <Property Name="LDelgados" Type="Boolean" />
-          <Property Name="LMedianos" Type="Boolean" />
-          <Property Name="LGruesos" Type="Boolean" />
-          <Property Name="LGrande" Type="Boolean" />
-          <Property Name="LMediana" Type="Boolean" />
-          <Property Name="LPequena" Type="Boolean" />
-          <Property Name="LInferior" Type="Boolean" />
-          <Property Name="LSuperior" Type="Boolean" />
-          <Property Name="LNinguno" Type="Boolean" />
-          <Property Name="Mbilovado" Type="Boolean" />
-          <Property Name="Mfoseta" Type="Boolean" />
-          <Property Name="Mborla" Type="Boolean" />
-          <Property Name="Mninguno" Type="Boolean" />
-          <Property Name="Moval" Type="Boolean" />
-          <Property Name="Mcuadrado" Type="Boolean" />
-          <Property Name="Mpunta" Type="Boolean" />
-          <Property Name="Mhuyente" Type="Boolean" />
-          <Property Name="Mprominente" Type="Boolean" />
-          <Property Name="Mvertical" Type="Boolean" />
-          <Property Name="Cicatrices" Type="Boolean" />
-          <Property Name="Tatuajes" Type="Boolean" />
-          <Property Name="Lunares" Type="Boolean" />
-          <Property Name="Discapacidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Protesis" Type="Boolean" />
-          <Property Name="Otras" Type="Boolean" />
-          <Property Name="Estatura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Peso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Alergias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MenosSesenta" Type="Boolean" />
-          <Property Name="Especial" Type="Boolean" />
-          <Property Name="Especiali" Type="Boolean" />
-          <Property Name="Acustico" Type="Boolean" />
-          <Property Name="Automatico" Type="Boolean" />
-          <Property Name="Dia" Type="Boolean" />
-          <Property Name="Acompanado" Type="Boolean" />
-          <Property Name="TipoSangre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Donador" Type="Boolean" />
-          <Property Name="FolioSeguimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SinRes" Type="Boolean" />
-          <Property Name="Retencion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="dtTramite" Relationship="Self.FK_dtExamenMedico_dtTramites" FromRole="dtExamenMedico" ToRole="dtTramites" />
-        </EntityType>
         <EntityType Name="dtExamenPsicometrico">
           <Key>
             <PropertyRef Name="PsicometricoId" />
@@ -13202,7 +13058,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <Property Name="FechaModifico" Type="DateTime" Precision="3" />
           <Property Name="Comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="DestinoId" Type="Int32" />
-          <NavigationProperty Name="dtTramite" Relationship="Self.FK_dtExamenToxico_dtTramites" FromRole="dtExamenToxico" ToRole="dtTramites" />
+          <NavigationProperty Name="dtTramite" Relationship="LicHistoricoModel.FK_dtExamenToxico_dtTramites" FromRole="dtExamenToxico" ToRole="dtTramite" />
         </EntityType>
         <EntityType Name="dtFactura">
           <Key>
@@ -13439,10 +13295,10 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <Property Name="EnviadoaC4" Type="Boolean" />
           <NavigationProperty Name="dtDestino" Relationship="Self.FK_dtLicencias_dtDestinos" FromRole="dtLicencias" ToRole="dtDestinos" />
           <NavigationProperty Name="dtEstatusLicencia" Relationship="Self.FK_dtLicencias_dtEstatusLicencia" FromRole="dtLicencias" ToRole="dtEstatusLicencia" />
-          <NavigationProperty Name="dtTramite" Relationship="Self.FK_dtLicencias_dtTramites" FromRole="dtLicencias" ToRole="dtTramites" />
           <NavigationProperty Name="dtUsuario" Relationship="Self.FK_dtLicencias_dtUsuario" FromRole="dtLicencias" ToRole="dtUsuario" />
           <NavigationProperty Name="dtUsuario1" Relationship="Self.FK_dtLicencias_dtUsuario1" FromRole="dtLicencias" ToRole="dtUsuario" />
           <NavigationProperty Name="dtUsuario2" Relationship="Self.FK_dtLicencias_dtUsuario2" FromRole="dtLicencias" ToRole="dtUsuario" />
+          <NavigationProperty Name="dtTramite" Relationship="LicHistoricoModel.FK_dtLicencias_dtTramites" FromRole="dtLicencia" ToRole="dtTramite" />
         </EntityType>
         <EntityType Name="dtListaPrecio">
           <Key>
@@ -14916,170 +14772,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <NavigationProperty Name="dtRegistroEquipo" Relationship="Self.FK_dtTokenLogin_dtRegistroEquipo" FromRole="dtTokenLogin" ToRole="dtRegistroEquipo" />
           <NavigationProperty Name="dtUsuario" Relationship="Self.FK_dtTokenLogin_dtUsuario" FromRole="dtTokenLogin" ToRole="dtUsuario" />
         </EntityType>
-        <EntityType Name="dtTramite">
-          <Key>
-            <PropertyRef Name="TramiteId" />
-          </Key>
-          <Property Name="TramiteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FolioAsignadoPlastico" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="TipoLicenciaId" Type="Int32" Nullable="false" />
-          <Property Name="TipoLicencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TipoTramite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="AniosVigencia" Type="Int32" Nullable="false" />
-          <Property Name="Importe" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
-          <Property Name="FolioPago" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="OrderCobro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="FechaExpedicion" Type="DateTime" Precision="3" />
-          <Property Name="FechaVencimiento" Type="DateTime" Precision="3" />
-          <Property Name="FechaAntiguedad" Type="DateTime" Precision="3" />
-          <Property Name="TipoIdentificacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="ComporbanteDomicilio" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Estatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FechaEstatus" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Curp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Nombre" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="ApellidoPaterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ApellidoMaterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="FolioActaNacimiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Calle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="NoExterior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NoInterior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Colonia" Type="Int16" />
-          <Property Name="CodigoPostal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="EstadoID" Type="Int16" />
-          <Property Name="MunicipioId" Type="Int16" />
-          <Property Name="LocalidadId" Type="Int16" />
-          <Property Name="Nacionalidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LugarOrigen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Ocupacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="EdoCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Sexo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TipoSangre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DonacionOrganos" Type="Boolean" />
-          <Property Name="Complexion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Estatura" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="Piel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Cabello" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Alergias" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Cara" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Ojos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Nariz" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Boca" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="SeñasParticulares" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="UsuarioCreador" Type="Int32" Nullable="false" />
-          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UsuarioModifico" Type="Int32" />
-          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
-          <Property Name="UsuarioPreRegistro" Type="Int32" />
-          <Property Name="UsuarioRegistro" Type="Int32" />
-          <Property Name="UsuarioBiometrico" Type="Int32" />
-          <Property Name="IntentosExamen" Type="Int32" />
-          <Property Name="Correo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="ConsecutivoGeneral" Type="Int32" />
-          <Property Name="ConsecutivoDestino" Type="Int32" />
-          <Property Name="NumeroLicencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CodigoPago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FechaVenPago" Type="DateTime" Precision="3" />
-          <Property Name="FolioControlEstado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FolioSeguimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LineaCapturaPago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MensajePago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UrlFormatoPago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ReferenciaOxxo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="DestinoId" Type="Int32" />
-          <Property Name="Concepto" Type="Int32" />
-          <Property Name="RFC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FotoLic" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="FingerLeft_10" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="FingerLeft_9" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="FingerLeft_8" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="FingerLeft_7" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="thumbs_6" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="FingerRight_5" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="FingerRight_4" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="FingerRight_3" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="FingerRight_2" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="thumbs_1" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="FirmaLic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="FechaNacimiento" Type="DateTime" Precision="3" />
-          <Property Name="Localidad" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="fechaPago" Type="DateTime" Precision="3" />
-          <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="FechaUltimoExamen" Type="DateTime" Precision="0" />
-          <Property Name="EstadoN" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="MunicipioN" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="ColoniaN" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="ExamenAprobado" Type="Boolean" />
-          <Property Name="LetraConsecutiva" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="TipoTel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Lada" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="RefAd" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="ImprimeDir" Type="Boolean" />
-          <Property Name="NombreTutor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="APaternoTutor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="AMaternoTutor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SinRestricciones" Type="Boolean" />
-          <Property Name="Lentes" Type="Boolean" />
-          <Property Name="Protesis" Type="Boolean" />
-          <Property Name="Auditivo" Type="Boolean" />
-          <Property Name="LentesContacto" Type="Boolean" />
-          <Property Name="VehiculoAdaptado" Type="Boolean" />
-          <Property Name="VehiculoAutomatico" Type="Boolean" />
-          <Property Name="Ben1Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben1APaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben1AMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben1Parentezco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben1Porcentaje" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="Ben2Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben2APaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben2AMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben2Parentezco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben2Porcentaje" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="Ben3Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben3APaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben3AMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben3Parentezco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Ben3Porcentaje" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="TipoVig" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="FolioExpediente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Corazon" Type="Boolean" />
-          <Property Name="Higado" Type="Boolean" />
-          <Property Name="Rinon" Type="Boolean" />
-          <Property Name="Corneas" Type="Boolean" />
-          <Property Name="LicenciaAnterior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="VigenciaId" Type="Int32" />
-          <Property Name="TipoServicio" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="CiudadanoId" Type="Int32" />
-          <Property Name="Van" Type="Boolean" />
-          <Property Name="Bus" Type="Boolean" />
-          <Property Name="Taxi" Type="Boolean" />
-          <Property Name="EstadoCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ToxicologicoVigente" Type="Boolean" />
-          <Property Name="NumeroLicenciaCorrecto" Type="Boolean" />
-          <Property Name="PeticionPago" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="RespuestaPago" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ReciboPagoGenerado" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Ben1Otro" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="Ben2Otro" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="Ben3Otro" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="FechaCita" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="HoraCita" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ModuloCita" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NoId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NoComprobante" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TestigoUno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="TestigoDos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="DescRobo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="DescExt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="TiempoExt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="dtArchivoTramites" Relationship="Self.FK_dtArchivoTramite_dtTramites" FromRole="dtTramites" ToRole="dtArchivoTramite" />
-          <NavigationProperty Name="dtCapacitacions" Relationship="Self.FK_dtCapacitacion_dtTramites" FromRole="dtTramites" ToRole="dtCapacitacion" />
-          <NavigationProperty Name="dtContestadoFormularios" Relationship="Self.FK_dtContestadoFormulario_dtTramites" FromRole="dtTramites" ToRole="dtContestadoFormulario" />
-          <NavigationProperty Name="dtExamenMedicoes" Relationship="Self.FK_dtExamenMedico_dtTramites" FromRole="dtTramites" ToRole="dtExamenMedico" />
-          <NavigationProperty Name="dtExamenToxicoes" Relationship="Self.FK_dtExamenToxico_dtTramites" FromRole="dtTramites" ToRole="dtExamenToxico" />
-          <NavigationProperty Name="dtLicencias" Relationship="Self.FK_dtLicencias_dtTramites" FromRole="dtTramites" ToRole="dtLicencias" />
-        </EntityType>
         <EntityType Name="dtUnidadMedita">
           <Key>
             <PropertyRef Name="UnidadMedidaId" />
@@ -16097,18 +15789,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dtArchivoTramite_dtTramites">
-          <End Role="dtTramites" Type="Self.dtTramite" Multiplicity="0..1" />
-          <End Role="dtArchivoTramite" Type="Self.dtArchivoTramite" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="dtTramites">
-              <PropertyRef Name="TramiteId" />
-            </Principal>
-            <Dependent Role="dtArchivoTramite">
-              <PropertyRef Name="TramiteId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_dtArchivoTramite_dtUsuario">
           <End Role="dtUsuario" Type="Self.dtUsuario" Multiplicity="0..1" />
           <End Role="dtArchivoTramite" Type="Self.dtArchivoTramite" Multiplicity="*" />
@@ -16877,18 +16557,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dtCapacitacion_dtTramites">
-          <End Role="dtTramites" Type="Self.dtTramite" Multiplicity="0..1" />
-          <End Role="dtCapacitacion" Type="Self.dtCapacitacion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="dtTramites">
-              <PropertyRef Name="TramiteId" />
-            </Principal>
-            <Dependent Role="dtCapacitacion">
-              <PropertyRef Name="TramiteId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_dtCapacitacion_dtUsuario">
           <End Role="dtUsuario" Type="Self.dtUsuario" Multiplicity="0..1" />
           <End Role="dtCapacitacion" Type="Self.dtCapacitacion" Multiplicity="*" />
@@ -17338,20 +17006,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             </Principal>
             <Dependent Role="dtContestadoFormulario">
               <PropertyRef Name="EmpresaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dtContestadoFormulario_dtTramites">
-          <End Role="dtTramites" Type="Self.dtTramite" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="dtContestadoFormulario" Type="Self.dtContestadoFormulario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="dtTramites">
-              <PropertyRef Name="TramiteId" />
-            </Principal>
-            <Dependent Role="dtContestadoFormulario">
-              <PropertyRef Name="TramiteId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -18893,30 +18547,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dtExamenMedico_dtTramites">
-          <End Role="dtTramites" Type="Self.dtTramite" Multiplicity="1" />
-          <End Role="dtExamenMedico" Type="Self.dtExamenMedico" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="dtTramites">
-              <PropertyRef Name="TramiteId" />
-            </Principal>
-            <Dependent Role="dtExamenMedico">
-              <PropertyRef Name="TramiteId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dtExamenToxico_dtTramites">
-          <End Role="dtTramites" Type="Self.dtTramite" Multiplicity="1" />
-          <End Role="dtExamenToxico" Type="Self.dtExamenToxico" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="dtTramites">
-              <PropertyRef Name="TramiteId" />
-            </Principal>
-            <Dependent Role="dtExamenToxico">
-              <PropertyRef Name="TramiteId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_dtFactura_dtFacturaCategoria">
           <End Role="dtFacturaCategoria" Type="Self.dtFacturaCategoria" Multiplicity="0..1" />
           <End Role="dtFactura" Type="Self.dtFactura" Multiplicity="*" />
@@ -19178,18 +18808,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             </Principal>
             <Dependent Role="dtJerarquia">
               <PropertyRef Name="EmpleadoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dtLicencias_dtTramites">
-          <End Role="dtTramites" Type="Self.dtTramite" Multiplicity="0..1" />
-          <End Role="dtLicencias" Type="Self.dtLicencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="dtTramites">
-              <PropertyRef Name="TramiteId" />
-            </Principal>
-            <Dependent Role="dtLicencias">
-              <PropertyRef Name="TramiteId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -20797,7 +20415,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <EntitySet Name="dtEtapas" EntityType="Self.dtEtapa" />
           <EntitySet Name="dtEtapaTemplates" EntityType="Self.dtEtapaTemplate" />
           <EntitySet Name="dtEvaluacions" EntityType="Self.dtEvaluacion" />
-          <EntitySet Name="dtExamenMedicoes" EntityType="Self.dtExamenMedico" />
           <EntitySet Name="dtExamenPsicometricoes" EntityType="Self.dtExamenPsicometrico" />
           <EntitySet Name="dtExamenToxicoes" EntityType="Self.dtExamenToxico" />
           <EntitySet Name="dtFacturas" EntityType="Self.dtFactura" />
@@ -20902,7 +20519,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <EntitySet Name="dtTitulosConcesiones" EntityType="Self.dtTitulosConcesione" />
           <EntitySet Name="dtTokens" EntityType="Self.dtToken" />
           <EntitySet Name="dtTokenLogins" EntityType="Self.dtTokenLogin" />
-          <EntitySet Name="dtTramites" EntityType="Self.dtTramite" />
           <EntitySet Name="dtUnidadMeditas" EntityType="Self.dtUnidadMedita" />
           <EntitySet Name="dtUsuarios" EntityType="Self.dtUsuario" />
           <EntitySet Name="dtUsuarioAreas" EntityType="Self.dtUsuarioArea" />
@@ -21049,10 +20665,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <AssociationSet Name="FK_dtTareaPasoArchivo_dtArchivo" Association="Self.FK_dtTareaPasoArchivo_dtArchivo">
             <End Role="dtArchivo" EntitySet="dtArchivoes" />
             <End Role="dtTareaPasoArchivo" EntitySet="dtTareaPasoArchivoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dtArchivoTramite_dtTramites" Association="Self.FK_dtArchivoTramite_dtTramites">
-            <End Role="dtTramites" EntitySet="dtTramites" />
-            <End Role="dtArchivoTramite" EntitySet="dtArchivoTramites" />
           </AssociationSet>
           <AssociationSet Name="FK_dtArchivoTramite_dtUsuario" Association="Self.FK_dtArchivoTramite_dtUsuario">
             <End Role="dtUsuario" EntitySet="dtUsuarios" />
@@ -21310,10 +20922,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             <End Role="dtCiudadano" EntitySet="dtCiudadanoes" />
             <End Role="dtCapacitacion" EntitySet="dtCapacitacions" />
           </AssociationSet>
-          <AssociationSet Name="FK_dtCapacitacion_dtTramites" Association="Self.FK_dtCapacitacion_dtTramites">
-            <End Role="dtTramites" EntitySet="dtTramites" />
-            <End Role="dtCapacitacion" EntitySet="dtCapacitacions" />
-          </AssociationSet>
           <AssociationSet Name="FK_dtCapacitacion_dtUsuario" Association="Self.FK_dtCapacitacion_dtUsuario">
             <End Role="dtUsuario" EntitySet="dtUsuarios" />
             <End Role="dtCapacitacion" EntitySet="dtCapacitacions" />
@@ -21460,10 +21068,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           </AssociationSet>
           <AssociationSet Name="FK_dtContestadoFormulario_dtEmpresa" Association="Self.FK_dtContestadoFormulario_dtEmpresa">
             <End Role="dtEmpresa" EntitySet="dtEmpresas" />
-            <End Role="dtContestadoFormulario" EntitySet="dtContestadoFormularios" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dtContestadoFormulario_dtTramites" Association="Self.FK_dtContestadoFormulario_dtTramites">
-            <End Role="dtTramites" EntitySet="dtTramites" />
             <End Role="dtContestadoFormulario" EntitySet="dtContestadoFormularios" />
           </AssociationSet>
           <AssociationSet Name="FK_dtContestadoFormularioRespuestas_dtContestadoFormulario" Association="Self.FK_dtContestadoFormularioRespuestas_dtContestadoFormulario">
@@ -21978,14 +21582,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             <End Role="dtEtapa" EntitySet="dtEtapas" />
             <End Role="dtOportunidadHistorial" EntitySet="dtOportunidadHistorials" />
           </AssociationSet>
-          <AssociationSet Name="FK_dtExamenMedico_dtTramites" Association="Self.FK_dtExamenMedico_dtTramites">
-            <End Role="dtTramites" EntitySet="dtTramites" />
-            <End Role="dtExamenMedico" EntitySet="dtExamenMedicoes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dtExamenToxico_dtTramites" Association="Self.FK_dtExamenToxico_dtTramites">
-            <End Role="dtTramites" EntitySet="dtTramites" />
-            <End Role="dtExamenToxico" EntitySet="dtExamenToxicoes" />
-          </AssociationSet>
           <AssociationSet Name="FK_dtFactura_dtFacturaCategoria" Association="Self.FK_dtFactura_dtFacturaCategoria">
             <End Role="dtFacturaCategoria" EntitySet="dtFacturaCategorias" />
             <End Role="dtFactura" EntitySet="dtFacturas" />
@@ -22073,10 +21669,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <AssociationSet Name="FK_dtJerarquia_dtUsuario2" Association="Self.FK_dtJerarquia_dtUsuario2">
             <End Role="dtUsuario" EntitySet="dtUsuarios" />
             <End Role="dtJerarquia" EntitySet="dtJerarquias" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dtLicencias_dtTramites" Association="Self.FK_dtLicencias_dtTramites">
-            <End Role="dtTramites" EntitySet="dtTramites" />
-            <End Role="dtLicencias" EntitySet="dtLicencias" />
           </AssociationSet>
           <AssociationSet Name="FK_dtLicencias_dtUsuario" Association="Self.FK_dtLicencias_dtUsuario">
             <End Role="dtUsuario" EntitySet="dtUsuarios" />
@@ -22605,7 +22197,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             <Parameter Name="hash" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetMajorVersion">
-            <Parameter Name="p_ver" Mode="InOut" Type="Int32" />
+          <Parameter Name="p_ver" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sPConteoProductoSemanal" ReturnType="Collection(LicHistoricoModel.sPConteoProductoSemanal_Result)">
             <Parameter Name="CampanaId" Mode="In" Type="Int32" />
@@ -22614,10 +22206,10 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="spProcesaLicencias">
-            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+          <Parameter Name="Fecha" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="spProcesaMovimientos">
-            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+          <Parameter Name="Fecha" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="spSearchMail" ReturnType="Collection(LicHistoricoModel.spSearchMail_Result)">
             <Parameter Name="correo" Mode="In" Type="String" />
@@ -22678,7 +22270,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             <Parameter Name="actionFlags" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="TempGetVersion">
-            <Parameter Name="ver" Mode="InOut" Type="String" />
+          <Parameter Name="ver" Mode="InOut" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TempInsertStateItemLong">
             <Parameter Name="id" Mode="In" Type="String" />
@@ -22704,7 +22296,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             <Parameter Name="lockCookie" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="TempResetTimeout">
-            <Parameter Name="id" Mode="In" Type="String" />
+          <Parameter Name="id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TempUpdateStateItemLong">
             <Parameter Name="id" Mode="In" Type="String" />
@@ -22741,7 +22333,7 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             <Parameter Name="parametro" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="uspFoleadorLicencias">
-            <Parameter Name="proceso" Mode="In" Type="Byte" />
+          <Parameter Name="proceso" Mode="In" Type="Byte" />
           </FunctionImport>
           <FunctionImport Name="uspLogin" ReturnType="Collection(LicHistoricoModel.uspLogin_Result)">
             <Parameter Name="usuario" Mode="In" Type="String" />
@@ -22753,6 +22345,32 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
             <Parameter Name="fechaInicio" Mode="In" Type="DateTime" />
             <Parameter Name="fechaFinal" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <EntitySet Name="dtTramites" EntityType="LicHistoricoModel.dtTramite" />
+          <AssociationSet Name="FK_dtArchivoTramite_dtTramites" Association="LicHistoricoModel.FK_dtArchivoTramite_dtTramites">
+            <End Role="dtTramite" EntitySet="dtTramites" />
+            <End Role="dtArchivoTramite" EntitySet="dtArchivoTramites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dtCapacitacion_dtTramites" Association="LicHistoricoModel.FK_dtCapacitacion_dtTramites">
+            <End Role="dtTramite" EntitySet="dtTramites" />
+            <End Role="dtCapacitacion" EntitySet="dtCapacitacions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dtContestadoFormulario_dtTramites" Association="LicHistoricoModel.FK_dtContestadoFormulario_dtTramites">
+            <End Role="dtTramite" EntitySet="dtTramites" />
+            <End Role="dtContestadoFormulario" EntitySet="dtContestadoFormularios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dtExamenToxico_dtTramites" Association="LicHistoricoModel.FK_dtExamenToxico_dtTramites">
+            <End Role="dtTramite" EntitySet="dtTramites" />
+            <End Role="dtExamenToxico" EntitySet="dtExamenToxicoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dtLicencias_dtTramites" Association="LicHistoricoModel.FK_dtLicencias_dtTramites">
+            <End Role="dtTramite" EntitySet="dtTramites" />
+            <End Role="dtLicencia" EntitySet="dtLicencias" />
+          </AssociationSet>
+          <EntitySet Name="dtExamenMedicoes" EntityType="LicHistoricoModel.dtExamenMedico" />
+          <AssociationSet Name="FK_dtExamenMedico_dtTramites" Association="LicHistoricoModel.FK_dtExamenMedico_dtTramites">
+            <End Role="dtTramite" EntitySet="dtTramites" />
+            <End Role="dtExamenMedico" EntitySet="dtExamenMedicoes" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sPConteoProductoSemanal_Result">
           <Property Type="String" Name="Product" Nullable="true" MaxLength="180" />
@@ -22842,6 +22460,385 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
           <Property Type="Int32" Name="Folio" Nullable="true" />
           <Property Type="Int32" Name="Estatus" Nullable="true" />
         </ComplexType>
+        <EntityType Name="dtTramite">
+          <Key>
+            <PropertyRef Name="TramiteId" />
+          </Key>
+          <Property Name="TramiteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FolioAsignadoPlastico" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TipoLicenciaId" Type="Int32" Nullable="false" />
+          <Property Name="TipoLicencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TipoTramite" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AniosVigencia" Type="Int32" Nullable="false" />
+          <Property Name="Importe" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="FolioPago" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OrderCobro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FechaExpedicion" Type="DateTime" Precision="3" />
+          <Property Name="FechaVencimiento" Type="DateTime" Precision="3" />
+          <Property Name="FechaAntiguedad" Type="DateTime" Precision="3" />
+          <Property Name="TipoIdentificacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ComporbanteDomicilio" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Estatus" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FechaEstatus" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Curp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoPaterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoMaterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FolioActaNacimiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Calle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NoExterior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NoInterior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Colonia" Type="Int16" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EstadoID" Type="Int16" />
+          <Property Name="MunicipioId" Type="Int16" />
+          <Property Name="LocalidadId" Type="Int16" />
+          <Property Name="Nacionalidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LugarOrigen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ocupacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EdoCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TipoSangre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DonacionOrganos" Type="Boolean" />
+          <Property Name="Complexion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Estatura" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Piel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cabello" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Alergias" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Cara" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ojos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nariz" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Boca" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SeñasParticulares" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioCreador" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioModifico" Type="Int32" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioPreRegistro" Type="Int32" />
+          <Property Name="UsuarioRegistro" Type="Int32" />
+          <Property Name="UsuarioBiometrico" Type="Int32" />
+          <Property Name="IntentosExamen" Type="Int32" />
+          <Property Name="Correo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ConsecutivoGeneral" Type="Int32" />
+          <Property Name="ConsecutivoDestino" Type="Int32" />
+          <Property Name="NumeroLicencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoPago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaVenPago" Type="DateTime" Precision="3" />
+          <Property Name="FolioControlEstado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FolioSeguimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LineaCapturaPago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MensajePago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UrlFormatoPago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReferenciaOxxo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="DestinoId" Type="Int32" />
+          <Property Name="Concepto" Type="Int32" />
+          <Property Name="RFC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FotoLic" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FingerLeft_10" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FingerLeft_9" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FingerLeft_8" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FingerLeft_7" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="thumbs_6" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FingerRight_5" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FingerRight_4" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FingerRight_3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FingerRight_2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="thumbs_1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FirmaLic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Precision="3" />
+          <Property Name="Localidad" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="fechaPago" Type="DateTime" Precision="3" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FechaUltimoExamen" Type="DateTime" Precision="0" />
+          <Property Name="EstadoN" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="MunicipioN" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ColoniaN" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ExamenAprobado" Type="Boolean" />
+          <Property Name="LetraConsecutiva" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TipoTel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EstatusH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="RefAd" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ImprimeDir" Type="Boolean" />
+          <Property Name="NombreTutor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="APaternoTutor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AMaternoTutor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SinRestricciones" Type="Boolean" />
+          <Property Name="Lentes" Type="Boolean" />
+          <Property Name="Protesis" Type="Boolean" />
+          <Property Name="Auditivo" Type="Boolean" />
+          <Property Name="LentesContacto" Type="Boolean" />
+          <Property Name="VehiculoAdaptado" Type="Boolean" />
+          <Property Name="VehiculoAutomatico" Type="Boolean" />
+          <Property Name="Ben1Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ben1APaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ben1AMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ben1Parentezco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ben1Porcentaje" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Ben2Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ben2APaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ben2AMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ben2Parentezco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ben2Porcentaje" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Ben3Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ben3APaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ben3AMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ben3Parentezco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ben3Porcentaje" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="TipoVig" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FolioExpediente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Corazon" Type="Boolean" />
+          <Property Name="Higado" Type="Boolean" />
+          <Property Name="Rinon" Type="Boolean" />
+          <Property Name="Corneas" Type="Boolean" />
+          <Property Name="LicenciaAnterior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VigenciaId" Type="Int32" />
+          <Property Name="TipoServicio" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CiudadanoId" Type="Int32" />
+          <Property Name="Van" Type="Boolean" />
+          <Property Name="Bus" Type="Boolean" />
+          <Property Name="Taxi" Type="Boolean" />
+          <Property Name="EstadoCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ToxicologicoVigente" Type="Boolean" />
+          <Property Name="NumeroLicenciaCorrecto" Type="Boolean" />
+          <Property Name="PeticionPago" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RespuestaPago" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ReciboPagoGenerado" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ben1Otro" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Ben2Otro" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Ben3Otro" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCita" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HoraCita" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModuloCita" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NoId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NoComprobante" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TestigoUno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TestigoDos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DescRobo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DescExt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TiempoExt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="dtArchivoTramites" Relationship="LicHistoricoModel.FK_dtArchivoTramite_dtTramites" FromRole="dtTramite" ToRole="dtArchivoTramite" />
+          <NavigationProperty Name="dtCapacitacions" Relationship="LicHistoricoModel.FK_dtCapacitacion_dtTramites" FromRole="dtTramite" ToRole="dtCapacitacion" />
+          <NavigationProperty Name="dtContestadoFormularios" Relationship="LicHistoricoModel.FK_dtContestadoFormulario_dtTramites" FromRole="dtTramite" ToRole="dtContestadoFormulario" />
+          <NavigationProperty Name="dtExamenToxicoes" Relationship="LicHistoricoModel.FK_dtExamenToxico_dtTramites" FromRole="dtTramite" ToRole="dtExamenToxico" />
+          <NavigationProperty Name="dtLicencias" Relationship="LicHistoricoModel.FK_dtLicencias_dtTramites" FromRole="dtTramite" ToRole="dtLicencia" />
+          <NavigationProperty Name="dtExamenMedicoes" Relationship="LicHistoricoModel.FK_dtExamenMedico_dtTramites" FromRole="dtTramite" ToRole="dtExamenMedico" />
+        </EntityType>
+        <Association Name="FK_dtArchivoTramite_dtTramites">
+          <End Type="LicHistoricoModel.dtTramite" Role="dtTramite" Multiplicity="0..1" />
+          <End Type="LicHistoricoModel.dtArchivoTramite" Role="dtArchivoTramite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dtTramite">
+              <PropertyRef Name="TramiteId" />
+            </Principal>
+            <Dependent Role="dtArchivoTramite">
+              <PropertyRef Name="TramiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dtCapacitacion_dtTramites">
+          <End Type="LicHistoricoModel.dtTramite" Role="dtTramite" Multiplicity="0..1" />
+          <End Type="LicHistoricoModel.dtCapacitacion" Role="dtCapacitacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dtTramite">
+              <PropertyRef Name="TramiteId" />
+            </Principal>
+            <Dependent Role="dtCapacitacion">
+              <PropertyRef Name="TramiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dtContestadoFormulario_dtTramites">
+          <End Type="LicHistoricoModel.dtTramite" Role="dtTramite" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LicHistoricoModel.dtContestadoFormulario" Role="dtContestadoFormulario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dtTramite">
+              <PropertyRef Name="TramiteId" />
+            </Principal>
+            <Dependent Role="dtContestadoFormulario">
+              <PropertyRef Name="TramiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dtExamenToxico_dtTramites">
+          <End Type="LicHistoricoModel.dtTramite" Role="dtTramite" Multiplicity="1" />
+          <End Type="LicHistoricoModel.dtExamenToxico" Role="dtExamenToxico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dtTramite">
+              <PropertyRef Name="TramiteId" />
+            </Principal>
+            <Dependent Role="dtExamenToxico">
+              <PropertyRef Name="TramiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dtLicencias_dtTramites">
+          <End Type="LicHistoricoModel.dtTramite" Role="dtTramite" Multiplicity="0..1" />
+          <End Type="LicHistoricoModel.dtLicencia" Role="dtLicencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dtTramite">
+              <PropertyRef Name="TramiteId" />
+            </Principal>
+            <Dependent Role="dtLicencia">
+              <PropertyRef Name="TramiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="dtExamenMedico">
+          <Key>
+            <PropertyRef Name="ExamenMedicoId" />
+          </Key>
+          <Property Name="ExamenMedicoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TramiteId" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicioVigencia" Type="DateTime" Precision="3" />
+          <Property Name="FechaFinVigencia" Type="DateTime" Precision="3" />
+          <Property Name="Lentes" Type="Boolean" />
+          <Property Name="CapVs" Type="Boolean" />
+          <Property Name="Miopia" Type="Boolean" />
+          <Property Name="Ambiopia" Type="Boolean" />
+          <Property Name="Hiper" Type="Boolean" />
+          <Property Name="Astigmatismo" Type="Boolean" />
+          <Property Name="NormalAv" Type="Boolean" />
+          <Property Name="CapAud" Type="Boolean" />
+          <Property Name="NivelBajo" Type="Boolean" Nullable="false" />
+          <Property Name="NivelMedio" Type="Boolean" />
+          <Property Name="SinRes" Type="Boolean" />
+          <Property Name="Normal" Type="Boolean" />
+          <Property Name="Apto" Type="Boolean" />
+          <Property Name="Negadas" Type="Boolean" />
+          <Property Name="UsuarioCreadorId" Type="Int32" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioModificoId" Type="Int32" />
+          <Property Name="FechaModifico" Type="DateTime" Precision="3" />
+          <Property Name="Comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OjoIzquierdo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OjoDerecho" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DestinoId" Type="Int32" />
+          <Property Name="CDelgada" Type="Boolean" />
+          <Property Name="CRegular" Type="Boolean" />
+          <Property Name="CAtletica" Type="Boolean" />
+          <Property Name="CObesa" Type="Boolean" />
+          <Property Name="CRobusta" Type="Boolean" />
+          <Property Name="PBlanco" Type="Boolean" />
+          <Property Name="PAmarillo" Type="Boolean" />
+          <Property Name="PMorenoClaro" Type="Boolean" />
+          <Property Name="PMoreno" Type="Boolean" />
+          <Property Name="PMorenoOscuro" Type="Boolean" />
+          <Property Name="PNegro" Type="Boolean" />
+          <Property Name="PCobriza" Type="Boolean" />
+          <Property Name="POtro" Type="Boolean" />
+          <Property Name="PAlbino" Type="Boolean" />
+          <Property Name="CaAlargada" Type="Boolean" />
+          <Property Name="CaCuadrada" Type="Boolean" />
+          <Property Name="CaOvalada" Type="Boolean" />
+          <Property Name="CaRedonda" Type="Boolean" />
+          <Property Name="CoAbundante" Type="Boolean" />
+          <Property Name="CoEscaso" Type="Boolean" />
+          <Property Name="CoRegular" Type="Boolean" />
+          <Property Name="CoSin" Type="Boolean" />
+          <Property Name="CoAlbino" Type="Boolean" />
+          <Property Name="CoTotal" Type="Boolean" />
+          <Property Name="CoCastanoClaro" Type="Boolean" />
+          <Property Name="CoCastanoOscuro" Type="Boolean" />
+          <Property Name="CoEntrecano" Type="Boolean" />
+          <Property Name="CoNegro" Type="Boolean" />
+          <Property Name="CoPelirrojo" Type="Boolean" />
+          <Property Name="CoRubio" Type="Boolean" />
+          <Property Name="CoCrespo" Type="Boolean" />
+          <Property Name="CoLacio" Type="Boolean" />
+          <Property Name="CoOndulado" Type="Boolean" />
+          <Property Name="CoRizado" Type="Boolean" />
+          <Property Name="CoParado" Type="Boolean" />
+          <Property Name="NGrande" Type="Boolean" />
+          <Property Name="NMediana" Type="Boolean" />
+          <Property Name="NPequena" Type="Boolean" />
+          <Property Name="NRecta" Type="Boolean" />
+          <Property Name="NRespingada" Type="Boolean" />
+          <Property Name="NAguilena" Type="Boolean" />
+          <Property Name="NAchatada" Type="Boolean" />
+          <Property Name="NConcavo" Type="Boolean" />
+          <Property Name="NConvexo" Type="Boolean" />
+          <Property Name="NRecto" Type="Boolean" />
+          <Property Name="NSinuoso" Type="Boolean" />
+          <Property Name="OAzul" Type="Boolean" />
+          <Property Name="OCafeClaro" Type="Boolean" />
+          <Property Name="OCafeOscuro" Type="Boolean" />
+          <Property Name="OMiel" Type="Boolean" />
+          <Property Name="OGris" Type="Boolean" />
+          <Property Name="Overde" Type="Boolean" />
+          <Property Name="ONegro" Type="Boolean" />
+          <Property Name="OOtro" Type="Boolean" />
+          <Property Name="OAlargados" Type="Boolean" />
+          <Property Name="ORedondos" Type="Boolean" />
+          <Property Name="OOvales" Type="Boolean" />
+          <Property Name="OGrandes" Type="Boolean" />
+          <Property Name="OPequenos" Type="Boolean" />
+          <Property Name="ORegulares" Type="Boolean" />
+          <Property Name="CEscasa" Type="Boolean" />
+          <Property Name="CRegulares" Type="Boolean" />
+          <Property Name="CPobladas" Type="Boolean" />
+          <Property Name="BGrande" Type="Boolean" />
+          <Property Name="BMediana" Type="Boolean" />
+          <Property Name="BPequena" Type="Boolean" />
+          <Property Name="BAbatidas" Type="Boolean" />
+          <Property Name="BElevadas" Type="Boolean" />
+          <Property Name="BSimetricas" Type="Boolean" />
+          <Property Name="BAsimetricas" Type="Boolean" />
+          <Property Name="LDelgados" Type="Boolean" />
+          <Property Name="LMedianos" Type="Boolean" />
+          <Property Name="LGruesos" Type="Boolean" />
+          <Property Name="LGrande" Type="Boolean" />
+          <Property Name="LMediana" Type="Boolean" />
+          <Property Name="LPequena" Type="Boolean" />
+          <Property Name="LInferior" Type="Boolean" />
+          <Property Name="LSuperior" Type="Boolean" />
+          <Property Name="LNinguno" Type="Boolean" />
+          <Property Name="Mbilovado" Type="Boolean" />
+          <Property Name="Mfoseta" Type="Boolean" />
+          <Property Name="Mborla" Type="Boolean" />
+          <Property Name="Mninguno" Type="Boolean" />
+          <Property Name="Moval" Type="Boolean" />
+          <Property Name="Mcuadrado" Type="Boolean" />
+          <Property Name="Mpunta" Type="Boolean" />
+          <Property Name="Mhuyente" Type="Boolean" />
+          <Property Name="Mprominente" Type="Boolean" />
+          <Property Name="Mvertical" Type="Boolean" />
+          <Property Name="Cicatrices" Type="Boolean" />
+          <Property Name="Tatuajes" Type="Boolean" />
+          <Property Name="Lunares" Type="Boolean" />
+          <Property Name="Discapacidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Protesis" Type="Boolean" />
+          <Property Name="Otras" Type="Boolean" />
+          <Property Name="Estatura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Peso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Alergias" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MenosSesenta" Type="Boolean" />
+          <Property Name="Especial" Type="Boolean" />
+          <Property Name="Especiali" Type="Boolean" />
+          <Property Name="Acustico" Type="Boolean" />
+          <Property Name="Automatico" Type="Boolean" />
+          <Property Name="Dia" Type="Boolean" />
+          <Property Name="Acompanado" Type="Boolean" />
+          <Property Name="TipoSangre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Donador" Type="Boolean" />
+          <Property Name="FolioSeguimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Retencion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="dtTramite" Relationship="LicHistoricoModel.FK_dtExamenMedico_dtTramites" FromRole="dtExamenMedico" ToRole="dtTramite" />
+        </EntityType>
+        <Association Name="FK_dtExamenMedico_dtTramites">
+          <End Type="LicHistoricoModel.dtTramite" Role="dtTramite" Multiplicity="1" />
+          <End Type="LicHistoricoModel.dtExamenMedico" Role="dtExamenMedico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dtTramite">
+              <PropertyRef Name="TramiteId" />
+            </Principal>
+            <Dependent Role="dtExamenMedico">
+              <PropertyRef Name="TramiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -24375,148 +24372,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="dtExamenMedicoes">
-            <EntityTypeMapping TypeName="LicHistoricoModel.dtExamenMedico">
-              <MappingFragment StoreEntitySet="dtExamenMedico">
-                <ScalarProperty Name="ExamenMedicoId" ColumnName="ExamenMedicoId" />
-                <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
-                <ScalarProperty Name="FechaInicioVigencia" ColumnName="FechaInicioVigencia" />
-                <ScalarProperty Name="FechaFinVigencia" ColumnName="FechaFinVigencia" />
-                <ScalarProperty Name="Lentes" ColumnName="Lentes" />
-                <ScalarProperty Name="CapVs" ColumnName="CapVs" />
-                <ScalarProperty Name="Miopia" ColumnName="Miopia" />
-                <ScalarProperty Name="Ambiopia" ColumnName="Ambiopia" />
-                <ScalarProperty Name="Hiper" ColumnName="Hiper" />
-                <ScalarProperty Name="Astigmatismo" ColumnName="Astigmatismo" />
-                <ScalarProperty Name="NormalAv" ColumnName="NormalAv" />
-                <ScalarProperty Name="CapAud" ColumnName="CapAud" />
-                <ScalarProperty Name="NivelBajo" ColumnName="NivelBajo" />
-                <ScalarProperty Name="NivelMedio" ColumnName="NivelMedio" />
-                <ScalarProperty Name="NivelAlto" ColumnName="NivelAlto" />
-                <ScalarProperty Name="Normal" ColumnName="Normal" />
-                <ScalarProperty Name="Apto" ColumnName="Apto" />
-                <ScalarProperty Name="Padecimiento" ColumnName="Padecimiento" />
-                <ScalarProperty Name="UsuarioCreadorId" ColumnName="UsuarioCreadorId" />
-                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
-                <ScalarProperty Name="UsuarioModificoId" ColumnName="UsuarioModificoId" />
-                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
-                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
-                <ScalarProperty Name="OjoIzquierdo" ColumnName="OjoIzquierdo" />
-                <ScalarProperty Name="OjoDerecho" ColumnName="OjoDerecho" />
-                <ScalarProperty Name="DestinoId" ColumnName="DestinoId" />
-                <ScalarProperty Name="CDelgada" ColumnName="CDelgada" />
-                <ScalarProperty Name="CRegular" ColumnName="CRegular" />
-                <ScalarProperty Name="CAtletica" ColumnName="CAtletica" />
-                <ScalarProperty Name="CObesa" ColumnName="CObesa" />
-                <ScalarProperty Name="CRobusta" ColumnName="CRobusta" />
-                <ScalarProperty Name="PBlanco" ColumnName="PBlanco" />
-                <ScalarProperty Name="PAmarillo" ColumnName="PAmarillo" />
-                <ScalarProperty Name="PMorenoClaro" ColumnName="PMorenoClaro" />
-                <ScalarProperty Name="PMoreno" ColumnName="PMoreno" />
-                <ScalarProperty Name="PMorenoOscuro" ColumnName="PMorenoOscuro" />
-                <ScalarProperty Name="PNegro" ColumnName="PNegro" />
-                <ScalarProperty Name="PCobriza" ColumnName="PCobriza" />
-                <ScalarProperty Name="POtro" ColumnName="POtro" />
-                <ScalarProperty Name="PAlbino" ColumnName="PAlbino" />
-                <ScalarProperty Name="CaAlargada" ColumnName="CaAlargada" />
-                <ScalarProperty Name="CaCuadrada" ColumnName="CaCuadrada" />
-                <ScalarProperty Name="CaOvalada" ColumnName="CaOvalada" />
-                <ScalarProperty Name="CaRedonda" ColumnName="CaRedonda" />
-                <ScalarProperty Name="CoAbundante" ColumnName="CoAbundante" />
-                <ScalarProperty Name="CoEscaso" ColumnName="CoEscaso" />
-                <ScalarProperty Name="CoRegular" ColumnName="CoRegular" />
-                <ScalarProperty Name="CoSin" ColumnName="CoSin" />
-                <ScalarProperty Name="CoAlbino" ColumnName="CoAlbino" />
-                <ScalarProperty Name="CoTotal" ColumnName="CoTotal" />
-                <ScalarProperty Name="CoCastanoClaro" ColumnName="CoCastanoClaro" />
-                <ScalarProperty Name="CoCastanoOscuro" ColumnName="CoCastanoOscuro" />
-                <ScalarProperty Name="CoEntrecano" ColumnName="CoEntrecano" />
-                <ScalarProperty Name="CoNegro" ColumnName="CoNegro" />
-                <ScalarProperty Name="CoPelirrojo" ColumnName="CoPelirrojo" />
-                <ScalarProperty Name="CoRubio" ColumnName="CoRubio" />
-                <ScalarProperty Name="CoCrespo" ColumnName="CoCrespo" />
-                <ScalarProperty Name="CoLacio" ColumnName="CoLacio" />
-                <ScalarProperty Name="CoOndulado" ColumnName="CoOndulado" />
-                <ScalarProperty Name="CoRizado" ColumnName="CoRizado" />
-                <ScalarProperty Name="CoParado" ColumnName="CoParado" />
-                <ScalarProperty Name="NGrande" ColumnName="NGrande" />
-                <ScalarProperty Name="NMediana" ColumnName="NMediana" />
-                <ScalarProperty Name="NPequena" ColumnName="NPequena" />
-                <ScalarProperty Name="NRecta" ColumnName="NRecta" />
-                <ScalarProperty Name="NRespingada" ColumnName="NRespingada" />
-                <ScalarProperty Name="NAguilena" ColumnName="NAguilena" />
-                <ScalarProperty Name="NAchatada" ColumnName="NAchatada" />
-                <ScalarProperty Name="NConcavo" ColumnName="NConcavo" />
-                <ScalarProperty Name="NConvexo" ColumnName="NConvexo" />
-                <ScalarProperty Name="NRecto" ColumnName="NRecto" />
-                <ScalarProperty Name="NSinuoso" ColumnName="NSinuoso" />
-                <ScalarProperty Name="OAzul" ColumnName="OAzul" />
-                <ScalarProperty Name="OCafeClaro" ColumnName="OCafeClaro" />
-                <ScalarProperty Name="OCafeOscuro" ColumnName="OCafeOscuro" />
-                <ScalarProperty Name="OMiel" ColumnName="OMiel" />
-                <ScalarProperty Name="OGris" ColumnName="OGris" />
-                <ScalarProperty Name="Overde" ColumnName="Overde" />
-                <ScalarProperty Name="ONegro" ColumnName="ONegro" />
-                <ScalarProperty Name="OOtro" ColumnName="OOtro" />
-                <ScalarProperty Name="OAlargados" ColumnName="OAlargados" />
-                <ScalarProperty Name="ORedondos" ColumnName="ORedondos" />
-                <ScalarProperty Name="OOvales" ColumnName="OOvales" />
-                <ScalarProperty Name="OGrandes" ColumnName="OGrandes" />
-                <ScalarProperty Name="OPequenos" ColumnName="OPequenos" />
-                <ScalarProperty Name="ORegulares" ColumnName="ORegulares" />
-                <ScalarProperty Name="CEscasa" ColumnName="CEscasa" />
-                <ScalarProperty Name="CRegulares" ColumnName="CRegulares" />
-                <ScalarProperty Name="CPobladas" ColumnName="CPobladas" />
-                <ScalarProperty Name="BGrande" ColumnName="BGrande" />
-                <ScalarProperty Name="BMediana" ColumnName="BMediana" />
-                <ScalarProperty Name="BPequena" ColumnName="BPequena" />
-                <ScalarProperty Name="BAbatidas" ColumnName="BAbatidas" />
-                <ScalarProperty Name="BElevadas" ColumnName="BElevadas" />
-                <ScalarProperty Name="BSimetricas" ColumnName="BSimetricas" />
-                <ScalarProperty Name="BAsimetricas" ColumnName="BAsimetricas" />
-                <ScalarProperty Name="LDelgados" ColumnName="LDelgados" />
-                <ScalarProperty Name="LMedianos" ColumnName="LMedianos" />
-                <ScalarProperty Name="LGruesos" ColumnName="LGruesos" />
-                <ScalarProperty Name="LGrande" ColumnName="LGrande" />
-                <ScalarProperty Name="LMediana" ColumnName="LMediana" />
-                <ScalarProperty Name="LPequena" ColumnName="LPequena" />
-                <ScalarProperty Name="LInferior" ColumnName="LInferior" />
-                <ScalarProperty Name="LSuperior" ColumnName="LSuperior" />
-                <ScalarProperty Name="LNinguno" ColumnName="LNinguno" />
-                <ScalarProperty Name="Mbilovado" ColumnName="Mbilovado" />
-                <ScalarProperty Name="Mfoseta" ColumnName="Mfoseta" />
-                <ScalarProperty Name="Mborla" ColumnName="Mborla" />
-                <ScalarProperty Name="Mninguno" ColumnName="Mninguno" />
-                <ScalarProperty Name="Moval" ColumnName="Moval" />
-                <ScalarProperty Name="Mcuadrado" ColumnName="Mcuadrado" />
-                <ScalarProperty Name="Mpunta" ColumnName="Mpunta" />
-                <ScalarProperty Name="Mhuyente" ColumnName="Mhuyente" />
-                <ScalarProperty Name="Mprominente" ColumnName="Mprominente" />
-                <ScalarProperty Name="Mvertical" ColumnName="Mvertical" />
-                <ScalarProperty Name="Cicatrices" ColumnName="Cicatrices" />
-                <ScalarProperty Name="Tatuajes" ColumnName="Tatuajes" />
-                <ScalarProperty Name="Lunares" ColumnName="Lunares" />
-                <ScalarProperty Name="Discapacidad" ColumnName="Discapacidad" />
-                <ScalarProperty Name="Protesis" ColumnName="Protesis" />
-                <ScalarProperty Name="Otras" ColumnName="Otras" />
-                <ScalarProperty Name="Estatura" ColumnName="Estatura" />
-                <ScalarProperty Name="Peso" ColumnName="Peso" />
-                <ScalarProperty Name="Alergias" ColumnName="Alergias" />
-                <ScalarProperty Name="MenosSesenta" ColumnName="MenosSesenta" />
-                <ScalarProperty Name="Especial" ColumnName="Especial" />
-                <ScalarProperty Name="Especiali" ColumnName="Especiali" />
-                <ScalarProperty Name="Acustico" ColumnName="Acustico" />
-                <ScalarProperty Name="Automatico" ColumnName="Automatico" />
-                <ScalarProperty Name="Dia" ColumnName="Dia" />
-                <ScalarProperty Name="Acompanado" ColumnName="Acompanado" />
-                <ScalarProperty Name="TipoSangre" ColumnName="TipoSangre" />
-                <ScalarProperty Name="Donador" ColumnName="Donador" />
-                <ScalarProperty Name="FolioSeguimiento" ColumnName="FolioSeguimiento" />
-                <ScalarProperty Name="SinRes" ColumnName="SinRes" />
-                <ScalarProperty Name="Retencion" ColumnName="Retencion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="dtExamenPsicometricoes">
             <EntityTypeMapping TypeName="LicHistoricoModel.dtExamenPsicometrico">
               <MappingFragment StoreEntitySet="dtExamenPsicometrico">
@@ -26043,165 +25898,6 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="dtTramites">
-            <EntityTypeMapping TypeName="LicHistoricoModel.dtTramite">
-              <MappingFragment StoreEntitySet="dtTramites">
-                <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
-                <ScalarProperty Name="FolioAsignadoPlastico" ColumnName="FolioAsignadoPlastico" />
-                <ScalarProperty Name="TipoLicenciaId" ColumnName="TipoLicenciaId" />
-                <ScalarProperty Name="TipoLicencia" ColumnName="TipoLicencia" />
-                <ScalarProperty Name="TipoTramite" ColumnName="TipoTramite" />
-                <ScalarProperty Name="AniosVigencia" ColumnName="AniosVigencia" />
-                <ScalarProperty Name="Importe" ColumnName="Importe" />
-                <ScalarProperty Name="FolioPago" ColumnName="FolioPago" />
-                <ScalarProperty Name="OrderCobro" ColumnName="OrderCobro" />
-                <ScalarProperty Name="FechaExpedicion" ColumnName="FechaExpedicion" />
-                <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
-                <ScalarProperty Name="FechaAntiguedad" ColumnName="FechaAntiguedad" />
-                <ScalarProperty Name="TipoIdentificacion" ColumnName="TipoIdentificacion" />
-                <ScalarProperty Name="ComporbanteDomicilio" ColumnName="ComporbanteDomicilio" />
-                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
-                <ScalarProperty Name="FechaEstatus" ColumnName="FechaEstatus" />
-                <ScalarProperty Name="Curp" ColumnName="Curp" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
-                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
-                <ScalarProperty Name="FolioActaNacimiento" ColumnName="FolioActaNacimiento" />
-                <ScalarProperty Name="Calle" ColumnName="Calle" />
-                <ScalarProperty Name="NoExterior" ColumnName="NoExterior" />
-                <ScalarProperty Name="NoInterior" ColumnName="NoInterior" />
-                <ScalarProperty Name="Colonia" ColumnName="Colonia" />
-                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="EstadoID" ColumnName="EstadoID" />
-                <ScalarProperty Name="MunicipioId" ColumnName="MunicipioId" />
-                <ScalarProperty Name="LocalidadId" ColumnName="LocalidadId" />
-                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
-                <ScalarProperty Name="LugarOrigen" ColumnName="LugarOrigen" />
-                <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
-                <ScalarProperty Name="EdoCivil" ColumnName="EdoCivil" />
-                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
-                <ScalarProperty Name="TipoSangre" ColumnName="TipoSangre" />
-                <ScalarProperty Name="DonacionOrganos" ColumnName="DonacionOrganos" />
-                <ScalarProperty Name="Complexion" ColumnName="Complexion" />
-                <ScalarProperty Name="Estatura" ColumnName="Estatura" />
-                <ScalarProperty Name="Piel" ColumnName="Piel" />
-                <ScalarProperty Name="Cabello" ColumnName="Cabello" />
-                <ScalarProperty Name="Alergias" ColumnName="Alergias" />
-                <ScalarProperty Name="Cara" ColumnName="Cara" />
-                <ScalarProperty Name="Ojos" ColumnName="Ojos" />
-                <ScalarProperty Name="Nariz" ColumnName="Nariz" />
-                <ScalarProperty Name="Boca" ColumnName="Boca" />
-                <ScalarProperty Name="SeñasParticulares" ColumnName="SeñasParticulares" />
-                <ScalarProperty Name="UsuarioCreador" ColumnName="UsuarioCreador" />
-                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
-                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
-                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
-                <ScalarProperty Name="UsuarioPreRegistro" ColumnName="UsuarioPreRegistro" />
-                <ScalarProperty Name="UsuarioRegistro" ColumnName="UsuarioRegistro" />
-                <ScalarProperty Name="UsuarioBiometrico" ColumnName="UsuarioBiometrico" />
-                <ScalarProperty Name="IntentosExamen" ColumnName="IntentosExamen" />
-                <ScalarProperty Name="Correo" ColumnName="Correo" />
-                <ScalarProperty Name="ConsecutivoGeneral" ColumnName="ConsecutivoGeneral" />
-                <ScalarProperty Name="ConsecutivoDestino" ColumnName="ConsecutivoDestino" />
-                <ScalarProperty Name="NumeroLicencia" ColumnName="NumeroLicencia" />
-                <ScalarProperty Name="CodigoPago" ColumnName="CodigoPago" />
-                <ScalarProperty Name="FechaVenPago" ColumnName="FechaVenPago" />
-                <ScalarProperty Name="FolioControlEstado" ColumnName="FolioControlEstado" />
-                <ScalarProperty Name="FolioSeguimiento" ColumnName="FolioSeguimiento" />
-                <ScalarProperty Name="LineaCapturaPago" ColumnName="LineaCapturaPago" />
-                <ScalarProperty Name="MensajePago" ColumnName="MensajePago" />
-                <ScalarProperty Name="UrlFormatoPago" ColumnName="UrlFormatoPago" />
-                <ScalarProperty Name="ReferenciaOxxo" ColumnName="ReferenciaOxxo" />
-                <ScalarProperty Name="DestinoId" ColumnName="DestinoId" />
-                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
-                <ScalarProperty Name="RFC" ColumnName="RFC" />
-                <ScalarProperty Name="FotoLic" ColumnName="FotoLic" />
-                <ScalarProperty Name="FingerLeft_10" ColumnName="FingerLeft_10" />
-                <ScalarProperty Name="FingerLeft_9" ColumnName="FingerLeft_9" />
-                <ScalarProperty Name="FingerLeft_8" ColumnName="FingerLeft_8" />
-                <ScalarProperty Name="FingerLeft_7" ColumnName="FingerLeft_7" />
-                <ScalarProperty Name="thumbs_6" ColumnName="thumbs_6" />
-                <ScalarProperty Name="FingerRight_5" ColumnName="FingerRight_5" />
-                <ScalarProperty Name="FingerRight_4" ColumnName="FingerRight_4" />
-                <ScalarProperty Name="FingerRight_3" ColumnName="FingerRight_3" />
-                <ScalarProperty Name="FingerRight_2" ColumnName="FingerRight_2" />
-                <ScalarProperty Name="thumbs_1" ColumnName="thumbs_1" />
-                <ScalarProperty Name="FirmaLic" ColumnName="FirmaLic" />
-                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
-                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
-                <ScalarProperty Name="fechaPago" ColumnName="fechaPago" />
-                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
-                <ScalarProperty Name="FechaUltimoExamen" ColumnName="FechaUltimoExamen" />
-                <ScalarProperty Name="EstadoN" ColumnName="EstadoN" />
-                <ScalarProperty Name="MunicipioN" ColumnName="MunicipioN" />
-                <ScalarProperty Name="ColoniaN" ColumnName="ColoniaN" />
-                <ScalarProperty Name="ExamenAprobado" ColumnName="ExamenAprobado" />
-                <ScalarProperty Name="LetraConsecutiva" ColumnName="LetraConsecutiva" />
-                <ScalarProperty Name="TipoTel" ColumnName="TipoTel" />
-                <ScalarProperty Name="Lada" ColumnName="Lada" />
-                <ScalarProperty Name="RefAd" ColumnName="RefAd" />
-                <ScalarProperty Name="ImprimeDir" ColumnName="ImprimeDir" />
-                <ScalarProperty Name="NombreTutor" ColumnName="NombreTutor" />
-                <ScalarProperty Name="APaternoTutor" ColumnName="APaternoTutor" />
-                <ScalarProperty Name="AMaternoTutor" ColumnName="AMaternoTutor" />
-                <ScalarProperty Name="SinRestricciones" ColumnName="SinRestricciones" />
-                <ScalarProperty Name="Lentes" ColumnName="Lentes" />
-                <ScalarProperty Name="Protesis" ColumnName="Protesis" />
-                <ScalarProperty Name="Auditivo" ColumnName="Auditivo" />
-                <ScalarProperty Name="LentesContacto" ColumnName="LentesContacto" />
-                <ScalarProperty Name="VehiculoAdaptado" ColumnName="VehiculoAdaptado" />
-                <ScalarProperty Name="VehiculoAutomatico" ColumnName="VehiculoAutomatico" />
-                <ScalarProperty Name="Ben1Nombre" ColumnName="Ben1Nombre" />
-                <ScalarProperty Name="Ben1APaterno" ColumnName="Ben1APaterno" />
-                <ScalarProperty Name="Ben1AMaterno" ColumnName="Ben1AMaterno" />
-                <ScalarProperty Name="Ben1Parentezco" ColumnName="Ben1Parentezco" />
-                <ScalarProperty Name="Ben1Porcentaje" ColumnName="Ben1Porcentaje" />
-                <ScalarProperty Name="Ben2Nombre" ColumnName="Ben2Nombre" />
-                <ScalarProperty Name="Ben2APaterno" ColumnName="Ben2APaterno" />
-                <ScalarProperty Name="Ben2AMaterno" ColumnName="Ben2AMaterno" />
-                <ScalarProperty Name="Ben2Parentezco" ColumnName="Ben2Parentezco" />
-                <ScalarProperty Name="Ben2Porcentaje" ColumnName="Ben2Porcentaje" />
-                <ScalarProperty Name="Ben3Nombre" ColumnName="Ben3Nombre" />
-                <ScalarProperty Name="Ben3APaterno" ColumnName="Ben3APaterno" />
-                <ScalarProperty Name="Ben3AMaterno" ColumnName="Ben3AMaterno" />
-                <ScalarProperty Name="Ben3Parentezco" ColumnName="Ben3Parentezco" />
-                <ScalarProperty Name="Ben3Porcentaje" ColumnName="Ben3Porcentaje" />
-                <ScalarProperty Name="TipoVig" ColumnName="TipoVig" />
-                <ScalarProperty Name="FolioExpediente" ColumnName="FolioExpediente" />
-                <ScalarProperty Name="Corazon" ColumnName="Corazon" />
-                <ScalarProperty Name="Higado" ColumnName="Higado" />
-                <ScalarProperty Name="Rinon" ColumnName="Rinon" />
-                <ScalarProperty Name="Corneas" ColumnName="Corneas" />
-                <ScalarProperty Name="LicenciaAnterior" ColumnName="LicenciaAnterior" />
-                <ScalarProperty Name="VigenciaId" ColumnName="VigenciaId" />
-                <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
-                <ScalarProperty Name="CiudadanoId" ColumnName="CiudadanoId" />
-                <ScalarProperty Name="Van" ColumnName="Van" />
-                <ScalarProperty Name="Bus" ColumnName="Bus" />
-                <ScalarProperty Name="Taxi" ColumnName="Taxi" />
-                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
-                <ScalarProperty Name="ToxicologicoVigente" ColumnName="ToxicologicoVigente" />
-                <ScalarProperty Name="NumeroLicenciaCorrecto" ColumnName="NumeroLicenciaCorrecto" />
-                <ScalarProperty Name="PeticionPago" ColumnName="PeticionPago" />
-                <ScalarProperty Name="RespuestaPago" ColumnName="RespuestaPago" />
-                <ScalarProperty Name="ReciboPagoGenerado" ColumnName="ReciboPagoGenerado" />
-                <ScalarProperty Name="Ben1Otro" ColumnName="Ben1Otro" />
-                <ScalarProperty Name="Ben2Otro" ColumnName="Ben2Otro" />
-                <ScalarProperty Name="Ben3Otro" ColumnName="Ben3Otro" />
-                <ScalarProperty Name="FechaCita" ColumnName="FechaCita" />
-                <ScalarProperty Name="HoraCita" ColumnName="HoraCita" />
-                <ScalarProperty Name="ModuloCita" ColumnName="ModuloCita" />
-                <ScalarProperty Name="NoId" ColumnName="NoId" />
-                <ScalarProperty Name="NoComprobante" ColumnName="NoComprobante" />
-                <ScalarProperty Name="TestigoUno" ColumnName="TestigoUno" />
-                <ScalarProperty Name="TestigoDos" ColumnName="TestigoDos" />
-                <ScalarProperty Name="DescRobo" ColumnName="DescRobo" />
-                <ScalarProperty Name="DescExt" ColumnName="DescExt" />
-                <ScalarProperty Name="TiempoExt" ColumnName="TiempoExt" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="dtUnidadMeditas">
             <EntityTypeMapping TypeName="LicHistoricoModel.dtUnidadMedita">
               <MappingFragment StoreEntitySet="dtUnidadMedita">
@@ -26810,6 +26506,306 @@ advertencia 6002: La tabla o vista 'LicHistorico.dbo.ViewUbicacionesContestadas'
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="dtTramites">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtTramite">
+              <MappingFragment StoreEntitySet="dtTramites">
+                <ScalarProperty Name="TiempoExt" ColumnName="TiempoExt" />
+                <ScalarProperty Name="DescExt" ColumnName="DescExt" />
+                <ScalarProperty Name="DescRobo" ColumnName="DescRobo" />
+                <ScalarProperty Name="TestigoDos" ColumnName="TestigoDos" />
+                <ScalarProperty Name="TestigoUno" ColumnName="TestigoUno" />
+                <ScalarProperty Name="NoComprobante" ColumnName="NoComprobante" />
+                <ScalarProperty Name="NoId" ColumnName="NoId" />
+                <ScalarProperty Name="ModuloCita" ColumnName="ModuloCita" />
+                <ScalarProperty Name="HoraCita" ColumnName="HoraCita" />
+                <ScalarProperty Name="FechaCita" ColumnName="FechaCita" />
+                <ScalarProperty Name="Ben3Otro" ColumnName="Ben3Otro" />
+                <ScalarProperty Name="Ben2Otro" ColumnName="Ben2Otro" />
+                <ScalarProperty Name="Ben1Otro" ColumnName="Ben1Otro" />
+                <ScalarProperty Name="ReciboPagoGenerado" ColumnName="ReciboPagoGenerado" />
+                <ScalarProperty Name="RespuestaPago" ColumnName="RespuestaPago" />
+                <ScalarProperty Name="PeticionPago" ColumnName="PeticionPago" />
+                <ScalarProperty Name="NumeroLicenciaCorrecto" ColumnName="NumeroLicenciaCorrecto" />
+                <ScalarProperty Name="ToxicologicoVigente" ColumnName="ToxicologicoVigente" />
+                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="Taxi" ColumnName="Taxi" />
+                <ScalarProperty Name="Bus" ColumnName="Bus" />
+                <ScalarProperty Name="Van" ColumnName="Van" />
+                <ScalarProperty Name="CiudadanoId" ColumnName="CiudadanoId" />
+                <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
+                <ScalarProperty Name="VigenciaId" ColumnName="VigenciaId" />
+                <ScalarProperty Name="LicenciaAnterior" ColumnName="LicenciaAnterior" />
+                <ScalarProperty Name="Corneas" ColumnName="Corneas" />
+                <ScalarProperty Name="Rinon" ColumnName="Rinon" />
+                <ScalarProperty Name="Higado" ColumnName="Higado" />
+                <ScalarProperty Name="Corazon" ColumnName="Corazon" />
+                <ScalarProperty Name="FolioExpediente" ColumnName="FolioExpediente" />
+                <ScalarProperty Name="TipoVig" ColumnName="TipoVig" />
+                <ScalarProperty Name="Ben3Porcentaje" ColumnName="Ben3Porcentaje" />
+                <ScalarProperty Name="Ben3Parentezco" ColumnName="Ben3Parentezco" />
+                <ScalarProperty Name="Ben3AMaterno" ColumnName="Ben3AMaterno" />
+                <ScalarProperty Name="Ben3APaterno" ColumnName="Ben3APaterno" />
+                <ScalarProperty Name="Ben3Nombre" ColumnName="Ben3Nombre" />
+                <ScalarProperty Name="Ben2Porcentaje" ColumnName="Ben2Porcentaje" />
+                <ScalarProperty Name="Ben2Parentezco" ColumnName="Ben2Parentezco" />
+                <ScalarProperty Name="Ben2AMaterno" ColumnName="Ben2AMaterno" />
+                <ScalarProperty Name="Ben2APaterno" ColumnName="Ben2APaterno" />
+                <ScalarProperty Name="Ben2Nombre" ColumnName="Ben2Nombre" />
+                <ScalarProperty Name="Ben1Porcentaje" ColumnName="Ben1Porcentaje" />
+                <ScalarProperty Name="Ben1Parentezco" ColumnName="Ben1Parentezco" />
+                <ScalarProperty Name="Ben1AMaterno" ColumnName="Ben1AMaterno" />
+                <ScalarProperty Name="Ben1APaterno" ColumnName="Ben1APaterno" />
+                <ScalarProperty Name="Ben1Nombre" ColumnName="Ben1Nombre" />
+                <ScalarProperty Name="VehiculoAutomatico" ColumnName="VehiculoAutomatico" />
+                <ScalarProperty Name="VehiculoAdaptado" ColumnName="VehiculoAdaptado" />
+                <ScalarProperty Name="LentesContacto" ColumnName="LentesContacto" />
+                <ScalarProperty Name="Auditivo" ColumnName="Auditivo" />
+                <ScalarProperty Name="Protesis" ColumnName="Protesis" />
+                <ScalarProperty Name="Lentes" ColumnName="Lentes" />
+                <ScalarProperty Name="SinRestricciones" ColumnName="SinRestricciones" />
+                <ScalarProperty Name="AMaternoTutor" ColumnName="AMaternoTutor" />
+                <ScalarProperty Name="APaternoTutor" ColumnName="APaternoTutor" />
+                <ScalarProperty Name="NombreTutor" ColumnName="NombreTutor" />
+                <ScalarProperty Name="ImprimeDir" ColumnName="ImprimeDir" />
+                <ScalarProperty Name="RefAd" ColumnName="RefAd" />
+                <ScalarProperty Name="EstatusH" ColumnName="EstatusH" />
+                <ScalarProperty Name="TipoTel" ColumnName="TipoTel" />
+                <ScalarProperty Name="LetraConsecutiva" ColumnName="LetraConsecutiva" />
+                <ScalarProperty Name="ExamenAprobado" ColumnName="ExamenAprobado" />
+                <ScalarProperty Name="ColoniaN" ColumnName="ColoniaN" />
+                <ScalarProperty Name="MunicipioN" ColumnName="MunicipioN" />
+                <ScalarProperty Name="EstadoN" ColumnName="EstadoN" />
+                <ScalarProperty Name="FechaUltimoExamen" ColumnName="FechaUltimoExamen" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="fechaPago" ColumnName="fechaPago" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="FirmaLic" ColumnName="FirmaLic" />
+                <ScalarProperty Name="thumbs_1" ColumnName="thumbs_1" />
+                <ScalarProperty Name="FingerRight_2" ColumnName="FingerRight_2" />
+                <ScalarProperty Name="FingerRight_3" ColumnName="FingerRight_3" />
+                <ScalarProperty Name="FingerRight_4" ColumnName="FingerRight_4" />
+                <ScalarProperty Name="FingerRight_5" ColumnName="FingerRight_5" />
+                <ScalarProperty Name="thumbs_6" ColumnName="thumbs_6" />
+                <ScalarProperty Name="FingerLeft_7" ColumnName="FingerLeft_7" />
+                <ScalarProperty Name="FingerLeft_8" ColumnName="FingerLeft_8" />
+                <ScalarProperty Name="FingerLeft_9" ColumnName="FingerLeft_9" />
+                <ScalarProperty Name="FingerLeft_10" ColumnName="FingerLeft_10" />
+                <ScalarProperty Name="FotoLic" ColumnName="FotoLic" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="DestinoId" ColumnName="DestinoId" />
+                <ScalarProperty Name="ReferenciaOxxo" ColumnName="ReferenciaOxxo" />
+                <ScalarProperty Name="UrlFormatoPago" ColumnName="UrlFormatoPago" />
+                <ScalarProperty Name="MensajePago" ColumnName="MensajePago" />
+                <ScalarProperty Name="LineaCapturaPago" ColumnName="LineaCapturaPago" />
+                <ScalarProperty Name="FolioSeguimiento" ColumnName="FolioSeguimiento" />
+                <ScalarProperty Name="FolioControlEstado" ColumnName="FolioControlEstado" />
+                <ScalarProperty Name="FechaVenPago" ColumnName="FechaVenPago" />
+                <ScalarProperty Name="CodigoPago" ColumnName="CodigoPago" />
+                <ScalarProperty Name="NumeroLicencia" ColumnName="NumeroLicencia" />
+                <ScalarProperty Name="ConsecutivoDestino" ColumnName="ConsecutivoDestino" />
+                <ScalarProperty Name="ConsecutivoGeneral" ColumnName="ConsecutivoGeneral" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="IntentosExamen" ColumnName="IntentosExamen" />
+                <ScalarProperty Name="UsuarioBiometrico" ColumnName="UsuarioBiometrico" />
+                <ScalarProperty Name="UsuarioRegistro" ColumnName="UsuarioRegistro" />
+                <ScalarProperty Name="UsuarioPreRegistro" ColumnName="UsuarioPreRegistro" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="UsuarioModifico" ColumnName="UsuarioModifico" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="UsuarioCreador" ColumnName="UsuarioCreador" />
+                <ScalarProperty Name="SeñasParticulares" ColumnName="SeñasParticulares" />
+                <ScalarProperty Name="Boca" ColumnName="Boca" />
+                <ScalarProperty Name="Nariz" ColumnName="Nariz" />
+                <ScalarProperty Name="Ojos" ColumnName="Ojos" />
+                <ScalarProperty Name="Cara" ColumnName="Cara" />
+                <ScalarProperty Name="Alergias" ColumnName="Alergias" />
+                <ScalarProperty Name="Cabello" ColumnName="Cabello" />
+                <ScalarProperty Name="Piel" ColumnName="Piel" />
+                <ScalarProperty Name="Estatura" ColumnName="Estatura" />
+                <ScalarProperty Name="Complexion" ColumnName="Complexion" />
+                <ScalarProperty Name="DonacionOrganos" ColumnName="DonacionOrganos" />
+                <ScalarProperty Name="TipoSangre" ColumnName="TipoSangre" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="EdoCivil" ColumnName="EdoCivil" />
+                <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+                <ScalarProperty Name="LugarOrigen" ColumnName="LugarOrigen" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="LocalidadId" ColumnName="LocalidadId" />
+                <ScalarProperty Name="MunicipioId" ColumnName="MunicipioId" />
+                <ScalarProperty Name="EstadoID" ColumnName="EstadoID" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+                <ScalarProperty Name="NoInterior" ColumnName="NoInterior" />
+                <ScalarProperty Name="NoExterior" ColumnName="NoExterior" />
+                <ScalarProperty Name="Calle" ColumnName="Calle" />
+                <ScalarProperty Name="FolioActaNacimiento" ColumnName="FolioActaNacimiento" />
+                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Curp" ColumnName="Curp" />
+                <ScalarProperty Name="FechaEstatus" ColumnName="FechaEstatus" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="ComporbanteDomicilio" ColumnName="ComporbanteDomicilio" />
+                <ScalarProperty Name="TipoIdentificacion" ColumnName="TipoIdentificacion" />
+                <ScalarProperty Name="FechaAntiguedad" ColumnName="FechaAntiguedad" />
+                <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+                <ScalarProperty Name="FechaExpedicion" ColumnName="FechaExpedicion" />
+                <ScalarProperty Name="OrderCobro" ColumnName="OrderCobro" />
+                <ScalarProperty Name="FolioPago" ColumnName="FolioPago" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="AniosVigencia" ColumnName="AniosVigencia" />
+                <ScalarProperty Name="TipoTramite" ColumnName="TipoTramite" />
+                <ScalarProperty Name="TipoLicencia" ColumnName="TipoLicencia" />
+                <ScalarProperty Name="TipoLicenciaId" ColumnName="TipoLicenciaId" />
+                <ScalarProperty Name="FolioAsignadoPlastico" ColumnName="FolioAsignadoPlastico" />
+                <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dtExamenMedicoes">
+            <EntityTypeMapping TypeName="LicHistoricoModel.dtExamenMedico">
+              <MappingFragment StoreEntitySet="dtExamenMedico">
+                <ScalarProperty Name="Retencion" ColumnName="Retencion" />
+                <ScalarProperty Name="FolioSeguimiento" ColumnName="FolioSeguimiento" />
+                <ScalarProperty Name="Donador" ColumnName="Donador" />
+                <ScalarProperty Name="TipoSangre" ColumnName="TipoSangre" />
+                <ScalarProperty Name="Acompanado" ColumnName="Acompanado" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Automatico" ColumnName="Automatico" />
+                <ScalarProperty Name="Acustico" ColumnName="Acustico" />
+                <ScalarProperty Name="Especiali" ColumnName="Especiali" />
+                <ScalarProperty Name="Especial" ColumnName="Especial" />
+                <ScalarProperty Name="MenosSesenta" ColumnName="MenosSesenta" />
+                <ScalarProperty Name="Alergias" ColumnName="Alergias" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Estatura" ColumnName="Estatura" />
+                <ScalarProperty Name="Otras" ColumnName="Otras" />
+                <ScalarProperty Name="Protesis" ColumnName="Protesis" />
+                <ScalarProperty Name="Discapacidad" ColumnName="Discapacidad" />
+                <ScalarProperty Name="Lunares" ColumnName="Lunares" />
+                <ScalarProperty Name="Tatuajes" ColumnName="Tatuajes" />
+                <ScalarProperty Name="Cicatrices" ColumnName="Cicatrices" />
+                <ScalarProperty Name="Mvertical" ColumnName="Mvertical" />
+                <ScalarProperty Name="Mprominente" ColumnName="Mprominente" />
+                <ScalarProperty Name="Mhuyente" ColumnName="Mhuyente" />
+                <ScalarProperty Name="Mpunta" ColumnName="Mpunta" />
+                <ScalarProperty Name="Mcuadrado" ColumnName="Mcuadrado" />
+                <ScalarProperty Name="Moval" ColumnName="Moval" />
+                <ScalarProperty Name="Mninguno" ColumnName="Mninguno" />
+                <ScalarProperty Name="Mborla" ColumnName="Mborla" />
+                <ScalarProperty Name="Mfoseta" ColumnName="Mfoseta" />
+                <ScalarProperty Name="Mbilovado" ColumnName="Mbilovado" />
+                <ScalarProperty Name="LNinguno" ColumnName="LNinguno" />
+                <ScalarProperty Name="LSuperior" ColumnName="LSuperior" />
+                <ScalarProperty Name="LInferior" ColumnName="LInferior" />
+                <ScalarProperty Name="LPequena" ColumnName="LPequena" />
+                <ScalarProperty Name="LMediana" ColumnName="LMediana" />
+                <ScalarProperty Name="LGrande" ColumnName="LGrande" />
+                <ScalarProperty Name="LGruesos" ColumnName="LGruesos" />
+                <ScalarProperty Name="LMedianos" ColumnName="LMedianos" />
+                <ScalarProperty Name="LDelgados" ColumnName="LDelgados" />
+                <ScalarProperty Name="BAsimetricas" ColumnName="BAsimetricas" />
+                <ScalarProperty Name="BSimetricas" ColumnName="BSimetricas" />
+                <ScalarProperty Name="BElevadas" ColumnName="BElevadas" />
+                <ScalarProperty Name="BAbatidas" ColumnName="BAbatidas" />
+                <ScalarProperty Name="BPequena" ColumnName="BPequena" />
+                <ScalarProperty Name="BMediana" ColumnName="BMediana" />
+                <ScalarProperty Name="BGrande" ColumnName="BGrande" />
+                <ScalarProperty Name="CPobladas" ColumnName="CPobladas" />
+                <ScalarProperty Name="CRegulares" ColumnName="CRegulares" />
+                <ScalarProperty Name="CEscasa" ColumnName="CEscasa" />
+                <ScalarProperty Name="ORegulares" ColumnName="ORegulares" />
+                <ScalarProperty Name="OPequenos" ColumnName="OPequenos" />
+                <ScalarProperty Name="OGrandes" ColumnName="OGrandes" />
+                <ScalarProperty Name="OOvales" ColumnName="OOvales" />
+                <ScalarProperty Name="ORedondos" ColumnName="ORedondos" />
+                <ScalarProperty Name="OAlargados" ColumnName="OAlargados" />
+                <ScalarProperty Name="OOtro" ColumnName="OOtro" />
+                <ScalarProperty Name="ONegro" ColumnName="ONegro" />
+                <ScalarProperty Name="Overde" ColumnName="Overde" />
+                <ScalarProperty Name="OGris" ColumnName="OGris" />
+                <ScalarProperty Name="OMiel" ColumnName="OMiel" />
+                <ScalarProperty Name="OCafeOscuro" ColumnName="OCafeOscuro" />
+                <ScalarProperty Name="OCafeClaro" ColumnName="OCafeClaro" />
+                <ScalarProperty Name="OAzul" ColumnName="OAzul" />
+                <ScalarProperty Name="NSinuoso" ColumnName="NSinuoso" />
+                <ScalarProperty Name="NRecto" ColumnName="NRecto" />
+                <ScalarProperty Name="NConvexo" ColumnName="NConvexo" />
+                <ScalarProperty Name="NConcavo" ColumnName="NConcavo" />
+                <ScalarProperty Name="NAchatada" ColumnName="NAchatada" />
+                <ScalarProperty Name="NAguilena" ColumnName="NAguilena" />
+                <ScalarProperty Name="NRespingada" ColumnName="NRespingada" />
+                <ScalarProperty Name="NRecta" ColumnName="NRecta" />
+                <ScalarProperty Name="NPequena" ColumnName="NPequena" />
+                <ScalarProperty Name="NMediana" ColumnName="NMediana" />
+                <ScalarProperty Name="NGrande" ColumnName="NGrande" />
+                <ScalarProperty Name="CoParado" ColumnName="CoParado" />
+                <ScalarProperty Name="CoRizado" ColumnName="CoRizado" />
+                <ScalarProperty Name="CoOndulado" ColumnName="CoOndulado" />
+                <ScalarProperty Name="CoLacio" ColumnName="CoLacio" />
+                <ScalarProperty Name="CoCrespo" ColumnName="CoCrespo" />
+                <ScalarProperty Name="CoRubio" ColumnName="CoRubio" />
+                <ScalarProperty Name="CoPelirrojo" ColumnName="CoPelirrojo" />
+                <ScalarProperty Name="CoNegro" ColumnName="CoNegro" />
+                <ScalarProperty Name="CoEntrecano" ColumnName="CoEntrecano" />
+                <ScalarProperty Name="CoCastanoOscuro" ColumnName="CoCastanoOscuro" />
+                <ScalarProperty Name="CoCastanoClaro" ColumnName="CoCastanoClaro" />
+                <ScalarProperty Name="CoTotal" ColumnName="CoTotal" />
+                <ScalarProperty Name="CoAlbino" ColumnName="CoAlbino" />
+                <ScalarProperty Name="CoSin" ColumnName="CoSin" />
+                <ScalarProperty Name="CoRegular" ColumnName="CoRegular" />
+                <ScalarProperty Name="CoEscaso" ColumnName="CoEscaso" />
+                <ScalarProperty Name="CoAbundante" ColumnName="CoAbundante" />
+                <ScalarProperty Name="CaRedonda" ColumnName="CaRedonda" />
+                <ScalarProperty Name="CaOvalada" ColumnName="CaOvalada" />
+                <ScalarProperty Name="CaCuadrada" ColumnName="CaCuadrada" />
+                <ScalarProperty Name="CaAlargada" ColumnName="CaAlargada" />
+                <ScalarProperty Name="PAlbino" ColumnName="PAlbino" />
+                <ScalarProperty Name="POtro" ColumnName="POtro" />
+                <ScalarProperty Name="PCobriza" ColumnName="PCobriza" />
+                <ScalarProperty Name="PNegro" ColumnName="PNegro" />
+                <ScalarProperty Name="PMorenoOscuro" ColumnName="PMorenoOscuro" />
+                <ScalarProperty Name="PMoreno" ColumnName="PMoreno" />
+                <ScalarProperty Name="PMorenoClaro" ColumnName="PMorenoClaro" />
+                <ScalarProperty Name="PAmarillo" ColumnName="PAmarillo" />
+                <ScalarProperty Name="PBlanco" ColumnName="PBlanco" />
+                <ScalarProperty Name="CRobusta" ColumnName="CRobusta" />
+                <ScalarProperty Name="CObesa" ColumnName="CObesa" />
+                <ScalarProperty Name="CAtletica" ColumnName="CAtletica" />
+                <ScalarProperty Name="CRegular" ColumnName="CRegular" />
+                <ScalarProperty Name="CDelgada" ColumnName="CDelgada" />
+                <ScalarProperty Name="DestinoId" ColumnName="DestinoId" />
+                <ScalarProperty Name="OjoDerecho" ColumnName="OjoDerecho" />
+                <ScalarProperty Name="OjoIzquierdo" ColumnName="OjoIzquierdo" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+                <ScalarProperty Name="FechaModifico" ColumnName="FechaModifico" />
+                <ScalarProperty Name="UsuarioModificoId" ColumnName="UsuarioModificoId" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="UsuarioCreadorId" ColumnName="UsuarioCreadorId" />
+                <ScalarProperty Name="Negadas" ColumnName="Negadas" />
+                <ScalarProperty Name="Apto" ColumnName="Apto" />
+                <ScalarProperty Name="Normal" ColumnName="Normal" />
+                <ScalarProperty Name="SinRes" ColumnName="SinRes" />
+                <ScalarProperty Name="NivelMedio" ColumnName="NivelMedio" />
+                <ScalarProperty Name="NivelBajo" ColumnName="NivelBajo" />
+                <ScalarProperty Name="CapAud" ColumnName="CapAud" />
+                <ScalarProperty Name="NormalAv" ColumnName="NormalAv" />
+                <ScalarProperty Name="Astigmatismo" ColumnName="Astigmatismo" />
+                <ScalarProperty Name="Hiper" ColumnName="Hiper" />
+                <ScalarProperty Name="Ambiopia" ColumnName="Ambiopia" />
+                <ScalarProperty Name="Miopia" ColumnName="Miopia" />
+                <ScalarProperty Name="CapVs" ColumnName="CapVs" />
+                <ScalarProperty Name="Lentes" ColumnName="Lentes" />
+                <ScalarProperty Name="FechaFinVigencia" ColumnName="FechaFinVigencia" />
+                <ScalarProperty Name="FechaInicioVigencia" ColumnName="FechaInicioVigencia" />
+                <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
+                <ScalarProperty Name="ExamenMedicoId" ColumnName="ExamenMedicoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

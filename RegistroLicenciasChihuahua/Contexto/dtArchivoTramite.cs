@@ -22,7 +22,7 @@ namespace RegistroLicenciasChihuahua.Contexto
         public Nullable<System.DateTime> FechaCreacion { get; set; }
         public string Nombre { get; set; }
     
-        public virtual dtTramite dtTramite { get; set; }
         public virtual dtUsuario dtUsuario { get; set; }
+        public virtual dtTramite dtTramite { get; set; }
     }
 }
