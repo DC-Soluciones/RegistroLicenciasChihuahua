@@ -830,6 +830,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // txt_Curp
             // 
+            this.txt_Curp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Curp.Location = new System.Drawing.Point(53, 3);
             this.txt_Curp.Name = "txt_Curp";
             this.txt_Curp.Size = new System.Drawing.Size(200, 20);
@@ -847,6 +848,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // txt_Nombre
             // 
+            this.txt_Nombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_Nombre.Location = new System.Drawing.Point(323, 3);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(200, 20);
@@ -864,6 +866,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // txt_ApellidoP
             // 
+            this.txt_ApellidoP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_ApellidoP.Location = new System.Drawing.Point(642, 3);
             this.txt_ApellidoP.Name = "txt_ApellidoP";
             this.txt_ApellidoP.Size = new System.Drawing.Size(200, 20);
@@ -881,6 +884,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // txt_ApellidoM
             // 
+            this.txt_ApellidoM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_ApellidoM.Location = new System.Drawing.Point(985, 3);
             this.txt_ApellidoM.Name = "txt_ApellidoM";
             this.txt_ApellidoM.Size = new System.Drawing.Size(200, 20);

@@ -139,6 +139,8 @@ namespace RegistroLicenciasChihuahua
             this.dtMunicipioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtTipoLicenciasTableAdapter = new RegistroLicenciasChihuahua.LicenciasCHDataSetTableAdapters.dtTipoLicenciasTableAdapter();
             this.dtMunicipioTableAdapter = new RegistroLicenciasChihuahua.LicenciasCHDataSetMunicipiosTableAdapters.dtMunicipioTableAdapter();
+            this.label28 = new System.Windows.Forms.Label();
+            this.cb_Prefijos = new System.Windows.Forms.ComboBox();
             this.panelregistro.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.pnl_Menor.SuspendLayout();
@@ -406,20 +408,22 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel4.Controls.Add(this.label35, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txt_Calle, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label36, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txt_NoExterior, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label37, 4, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txt_NoInterior, 5, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label38, 6, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txt_CP, 7, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label39, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.cb_Estado, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label40, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.cb_Municipio, 3, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label41, 4, 1);
-            this.tableLayoutPanel4.Controls.Add(this.txt_Colonia, 5, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txt_Colonia, 7, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label41, 6, 1);
+            this.tableLayoutPanel4.Controls.Add(this.cb_Municipio, 5, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label40, 4, 1);
+            this.tableLayoutPanel4.Controls.Add(this.cb_Estado, 3, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label39, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txt_CP, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label38, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txt_NoInterior, 7, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label37, 6, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txt_NoExterior, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label36, 4, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txt_Calle, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label35, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.cb_Prefijos, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(14, 520);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
@@ -432,7 +436,7 @@ namespace RegistroLicenciasChihuahua
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(3, 0);
+            this.label35.Location = new System.Drawing.Point(287, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(41, 16);
             this.label35.TabIndex = 0;
@@ -441,7 +445,7 @@ namespace RegistroLicenciasChihuahua
             // txt_Calle
             // 
             this.txt_Calle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Calle.Location = new System.Drawing.Point(145, 3);
+            this.txt_Calle.Location = new System.Drawing.Point(429, 3);
             this.txt_Calle.Name = "txt_Calle";
             this.txt_Calle.Size = new System.Drawing.Size(136, 20);
             this.txt_Calle.TabIndex = 1;
@@ -450,7 +454,7 @@ namespace RegistroLicenciasChihuahua
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(287, 0);
+            this.label36.Location = new System.Drawing.Point(571, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(112, 16);
             this.label36.TabIndex = 2;
@@ -458,7 +462,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // txt_NoExterior
             // 
-            this.txt_NoExterior.Location = new System.Drawing.Point(429, 3);
+            this.txt_NoExterior.Location = new System.Drawing.Point(713, 3);
             this.txt_NoExterior.Name = "txt_NoExterior";
             this.txt_NoExterior.Size = new System.Drawing.Size(136, 20);
             this.txt_NoExterior.TabIndex = 3;
@@ -467,7 +471,7 @@ namespace RegistroLicenciasChihuahua
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(571, 0);
+            this.label37.Location = new System.Drawing.Point(855, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(108, 16);
             this.label37.TabIndex = 4;
@@ -475,7 +479,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // txt_NoInterior
             // 
-            this.txt_NoInterior.Location = new System.Drawing.Point(713, 3);
+            this.txt_NoInterior.Location = new System.Drawing.Point(997, 3);
             this.txt_NoInterior.Name = "txt_NoInterior";
             this.txt_NoInterior.Size = new System.Drawing.Size(136, 20);
             this.txt_NoInterior.TabIndex = 5;
@@ -484,7 +488,7 @@ namespace RegistroLicenciasChihuahua
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(855, 0);
+            this.label38.Location = new System.Drawing.Point(3, 27);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(26, 16);
             this.label38.TabIndex = 6;
@@ -493,17 +497,18 @@ namespace RegistroLicenciasChihuahua
             // txt_CP
             // 
             this.txt_CP.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_CP.Location = new System.Drawing.Point(997, 3);
+            this.txt_CP.Location = new System.Drawing.Point(145, 30);
             this.txt_CP.Name = "txt_CP";
             this.txt_CP.Size = new System.Drawing.Size(136, 22);
             this.txt_CP.TabIndex = 7;
             this.txt_CP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CP_KeyPress);
+            this.txt_CP.Leave += new System.EventHandler(this.txt_CP_Leave);
             // 
             // label39
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(3, 28);
+            this.label39.Location = new System.Drawing.Point(287, 27);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(50, 16);
             this.label39.TabIndex = 8;
@@ -514,7 +519,7 @@ namespace RegistroLicenciasChihuahua
             this.cb_Estado.FormattingEnabled = true;
             this.cb_Estado.Items.AddRange(new object[] {
             "CHIHUAHUA"});
-            this.cb_Estado.Location = new System.Drawing.Point(145, 31);
+            this.cb_Estado.Location = new System.Drawing.Point(429, 30);
             this.cb_Estado.Name = "cb_Estado";
             this.cb_Estado.Size = new System.Drawing.Size(136, 21);
             this.cb_Estado.TabIndex = 9;
@@ -524,7 +529,7 @@ namespace RegistroLicenciasChihuahua
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(287, 28);
+            this.label40.Location = new System.Drawing.Point(571, 27);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(70, 16);
             this.label40.TabIndex = 10;
@@ -533,7 +538,7 @@ namespace RegistroLicenciasChihuahua
             // cb_Municipio
             // 
             this.cb_Municipio.FormattingEnabled = true;
-            this.cb_Municipio.Location = new System.Drawing.Point(429, 31);
+            this.cb_Municipio.Location = new System.Drawing.Point(713, 30);
             this.cb_Municipio.Name = "cb_Municipio";
             this.cb_Municipio.Size = new System.Drawing.Size(136, 21);
             this.cb_Municipio.TabIndex = 11;
@@ -542,7 +547,7 @@ namespace RegistroLicenciasChihuahua
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(571, 28);
+            this.label41.Location = new System.Drawing.Point(855, 27);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(57, 16);
             this.label41.TabIndex = 12;
@@ -551,7 +556,7 @@ namespace RegistroLicenciasChihuahua
             // txt_Colonia
             // 
             this.txt_Colonia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Colonia.Location = new System.Drawing.Point(713, 31);
+            this.txt_Colonia.Location = new System.Drawing.Point(997, 30);
             this.txt_Colonia.Name = "txt_Colonia";
             this.txt_Colonia.Size = new System.Drawing.Size(136, 20);
             this.txt_Colonia.TabIndex = 13;
@@ -908,8 +913,115 @@ namespace RegistroLicenciasChihuahua
             // 
             this.cb_Nacionalidad.FormattingEnabled = true;
             this.cb_Nacionalidad.Items.AddRange(new object[] {
+            "ALBANESA",
+            "ALEMANA",
+            "ANGOLEÑA",
+            "ARGELINA",
+            "ARGENTINA",
+            "ARMENIA",
+            "AUSTRALIANA",
+            "AUSTRÍACA",
+            "AZERBAIYANA",
+            "BELGA",
+            "BIELORRUSA",
+            "BOLIVIANA",
+            "BOSNIA",
+            "BRASILEÑA",
+            "BÚLGARA",
+            "CAMERUNESA",
+            "CANADIENSE",
+            "CHECA",
+            "CHILENA",
+            "CHINA",
+            "CHIPRIOTA",
+            "VIETNAMITA",
+            "VENEZOLANA",
+            "URUGUAYA",
+            "UCRANIANA",
+            "TURCA",
+            "TOGOLESA",
+            "SURINAMÉS",
+            "SURCOREANA",
+            "SUIZA",
+            "SUECA",
+            "SUDAFRICANA",
+            "SIRIA",
+            "SERBIA",
+            "SENEGALESA",
+            "SALVADOREÑA",
+            "SAHARAUI",
+            "RUSA",
+            "RUMANA",
+            "PUERTORRIQUEÑA",
+            "PORTUGUESA",
+            "POLACA",
+            "PERUANA",
+            "PARAGUAYA",
+            "PANAMEÑA",
+            "NORUEGA",
+            "NORCOREANA",
+            "NIGERIANA",
+            "NICARAGÜENSE",
+            "NEOZELANDESA",
+            "NAMIBIA",
+            "MONTENEGRINA",
+            "MONEGASCA",
+            "MOLDAVA",
             "MEXICANA",
-            "EXTRANJERA"});
+            "MARROQUÍ",
+            "MALTESA",
+            "LUXEMBURGUESA",
+            "LITUANA",
+            "LIBIA",
+            "LIBANESA",
+            "LETONA",
+            "JAPONESA",
+            "JAMAIQUINA",
+            "ITALIANA",
+            "ISRAELÍ",
+            "IRLANDESA",
+            "INGLESA",
+            "INDONESIA",
+            "HÚNGARA",
+            "HONDUREÑA",
+            "HOLANDESA",
+            "INDIO",
+            "HAITIANA",
+            "GUYANÉS",
+            "GUATEMALTECA",
+            "GRIEGA",
+            "GEORGIANA",
+            "FRANCESA",
+            "FINLANDESA",
+            "FILIPINA",
+            "ETÍOPE",
+            "ESTONIA",
+            "ESTADOUNIDENSE",
+            "ESPAÑOLA",
+            "ESLOVENA",
+            "ESLOVACA",
+            "ESCOCESA",
+            "EGIPCIA",
+            "ECUATORIANA",
+            "ECUATOGUINEANA",
+            "DOMINICANA",
+            "DANESA",
+            "CUBANA",
+            "COSTARRICENSE",
+            "COLOMBIANA",
+            "BELICEÑO",
+            "TAIWANES",
+            "ISLANDES",
+            "MALASIO",
+            "PAKISTANI",
+            "MARFILEÑO",
+            "CONGOLESA",
+            "MONTENEGRINO",
+            "IRANÍ",
+            "AFGANA",
+            "MOZAMBIQUEÑA",
+            "IRAQUI",
+            "TUNECINA"});
             this.cb_Nacionalidad.Location = new System.Drawing.Point(429, 62);
             this.cb_Nacionalidad.Name = "cb_Nacionalidad";
             this.cb_Nacionalidad.Size = new System.Drawing.Size(136, 21);
@@ -1362,6 +1474,36 @@ namespace RegistroLicenciasChihuahua
             // 
             this.dtMunicipioTableAdapter.ClearBeforeFill = true;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label28.Location = new System.Drawing.Point(3, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(50, 16);
+            this.label28.TabIndex = 14;
+            this.label28.Text = "Prefijo";
+            // 
+            // cb_Prefijos
+            // 
+            this.cb_Prefijos.FormattingEnabled = true;
+            this.cb_Prefijos.Items.AddRange(new object[] {
+            "AVE",
+            "BLVD",
+            "C",
+            "CALLEJON",
+            "CAMINO",
+            "CARR-KM",
+            "CERRADA",
+            "CONOCIDO",
+            "PAR-IND",
+            "PERIF",
+            "PRIV"});
+            this.cb_Prefijos.Location = new System.Drawing.Point(145, 3);
+            this.cb_Prefijos.Name = "cb_Prefijos";
+            this.cb_Prefijos.Size = new System.Drawing.Size(136, 21);
+            this.cb_Prefijos.TabIndex = 15;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1508,5 +1650,7 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.MaskedTextBox txt_Fnacimiento;
         private System.Windows.Forms.Button btnFirma;
         private System.Windows.Forms.Button btnHuella;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox cb_Prefijos;
     }
 }

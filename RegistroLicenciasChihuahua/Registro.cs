@@ -255,7 +255,11 @@ namespace RegistroLicenciasChihuahua
             txt_APContacto.Text = ciudadano.Ben1APaterno;
             txt_AMContacto.Text = ciudadano.Ben1AMaterno;
             txt_TelContacto.Text = ciudadano.TipoTel;
-            txt_Calle.Text = ciudadano.Calle;
+
+
+            string[] subs = ciudadano.Calle.Split(' ');
+            cb_Prefijos.Text = subs[0];
+            txt_Calle.Text = subs[1]; //ciudadano.Calle;
             txt_NoExterior.Text = ciudadano.NoExterior;
             txt_NoInterior.Text = ciudadano.NoInterior;
             txt_CP.Text = ciudadano.CodigoPostal;
@@ -798,7 +802,7 @@ namespace RegistroLicenciasChihuahua
                                 dciudadano.AMaterno = txt_ApellidoM.Text;
                                 dciudadano.AniosVigencia = anv.AniosVigencia;
                                 dciudadano.APaterno = txt_ApellidoP.Text;
-                                dciudadano.Calle = txt_Calle.Text;
+                                dciudadano.Calle = cb_Prefijos.Text + " " + txt_Calle.Text;
                                 dciudadano.Colonia = 0;
                                 dciudadano.CP = txt_CP.Text;
                                 dciudadano.Curp = txt_Curp.Text;
@@ -877,7 +881,7 @@ namespace RegistroLicenciasChihuahua
                                 dtramite.Ben1AMaterno = txt_AMContacto.Text;
                                 dtramite.Ben1APaterno = txt_APContacto.Text;
                                 dtramite.TipoTel = txt_TelContacto.Text;
-                                dtramite.Calle = txt_Calle.Text;
+                                dtramite.Calle = cb_Prefijos.Text + " " + txt_Calle.Text;
                                 dtramite.NoExterior = txt_NoExterior.Text;
                                 dtramite.NoInterior = txt_NoInterior.Text;
                                 dtramite.CodigoPostal = txt_CP.Text;
@@ -1061,7 +1065,7 @@ namespace RegistroLicenciasChihuahua
                     dtramite.Ben1AMaterno = txt_AMContacto.Text;
                     dtramite.Ben1APaterno = txt_APContacto.Text;
                     dtramite.TipoTel = txt_TelContacto.Text;
-                    dtramite.Calle = txt_Calle.Text;
+                    dtramite.Calle = cb_Prefijos.Text + " " + txt_Calle.Text;
                     dtramite.NoExterior = txt_NoExterior.Text;
                     dtramite.NoInterior = txt_NoInterior.Text;
                     dtramite.CodigoPostal = txt_CP.Text;
@@ -1287,6 +1291,9 @@ namespace RegistroLicenciasChihuahua
             }
         }
 
-   
+        private void txt_CP_Leave(object sender, EventArgs e)
+        {
+
+        }
     }
 }
