@@ -198,7 +198,7 @@ namespace RegistroLicenciasChihuahua
          
             txt_Curp.Text = ciudadano.Curp;
             cb_Tlicencia.SelectedValue = ciudadano.TipoLicencia;
-            LoadTramiteVigencia(ciudadano.AniosVigencia);
+          
          //   cb_Vigencia.Text.Contains(ciudadano.AniosVigencia.ToString());
             txt_Importe.Text = ciudadano.Importe.ToString();
             txt_Folio.Text = ciudadano.FolioSeguimiento;
@@ -235,6 +235,7 @@ namespace RegistroLicenciasChihuahua
             txt_APTutor.Text = ciudadano.APaternoTutor;
             txt_AMTutor.Text = ciudadano.AMaternoTutor;
             txt_Licanterior.Text = ciudadano.LicenciaAnterior == null ? ciudadano.NumeroLicencia : ciudadano.LicenciaAnterior;
+            LoadTramiteVigencia(ciudadano.AniosVigencia, ciudadano.TipoTramite);
             //Vigencia();
 
         }
@@ -529,7 +530,7 @@ namespace RegistroLicenciasChihuahua
         }
 
 
-        public void LoadTramiteVigencia(int anios)
+        public void LoadTramiteVigencia(int anios, string tipotramite)
         {
             using (_context = new LicenciasCH_Entities())
             {
@@ -539,7 +540,7 @@ namespace RegistroLicenciasChihuahua
                 int tipolic = tplic.TipoLicenciaId;
              
 
-                if (cb_Ttramite.Text == "Nueva")
+                if (tipotramite == "E")
                 {
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "E" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
@@ -549,7 +550,7 @@ namespace RegistroLicenciasChihuahua
                     cb_Vigencia.SelectedValue = SELECT;
 
                 }
-                else if (cb_Ttramite.Text == "Canje")
+                else if (tipotramite == "R")
                 {
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "R" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
@@ -558,7 +559,7 @@ namespace RegistroLicenciasChihuahua
                     var SELECT = _context.dtVigencias.Where(x => x.TipoTramite == "R" && x.TipoLicenciaId == tipolic && x.AniosVigencia == anios).Select(X => X.VigenciaId).FirstOrDefault();
                     cb_Vigencia.SelectedValue = SELECT;
                 }
-                else if (cb_Ttramite.Text == "Renovación")
+                else if (tipotramite == "C")
                 {
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "C" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
@@ -567,7 +568,7 @@ namespace RegistroLicenciasChihuahua
                     var SELECT = _context.dtVigencias.Where(x => x.TipoTramite == "C" && x.TipoLicenciaId == tipolic && x.AniosVigencia == anios).Select(X => X.VigenciaId).FirstOrDefault();
                     cb_Vigencia.SelectedValue = SELECT;
                 }
-                else if (cb_Ttramite.Text == "Reimpresión")
+                else if (tipotramite == "I")
                 {
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "I" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
@@ -576,7 +577,7 @@ namespace RegistroLicenciasChihuahua
                     var SELECT = _context.dtVigencias.Where(x => x.TipoTramite == "I" && x.TipoLicenciaId == tipolic && x.AniosVigencia == anios).Select(X => X.VigenciaId).FirstOrDefault();
                     cb_Vigencia.SelectedValue = SELECT;
                 }
-                else if (cb_Ttramite.Text == "Robo")
+                else if (tipotramite == "O")
                 {
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "O" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
@@ -585,7 +586,7 @@ namespace RegistroLicenciasChihuahua
                     var SELECT = _context.dtVigencias.Where(x => x.TipoTramite == "O" && x.TipoLicenciaId == tipolic && x.AniosVigencia == anios).Select(X => X.VigenciaId).FirstOrDefault();
                     cb_Vigencia.SelectedValue = SELECT;
                 }
-                else if (cb_Ttramite.Text == "Extravio")
+                else if (tipotramite == "X")
                 {
                     cb_Vigencia.DataSource = _context.dtVigencias.Where(x => x.TipoTramite == "X" && x.TipoLicenciaId == tipolic).ToList();
                     cb_Vigencia.ValueMember = "VigenciaId";
