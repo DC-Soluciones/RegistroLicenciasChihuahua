@@ -964,5 +964,14 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Downloads\AppRegistro\AppRegistro\sigPlusNET_wpfDemo1\sigPlusNET_wpfDemo.csproj">
+      <Project>{9167f243-e5a1-447e-b47c-d117f5637fe3}</Project>
+      <Name>sigPlusNET_wpfDemo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

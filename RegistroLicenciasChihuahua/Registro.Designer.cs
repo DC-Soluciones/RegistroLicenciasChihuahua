@@ -33,9 +33,11 @@ namespace RegistroLicenciasChihuahua
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.panelregistro = new System.Windows.Forms.Panel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_Guardar = new System.Windows.Forms.Button();
-            this.btn_Biometricos = new System.Windows.Forms.Button();
             this.btn_Escaneo = new System.Windows.Forms.Button();
+            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.btnFoto = new System.Windows.Forms.Button();
+            this.btnFirma = new System.Windows.Forms.Button();
+            this.btnHuella = new System.Windows.Forms.Button();
             this.pnl_Menor = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label43 = new System.Windows.Forms.Label();
@@ -104,6 +106,7 @@ namespace RegistroLicenciasChihuahua
             this.cb_ComprobanteDom = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txt_NoComprobante = new System.Windows.Forms.TextBox();
+            this.txt_Fnacimiento = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -136,7 +139,6 @@ namespace RegistroLicenciasChihuahua
             this.dtMunicipioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtTipoLicenciasTableAdapter = new RegistroLicenciasChihuahua.LicenciasCHDataSetTableAdapters.dtTipoLicenciasTableAdapter();
             this.dtMunicipioTableAdapter = new RegistroLicenciasChihuahua.LicenciasCHDataSetMunicipiosTableAdapters.dtMunicipioTableAdapter();
-            this.txt_Fnacimiento = new System.Windows.Forms.MaskedTextBox();
             this.panelregistro.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.pnl_Menor.SuspendLayout();
@@ -177,15 +179,20 @@ namespace RegistroLicenciasChihuahua
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 5;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.49551F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.5045F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel6.Controls.Add(this.btn_Guardar, 3, 0);
-            this.tableLayoutPanel6.Controls.Add(this.btn_Biometricos, 2, 0);
+            this.tableLayoutPanel6.ColumnCount = 8;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.28487F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.71512F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel6.Controls.Add(this.btn_Escaneo, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btn_Guardar, 6, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnFoto, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnFirma, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnHuella, 4, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 711);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -194,46 +201,13 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel6.Size = new System.Drawing.Size(1594, 48);
             this.tableLayoutPanel6.TabIndex = 30;
             // 
-            // btn_Guardar
-            // 
-            this.btn_Guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(50)))), ((int)(((byte)(140)))));
-            this.btn_Guardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
-            this.btn_Guardar.Location = new System.Drawing.Point(1371, 3);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(177, 35);
-            this.btn_Guardar.TabIndex = 0;
-            this.btn_Guardar.Text = "Guardar registro";
-            this.btn_Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Guardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Guardar.UseVisualStyleBackColor = false;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
-            // 
-            // btn_Biometricos
-            // 
-            this.btn_Biometricos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(31)))), ((int)(((byte)(89)))));
-            this.btn_Biometricos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Biometricos.ForeColor = System.Drawing.Color.White;
-            this.btn_Biometricos.Image = ((System.Drawing.Image)(resources.GetObject("btn_Biometricos.Image")));
-            this.btn_Biometricos.Location = new System.Drawing.Point(1212, 3);
-            this.btn_Biometricos.Name = "btn_Biometricos";
-            this.btn_Biometricos.Size = new System.Drawing.Size(146, 35);
-            this.btn_Biometricos.TabIndex = 1;
-            this.btn_Biometricos.Text = "Biométricos";
-            this.btn_Biometricos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Biometricos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Biometricos.UseVisualStyleBackColor = false;
-            this.btn_Biometricos.Visible = false;
-            this.btn_Biometricos.Click += new System.EventHandler(this.btn_Biometricos_Click);
-            // 
             // btn_Escaneo
             // 
             this.btn_Escaneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btn_Escaneo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Escaneo.ForeColor = System.Drawing.Color.White;
             this.btn_Escaneo.Image = ((System.Drawing.Image)(resources.GetObject("btn_Escaneo.Image")));
-            this.btn_Escaneo.Location = new System.Drawing.Point(952, 3);
+            this.btn_Escaneo.Location = new System.Drawing.Point(594, 3);
             this.btn_Escaneo.Name = "btn_Escaneo";
             this.btn_Escaneo.Size = new System.Drawing.Size(254, 35);
             this.btn_Escaneo.TabIndex = 2;
@@ -243,6 +217,73 @@ namespace RegistroLicenciasChihuahua
             this.btn_Escaneo.UseVisualStyleBackColor = false;
             this.btn_Escaneo.Visible = false;
             this.btn_Escaneo.Click += new System.EventHandler(this.btn_Escaneo_Click);
+            // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(50)))), ((int)(((byte)(140)))));
+            this.btn_Guardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Guardar.ForeColor = System.Drawing.Color.White;
+            this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
+            this.btn_Guardar.Location = new System.Drawing.Point(1395, 3);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(175, 35);
+            this.btn_Guardar.TabIndex = 0;
+            this.btn_Guardar.Text = "Guardar registro";
+            this.btn_Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Guardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            // 
+            // btnFoto
+            // 
+            this.btnFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(31)))), ((int)(((byte)(89)))));
+            this.btnFoto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFoto.ForeColor = System.Drawing.Color.White;
+            this.btnFoto.Image = ((System.Drawing.Image)(resources.GetObject("btnFoto.Image")));
+            this.btnFoto.Location = new System.Drawing.Point(856, 3);
+            this.btnFoto.Name = "btnFoto";
+            this.btnFoto.Size = new System.Drawing.Size(146, 35);
+            this.btnFoto.TabIndex = 1;
+            this.btnFoto.Text = "Foto";
+            this.btnFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFoto.UseVisualStyleBackColor = false;
+            this.btnFoto.Visible = false;
+            this.btnFoto.Click += new System.EventHandler(this.btn_Biometricos_Click);
+            // 
+            // btnFirma
+            // 
+            this.btnFirma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(31)))), ((int)(((byte)(89)))));
+            this.btnFirma.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirma.ForeColor = System.Drawing.Color.White;
+            this.btnFirma.Image = ((System.Drawing.Image)(resources.GetObject("btnFirma.Image")));
+            this.btnFirma.Location = new System.Drawing.Point(1011, 3);
+            this.btnFirma.Name = "btnFirma";
+            this.btnFirma.Size = new System.Drawing.Size(146, 35);
+            this.btnFirma.TabIndex = 3;
+            this.btnFirma.Text = "Firma";
+            this.btnFirma.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFirma.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFirma.UseVisualStyleBackColor = false;
+            this.btnFirma.Visible = false;
+            this.btnFirma.Click += new System.EventHandler(this.btn_Biometricos_Click);
+            // 
+            // btnHuella
+            // 
+            this.btnHuella.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(31)))), ((int)(((byte)(89)))));
+            this.btnHuella.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuella.ForeColor = System.Drawing.Color.White;
+            this.btnHuella.Image = ((System.Drawing.Image)(resources.GetObject("btnHuella.Image")));
+            this.btnHuella.Location = new System.Drawing.Point(1166, 3);
+            this.btnHuella.Name = "btnHuella";
+            this.btnHuella.Size = new System.Drawing.Size(146, 35);
+            this.btnHuella.TabIndex = 4;
+            this.btnHuella.Text = "Huellas";
+            this.btnHuella.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuella.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuella.UseVisualStyleBackColor = false;
+            this.btnHuella.Visible = false;
+            this.btnHuella.Click += new System.EventHandler(this.btn_Biometricos_Click);
             // 
             // pnl_Menor
             // 
@@ -1007,6 +1048,16 @@ namespace RegistroLicenciasChihuahua
             this.txt_NoComprobante.TabIndex = 29;
             this.txt_NoComprobante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NoComprobante_keyPress);
             // 
+            // txt_Fnacimiento
+            // 
+            this.txt_Fnacimiento.Location = new System.Drawing.Point(429, 30);
+            this.txt_Fnacimiento.Mask = "00/00/0000";
+            this.txt_Fnacimiento.Name = "txt_Fnacimiento";
+            this.txt_Fnacimiento.ReadOnly = true;
+            this.txt_Fnacimiento.Size = new System.Drawing.Size(136, 20);
+            this.txt_Fnacimiento.TabIndex = 31;
+            this.txt_Fnacimiento.ValidatingType = typeof(System.DateTime);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(9)))), ((int)(((byte)(115)))));
@@ -1311,16 +1362,6 @@ namespace RegistroLicenciasChihuahua
             // 
             this.dtMunicipioTableAdapter.ClearBeforeFill = true;
             // 
-            // txt_Fnacimiento
-            // 
-            this.txt_Fnacimiento.Location = new System.Drawing.Point(429, 30);
-            this.txt_Fnacimiento.Mask = "00/00/0000";
-            this.txt_Fnacimiento.Name = "txt_Fnacimiento";
-            this.txt_Fnacimiento.ReadOnly = true;
-            this.txt_Fnacimiento.Size = new System.Drawing.Size(136, 20);
-            this.txt_Fnacimiento.TabIndex = 31;
-            this.txt_Fnacimiento.ValidatingType = typeof(System.DateTime);
-            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1362,7 +1403,7 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.Panel panelregistro;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button btn_Guardar;
-        private System.Windows.Forms.Button btn_Biometricos;
+        private System.Windows.Forms.Button btnFoto;
         private System.Windows.Forms.Button btn_Escaneo;
         private System.Windows.Forms.Panel pnl_Menor;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
@@ -1465,5 +1506,7 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.MaskedTextBox txt_Fvencimiento;
         private System.Windows.Forms.MaskedTextBox txt_Fantiguedad;
         private System.Windows.Forms.MaskedTextBox txt_Fnacimiento;
+        private System.Windows.Forms.Button btnFirma;
+        private System.Windows.Forms.Button btnHuella;
     }
 }

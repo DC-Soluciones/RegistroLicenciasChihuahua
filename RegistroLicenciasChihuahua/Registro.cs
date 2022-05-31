@@ -3,10 +3,15 @@ using RegistroLicenciasChihuahua.Contexto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -25,6 +30,25 @@ namespace RegistroLicenciasChihuahua
         int usuarioid1 = 0;
         int rolID;
         string edicion1;
+
+
+        bool tramitevalido = true;
+
+        const String btnHuellas = "btnHuella";
+        const String Firmaelectronica = "btnFirma";
+        const String Fotografia = "btnFoto";
+        const String Previsualizar = "btnPrevio";
+
+        static string licencia = "";
+        private string ruta = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+        [DllImport("User32.dll")]
+        private static extern bool SetForegroundWindow(IntPtr hWnd);
+        private IntPtr handle;
+        private Process processABIS;
+        static string folioSegui = "";
+        static string conect;
+        static int UsuarioId;
         public Registro(string curp, string usuario, int id, string bd, int IdUserC, string edicion)
         {
             edicion1 = edicion;
@@ -137,6 +161,13 @@ namespace RegistroLicenciasChihuahua
             {
                 btn_Guardar.Enabled = false;
             }
+            else
+            {
+                btnFoto.Visible = true;
+                btnFirma.Visible = true;
+                btnHuella.Visible = true;
+                btn_Escaneo.Visible = true;
+            }
 
 
             if (bd == "Actual" || bd == "")
@@ -156,7 +187,7 @@ namespace RegistroLicenciasChihuahua
                 ciudadano = (from d in _contextHist.dtTramites
                              where d.TramiteId == id
                              select d).OrderByDescending(x => x.FechaCreacion).FirstOrDefault();
-                btn_Biometricos.Visible = false;
+                btnFoto.Visible = false;
                 btn_Guardar.Visible = false;
                 btn_Escaneo.Visible = false;
             }
@@ -419,15 +450,69 @@ namespace RegistroLicenciasChihuahua
 
         private void btn_Biometricos_Click(object sender, EventArgs e)
         {
-            if (this.panelregistro.Controls.Count > 0)
-                this.panelregistro.Controls.RemoveAt(0);
-            Biometricos biometricos = new Biometricos();
-            biometricos.TopLevel = false;
-            biometricos.Dock = DockStyle.Fill;
-            panelregistro.Controls.Clear();
-            panelregistro.Controls.Add(biometricos);
-            panelregistro.Tag = biometricos;
-            biometricos.Show();
+            Button btn = (Button)sender;
+            switch (btn.Name)
+            {
+                case btnHuellas:
+                    //Finger old
+                    if (tramitevalido)
+                    {
+                        var allProcesses = Process.GetProcesses();
+
+                        if (!IsProcessRunning("Finger"))
+                        {
+                            ProcessStartInfo pro = new ProcessStartInfo();
+                            string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase);
+                            pro.FileName = Path.Combine(path, "HuellasFx", "Finger.exe");
+                            Process.Start(pro);
+                        }
+                        else
+                        {
+                            handle = processABIS.MainWindowHandle;
+                            SetForegroundWindow(handle);
+                        }
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No hay datos para enrolar", "Aviso Importante");
+                    }
+                    break;
+
+                case Fotografia:
+                    if (tramitevalido)
+                    {
+                        Process[] namePFoto = Process.GetProcessesByName("Foto");
+                        if (namePFoto.Length >= 0)
+                        {
+                            ProcessStartInfo prof = new ProcessStartInfo();
+                            string pathf = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase);
+                            prof.FileName = Path.Combine(pathf, "FotoFx", "Foto.exe");
+                            Process processf = Process.Start(prof);
+                        }
+                    }
+
+                    break;
+
+                case Firmaelectronica:
+                    sigPlusNET_wpfDemo.Window1 Firma = new sigPlusNET_wpfDemo.Window1(licencia, conect, UsuarioId);
+                    
+                    Firma.ShowDialog();
+                    break;
+
+                case Previsualizar:
+                    if (tramitevalido)
+                    {
+                        Process[] namePrevio = Process.GetProcessesByName("Previsualizar");
+                        if (namePrevio.Length >= 0)
+                        {
+                            ProcessStartInfo prof2 = new ProcessStartInfo();
+                            string pathfr = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase);
+                            prof2.FileName = Path.Combine(pathfr, "PrevioFx", "VistaBio.exe");
+                            Process processf = Process.Start(prof2);
+                        }
+                    }
+                    break;
+            }
         }
 
         private void cb_Tlicencia_SelectedIndexChanged(object sender, EventArgs e)
@@ -873,12 +958,14 @@ namespace RegistroLicenciasChihuahua
 
                                     MessageBox.Show("Registro guardado exitosamente!");
                                     btn_Escaneo.Visible = true;
-                                    btn_Biometricos.Visible = true;
+                                    btnFoto.Visible = true;
                                     dtramite.FolioSeguimiento = dtramite.TramiteId.ToString().PadLeft(8, '0');
                                     _context.SaveChanges();
                                     txt_Folio.Text = dtramite.FolioSeguimiento;
 
-                                    btn_Biometricos.Visible = true;
+                                    btnFoto.Visible = true;
+                                    btnFirma.Visible = true;
+                                    btnHuella.Visible = true;
                                 }
 
                             }
@@ -1185,5 +1272,21 @@ namespace RegistroLicenciasChihuahua
                 MessageBox.Show("RFC no valido");
             }
         }
+
+
+        private bool IsProcessRunning(string sProcessName)
+        {
+            System.Diagnostics.Process[] proc = System.Diagnostics.Process.GetProcessesByName(sProcessName);
+            if (proc.Length > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+   
     }
 }

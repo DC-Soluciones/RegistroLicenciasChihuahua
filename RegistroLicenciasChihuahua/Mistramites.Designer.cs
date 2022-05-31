@@ -297,6 +297,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // folioSeguimientoDataGridViewTextBoxColumn
             // 
+            this.folioSeguimientoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.folioSeguimientoDataGridViewTextBoxColumn.DataPropertyName = "FolioSeguimiento";
             this.folioSeguimientoDataGridViewTextBoxColumn.HeaderText = "Folio Seguimiento";
             this.folioSeguimientoDataGridViewTextBoxColumn.Name = "folioSeguimientoDataGridViewTextBoxColumn";
@@ -304,6 +305,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // curpDataGridViewTextBoxColumn
             // 
+            this.curpDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.curpDataGridViewTextBoxColumn.DataPropertyName = "Curp";
             this.curpDataGridViewTextBoxColumn.HeaderText = "Curp";
             this.curpDataGridViewTextBoxColumn.Name = "curpDataGridViewTextBoxColumn";
@@ -311,6 +313,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // nombreDataGridViewTextBoxColumn
             // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
@@ -318,6 +321,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // apellidoPaternoDataGridViewTextBoxColumn
             // 
+            this.apellidoPaternoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.apellidoPaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoPaterno";
             this.apellidoPaternoDataGridViewTextBoxColumn.HeaderText = "Apellido Paterno";
             this.apellidoPaternoDataGridViewTextBoxColumn.Name = "apellidoPaternoDataGridViewTextBoxColumn";
@@ -325,6 +329,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // apellidoMaternoDataGridViewTextBoxColumn
             // 
+            this.apellidoMaternoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.apellidoMaternoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoMaterno";
             this.apellidoMaternoDataGridViewTextBoxColumn.HeaderText = "Apellido Materno";
             this.apellidoMaternoDataGridViewTextBoxColumn.Name = "apellidoMaternoDataGridViewTextBoxColumn";
@@ -332,6 +337,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // tipoLicenciaDataGridViewTextBoxColumn
             // 
+            this.tipoLicenciaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tipoLicenciaDataGridViewTextBoxColumn.DataPropertyName = "TipoLicencia";
             this.tipoLicenciaDataGridViewTextBoxColumn.HeaderText = "Tipo de Licencia";
             this.tipoLicenciaDataGridViewTextBoxColumn.Name = "tipoLicenciaDataGridViewTextBoxColumn";
@@ -339,6 +345,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // tipoTramiteDataGridViewTextBoxColumn
             // 
+            this.tipoTramiteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tipoTramiteDataGridViewTextBoxColumn.DataPropertyName = "TipoTramite";
             this.tipoTramiteDataGridViewTextBoxColumn.HeaderText = "Tipo Tramite";
             this.tipoTramiteDataGridViewTextBoxColumn.Name = "tipoTramiteDataGridViewTextBoxColumn";
@@ -346,6 +353,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // aniosVigenciaDataGridViewTextBoxColumn
             // 
+            this.aniosVigenciaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.aniosVigenciaDataGridViewTextBoxColumn.DataPropertyName = "AniosVigencia";
             this.aniosVigenciaDataGridViewTextBoxColumn.HeaderText = "Años de Vigencia";
             this.aniosVigenciaDataGridViewTextBoxColumn.Name = "aniosVigenciaDataGridViewTextBoxColumn";
@@ -353,6 +361,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // fechaExpedicionDataGridViewTextBoxColumn
             // 
+            this.fechaExpedicionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.fechaExpedicionDataGridViewTextBoxColumn.DataPropertyName = "FechaExpedicion";
             this.fechaExpedicionDataGridViewTextBoxColumn.HeaderText = "Fecha Expedicion";
             this.fechaExpedicionDataGridViewTextBoxColumn.Name = "fechaExpedicionDataGridViewTextBoxColumn";
@@ -360,6 +369,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // fechaVencimientoDataGridViewTextBoxColumn
             // 
+            this.fechaVencimientoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.fechaVencimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaVencimiento";
             this.fechaVencimientoDataGridViewTextBoxColumn.HeaderText = "Fecha Vencimiento";
             this.fechaVencimientoDataGridViewTextBoxColumn.Name = "fechaVencimientoDataGridViewTextBoxColumn";
@@ -367,6 +377,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // estatusDataGridViewTextBoxColumn
             // 
+            this.estatusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
             this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
             this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
@@ -374,6 +385,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // sexoDataGridViewTextBoxColumn
             // 
+            this.sexoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
             this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
             this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
@@ -381,6 +393,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // rFCDataGridViewTextBoxColumn
             // 
+            this.rFCDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.rFCDataGridViewTextBoxColumn.DataPropertyName = "RFC";
             this.rFCDataGridViewTextBoxColumn.HeaderText = "RFC";
             this.rFCDataGridViewTextBoxColumn.Name = "rFCDataGridViewTextBoxColumn";
@@ -388,6 +401,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // fechaNacimientoDataGridViewTextBoxColumn
             // 
+            this.fechaNacimientoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
             this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "Fecha Nacimiento";
             this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
@@ -395,6 +409,7 @@ namespace RegistroLicenciasChihuahua
             // 
             // municipioNDataGridViewTextBoxColumn
             // 
+            this.municipioNDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.municipioNDataGridViewTextBoxColumn.DataPropertyName = "MunicipioN";
             this.municipioNDataGridViewTextBoxColumn.HeaderText = "Municipio";
             this.municipioNDataGridViewTextBoxColumn.Name = "municipioNDataGridViewTextBoxColumn";
