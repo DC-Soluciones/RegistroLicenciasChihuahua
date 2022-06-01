@@ -258,8 +258,15 @@ namespace RegistroLicenciasChihuahua
 
 
             string[] subs = ciudadano.Calle.Split(' ');
-            cb_Prefijos.Text = subs[0];
-            txt_Calle.Text = subs[1]; //ciudadano.Calle;
+            try
+            {
+                cb_Prefijos.Text = subs[0];
+                txt_Calle.Text = subs[1]; //ciudadano.Calle;
+            }
+            catch
+            {
+                txt_Calle.Text = ciudadano.Calle;
+            }
             txt_NoExterior.Text = ciudadano.NoExterior;
             txt_NoInterior.Text = ciudadano.NoInterior;
             txt_CP.Text = ciudadano.CodigoPostal;

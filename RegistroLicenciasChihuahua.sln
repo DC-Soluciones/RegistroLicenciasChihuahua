@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroLicenciasChihuahua", "RegistroLicenciasChihuahua\RegistroLicenciasChihuahua.csproj", "{5651A568-0596-4690-81DA-8EBA0AF69D7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sigPlusNET_wpfDemo", "..\..\..\..\Downloads\AppRegistro\AppRegistro\sigPlusNET_wpfDemo1\sigPlusNET_wpfDemo.csproj", "{9167F243-E5A1-447E-B47C-D117F5637FE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sigPlusNET_wpfDemo", "sigPlusNET_wpfDemo1\sigPlusNET_wpfDemo.csproj", "{9167F243-E5A1-447E-B47C-D117F5637FE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
