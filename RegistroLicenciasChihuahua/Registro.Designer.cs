@@ -49,20 +49,22 @@ namespace RegistroLicenciasChihuahua
             this.panel5 = new System.Windows.Forms.Panel();
             this.label42 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label35 = new System.Windows.Forms.Label();
-            this.txt_Calle = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.txt_NoExterior = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.txt_NoInterior = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.txt_CP = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.cb_Estado = new System.Windows.Forms.ComboBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.cb_Municipio = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
-            this.txt_Colonia = new System.Windows.Forms.TextBox();
+            this.cb_Municipio = new System.Windows.Forms.ComboBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.cb_Estado = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txt_CP = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txt_NoInterior = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txt_NoExterior = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txt_Calle = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.cb_Prefijos = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.cb_Colonia = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label34 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -139,8 +141,6 @@ namespace RegistroLicenciasChihuahua
             this.dtMunicipioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtTipoLicenciasTableAdapter = new RegistroLicenciasChihuahua.LicenciasCHDataSetTableAdapters.dtTipoLicenciasTableAdapter();
             this.dtMunicipioTableAdapter = new RegistroLicenciasChihuahua.LicenciasCHDataSetMunicipiosTableAdapters.dtMunicipioTableAdapter();
-            this.label28 = new System.Windows.Forms.Label();
-            this.cb_Prefijos = new System.Windows.Forms.ComboBox();
             this.panelregistro.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.pnl_Menor.SuspendLayout();
@@ -250,7 +250,6 @@ namespace RegistroLicenciasChihuahua
             this.btnFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFoto.UseVisualStyleBackColor = false;
-            this.btnFoto.Visible = false;
             this.btnFoto.Click += new System.EventHandler(this.btn_Biometricos_Click);
             // 
             // btnFirma
@@ -267,7 +266,6 @@ namespace RegistroLicenciasChihuahua
             this.btnFirma.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFirma.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFirma.UseVisualStyleBackColor = false;
-            this.btnFirma.Visible = false;
             this.btnFirma.Click += new System.EventHandler(this.btn_Biometricos_Click);
             // 
             // btnHuella
@@ -284,7 +282,6 @@ namespace RegistroLicenciasChihuahua
             this.btnHuella.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHuella.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuella.UseVisualStyleBackColor = false;
-            this.btnHuella.Visible = false;
             this.btnHuella.Click += new System.EventHandler(this.btn_Biometricos_Click);
             // 
             // pnl_Menor
@@ -408,7 +405,6 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel4.Controls.Add(this.txt_Colonia, 7, 1);
             this.tableLayoutPanel4.Controls.Add(this.label41, 6, 1);
             this.tableLayoutPanel4.Controls.Add(this.cb_Municipio, 5, 1);
             this.tableLayoutPanel4.Controls.Add(this.label40, 4, 1);
@@ -424,6 +420,7 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel4.Controls.Add(this.label35, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.cb_Prefijos, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label28, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.cb_Colonia, 7, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(14, 520);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
@@ -432,87 +429,33 @@ namespace RegistroLicenciasChihuahua
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1282, 72);
             this.tableLayoutPanel4.TabIndex = 28;
             // 
-            // label35
+            // label41
             // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(287, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(41, 16);
-            this.label35.TabIndex = 0;
-            this.label35.Text = "Calle";
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(855, 27);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(57, 16);
+            this.label41.TabIndex = 12;
+            this.label41.Text = "Colonia";
             // 
-            // txt_Calle
+            // cb_Municipio
             // 
-            this.txt_Calle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Calle.Location = new System.Drawing.Point(429, 3);
-            this.txt_Calle.Name = "txt_Calle";
-            this.txt_Calle.Size = new System.Drawing.Size(136, 20);
-            this.txt_Calle.TabIndex = 1;
+            this.cb_Municipio.FormattingEnabled = true;
+            this.cb_Municipio.Location = new System.Drawing.Point(713, 30);
+            this.cb_Municipio.Name = "cb_Municipio";
+            this.cb_Municipio.Size = new System.Drawing.Size(136, 21);
+            this.cb_Municipio.TabIndex = 11;
             // 
-            // label36
+            // label40
             // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(571, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(112, 16);
-            this.label36.TabIndex = 2;
-            this.label36.Text = "Número exterior";
-            // 
-            // txt_NoExterior
-            // 
-            this.txt_NoExterior.Location = new System.Drawing.Point(713, 3);
-            this.txt_NoExterior.Name = "txt_NoExterior";
-            this.txt_NoExterior.Size = new System.Drawing.Size(136, 20);
-            this.txt_NoExterior.TabIndex = 3;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(855, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(108, 16);
-            this.label37.TabIndex = 4;
-            this.label37.Text = "Número interior";
-            // 
-            // txt_NoInterior
-            // 
-            this.txt_NoInterior.Location = new System.Drawing.Point(997, 3);
-            this.txt_NoInterior.Name = "txt_NoInterior";
-            this.txt_NoInterior.Size = new System.Drawing.Size(136, 20);
-            this.txt_NoInterior.TabIndex = 5;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(3, 27);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(26, 16);
-            this.label38.TabIndex = 6;
-            this.label38.Text = "CP";
-            // 
-            // txt_CP
-            // 
-            this.txt_CP.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_CP.Location = new System.Drawing.Point(145, 30);
-            this.txt_CP.Name = "txt_CP";
-            this.txt_CP.Size = new System.Drawing.Size(136, 22);
-            this.txt_CP.TabIndex = 7;
-            this.txt_CP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CP_KeyPress);
-            this.txt_CP.Leave += new System.EventHandler(this.txt_CP_Leave);
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(287, 27);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(50, 16);
-            this.label39.TabIndex = 8;
-            this.label39.Text = "Estado";
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(571, 27);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(70, 16);
+            this.label40.TabIndex = 10;
+            this.label40.Text = "Municipio";
             // 
             // cb_Estado
             // 
@@ -525,41 +468,126 @@ namespace RegistroLicenciasChihuahua
             this.cb_Estado.TabIndex = 9;
             this.cb_Estado.Text = "CHIHUAHUA";
             // 
-            // label40
+            // label39
             // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(571, 27);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(70, 16);
-            this.label40.TabIndex = 10;
-            this.label40.Text = "Municipio";
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(287, 27);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(50, 16);
+            this.label39.TabIndex = 8;
+            this.label39.Text = "Estado";
             // 
-            // cb_Municipio
+            // txt_CP
             // 
-            this.cb_Municipio.FormattingEnabled = true;
-            this.cb_Municipio.Location = new System.Drawing.Point(713, 30);
-            this.cb_Municipio.Name = "cb_Municipio";
-            this.cb_Municipio.Size = new System.Drawing.Size(136, 21);
-            this.cb_Municipio.TabIndex = 11;
+            this.txt_CP.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CP.Location = new System.Drawing.Point(145, 30);
+            this.txt_CP.MaxLength = 5;
+            this.txt_CP.Name = "txt_CP";
+            this.txt_CP.Size = new System.Drawing.Size(136, 22);
+            this.txt_CP.TabIndex = 7;
+            this.txt_CP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CP_KeyPress);
+            this.txt_CP.Leave += new System.EventHandler(this.txt_CP_Leave);
             // 
-            // label41
+            // label38
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(855, 27);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(57, 16);
-            this.label41.TabIndex = 12;
-            this.label41.Text = "Colonia";
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(3, 27);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(26, 16);
+            this.label38.TabIndex = 6;
+            this.label38.Text = "CP";
             // 
-            // txt_Colonia
+            // txt_NoInterior
             // 
-            this.txt_Colonia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Colonia.Location = new System.Drawing.Point(997, 30);
-            this.txt_Colonia.Name = "txt_Colonia";
-            this.txt_Colonia.Size = new System.Drawing.Size(136, 20);
-            this.txt_Colonia.TabIndex = 13;
+            this.txt_NoInterior.Location = new System.Drawing.Point(997, 3);
+            this.txt_NoInterior.Name = "txt_NoInterior";
+            this.txt_NoInterior.Size = new System.Drawing.Size(136, 20);
+            this.txt_NoInterior.TabIndex = 5;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(855, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(108, 16);
+            this.label37.TabIndex = 4;
+            this.label37.Text = "Número interior";
+            // 
+            // txt_NoExterior
+            // 
+            this.txt_NoExterior.Location = new System.Drawing.Point(713, 3);
+            this.txt_NoExterior.Name = "txt_NoExterior";
+            this.txt_NoExterior.Size = new System.Drawing.Size(136, 20);
+            this.txt_NoExterior.TabIndex = 3;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(571, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(112, 16);
+            this.label36.TabIndex = 2;
+            this.label36.Text = "Número exterior";
+            // 
+            // txt_Calle
+            // 
+            this.txt_Calle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_Calle.Location = new System.Drawing.Point(429, 3);
+            this.txt_Calle.Name = "txt_Calle";
+            this.txt_Calle.Size = new System.Drawing.Size(136, 20);
+            this.txt_Calle.TabIndex = 1;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(287, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(41, 16);
+            this.label35.TabIndex = 0;
+            this.label35.Text = "Calle";
+            // 
+            // cb_Prefijos
+            // 
+            this.cb_Prefijos.FormattingEnabled = true;
+            this.cb_Prefijos.Items.AddRange(new object[] {
+            "AVE",
+            "BLVD",
+            "C",
+            "CALLEJON",
+            "CAMINO",
+            "CARR-KM",
+            "CERRADA",
+            "CONOCIDO",
+            "PAR-IND",
+            "PERIF",
+            "PRIV"});
+            this.cb_Prefijos.Location = new System.Drawing.Point(145, 3);
+            this.cb_Prefijos.Name = "cb_Prefijos";
+            this.cb_Prefijos.Size = new System.Drawing.Size(136, 21);
+            this.cb_Prefijos.TabIndex = 15;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label28.Location = new System.Drawing.Point(3, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(50, 16);
+            this.label28.TabIndex = 14;
+            this.label28.Text = "Prefijo";
+            // 
+            // cb_Colonia
+            // 
+            this.cb_Colonia.FormattingEnabled = true;
+            this.cb_Colonia.Location = new System.Drawing.Point(997, 30);
+            this.cb_Colonia.Name = "cb_Colonia";
+            this.cb_Colonia.Size = new System.Drawing.Size(136, 21);
+            this.cb_Colonia.TabIndex = 16;
             // 
             // panel4
             // 
@@ -1474,36 +1502,6 @@ namespace RegistroLicenciasChihuahua
             // 
             this.dtMunicipioTableAdapter.ClearBeforeFill = true;
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label28.Location = new System.Drawing.Point(3, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(50, 16);
-            this.label28.TabIndex = 14;
-            this.label28.Text = "Prefijo";
-            // 
-            // cb_Prefijos
-            // 
-            this.cb_Prefijos.FormattingEnabled = true;
-            this.cb_Prefijos.Items.AddRange(new object[] {
-            "AVE",
-            "BLVD",
-            "C",
-            "CALLEJON",
-            "CAMINO",
-            "CARR-KM",
-            "CERRADA",
-            "CONOCIDO",
-            "PAR-IND",
-            "PERIF",
-            "PRIV"});
-            this.cb_Prefijos.Location = new System.Drawing.Point(145, 3);
-            this.cb_Prefijos.Name = "cb_Prefijos";
-            this.cb_Prefijos.Size = new System.Drawing.Size(136, 21);
-            this.cb_Prefijos.TabIndex = 15;
-            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1571,7 +1569,6 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.ComboBox cb_Municipio;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox txt_Colonia;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -1652,5 +1649,6 @@ namespace RegistroLicenciasChihuahua
         private System.Windows.Forms.Button btnHuella;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.ComboBox cb_Prefijos;
+        private System.Windows.Forms.ComboBox cb_Colonia;
     }
 }

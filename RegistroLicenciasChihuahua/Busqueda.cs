@@ -205,16 +205,16 @@ namespace RegistroLicenciasChihuahua
                     {
 
                          listcd = (from d in _contextHist.dtTramites
-                                      where d.Curp == txt_Curp.Text && d.FechaVencimiento > System.DateTime.Now
-                                      select d).ToList();
+                                      where d.Curp == txt_Curp.Text //&& d.FechaVencimiento > System.DateTime.Now
+                                      select d).OrderByDescending(x=>x.FechaCreacion).Take(1).ToList();
                     }
                     else
                     {
                         try
                         {
                             listcd = (from d in _contextHist.dtTramites
-                                      where d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text && d.FechaVencimiento > System.DateTime.Now
-                                      select d).ToList();
+                                      where d.Nombre == txt_Nombre.Text && d.ApellidoPaterno == txt_ApellidoP.Text //&& d.FechaVencimiento > System.DateTime.Now
+                                      select d).OrderByDescending(x => x.FechaCreacion).ToList();
                             txt_Curp.Text = listcd.FirstOrDefault().Curp;
                         }
                         catch

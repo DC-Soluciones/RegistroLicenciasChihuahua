@@ -272,7 +272,7 @@ namespace RegistroLicenciasChihuahua
             txt_CP.Text = ciudadano.CodigoPostal;
             cb_Estado.Text = ciudadano.EstadoN;
             cb_Municipio.Text = ciudadano.MunicipioN;
-            txt_Colonia.Text = ciudadano.ColoniaN;
+            cb_Colonia.Text = ciudadano.ColoniaN;
             txt_NTutor.Text = ciudadano.NombreTutor;
             txt_APTutor.Text = ciudadano.APaternoTutor;
             txt_AMTutor.Text = ciudadano.AMaternoTutor;
@@ -351,7 +351,7 @@ namespace RegistroLicenciasChihuahua
                     return false;
                 }
 
-                if (txt_Calle.Text == "" || txt_Colonia.Text == "" || txt_CP.Text == "" || txt_NoExterior.Text == "")
+                if (txt_Calle.Text == "" || cb_Colonia.Text == "" || txt_CP.Text == "" || txt_NoExterior.Text == "")
                 {
                     MessageBox.Show("Favor de ingresar dirección completa");
                     return false;
@@ -418,7 +418,7 @@ namespace RegistroLicenciasChihuahua
                 }
            
 
-                if (txt_Calle.Text == "" || txt_Colonia.Text == "" && txt_CP.Text == "" || txt_NoExterior.Text == "")
+                if (txt_Calle.Text == "" || cb_Colonia.Text == "" && txt_CP.Text == "" || txt_NoExterior.Text == "")
                 {
                     MessageBox.Show("Favor de ingresar dirección completa");
                     return false;
@@ -894,7 +894,7 @@ namespace RegistroLicenciasChihuahua
                                 dtramite.CodigoPostal = txt_CP.Text;
                                 dtramite.EstadoN = cb_Estado.SelectedItem.ToString();
                                 dtramite.MunicipioN = cb_Municipio.Text;
-                                dtramite.ColoniaN = txt_Colonia.Text;
+                                dtramite.ColoniaN = cb_Colonia.Text;
                                 dtramite.NombreTutor = txt_NTutor.Text;
                                 dtramite.APaternoTutor = txt_APTutor.Text;
                                 dtramite.AMaternoTutor = txt_AMTutor.Text;
@@ -1078,7 +1078,7 @@ namespace RegistroLicenciasChihuahua
                     dtramite.CodigoPostal = txt_CP.Text;
                     dtramite.EstadoN = cb_Estado.SelectedItem.ToString();
                     dtramite.MunicipioN = cb_Municipio.Text;
-                    dtramite.ColoniaN = txt_Colonia.Text;
+                    dtramite.ColoniaN = cb_Colonia.Text;
                     dtramite.NombreTutor = txt_NTutor.Text;
                     dtramite.APaternoTutor = txt_APTutor.Text;
                     dtramite.AMaternoTutor = txt_AMTutor.Text;
@@ -1300,7 +1300,25 @@ namespace RegistroLicenciasChihuahua
 
         private void txt_CP_Leave(object sender, EventArgs e)
         {
-
+            try
+            {
+                using (_context = new LicenciasCH_Entities())
+                {
+                    var colonia = _context.dtColonias.Where(x => x.CodigoPostal == txt_CP.Text).ToList();
+                    cb_Colonia.DataSource = colonia;
+                    cb_Colonia.DisplayMember = "ColoniaNombre";
+                    cb_Colonia.ValueMember = "ColoniaId";
+                    var municipioid = colonia.FirstOrDefault().MunicipioId;
+                    cb_Municipio.DataSource = _context.dtMunicipios.Where(x => x.EstadoId == 30 && x.MunicipioId == municipioid).ToList();
+                    cb_Municipio.DisplayMember = "MunicipioNombre";
+                    cb_Municipio.ValueMember = "MunicipioId";
+                }
+            }
+            catch
+            {
+                txt_CP.Text = "";
+                MessageBox.Show("Ingrese un código postal valido");
+            }
         }
     }
 }
